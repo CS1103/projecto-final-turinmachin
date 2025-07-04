@@ -1,5 +1,6 @@
-#ifndef TENSOR_H
-#define TENSOR_H
+#ifndef PROG3_NN_FINAL_PROJECT_V2025_01_TENSOR_H
+#define PROG3_NN_FINAL_PROJECT_V2025_01_TENSOR_H
+
 #include <algorithm>
 #include <array>
 #include <functional>
@@ -32,6 +33,46 @@ namespace utec::algebra {
         template<typename... Dims>
         requires(sizeof...(Dims) == Rank)
         explicit Tensor(Dims... dims): dims_array{static_cast<size_t>(dims)...}, data(std::accumulate(dims_array.begin(), dims_array.end(), static_cast<size_t>(1), std::multiplies())) {
+            update_steps();
+        }
+
+        template<std::ranges::sized_range Range>
+        requires std::convertible_to<std::ranges::range_value_t<Range>, T>
+        explicit Tensor(const Range& range, const std::array<size_t, Rank>& shape): dims_array(shape), data(std::ranges::begin(range), std::ranges::end(range)) {
+            if (data.size() != std::accumulate(dims_array.begin(), dims_array.end(), static_cast<size_t>(1), std::multiplies())) throw std::invalid_argument("Data size does not match tensor size");
+            update_steps();
+        }
+
+        template<std::ranges::sized_range Range, typename... Dims>
+        requires std::convertible_to<std::ranges::range_value_t<Range>, T> && (sizeof...(Dims) == Rank)
+        explicit Tensor(const Range& range, Dims... dims): dims_array(static_cast<size_t>(dims)...), data(std::ranges::begin(range), std::ranges::end(range)) {
+            if (data.size() != std::accumulate(dims_array.begin(), dims_array.end(), static_cast<size_t>(1), std::multiplies())) throw std::invalid_argument("Data size does not match tensor size");
+            update_steps();
+        }
+
+        template<std::ranges::input_range Range>
+        requires (!std::ranges::sized_range<Range> && std::convertible_to<std::ranges::range_value_t<Range>, T>)
+        explicit Tensor(const Range& range, const std::array<size_t, Rank>& shape): dims_array(shape), data(std::ranges::begin(range), std::ranges::end(range)) {
+            if (data.size() != std::accumulate(dims_array.begin(), dims_array.end(), static_cast<size_t>(1), std::multiplies())) throw std::invalid_argument("Data size does not match tensor size");
+            update_steps();
+        }
+
+        template<std::ranges::input_range Range, typename... Dims>
+        requires (!std::ranges::sized_range<Range> && std::convertible_to<std::ranges::range_value_t<Range>, T>) && (sizeof...(Dims) == Rank)
+        explicit Tensor(const Range& range, Dims... dims): dims_array(static_cast<size_t>(dims)...), data(std::ranges::begin(range), std::ranges::end(range)) {
+            if (data.size() != std::accumulate(dims_array.begin(), dims_array.end(), static_cast<size_t>(1), std::multiplies())) throw std::invalid_argument("Data size does not match tensor size");
+            update_steps();
+        }
+
+        explicit Tensor(std::initializer_list<T> list, const std::array<size_t, Rank>& shape): dims_array(shape), data(list) {
+            if (data.size() != std::accumulate(dims_array.begin(), dims_array.end(), static_cast<size_t>(1), std::multiplies())) throw std::invalid_argument("Data size does not match tensor size");
+            update_steps();
+        }
+
+        template<typename... Dims>
+        requires(sizeof...(Dims) == Rank)
+        Tensor(std::initializer_list<T> list, Dims... dims): dims_array(static_cast<size_t>(dims)...), data(list) {
+            if (data.size() != std::accumulate(dims_array.begin(), dims_array.end(), static_cast<size_t>(1), std::multiplies())) throw std::invalid_argument("Data size does not match tensor size");
             update_steps();
         }
 
@@ -137,6 +178,27 @@ namespace utec::algebra {
         void fill(const T& value) noexcept {
             std::fill(data.begin(), data.end(), value);
         }
+
+        Tensor<T, 2> row(size_t index) const requires(Rank == 2) {
+            if (index >= dims_array[0]) throw std::out_of_range("Row index out of bounds");
+
+            Tensor<T, 2> result({1, dims_array[1]});
+            for (size_t j = 0; j < dims_array[1]; ++j) {
+                result(0, j) = (*this)(index, j);
+            }
+            return result;
+        }
+
+        void set_row(size_t index, const Tensor<T, 2>& row_tensor) requires(Rank == 2) {
+            if (row_tensor.shape()[0] != 1 || row_tensor.shape()[1] != dims_array[1]) {
+                throw std::invalid_argument("Row shape does not match");
+            }
+
+            for (size_t j = 0; j < dims_array[1]; ++j) {
+                (*this)(index, j) = row_tensor(0, j);
+            }
+        }
+
 
         template <typename BinaryOperator, size_t OtherRank>
         Tensor<T, std::max(Rank, OtherRank)> apply_elementwise(const Tensor<T, OtherRank>& other, BinaryOperator op) const {
@@ -256,6 +318,32 @@ namespace utec::algebra {
             return result;
         }
 
+        Tensor& operator+=(const T& scalar) {
+            std::transform(data.begin(), data.end(), data.begin(), [&](const T& value) { return value + scalar; });
+            return *this;
+        }
+
+        Tensor& operator-=(const T& scalar) {
+            std::transform(data.begin(), data.end(), data.begin(), [&](const T& value) { return value - scalar; });
+            return *this;
+        }
+
+        Tensor& operator*=(const T& scalar) {
+            std::transform(data.begin(), data.end(), data.begin(), [&](const T& value) { return value * scalar; });
+            return *this;
+        }
+
+        Tensor& operator/=(const T& scalar) {
+            std::transform(data.begin(), data.end(), data.begin(), [&](const T& value) { return value / scalar; });
+            return *this;
+        }
+
+        Tensor operator-() const {
+            Tensor result(dims_array);
+            std::transform(data.begin(), data.end(), result.data.begin(), std::negate<T>());
+            return result;
+        }
+
         friend std::ostream& operator<<(std::ostream& os, const Tensor& tensor) requires (Rank > 1) {
 
             const auto& shape = tensor.shape();
@@ -338,13 +426,6 @@ namespace utec::algebra {
 
         auto crend() const noexcept {
             return data.crend();
-        }
-
-        template<typename Function>
-        auto apply(Function function) const {
-            Tensor result(dims_array);
-            std::transform(data.begin(), data.end(), result.begin(), function);
-            return result;
         }
 
     };
@@ -437,6 +518,12 @@ namespace utec::algebra {
         return result;
     }
 
+    template<typename Function, typename T, size_t Rank>
+    Tensor<T, Rank> apply(Tensor<T, Rank> tensor, Function function) {
+        std::transform(tensor.begin(), tensor.end(), tensor.begin(), function);
+        return tensor;
+    }
+
 }
 
-#endif //TENSOR_H
+#endif //PROG3_NN_FINAL_PROJECT_V2025_01_TENSOR_H
