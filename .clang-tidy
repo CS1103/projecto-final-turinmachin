@@ -1,0 +1,20 @@
+Checks: >
+  *,
+  -llvmlibc-*,
+  -fuchsia-*,
+  -altera-*,
+  -boost-*,
+  -bugprone-easily-swappable-parameters,
+  -cert-dcl59-cpp,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -google-build-namespaces,
+  -google-readability-todo,
+  -google-runtime-int,
+  -llvm-include-order,
+  -readability-identifier-length,
+  -readability-magic-numbers,
+  -misc-non-private-member-variables-in-classes
+
+CheckOptions:
+  cppcoreguidelines-special-member-functions.AllowSoleDefaultDtor: true
+  hicpp-special-member-functions.AllowSoleDefaultDtor: true
