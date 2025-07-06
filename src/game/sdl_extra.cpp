@@ -2,7 +2,6 @@
 #include <SDL2/SDL2_gfxPrimitives.h>
 #include <SDL_render.h>
 #include <SDL_timer.h>
-#include <cmath>
 
 namespace sdl_extra {
 

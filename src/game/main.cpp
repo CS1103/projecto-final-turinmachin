@@ -3,10 +3,7 @@
 #include <SDL_ttf.h>
 #include <algorithm>
 #include <cstdint>
-#include <cstdlib>
-#include <ctime>
 #include <iostream>
-#include <ostream>
 #include <print>
 #include "game/constants.h"
 #include "game/font_data.h"

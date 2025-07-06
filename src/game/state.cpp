@@ -10,7 +10,6 @@
 #include <SDL_surface.h>
 #include <SDL_ttf.h>
 #include <algorithm>
-#include <cmath>
 #include <cstddef>
 #include <cstdint>
 #include <cstdlib>
