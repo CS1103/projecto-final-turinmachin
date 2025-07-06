@@ -1,5 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Lj3YlzJp)
-# Proyecto Final 2025-1: AI Neural Network
+# Proyecto Final 2025-1: Brain Ager
 ## **CS2013 Programación III** · Informe Final
 
 ### **Descripción**
@@ -22,39 +22,39 @@
 
 ### Datos generales
 
-* **Tema**: Redes Neuronales en AI
-* **Grupo**: `group_3_custom_name`
+* **Tema**: Red Neuronal intérprete de imágenes
+* **Grupo**: `turinmachin`
 * **Integrantes**:
 
-  * Alumno A – 209900001 (Responsable de investigación teórica)
-  * Alumno B – 209900002 (Desarrollo de la arquitectura)
-  * Alumno C – 209900003 (Implementación del modelo)
-  * Alumno D – 209900004 (Pruebas y benchmarking)
-  * Alumno E – 209900005 (Documentación y demo)
-
-> *Nota: Reemplazar nombres y roles reales.*
+  * Grayson Tejada, José Daniel – 202410372 ()
+  * Lopez Del Carpio, Joaquin Adrian – 202410220 ()
+  * Figueroa Winkelried, Diego Alonso – 202410533 ()
+  * Valladolid Jimenes, Gonzalo Andrés – 202410186 ()
+  * Walde Verano, Matías Sebastian – 202410626 ()
 
 ---
 
 ### Requisitos e instalación
 
-1. **Compilador**: GCC 11 o superior
+1. **Compilador**: GCC 14
 2. **Dependencias**:
 
-   * CMake 3.18+
-   * Eigen 3.4
-   * \[Otra librería opcional]
+   * CMake 3.29+
+   * pkg-config 0.29+
+   * xxd
+   * SDL2
+   * SDL2_ttf
+   * SDL2_gfx
+   * catch2_3
 3. **Instalación**:
 
    ```bash
-   git clone https://github.com/EJEMPLO/proyecto-final.git
-   cd proyecto-final
-   mkdir build && cd build
-   cmake ..
-   make
+   git clone https://github.com/CS1103/projecto-final-turinmachin
+   cd projecto-final-turinmachin
+   cmake -S . -B build
+   cmake --build build
+   ./build/brain_ager
    ```
-
-> *Ejemplo de repositorio y comandos, ajustar según proyecto.*
 
 ---
 
