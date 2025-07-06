@@ -4,16 +4,15 @@ Checks: >
   -fuchsia-*,
   -altera-*,
   -boost-*,
+  -google-*,
   -bugprone-easily-swappable-parameters,
   -cert-dcl59-cpp,
   -cppcoreguidelines-avoid-magic-numbers,
-  -google-build-namespaces,
-  -google-readability-todo,
-  -google-runtime-int,
   -llvm-include-order,
   -readability-identifier-length,
   -readability-magic-numbers,
-  -misc-non-private-member-variables-in-classes
+  -misc-non-private-member-variables-in-classes,
+  -readability-avoid-nested-conditional-operator,
 
 CheckOptions:
   cppcoreguidelines-special-member-functions.AllowSoleDefaultDtor: true
