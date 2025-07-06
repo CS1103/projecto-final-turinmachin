@@ -10,7 +10,8 @@
 #include "interfaces.h"
 #include "optimizer.h"
 #include "utec/nn/activation.h"
-#include "utec/serialization.h"
+#include "utec/nn/kan.h"
+#include "utec/utils/serialization.h"
 
 namespace utec::neural_network {
     constexpr std::uint8_t FORMAT_CURRENT_VERSION = 1;
