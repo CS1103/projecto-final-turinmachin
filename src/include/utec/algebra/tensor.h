@@ -29,6 +29,7 @@ namespace utec::algebra {
     public:
         Tensor(const Tensor<T, Rank>& other) noexcept = default;
         Tensor(Tensor<T, Rank>&& other) noexcept = default;
+        ~Tensor() = default;
 
         explicit Tensor(const std::array<size_t, Rank>& shape)
             : dims_array(shape),
@@ -443,43 +444,45 @@ namespace utec::algebra {
             return result;
         }
 
-        friend auto operator<<(std::ostream& os, const Tensor& tensor)
-            -> std::ostream& requires(Rank > 1) {
-                const auto& shape = tensor.shape();
-                std::array<size_t, Rank> index{};
+        friend auto operator<<(std::ostream& os, const Tensor& tensor) -> std::ostream&
+            requires(Rank > 1)
+        {
+            const auto& shape = tensor.shape();
+            std::array<size_t, Rank> index{};
 
-                std::function<void(size_t, size_t)> print_recursive = [&](size_t dim,
-                                                                          const size_t indent) {
-                    os << std::string(indent, ' ') << "{\n";
+            std::function<void(size_t, size_t)> print_recursive = [&](size_t dim,
+                                                                      const size_t indent) {
+                os << std::string(indent, ' ') << "{\n";
 
-                    for (size_t i = 0; i < shape[dim]; ++i) {
-                        index[dim] = i;
+                for (size_t i = 0; i < shape[dim]; ++i) {
+                    index[dim] = i;
 
-                        if (dim == Rank - 2) {
-                            os << std::string(indent + 2, ' ');
-                            for (size_t j = 0; j < shape[Rank - 1]; ++j) {
-                                index[Rank - 1] = j;
-                                os << tensor(index) << " ";
-                            }
-                            os << "\n";
-                        } else {
-                            print_recursive(dim + 1, indent + 2);
+                    if (dim == Rank - 2) {
+                        os << std::string(indent + 2, ' ');
+                        for (size_t j = 0; j < shape[Rank - 1]; ++j) {
+                            index[Rank - 1] = j;
+                            os << tensor(index) << " ";
                         }
+                        os << "\n";
+                    } else {
+                        print_recursive(dim + 1, indent + 2);
                     }
+                }
 
-                    os << std::string(indent, ' ') << "}\n";
-                };
+                os << std::string(indent, ' ') << "}\n";
+            };
 
-                print_recursive(0, 0);
-                return os;
-            }
+            print_recursive(0, 0);
+            return os;
+        }
 
-        friend auto operator<<(std::ostream& os, const Tensor& tensor)
-            -> std::ostream& requires(Rank == 1) {
-                std::ranges::copy(tensor, std::ostream_iterator<T>(os, " "));
-                os << "\n";
-                return os;
-            }
+        friend auto operator<<(std::ostream& os, const Tensor& tensor) -> std::ostream&
+            requires(Rank == 1)
+        {
+            std::ranges::copy(tensor, std::ostream_iterator<T>(os, " "));
+            os << "\n";
+            return os;
+        }
 
         auto begin() noexcept {
             return data.begin();
