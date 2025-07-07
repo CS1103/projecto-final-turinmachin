@@ -6,11 +6,9 @@
 #include <numeric>
 #include <print>
 #include <random>
-#include "dense.h"
 #include "interfaces.h"
 #include "optimizer.h"
-#include "utec/nn/activation.h"
-#include "utec/nn/kan.h"
+#include "utec/nn/layer_registry.h"
 #include "utec/utils/serialization.h"
 
 namespace utec::neural_network {
@@ -21,6 +19,10 @@ namespace utec::neural_network {
         std::vector<std::unique_ptr<ILayer<T>>> layers;
 
     public:
+        NeuralNetwork() {
+            register_all_layers<T>();
+        }
+
         template <typename L, typename... Args>
         void add_layer(Args&&... args) {
             layers.emplace_back(std::make_unique<L>(std::forward<Args>(args)...));
@@ -113,25 +115,7 @@ namespace utec::neural_network {
                 const int id_raw = in.get();
                 const auto id = static_cast<LayerId>(id_raw);
 
-                switch (id) {
-                    case LayerId::ReLU:
-                        net.layers.push_back(std::make_unique<ReLU<T>>());
-                        break;
-                    case LayerId::Sigmoid:
-                        net.layers.push_back(std::make_unique<Sigmoid<T>>());
-                        break;
-                    case LayerId::Softmax:
-                        net.layers.push_back(std::make_unique<Softmax<T>>());
-                        break;
-                    case LayerId::Dense:
-                        net.layers.push_back(std::make_unique<Dense<T>>(Dense<T>::load(in)));
-                        break;
-                    case LayerId::Kan:
-                        net.layers.push_back(std::make_unique<Kan<T>>(Kan<T>::load(in)));
-                        break;
-                    default:
-                        throw std::runtime_error("Invalid layer ID: " + std::to_string(id_raw));
-                }
+                net.layers.push_back(LayerRegistry<T>::create(id, in));
             }
 
             return net;
