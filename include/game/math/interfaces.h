@@ -6,8 +6,7 @@
 
 namespace math {
 
-    class IEquation {
-    public:
+    struct IEquation {
         virtual ~IEquation() = default;
 
         [[nodiscard]] virtual auto answer() const -> int = 0;
@@ -17,8 +16,7 @@ namespace math {
         [[nodiscard]] virtual auto display_solved() const -> std::string = 0;
     };
 
-    class IEquationFactory {
-    public:
+    struct IEquationFactory {
         virtual ~IEquationFactory() = default;
 
         [[nodiscard]] virtual auto create() -> std::unique_ptr<IEquation> = 0;
