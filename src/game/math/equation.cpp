@@ -1,4 +1,5 @@
 #include "game/math/equation.h"
+#include <format>
 
 namespace math {
 
