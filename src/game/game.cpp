@@ -17,7 +17,6 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
-#include "common/utils.h"
 #include "game/constants.h"
 #include "game/math/factory.h"
 #include "game/pixels.h"
@@ -126,21 +125,21 @@ void Game::handle_event(const SDL_Event& event) {
 }
 
 void Game::transition() {
+    static const std::array<std::unique_ptr<math::IEquationFactory>, 3> EQUATION_FACTORIES{
+        std::make_unique<math::AddEquationFactory>(rng),
+        std::make_unique<math::SubtractEquationFactory>(rng),
+        std::make_unique<math::DivideEquationFactory>(rng)};
+
     if (current_equation) {
         solved_equations.push_back(std::move(*current_equation));
         current_equation = std::nullopt;
     }
 
-    std::vector<std::unique_ptr<math::IEquationFactory>> factories;
-    factories.push_back(std::make_unique<math::AddEquationFactory>(rng));
-    factories.push_back(std::make_unique<math::SubtractEquationFactory>(rng));
-    factories.push_back(std::make_unique<math::DivideEquationFactory>(rng));
-
-    std::uniform_int_distribution<std::size_t> dist(0, factories.size() - 1);
+    std::uniform_int_distribution<std::size_t> dist(0, EQUATION_FACTORIES.size() - 1);
     const std::size_t factory_index = dist(rng);
 
     current_guess = std::nullopt;
-    current_equation = factories[factory_index]->create();
+    current_equation = EQUATION_FACTORIES.at(factory_index)->create();
     state = State::Playing;
     clear_canvas();
 }
