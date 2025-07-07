@@ -9,11 +9,9 @@
 #include <SDL_keycode.h>
 #include <SDL_surface.h>
 #include <SDL_ttf.h>
-#include <cmath>
 #include <cstddef>
 #include <cstdlib>
 #include <fstream>
-#include <print>
 #include <random>
 #include <ranges>
 #include <stdexcept>
