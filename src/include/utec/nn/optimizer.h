@@ -50,7 +50,7 @@ namespace utec::neural_network {
             const algebra::Tensor<T, 2> v_hat = v / (T{1} - std::pow(beta2, t));
 
             params -= m_hat * learning_rate /
-                      (std::apply(v_hat, [](const T x) { return std::sqrt(x); }) + epsilon);
+                      (algebra::apply(v_hat, [](const T x) { return std::sqrt(x); }) + epsilon);
         }
 
         void step() override {

@@ -10,6 +10,7 @@ namespace utec::neural_network {
         Sigmoid = 1,
         Dense = 2,
         Softmax = 3,
+        KAN = 4,
     };
 
     template <typename T>

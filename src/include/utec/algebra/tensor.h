@@ -280,6 +280,41 @@ namespace utec::algebra {
             }
         }
 
+        auto slice(size_t index) const -> Tensor<T, 2>
+            requires(Rank == 3)
+        {
+            if (index >= dims_array[0]) {
+                throw std::out_of_range("Index out of bounds");
+            }
+
+            Tensor<T, 2> result(dims_array[1], dims_array[2]);
+            for (size_t j = 0; j < dims_array[1]; ++j) {
+                for (size_t k = 0; k < dims_array[2]; ++k) {
+                    result(j, k) = (*this)(index, j, k);
+                }
+            }
+
+            return result;
+        }
+
+        void set_slice(size_t index, const Tensor<T, 2>& slice)
+            requires(Rank == 3)
+        {
+            if (index >= dims_array[0]) {
+                throw std::out_of_range("Index out of bounds");
+            }
+
+            if (slice.shape()[0] != dims_array[1] || slice.shape()[1] != dims_array[2]) {
+                throw std::invalid_argument("Slice shape does not match");
+            }
+
+            for (size_t j = 0; j < dims_array[1]; ++j) {
+                for (size_t k = 0; k < dims_array[2]; ++k) {
+                    (*this)(index, j, k) = slice(j, k);
+                }
+            }
+        }
+
         template <size_t OtherRank>
         auto apply_elementwise(const Tensor<T, OtherRank>& other, auto op) const
             -> Tensor<T, std::max(Rank, OtherRank)> {

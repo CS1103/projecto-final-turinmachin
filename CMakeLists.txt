@@ -35,10 +35,13 @@ add_custom_command(
   COMMENT "Generating font source")
 
 file(GLOB_RECURSE trainer_source CONFIGURE_DEPENDS src/trainer/*.cpp)
+file(GLOB_RECURSE trainer_kan_source CONFIGURE_DEPENDS src/trainer_kan/*.cpp)
 file(GLOB_RECURSE game_source CONFIGURE_DEPENDS src/game/*.cpp)
 
 add_executable(trainer ${trainer_source})
+add_executable(trainer_kan ${trainer_kan_source})
 target_include_directories(trainer PUBLIC src/include)
+target_include_directories(trainer_kan PUBLIC src/include)
 
 add_executable(brain_ager ${game_source} ${font_source})
 target_include_directories(brain_ager PUBLIC src/include)

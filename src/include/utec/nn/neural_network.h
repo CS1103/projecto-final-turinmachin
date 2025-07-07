@@ -41,9 +41,7 @@ namespace utec::neural_network {
             std::ranges::iota(indices, 0);
 
             for (size_t epoch = 0; epoch < epochs; ++epoch) {
-                if (epoch % 100 == 0) {
-                    std::println("Epoch {}", epoch);
-                }
+                std::println("Epoch {}", epoch);
 
                 std::ranges::shuffle(indices, rng);
 
@@ -128,6 +126,9 @@ namespace utec::neural_network {
                         break;
                     case LayerID::Dense:
                         net.layers.push_back(std::make_unique<Dense<T>>(Dense<T>::load(in)));
+                        break;
+                    case LayerID::KAN:
+                        net.layers.push_back(std::make_unique<KAN<T>>(KAN<T>::load(in)));
                         break;
                     default:
                         throw std::runtime_error("Invalid layer ID: " + std::to_string(id_raw));
