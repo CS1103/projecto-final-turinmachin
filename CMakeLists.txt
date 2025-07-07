@@ -24,16 +24,6 @@ find_package(SDL2_ttf REQUIRED CONFIG REQUIRED)
 include(FindPkgConfig)
 pkg_search_module(SDL2_gfx REQUIRED SDL2_gfx)
 
-set(font_ttf ${PROJECT_SOURCE_DIR}/res/ComicShannsMono-Regular.ttf)
-set(font_source ${CMAKE_CURRENT_BINARY_DIR}/font_data.cpp)
-
-add_custom_command(
-  OUTPUT ${font_source}
-  COMMAND ${CMAKE_COMMAND} -E env xxd -i -C -n DISPLAY_FONT_DATA ${font_ttf} >
-          ${font_source}
-  DEPENDS ${font_ttf}
-  COMMENT "Generating font source")
-
 file(GLOB_RECURSE trainer_source CONFIGURE_DEPENDS src/trainer/*.cpp)
 file(GLOB_RECURSE trainer_kan_source CONFIGURE_DEPENDS src/trainer_kan/*.cpp)
 file(GLOB_RECURSE game_source CONFIGURE_DEPENDS src/game/*.cpp)

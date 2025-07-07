@@ -11,7 +11,6 @@ let
     SDL2_ttf
     SDL2_gfx
     catch2_3
-    xxd
     ;
 in
 pkgs.stdenv.mkDerivation {
@@ -27,7 +26,6 @@ pkgs.stdenv.mkDerivation {
     SDL2_ttf
     SDL2_gfx
     catch2_3
-    xxd
   ];
 
   cmakeFlags = [
@@ -45,7 +43,7 @@ pkgs.stdenv.mkDerivation {
   '';
 
   meta = with lib; {
-    description = "A Neural Network-powered math game.";
+    description = "A neural network-powered math game.";
     homepage = "https://github.com/CS1103/projecto-final-turinmachin";
     license = licenses.gpl3;
     mainProgram = "brain_ager";
