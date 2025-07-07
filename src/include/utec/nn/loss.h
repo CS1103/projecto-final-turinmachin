@@ -27,6 +27,7 @@ namespace utec::neural_network {
          * @param y_prediction Tensores con las predicciones del modelo.
          * @param y_true Tensores con los valores verdaderos (etiquetas).
          * @throws std::invalid_argument si las dimensiones no coinciden.
+         * @complexity O(1).
          */
         template <typename Prediction, typename Expected>
         MSELoss(Prediction&& y_prediction, Expected&& y_true)
@@ -40,6 +41,7 @@ namespace utec::neural_network {
         /**
          * @brief Devuelve el valor de la pérdida MSE.
          * @return Escalar con el valor medio del error cuadrático.
+         * @complexity O(n*m), donde n*m es el tamaño del tensor.
          */
         auto loss() const -> T override {
             T sum = 0;
@@ -54,6 +56,7 @@ namespace utec::neural_network {
         /**
          * @brief Gradiente de la pérdida con respecto a las predicciones.
          * @return Tensor con el mismo shape que y_prediction.
+         * @complexity O(n*m), siendo n*m el tamaño del tensor.
          */
         auto loss_gradient() const -> algebra::Tensor<T, 2> override {
             return T(2) / y_true.size() * (y_prediction - y_true);
@@ -76,6 +79,7 @@ namespace utec::neural_network {
          * @param y_prediction Tensores con probabilidades predichas.
          * @param y_true Tensores con valores binarios verdaderos.
          * @throws std::invalid_argument si las dimensiones no coinciden.
+         * @complexity O(1)
          */
         template <typename Prediction, typename Expected>
         BCELoss(Prediction&& y_prediction, Expected&& y_true)
@@ -89,6 +93,7 @@ namespace utec::neural_network {
         /**
          * @brief Devuelve el valor de la pérdida BCE.
          * @return Valor escalar negativo de la entropía cruzada binaria.
+         * @complexity O(n*m), donde n*m es el número de elementos del tensor.
          */
         auto loss() const -> T override {
             T sum = 0;
@@ -103,6 +108,7 @@ namespace utec::neural_network {
         /**
          * @brief Gradiente de la pérdida BCE con respecto a las predicciones.
          * @return Tensor del mismo tamaño que y_prediction.
+         * @complexity O(n*m).
          */
         auto loss_gradient() const -> algebra::Tensor<T, 2> override {
             return -((y_true / y_prediction) -
@@ -127,6 +133,7 @@ namespace utec::neural_network {
          * @param y_prediction Tensores con probabilidades predichas.
          * @param y_true Tensores one-hot con etiquetas verdaderas.
          * @throws std::invalid_argument si las dimensiones no coinciden.
+         * @complexity O(1).
          */
         template <typename Prediction, typename Expected>
         CrossEntropyLoss(Prediction&& y_prediction, Expected&& y_true)
@@ -141,6 +148,7 @@ namespace utec::neural_network {
          * @brief Valor de la pérdida Cross Entropy.
          * Aplica logaritmo y protección contra valores extremos.
          * @return Promedio negativo del logaritmo de las probabilidades verdaderas.
+         * @complexity O(n*m), donde n es el número de muestras y m el número de clases.
          */
         auto loss() const -> T override {
             T sum = 0;
@@ -161,6 +169,7 @@ namespace utec::neural_network {
          * @brief Gradiente de la pérdida Cross Entropy.
          * Simplemente calcula la diferencia entre predicción y etiqueta.
          * @return Tensor del mismo shape que la entrada.
+         * @complexity O(n*m).
          */
         auto loss_gradient() const -> algebra::Tensor<T, 2> override {
             const std::size_t num_samples = y_true.shape()[0];

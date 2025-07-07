@@ -11,7 +11,6 @@
 #include <vector>
 
 namespace utec::algebra {
-
     template <typename T, size_t Rank>
     class Tensor {
         std::array<size_t, Rank> dims_array;

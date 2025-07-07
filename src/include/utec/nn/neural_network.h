@@ -32,6 +32,7 @@ namespace utec::neural_network {
          * @tparam L Tipo de capa (e.g., Dense, ReLU).
          * @tparam Args Tipos de argumentos para el constructor de la capa.
          * @param args Argumentos para inicializar la capa.
+         * @complexity O(1).
          */
         template <typename L, typename... Args>
         void add_layer(Args&&... args) {
@@ -48,6 +49,15 @@ namespace utec::neural_network {
          * @param batch_size Tamaño del batch.
          * @param learning_rate Tasa de aprendizaje.
          * @param rng Generador aleatorio para mezclar los datos.
+         * @complexity O(e*(n/b)*L*(f+b+u))),
+         * donde:
+         * - e: número de épocas
+         * - n: número total de muestras
+         * - b: batch size
+         * - L: número de capas
+         * - f: costo forward de una capa
+         * - b: costo backward de una capa
+         * - u: costo de actualización de parámetros por capa
          */
         template <template <typename...> class LossType,
                   template <typename...> class OptimizerType = SGD>
@@ -101,6 +111,7 @@ namespace utec::neural_network {
          * @brief Realiza una predicción sobre un conjunto de datos.
          * @param X Datos de entrada.
          * @return Tensor con la predicción de salida.
+         * @complexity O(L*f), donde L es el número de capas y f es el costo del forward.
          */
         auto predict(const algebra::Tensor<T, 2>& X) -> algebra::Tensor<T, 2> {
             algebra::Tensor<T, 2> output = X;
@@ -113,6 +124,7 @@ namespace utec::neural_network {
         /**
          * @brief Guarda el modelo en un flujo de salida binario.
          * @param out Flujo de salida donde se guarda la red.
+         * @complexity O(L*s), donde s es el tamaño serializado de cada capa.
          */
         void save(std::ostream& out) const {
             out.put(FORMAT_CURRENT_VERSION);
@@ -130,6 +142,7 @@ namespace utec::neural_network {
          * @brief Carga una red neuronal desde un flujo de entrada binario.
          * @param in Flujo de entrada desde el cual se carga la red.
          * @return Instancia de NeuralNetwork cargada con sus capas y pesos.
+         * @complexity O(L*s), donde L es el número de capas y s el tamaño serializado de cada una.
          */
         static auto load(std::istream& in) -> NeuralNetwork<T> {
             const int version = in.get();

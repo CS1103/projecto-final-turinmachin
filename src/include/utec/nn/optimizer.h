@@ -19,6 +19,7 @@ namespace utec::neural_network {
         /**
          * @brief Constructor del optimizador.
          * @param learning_rate Valor de la tasa de aprendizaje (por defecto 0.01).
+         * @complexity O(1).
          */
         explicit SGD(T learning_rate = 0.01)
             : learning_rate(learning_rate) {}
@@ -27,6 +28,7 @@ namespace utec::neural_network {
          * @brief Actualiza los parámetros en función del gradiente.
          * @param params Parámetros actuales del modelo.
          * @param grads Gradientes calculados.
+         * @complexity O(n*m), donde n*m es el tamaño del tensor de parámetros.
          */
         void update(algebra::Tensor<T, 2>& params, const algebra::Tensor<T, 2>& grads) override {
             params = params - grads * learning_rate;
@@ -68,6 +70,7 @@ namespace utec::neural_network {
          * @param beta1 Coeficiente para el promedio del primer momento.
          * @param beta2 Coeficiente para el promedio del segundo momento.
          * @param epsilon Valor pequeño para estabilizar la división.
+         * @complexity O(1)
          */
         explicit Adam(T learning_rate = 0.001, T beta1 = 0.9, T beta2 = 0.999, T epsilon = 1e-8)
             : learning_rate(learning_rate),
@@ -79,6 +82,9 @@ namespace utec::neural_network {
          * @brief Actualiza los parámetros del modelo usando el algoritmo de Adam.
          * @param params Parámetros actuales.
          * @param grads Gradientes correspondientes.
+         * @complexity O(n*m), donde n*m es el tamaño de los tensores.
+         * Incluye: operaciones de actualización para m, v, normalización con m̂ y v̂,
+         * y la división final.
          */
         void update(algebra::Tensor<T, 2>& params, const algebra::Tensor<T, 2>& grads) override {
             if (m.shape() != grads.shape()) {
@@ -101,6 +107,7 @@ namespace utec::neural_network {
         /**
          * @brief Incrementa el contador de pasos.
          * Es importante para las correcciones de sesgo de Adam.
+         * @complexity O(1)
          */
         void step() override {
             t += 1;

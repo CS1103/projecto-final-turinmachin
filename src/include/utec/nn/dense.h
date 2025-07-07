@@ -34,6 +34,7 @@ namespace utec::neural_network {
          * @brief Constructor que inicializa los tensores internos con ceros.
          * @param in_f Número de neuronas de entrada.
          * @param out_f Número de neuronas de salida.
+         * @complexity O(1), inicialización directa.
          */
         Dense(const size_t in_f, const size_t out_f)
             : weights(std::array{in_f, out_f}),
@@ -48,6 +49,8 @@ namespace utec::neural_network {
          * @param out_f Número de neuronas de salida.
          * @param init_w_fun Función para inicializar los pesos.
          * @param init_b_fun Función para inicializar los biases.
+         * @complexity O(n*m),
+         * donde n = in_f, m = out_f (por recorrer los tensores).
          */
         Dense(const size_t in_f, const size_t out_f, auto init_w_fun, auto init_b_fun)
             : Dense(in_f, out_f) {
@@ -60,6 +63,11 @@ namespace utec::neural_network {
          * Calcula: output = x * weights + biases
          * @param x Tensor de entrada.
          * @return Tensor de salida de la capa.
+         * @complexity O(b*n*m), donde:
+         * b es el número de muestras (filas de x),
+         * n es input_features, y
+         * m es output_features.
+         * Se debe a la multiplicación matricial (x * weights) y la suma con biases.
          */
         auto forward(const algebra::Tensor<T, 2>& x) -> algebra::Tensor<T, 2> override {
             activations = x;
@@ -71,6 +79,10 @@ namespace utec::neural_network {
          * Calcula los gradientes con respecto a pesos, biases y entrada.
          * @param dZ Gradiente de la pérdida respecto a la salida de esta capa.
          * @return Gradiente de la pérdida respecto a la entrada de esta capa.
+         * @complexity O(b*n*m), por
+         * multiplicación activaciones^T * dZ → O(b*n*m) +
+         * suma fila a fila de dZ para biases → O(b*m) +
+         * multiplicación dZ * weights^t → O(b*m*n)
          */
         auto backward(const algebra::Tensor<T, 2>& dZ) -> algebra::Tensor<T, 2> override {
             gradient_weights = algebra::matrix_product(algebra::transpose_2d(activations), dZ);
@@ -87,6 +99,8 @@ namespace utec::neural_network {
         /**
          * @brief Actualiza los parámetros (pesos y biases) usando un optimizador.
          * @param optimizer Referencia al optimizador (SGD, Adam, etc.).
+         * @complexity O(n*m), donde n*m es el tamaño total de parámetros a actualizar.
+         * Depende de la implementación del optimizador.
          */
         void update_params(IOptimizer<T>& optimizer) override {
             optimizer.update(weights, gradient_weights);
@@ -96,6 +110,7 @@ namespace utec::neural_network {
         /**
          * @brief Devuelve el tipo identificador de esta capa.
          * @return LayerID::Dense (o bien 2)
+         * @complexity O(1).
          */
         [[nodiscard]] auto id() const -> LayerID override {
             return LayerID::Dense;
