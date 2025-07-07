@@ -104,6 +104,8 @@
   │   └── trainer
   │   │   ├── main.cpp
   ├── tests/
+  │   ├── CMakeLists.txt
+  │   ├── test_tensor.cpp
   ```
 
 #### 2.2 Manual de uso y casos de prueba
