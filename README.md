@@ -79,11 +79,31 @@
   ```
   proyecto-final/
   ├── src/
-  │   ├── layers/
-  │   ├── optimizers/
-  │   └── main.cpp
+  │   ├── game/
+  │   │   ├── main.cpp
+  │   │   ├── std_extra.cpp
+  │   │   ├── state.cpp
+  │   ├── include/
+  │   │   ├── game/
+  │   │   │   ├── constants.h
+  │   │   │   ├── font_data.h
+  │   │   │   ├── sdl_extra.h
+  │   │   │   ├── state.h
+  │   │   ├── utec/
+  │   │   │   ├── algebra
+  │   │   │   │   ├── tensor.h
+  │   │   │   ├── nn
+  │   │   │   │   ├── activation.h
+  │   │   │   │   ├── dense.h
+  │   │   │   │   ├── interfaces.h
+  │   │   │   │   ├── loss.h
+  │   │   │   │   ├── neural_network.h
+  │   │   │   │   ├── optimizer.h
+  │   │   │   ├── utils
+  │   │   │   │   ├── serialization.h
+  │   └── trainer
+  │   │   ├── main.cpp
   ├── tests/
-  └── docs/
   ```
 
 #### 2.2 Manual de uso y casos de prueba
