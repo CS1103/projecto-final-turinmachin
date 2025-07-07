@@ -49,7 +49,7 @@ namespace utec::neural_network {
     };
 
     template <typename T>
-    class KAN final : public ILayer<T> {
+    class Kan final : public ILayer<T> {
         size_t in_f;
         size_t out_f;
         size_t width;
@@ -73,7 +73,11 @@ namespace utec::neural_network {
         BSpline<T> basis;
 
     public:
-        KAN(size_t in_f, size_t out_f, size_t knots, T x_min = -1, T x_max = +1)
+        Kan(const size_t in_f,
+            const size_t out_f,
+            const size_t knots,
+            const T x_min = -1,
+            const T x_max = +1)
             : in_f(in_f),
               out_f(out_f),
               width((2 * in_f) + 1),
@@ -91,13 +95,13 @@ namespace utec::neural_network {
               psi_sum(0, 0),
               basis(knots, x_min, x_max) {}
 
-        KAN(size_t in_f,
-            size_t out_f,
-            size_t knots,
+        Kan(const size_t in_f,
+            const size_t out_f,
+            const size_t knots,
             auto init_psi_w_fun,
             auto init_phi_w_fun,
             auto init_phi_b_fun)
-            : KAN(in_f, out_f, knots) {
+            : Kan(in_f, out_f, knots) {
             init_psi_w_fun(psi_weights);
             init_phi_w_fun(phi_weights);
             init_phi_b_fun(phi_biases);
@@ -191,8 +195,8 @@ namespace utec::neural_network {
             optimizer.update(phi_biases, gradient_phi_biases);
         }
 
-        [[nodiscard]] auto id() const -> LayerID override {
-            return LayerID::KAN;
+        [[nodiscard]] auto id() const -> LayerId override {
+            return LayerId::Kan;
         }
 
         void save(std::ostream& out) const override {
@@ -215,14 +219,14 @@ namespace utec::neural_network {
             }
         }
 
-        static auto load(std::istream& in) -> KAN<T> {
+        static auto load(std::istream& in) -> Kan<T> {
             auto in_feat = serialization::read_numeric<uint64_t>(in);
             auto out_feat = serialization::read_numeric<uint64_t>(in);
             auto knots = serialization::read_numeric<uint64_t>(in);
             T a = serialization::read_numeric<T>(in);
             T b = serialization::read_numeric<T>(in);
 
-            KAN<T> layer(in_feat, out_feat, knots, a, b);
+            Kan<T> layer(in_feat, out_feat, knots, a, b);
             for (auto& x : layer.psi_weights) {
                 x = serialization::read_numeric<T>(in);
             }

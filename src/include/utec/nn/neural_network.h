@@ -126,8 +126,8 @@ namespace utec::neural_network {
                     case LayerId::Dense:
                         net.layers.push_back(std::make_unique<Dense<T>>(Dense<T>::load(in)));
                         break;
-                    case LayerID::KAN:
-                        net.layers.push_back(std::make_unique<KAN<T>>(KAN<T>::load(in)));
+                    case LayerId::Kan:
+                        net.layers.push_back(std::make_unique<Kan<T>>(Kan<T>::load(in)));
                         break;
                     default:
                         throw std::runtime_error("Invalid layer ID: " + std::to_string(id_raw));

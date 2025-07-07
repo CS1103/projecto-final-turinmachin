@@ -128,9 +128,9 @@ namespace {
         std::println("No existing network data detected.");
 
         NeuralNetwork<double> net;
-        net.add_layer<KAN<double>>(IMAGE_LENGTH, 64, 8, kan_init, kan_init, zero_init);
-        net.add_layer<KAN<double>>(64, 32, 8, kan_init, kan_init, zero_init);
-        net.add_layer<KAN<double>>(32, 10, 8, kan_init, kan_init, zero_init);
+        net.add_layer<Kan<double>>(IMAGE_LENGTH, 64, 8, kan_init, kan_init, zero_init);
+        net.add_layer<Kan<double>>(64, 32, 8, kan_init, kan_init, zero_init);
+        net.add_layer<Kan<double>>(32, 10, 8, kan_init, kan_init, zero_init);
         net.add_layer<Softmax<double>>();
         return net;
     }
