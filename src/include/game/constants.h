@@ -1,6 +1,7 @@
 #ifndef INCLUDE_GAME_CONSTANTS_H
 #define INCLUDE_GAME_CONSTANTS_H
 
+#include <cstddef>
 constexpr int WINDOW_WIDTH = 960;
 constexpr int WINDOW_HEIGHT = 540;
 constexpr int FPS = 60;
@@ -12,5 +13,7 @@ constexpr int CANVAS_HEIGHT = WINDOW_HEIGHT;
 
 constexpr int CANVAS_X = WINDOW_WIDTH - CANVAS_WIDTH;
 constexpr int CANVAS_Y = 0;
+
+constexpr std::size_t HISTORY_LIMIT = 4;
 
 #endif

@@ -107,24 +107,23 @@ namespace utec::neural_network {
             const auto layers_size = serialization::read_numeric<std::uint64_t>(in);
 
             NeuralNetwork<T> net;
-
             net.layers.reserve(layers_size);
 
             for (std::size_t i = 0; i < layers_size; ++i) {
                 const int id_raw = in.get();
-                const auto id = static_cast<LayerID>(id_raw);
+                const auto id = static_cast<LayerId>(id_raw);
 
                 switch (id) {
-                    case LayerID::ReLU:
+                    case LayerId::ReLU:
                         net.layers.push_back(std::make_unique<ReLU<T>>());
                         break;
-                    case LayerID::Sigmoid:
+                    case LayerId::Sigmoid:
                         net.layers.push_back(std::make_unique<Sigmoid<T>>());
                         break;
-                    case LayerID::Softmax:
+                    case LayerId::Softmax:
                         net.layers.push_back(std::make_unique<Softmax<T>>());
                         break;
-                    case LayerID::Dense:
+                    case LayerId::Dense:
                         net.layers.push_back(std::make_unique<Dense<T>>(Dense<T>::load(in)));
                         break;
                     case LayerID::KAN:

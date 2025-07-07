@@ -5,7 +5,7 @@
 
 namespace utec::neural_network {
 
-    enum class LayerID : uint8_t {
+    enum class LayerId : uint8_t {
         ReLU = 0,
         Sigmoid = 1,
         Dense = 2,
@@ -29,7 +29,7 @@ namespace utec::neural_network {
 
         virtual void update_params([[maybe_unused]] IOptimizer<T>& optimizer) {}
 
-        [[nodiscard]] virtual auto id() const -> LayerID = 0;
+        [[nodiscard]] virtual auto id() const -> LayerId = 0;
         virtual void save([[maybe_unused]] std::ostream& out) const {};
     };
 

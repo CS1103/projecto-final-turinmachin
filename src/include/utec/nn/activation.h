@@ -20,8 +20,8 @@ namespace utec::neural_network {
             return algebra::apply(input, [](const T t) { return T(t > 0); }) * g;
         }
 
-        [[nodiscard]] auto id() const -> LayerID override {
-            return LayerID::ReLU;
+        [[nodiscard]] auto id() const -> LayerId override {
+            return LayerId::ReLU;
         }
     };
 
@@ -39,8 +39,8 @@ namespace utec::neural_network {
             return algebra::apply(output, [](const T t) { return t * (1 - t); }) * g;
         }
 
-        [[nodiscard]] auto id() const -> LayerID override {
-            return LayerID::Sigmoid;
+        [[nodiscard]] auto id() const -> LayerId override {
+            return LayerId::Sigmoid;
         }
     };
 
@@ -86,8 +86,8 @@ namespace utec::neural_network {
             return grad;
         }
 
-        [[nodiscard]] auto id() const -> LayerID override {
-            return LayerID::Softmax;
+        [[nodiscard]] auto id() const -> LayerId override {
+            return LayerId::Softmax;
         }
     };
 

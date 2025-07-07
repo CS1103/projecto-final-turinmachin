@@ -27,7 +27,7 @@ namespace utec::algebra {
         }
 
     public:
-        Tensor(const Tensor<T, Rank>& other) noexcept = default;
+        Tensor(const Tensor<T, Rank>& other) = default;
         Tensor(Tensor<T, Rank>&& other) noexcept = default;
         ~Tensor() = default;
 
@@ -321,13 +321,10 @@ namespace utec::algebra {
             constexpr size_t ResultRank = std::max(Rank, OtherRank);
             std::array<size_t, ResultRank> result_shape{};
 
-            const auto& other_shape = other.shape();
-            const auto& other_steps = other.get_steps();
-
             for (size_t i = 0; i < ResultRank; ++i) {
                 size_t dim_this = i < ResultRank - Rank ? 1 : dims_array[i - (ResultRank - Rank)];
                 size_t dim_other =
-                    i < ResultRank - OtherRank ? 1 : other_shape[i - (ResultRank - OtherRank)];
+                    i < ResultRank - OtherRank ? 1 : other.dims_array[i - (ResultRank - OtherRank)];
 
                 if (dim_this != dim_other && dim_this != 1 && dim_other != 1) {
                     throw std::invalid_argument(
@@ -358,7 +355,7 @@ namespace utec::algebra {
 
                     if (i >= ResultRank - OtherRank) {
                         const size_t dim = i - (ResultRank - OtherRank);
-                        const size_t step = other_shape[dim] == 1 ? 0 : other_steps[dim];
+                        const size_t step = other.dims_array[dim] == 1 ? 0 : other.steps[dim];
                         idx_other += coord * step;
                     }
                 }

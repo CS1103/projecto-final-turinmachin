@@ -50,8 +50,8 @@ namespace utec::neural_network {
             optimizer.update(biases, gradient_biases);
         }
 
-        [[nodiscard]] auto id() const -> LayerID override {
-            return LayerID::Dense;
+        [[nodiscard]] auto id() const -> LayerId override {
+            return LayerId::Dense;
         }
 
         void save(std::ostream& out) const override {
