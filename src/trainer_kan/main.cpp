@@ -142,8 +142,8 @@ auto main() -> int {
     std::mt19937 rng(rd());
     NeuralNetwork<double> net = load_neural_network(rng);
 
-    std::ifstream training_file("res/optdigits.tra");
-    std::ifstream test_file("res/optdigits.tes");
+    std::ifstream training_file("../share/optdigits.tra");
+    std::ifstream test_file("../share/optdigits.tes");
 
     const Dataset training_data(training_file);
     const Dataset test_data(test_file);
