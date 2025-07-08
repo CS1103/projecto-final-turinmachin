@@ -108,7 +108,7 @@ public:
 namespace {
 
     auto load_neural_network(std::mt19937& rng) -> NeuralNetwork<double> {
-        std::ifstream infile("net.pp20");
+        std::ifstream infile("../share/net.pp20");
         if (infile) {
             std::println("Loading existing network...");
             return NeuralNetwork<double>::load(infile);
@@ -142,8 +142,8 @@ auto main() -> int {
     std::mt19937 rng(rd());
     NeuralNetwork<double> net = load_neural_network(rng);
 
-    std::ifstream training_file("res/optdigits.tra");
-    std::ifstream test_file("res/optdigits.tes");
+    std::ifstream training_file("../share/optdigits.tra");
+    std::ifstream test_file("../share/optdigits.tes");
 
     const Dataset training_data(training_file);
     const Dataset test_data(test_file);
@@ -153,7 +153,7 @@ auto main() -> int {
 
     std::println("Saving...");
     {
-        std::ofstream outfile("net.pp20");
+        std::ofstream outfile("../share/net.pp20");
         net.save(outfile);
     }
 

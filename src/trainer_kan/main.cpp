@@ -76,7 +76,7 @@ public:
         const Tensor<double, 2> inputs = get_input_tensor();
         const Tensor<double, 2> outputs = get_output_tensor();
 
-        net.train<CrossEntropyLoss>(inputs, outputs, 1000, samples.size(), 0.01, rng);
+        net.train<CrossEntropyLoss>(inputs, outputs, 1000, samples.size(), 0.1, rng);
     }
 
     auto test_accuracy(NeuralNetwork<double>& net) const -> double {
@@ -107,7 +107,7 @@ public:
 namespace {
 
     auto load_neural_network(std::mt19937& rng) -> NeuralNetwork<double> {
-        std::ifstream infile("net_kan.pp20");
+        std::ifstream infile("../share/net_kan.pp20");
         if (infile) {
             std::println("Loading existing network...");
             return NeuralNetwork<double>::load(infile);
@@ -153,7 +153,7 @@ auto main() -> int {
 
     std::println("Saving...");
     {
-        std::ofstream outfile("net_kan.pp20");
+        std::ofstream outfile("../share/net_kan.pp20");
         net.save(outfile);
     }
 
