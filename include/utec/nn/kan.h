@@ -18,31 +18,32 @@ namespace utec::neural_network {
         T x_max;
 
         T step;
+        T inv_step;
 
         BSpline(size_t knots, T a, T b)
             : knots(knots),
               x_min(a),
               x_max(b),
-              step((b - a) / (knots - 1)) {}
+              step((b - a) / (knots - 1)),
+              inv_step(T{1} / step) {}
 
         auto eval(T x) const -> std::vector<T> {
-            std::vector<T> B;
-            B.resize(knots, T{0});
+            std::vector<T> B(knots, T{0});
 
             if (x <= x_min) {
-                B.front() = 1;
+                B[0] = T{1};
                 return B;
             }
             if (x >= x_max) {
-                B.back() = 1;
+                B[knots - 1] = T{1};
                 return B;
             }
 
-            T pos = (x - x_min) / step;
-            auto i = static_cast<size_t>(pos);
-            T t = pos - 1;
+            const T pos = (x - x_min) * inv_step;
+            const auto i = static_cast<size_t>(pos);
+            const T t = pos - i;
 
-            B[i] = 1 - t;
+            B[i] = T{1} - t;
             B[i + 1] = t;
             return B;
         }
@@ -109,50 +110,48 @@ namespace utec::neural_network {
 
         auto forward(const algebra::Tensor<T, 2>& x) -> algebra::Tensor<T, 2> override {
             input = x;
-            size_t B = x.shape()[0];
+            const size_t B = x.shape()[0];
 
-            psi_output = algebra::Tensor<T, 3>(B, width, in_f);
-            psi_sum = algebra::Tensor<T, 2>(B, width);
+            psi_output.reshape(B, width, in_f);
+            psi_sum.reshape(B, width);
 
             for (size_t b = 0; b < B; ++b) {
                 for (size_t q = 0; q < width; ++q) {
                     T sum_q = 0;
                     for (size_t p = 0; p < in_f; ++p) {
-                        auto Bk = basis.eval(x(b, p));
-                        T tmp = 0;
+                        auto&& Bk = basis.eval(x(b, p));
+                        T acc = 0;
                         for (size_t k = 0; k < knots; ++k) {
-                            tmp += psi_weights(q, p, k) * Bk[k];
+                            acc += psi_weights(q, p, k) * Bk[k];
                         }
-                        psi_output(b, q, p) = tmp;
-                        sum_q += tmp;
+                        psi_output(b, q, p) = acc;
+                        sum_q += acc;
                     }
                     psi_sum(b, q) = sum_q;
                 }
             }
 
-            algebra::Tensor<T, 2> result(B, out_f);
-            result.fill(0);
             auto phi_w_T = algebra::transpose_2d(phi_weights);
+            auto out = algebra::matrix_product(psi_sum, phi_w_T);
 
-            auto tmp = algebra::matrix_product(psi_sum, phi_w_T);
             for (size_t b = 0; b < B; ++b) {
                 for (size_t j = 0; j < out_f; ++j) {
-                    result(b, j) = tmp(b, j) + phi_biases(0, j);
+                    out(b, j) += phi_biases(0, j);
                 }
             }
 
-            return result;
+            return out;
         }
 
         auto backward(const algebra::Tensor<T, 2>& dZ) -> algebra::Tensor<T, 2> override {
-            size_t B = input.shape()[0];
+            const size_t B = input.shape()[0];
 
             gradient_phi_weights = algebra::matrix_product(algebra::transpose_2d(dZ), psi_sum);
             // gradient_phi_weights = algebra::transpose_2d(gradient_phi_weights);
 
             gradient_phi_biases.fill(0);
-            for (size_t b = 0; b < B; ++b) {
-                for (size_t j = 0; j < out_f; ++j) {
+            for (size_t j = 0; j < out_f; ++j) {
+                for (size_t b = 0; b < B; ++b) {
                     gradient_phi_biases(0, j) += dZ(b, j);
                 }
             }
@@ -160,23 +159,21 @@ namespace utec::neural_network {
             auto DPsiSum = algebra::matrix_product(dZ, phi_weights);
 
             gradient_psi_weights.fill(0);
-
             algebra::Tensor<T, 2> dInput(B, in_f);
             dInput.fill(0);
 
             for (size_t b = 0; b < B; ++b) {
                 for (size_t q = 0; q < width; ++q) {
-                    T dPs = DPsiSum(b, q);
+                    const T dPs = DPsiSum(b, q);
                     for (size_t p = 0; p < in_f; ++p) {
-                        auto Bk = basis.eval(input(b, p));
+                        auto&& Bk = basis.eval(input(b, p));
+                        T weighted_sum = 0;
                         for (size_t k = 0; k < knots; ++k) {
-                            gradient_psi_weights(q, p, k) += dPs * Bk[k];
+                            const T B_val = Bk[k];
+                            gradient_psi_weights(q, p, k) += dPs * B_val;
+                            weighted_sum += psi_weights(q, p, k) * B_val;
                         }
-                        T wqpk_sum = 0;
-                        for (size_t k = 0; k < knots; ++k) {
-                            wqpk_sum += psi_weights(q, p, k) * Bk[k];
-                        }
-                        dInput(b, p) += dPs * wqpk_sum;
+                        dInput(b, p) += dPs * weighted_sum;
                     }
                 }
             }

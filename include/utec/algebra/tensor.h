@@ -4,9 +4,9 @@
 #include <algorithm>
 #include <array>
 #include <functional>
+#include <iostream>
 #include <iterator>
 #include <numeric>
-#include <ostream>
 #include <stdexcept>
 #include <vector>
 
