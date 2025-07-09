@@ -1,5 +1,5 @@
 #include "game/sdl/time.h"
-#include <SDL_timer.h>
+#include <SDL3/SDL_timer.h>
 
 namespace game::sdl {
 

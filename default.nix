@@ -7,9 +7,8 @@ let
     lib
     cmake
     pkg-config
-    SDL2
-    SDL2_ttf
-    SDL2_gfx
+    sdl3
+    sdl3-ttf
     catch2_3
     ;
 in
@@ -22,9 +21,8 @@ pkgs.stdenv.mkDerivation {
   nativeBuildInputs = [
     cmake
     pkg-config
-    SDL2
-    SDL2_ttf
-    SDL2_gfx
+    sdl3
+    sdl3-ttf
     catch2_3
   ];
 

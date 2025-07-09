@@ -1,8 +1,8 @@
 #ifndef INCLUDE_STATE_H
 #define INCLUDE_STATE_H
 
-#include <SDL2/SDL_events.h>
-#include <SDL2/SDL_render.h>
+#include <SDL3/SDL_events.h>
+#include <SDL3/SDL_render.h>
 #include <cstdint>
 #include <memory>
 #include <optional>
@@ -31,8 +31,8 @@ namespace game {
         std::optional<std::unique_ptr<math::IEquation>> current_equation = std::nullopt;
         std::vector<std::unique_ptr<math::IEquation>> solved_equations;
         bool mouse_down = false;
-        int last_mouse_x = 0;
-        int last_mouse_y = 0;
+        float last_mouse_x = 0;
+        float last_mouse_y = 0;
         std::optional<int> current_guess = std::nullopt;
 
         State state = State::WinTransition;

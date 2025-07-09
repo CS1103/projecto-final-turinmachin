@@ -1,14 +1,14 @@
 #include "game/game.h"
-#include <SDL2/SDL2_gfxPrimitives.h>
-#include <SDL2/SDL_events.h>
-#include <SDL2/SDL_mouse.h>
-#include <SDL2/SDL_pixels.h>
-#include <SDL2/SDL_rect.h>
-#include <SDL2/SDL_render.h>
-#include <SDL_error.h>
-#include <SDL_keycode.h>
-#include <SDL_surface.h>
-#include <SDL_ttf.h>
+#include <SDL3/SDL_error.h>
+#include <SDL3/SDL_events.h>
+#include <SDL3/SDL_keycode.h>
+#include <SDL3/SDL_mouse.h>
+#include <SDL3/SDL_oldnames.h>
+#include <SDL3/SDL_pixels.h>
+#include <SDL3/SDL_rect.h>
+#include <SDL3/SDL_render.h>
+#include <SDL3/SDL_surface.h>
+#include <SDL3_ttf/SDL_ttf.h>
 #include <cstddef>
 #include <cstdlib>
 #include <random>
@@ -22,6 +22,7 @@
 #include "game/pixels.h"
 #include "game/render.h"
 #include "game/sdl/color.h"
+#include "game/sdl/draw.h"
 #include "game/sdl/text.h"
 #include "game/sdl/texture.h"
 
@@ -43,7 +44,7 @@ namespace game {
                                      std::string(SDL_GetError()));
         }
 
-        SDL_SetTextureScaleMode(canvas_texture, SDL_ScaleModeLinear);
+        SDL_SetTextureScaleMode(canvas_texture, SDL_SCALEMODE_LINEAR);
         clear_canvas();
     }
 
@@ -59,22 +60,22 @@ namespace game {
 
     void Game::handle_event(const SDL_Event& event) {
         switch (event.type) {
-            case SDL_QUIT:
+            case SDL_EVENT_QUIT:
                 quit = true;
                 break;
-            case SDL_KEYDOWN: {
-                const SDL_Keycode key = event.key.keysym.sym;
+            case SDL_EVENT_KEY_DOWN: {
+                const SDL_Keycode key = event.key.key;
 
-                if (state == State::Playing && key == SDLK_r) {
+                if (state == State::Playing && key == SDLK_R) {
                     clear_canvas();
                     current_guess = std::nullopt;
                 }
                 break;
             }
-            case SDL_MOUSEBUTTONDOWN:
+            case SDL_EVENT_MOUSE_BUTTON_DOWN:
                 mouse_down = true;
                 break;
-            case SDL_MOUSEBUTTONUP: {
+            case SDL_EVENT_MOUSE_BUTTON_UP: {
                 mouse_down = false;
 
                 if (state == State::Playing && current_equation) {
@@ -88,8 +89,8 @@ namespace game {
     }
 
     void Game::process_drawing() {
-        const std::vector<std::uint8_t> pixel_data = sdl::extract_pixel_data(
-            renderer, canvas_texture, SDL_PIXELFORMAT_RGBA8888, CANVAS_WIDTH, CANVAS_HEIGHT, 4);
+        const std::vector<std::uint8_t> pixel_data =
+            sdl::extract_pixel_data(renderer, canvas_texture, CANVAS_WIDTH, CANVAS_HEIGHT, 4);
 
         const std::vector<std::uint8_t> grayscale_data = make_grayscale(pixel_data, CANVAS_WIDTH);
 
@@ -141,8 +142,8 @@ namespace game {
             }
         }
 
-        int mouse_x = 0;
-        int mouse_y = 0;
+        float mouse_x = 0;
+        float mouse_y = 0;
         SDL_GetMouseState(&mouse_x, &mouse_y);
 
         if (state == State::Playing && mouse_down &&
@@ -157,9 +158,7 @@ namespace game {
             SDL_SetRenderTarget(renderer, canvas_texture);
             SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
 
-            thickLineRGBA(renderer, x1, y1, x2, y2, LINE_THICKNESS, 0, 0, 0, SDL_ALPHA_OPAQUE);
-            filledCircleRGBA(renderer, x1, y1, LINE_THICKNESS / 2, 0, 0, 0, SDL_ALPHA_OPAQUE);
-            filledCircleRGBA(renderer, x2, y2, LINE_THICKNESS / 2, 0, 0, 0, SDL_ALPHA_OPAQUE);
+            sdl::draw_line(renderer, x1, y1, x2, y2, LINE_THICKNESS, {0, 0, 0, SDL_ALPHA_OPAQUE});
 
             SDL_SetRenderTarget(renderer, nullptr);
         }
@@ -187,8 +186,8 @@ namespace game {
                        sdl::HAlign::Center, sdl::VAlign::Top, sdl::WHITE);
 
         // Draw texture
-        const SDL_Rect canvas_rect = {CANVAS_X, CANVAS_Y, CANVAS_WIDTH, CANVAS_HEIGHT};
-        SDL_RenderCopy(renderer, canvas_texture, nullptr, &canvas_rect);
+        const SDL_FRect canvas_rect = {CANVAS_X, CANVAS_Y, CANVAS_WIDTH, CANVAS_HEIGHT};
+        SDL_RenderTexture(renderer, canvas_texture, nullptr, &canvas_rect);
 
         const bool solved = state == State::WinTransition;
 

@@ -44,9 +44,8 @@
 
    - CMake 3.29+
    - pkg-config 0.29+
-   - SDL2
-   - SDL2_ttf
-   - SDL2_gfx
+   - SDL3
+   - SDL3_ttf
    - catch2_3
 
 3. **Instalación**:

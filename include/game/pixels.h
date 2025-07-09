@@ -1,7 +1,7 @@
 #ifndef INCLUDE_GAME_PIXELS_H
 #define INCLUDE_GAME_PIXELS_H
 
-#include <SDL_rect.h>
+#include <SDL3/SDL_rect.h>
 #include <cstdint>
 #include <vector>
 

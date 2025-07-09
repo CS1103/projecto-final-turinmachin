@@ -1,13 +1,12 @@
-#include <SDL2/SDL_render.h>
-#include <SDL2/SDL_video.h>
-#include <SDL_ttf.h>
+#include <SDL3/SDL_render.h>
+#include <SDL3/SDL_video.h>
+#include <SDL3_ttf/SDL_ttf.h>
 #include <algorithm>
 #include <cstdint>
 #include <fstream>
 #include <iostream>
 #include <memory>
 #include <print>
-#include <random>
 #include <string>
 #include "common/agent.h"
 #include "common/data.h"
@@ -19,32 +18,24 @@
 auto main() -> int {
     using namespace game;
 
-    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+    if (!SDL_Init(SDL_INIT_VIDEO)) {
         std::println(std::cerr, "Could not initialize video: {}", SDL_GetError());
         return 1;
     }
 
-    if (TTF_Init() != 0) {
+    if (!TTF_Init()) {
         std::println(std::cerr, "Could not initialize TTF: {}", SDL_GetError());
         return 1;
     }
 
-    SDL_Window* const window =
-        SDL_CreateWindow(GAME_TITLE.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                         WINDOW_WIDTH, WINDOW_HEIGHT, 0);
-    SDL_Renderer* const renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    SDL_Window* const window = SDL_CreateWindow(GAME_TITLE.c_str(), WINDOW_WIDTH, WINDOW_HEIGHT, 0);
+    SDL_Renderer* const renderer = SDL_CreateRenderer(window, nullptr);
 
     if (window == nullptr || renderer == nullptr) {
         std::println(std::cerr, "Could not initialize window or renderer: {}", SDL_GetError());
         return 1;
     }
 
-    if (TTF_Init() != 0) {
-        std::println(std::cerr, "Could not initialize TTF: {}", SDL_GetError());
-        return 1;
-    }
-
-    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
     SDL_RenderPresent(renderer);
 
     long double last_time = sdl::get_performance_time();
@@ -67,7 +58,7 @@ auto main() -> int {
         const long double frame_start = sdl::get_performance_time();
 
         SDL_Event event{};
-        while (SDL_PollEvent(&event) != 0) {
+        while (SDL_PollEvent(&event)) {
             game.handle_event(event);
         }
 

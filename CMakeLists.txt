@@ -18,11 +18,8 @@ else()
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-find_package(SDL2 REQUIRED)
-find_package(SDL2_ttf REQUIRED CONFIG REQUIRED)
-
-include(FindPkgConfig)
-pkg_search_module(SDL2_gfx REQUIRED SDL2_gfx)
+find_package(SDL3 REQUIRED CONFIG REQUIRED COMPONENTS SDL3-shared)
+find_package(SDL3_ttf REQUIRED CONFIG REQUIRED)
 
 file(GLOB_RECURSE trainer_source CONFIGURE_DEPENDS src/common/*.cpp
      src/trainer/*.cpp)
@@ -39,9 +36,8 @@ target_include_directories(brain_ager_trainer PUBLIC include)
 
 add_executable(brain_ager ${game_source})
 target_include_directories(brain_ager PUBLIC include)
-target_link_libraries(brain_ager PRIVATE SDL2::SDL2 SDL2_ttf::SDL2_ttf SDL2_gfx)
-
 target_include_directories(brain_ager PRIVATE ${CMAKE_BINARY_DIR})
+target_link_libraries(brain_ager PRIVATE SDL3::SDL3 SDL3_ttf::SDL3_ttf)
 
 install(TARGETS brain_ager DESTINATION bin)
 install(TARGETS brain_ager_trainer DESTINATION bin)
