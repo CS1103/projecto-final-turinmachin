@@ -1,7 +1,7 @@
 #include "game/math/equation.h"
 #include <format>
 
-namespace math {
+namespace game::math {
 
     AddEquation::AddEquation(const int lhs, const int rhs)
         : lhs(lhs),
@@ -51,4 +51,4 @@ namespace math {
         return std::format("{} / {} = {}", lhs, rhs, answer());
     }
 
-}  // namespace math
+}  // namespace game::math

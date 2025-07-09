@@ -3,12 +3,12 @@
 
 #include <SDL_ttf.h>
 
-namespace render {
+namespace game {
 
     struct ResourceManager {
         TTF_Font* font;
     };
 
-}  // namespace render
+}  // namespace game
 
 #endif

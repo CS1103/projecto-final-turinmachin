@@ -4,7 +4,8 @@
 #include <cstdint>
 #include <string>
 
-namespace sdl::text {
+namespace game::sdl {
+
     enum class VAlign : std::uint8_t {
         Top,
         Middle,
@@ -27,4 +28,4 @@ namespace sdl::text {
                    VAlign v_align,
                    SDL_Color color);
 
-}  // namespace sdl::text
+}  // namespace game::sdl

@@ -4,7 +4,7 @@
 #include <SDL_ttf.h>
 #include <string>
 
-namespace sdl::text {
+namespace game::sdl {
 
     void draw_text(SDL_Renderer* const renderer,
                    TTF_Font* const font,
@@ -56,4 +56,4 @@ namespace sdl::text {
         SDL_DestroyTexture(message);
     }
 
-}  // namespace sdl::text
+}  // namespace game::sdl

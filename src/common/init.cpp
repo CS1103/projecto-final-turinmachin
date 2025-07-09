@@ -1,6 +1,7 @@
 #include "common/init.h"
 
-namespace init {
+namespace common {
+
     using utec::algebra::Tensor;
 
     void he_init(Tensor<double, 2>& tensor, std::mt19937& rng) {
@@ -12,4 +13,4 @@ namespace init {
         }
     };
 
-}  // namespace init
+}  // namespace common

@@ -4,7 +4,7 @@
 #include <memory>
 #include <string>
 
-namespace math {
+namespace game::math {
 
     struct IEquation {
         virtual ~IEquation() = default;
@@ -21,6 +21,6 @@ namespace math {
 
         [[nodiscard]] virtual auto create() -> std::unique_ptr<IEquation> = 0;
     };
-}  // namespace math
+}  // namespace game::math
 
 #endif

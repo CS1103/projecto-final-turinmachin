@@ -4,12 +4,11 @@
 #include <fstream>
 #include <vector>
 #include "common/agent.h"
-namespace loader {
 
-    using DigitSample = agent::Sample<std::vector<double>, int>;
+namespace trainer {
 
-    auto load_digit_samples(std::ifstream& infile) -> std::vector<DigitSample>;
+    auto load_digit_samples(std::ifstream& infile) -> std::vector<common::DigitSample>;
 
-}  // namespace loader
+}  // namespace trainer
 
 #endif

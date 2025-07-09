@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <vector>
 
-namespace pixels {
+namespace game {
 
     auto make_grayscale(const std::vector<std::uint8_t>& pixel_data, const std::size_t width)
         -> std::vector<std::uint8_t> {
@@ -64,4 +64,4 @@ namespace pixels {
         return downscaled_data;
     }
 
-}  // namespace pixels
+}  // namespace game

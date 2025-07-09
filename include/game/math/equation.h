@@ -4,7 +4,7 @@
 #include <string>
 #include "game/math/interfaces.h"
 
-namespace math {
+namespace game::math {
 
     class AddEquation final : public IEquation {
         int lhs;
@@ -48,6 +48,6 @@ namespace math {
         [[nodiscard]] auto display_solved() const -> std::string override;
     };
 
-}  // namespace math
+}  // namespace game::math
 
 #endif

@@ -6,23 +6,21 @@
 #include "common/agent.h"
 #include "common/constants.h"
 
-namespace loader {
+namespace trainer {
 
-    auto load_digit_samples(std::ifstream& infile) -> std::vector<DigitSample> {
-        using Sample = agent::Sample<std::vector<double>, int>;
-
-        std::vector<Sample> samples;
+    auto load_digit_samples(std::ifstream& infile) -> std::vector<common::DigitSample> {
+        std::vector<common::DigitSample> samples;
 
         std::string line;
 
         while (std::getline(infile, line)) {
             std::stringstream line_ss(line);
             std::string buf;
-            Sample sample;
+            common::DigitSample sample;
 
-            for (std::size_t i = 0; i < IMAGE_SIZE; ++i) {
+            for (std::size_t i = 0; i < common::IMAGE_SIZE; ++i) {
                 std::getline(line_ss, buf, ',');
-                sample.input.push_back(std::stoi(buf) / IMAGE_DIMENSION);
+                sample.input.push_back(std::stoi(buf) / common::IMAGE_DIMENSION);
             }
 
             std::getline(line_ss, buf, ',');
@@ -34,4 +32,4 @@ namespace loader {
         return samples;
     }
 
-}  // namespace loader
+}  // namespace trainer

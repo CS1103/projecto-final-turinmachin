@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <vector>
 
-namespace pixels {
+namespace game {
 
     auto make_grayscale(const std::vector<std::uint8_t>& pixel_data, std::size_t width)
         -> std::vector<std::uint8_t>;
@@ -14,6 +14,6 @@ namespace pixels {
                           const SDL_Rect& src_rect,
                           int width) -> std::vector<std::uint8_t>;
 
-}  // namespace pixels
+}  // namespace game
 
 #endif

@@ -5,7 +5,7 @@
 #include <vector>
 #include "utec/nn/neural_network.h"
 
-namespace agent {
+namespace common {
 
     template <typename Input, typename Output>
     struct Sample {
@@ -27,14 +27,14 @@ namespace agent {
     };
 
     using IDigitAgent = IAgent<std::vector<double>, int>;
+    using DigitSample = Sample<std::vector<double>, int>;
 
-    class DigitReader final : public agent::IAgent<std::vector<double>, int> {
+    class DigitReader final : public IAgent<std::vector<double>, int> {
         utec::neural_network::NeuralNetwork<double> net;
 
     public:
         using Input = std::vector<double>;
         using Output = int;
-        using Sample = agent::Sample<Input, Output>;
 
         explicit DigitReader(std::mt19937& rng);
 
@@ -42,18 +42,18 @@ namespace agent {
 
         auto predict(const Input& features) -> int override;
 
-        void train(const std::vector<Sample>& samples,
+        void train(const std::vector<DigitSample>& samples,
                    std::size_t epochs,
                    double learning_rate,
                    std::mt19937& rng) override;
 
-        auto test_accuracy(const std::vector<Sample>& samples) -> double;
+        auto test_accuracy(const std::vector<DigitSample>& samples) -> double;
 
         void load_net(std::istream& in);
 
         void save_net(std::ostream& out) const;
     };
 
-}  // namespace agent
+}  // namespace common
 
 #endif

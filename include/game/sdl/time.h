@@ -3,10 +3,10 @@
 
 #include <SDL_render.h>
 
-namespace sdl::time {
+namespace game::sdl {
 
     auto get_performance_time() -> long double;
 
-}  // namespace sdl::time
+}  // namespace game::sdl
 
 #endif

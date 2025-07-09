@@ -5,7 +5,7 @@
 #include <random>
 #include "game/math/interfaces.h"
 
-namespace math {
+namespace game::math {
 
     class AddEquationFactory final : public IEquationFactory {
         std::mt19937& rng;
@@ -40,6 +40,6 @@ namespace math {
         [[nodiscard]] auto create() -> std::unique_ptr<IEquation> override;
     };
 
-}  // namespace math
+}  // namespace game::math
 
 #endif

@@ -17,6 +17,8 @@
 #include "game/sdl/time.h"
 
 auto main() -> int {
+    using namespace game;
+
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         std::println(std::cerr, "Could not initialize video: {}", SDL_GetError());
         return 1;
@@ -45,33 +47,31 @@ auto main() -> int {
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
     SDL_RenderPresent(renderer);
 
-    long double last_time = sdl::time::get_performance_time();
+    long double last_time = sdl::get_performance_time();
     long double time_accumulator = 0.0;
 
     std::random_device rd{};
 
-    using namespace agent;
-
-    std::ifstream net_file = data::get_data_file("net.pp20");
-    std::unique_ptr<IDigitAgent> agent = std::make_unique<DigitReader>(net_file);
+    std::ifstream net_file = common::get_data_file("net.pp20");
+    auto agent = std::make_unique<common::DigitReader>(net_file);
     net_file.close();
 
     Game game(renderer, std::move(agent), std::mt19937(rd()));
 
-    const std::string font_path = data::get_data_file_path("ComicShannsMono-Regular.ttf");
+    const std::string font_path = common::get_data_file_path("ComicShannsMono-Regular.ttf");
 
-    render::ResourceManager resources{};
+    ResourceManager resources{};
     resources.font = TTF_OpenFont(font_path.c_str(), 96);
 
     while (!game.should_quit()) {
-        const long double frame_start = sdl::time::get_performance_time();
+        const long double frame_start = sdl::get_performance_time();
 
         SDL_Event event{};
         while (SDL_PollEvent(&event) != 0) {
             game.handle_event(event);
         }
 
-        const long double new_time = sdl::time::get_performance_time();
+        const long double new_time = sdl::get_performance_time();
         time_accumulator = std::min(time_accumulator + new_time - last_time, MAX_TIME_ACCUMULATOR);
         last_time = new_time;
 
@@ -82,7 +82,7 @@ auto main() -> int {
 
         game.render(resources);
 
-        const long double offset = sdl::time::get_performance_time() - frame_start;
+        const long double offset = sdl::get_performance_time() - frame_start;
         const long double delay = DELTA - offset;
         if (delay > 0) {
             SDL_Delay(static_cast<std::uint64_t>(delay * 1000));

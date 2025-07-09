@@ -4,20 +4,24 @@
 #include <cstddef>
 #include <string>
 
-constexpr std::string GAME_TITLE = "Brain Ager";
+namespace game {
 
-constexpr int WINDOW_WIDTH = 960;
-constexpr int WINDOW_HEIGHT = 540;
-constexpr int FPS = 60;
-constexpr double DELTA = 1.0 / FPS;
-constexpr long double MAX_TIME_ACCUMULATOR = 4 * DELTA;
+    constexpr std::string GAME_TITLE = "Brain Ager";
 
-constexpr int CANVAS_WIDTH = WINDOW_HEIGHT;
-constexpr int CANVAS_HEIGHT = WINDOW_HEIGHT;
+    constexpr int WINDOW_WIDTH = 960;
+    constexpr int WINDOW_HEIGHT = 540;
+    constexpr int FPS = 60;
+    constexpr double DELTA = 1.0 / FPS;
+    constexpr long double MAX_TIME_ACCUMULATOR = 4 * DELTA;
 
-constexpr int CANVAS_X = WINDOW_WIDTH - CANVAS_WIDTH;
-constexpr int CANVAS_Y = 0;
+    constexpr int CANVAS_WIDTH = WINDOW_HEIGHT;
+    constexpr int CANVAS_HEIGHT = WINDOW_HEIGHT;
 
-constexpr std::size_t HISTORY_LIMIT = 4;
+    constexpr int CANVAS_X = WINDOW_WIDTH - CANVAS_WIDTH;
+    constexpr int CANVAS_Y = 0;
+
+    constexpr std::size_t HISTORY_LIMIT = 4;
+
+}  // namespace game
 
 #endif

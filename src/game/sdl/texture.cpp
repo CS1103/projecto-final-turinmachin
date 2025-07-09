@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 
-namespace sdl::texture {
+namespace game::sdl {
 
     auto extract_pixel_data(SDL_Renderer* const renderer,
                             SDL_Texture* const texture,
@@ -30,4 +30,4 @@ namespace sdl::texture {
         return pixel_data;
     }
 
-}  // namespace sdl::texture
+}  // namespace game::sdl

@@ -7,22 +7,22 @@
 #include "common/data.h"
 #include "trainer/loader.h"
 
-using agent::DigitReader;
-
 auto main() -> int {
+    using common::DigitReader;
+
     std::random_device rd{};
     std::mt19937 rng(rd());
 
-    std::ifstream training_file = data::get_data_file("optdigits.tra");
-    std::ifstream test_file = data::get_data_file("optdigits.tes");
+    std::ifstream training_file = common::get_data_file("optdigits.tra");
+    std::ifstream test_file = common::get_data_file("optdigits.tes");
 
-    const auto training_samples = loader::load_digit_samples(training_file);
-    const auto test_samples = loader::load_digit_samples(test_file);
+    const auto training_samples = trainer::load_digit_samples(training_file);
+    const auto test_samples = trainer::load_digit_samples(test_file);
 
     training_file.close();
     test_file.close();
 
-    std::ifstream existing_net(data::get_data_file_path("net.pp20"));
+    std::ifstream existing_net(common::get_data_file_path("net.pp20"));
     DigitReader agent = existing_net ? DigitReader(existing_net) : DigitReader(rng);
 
     constexpr std::size_t EPOCHS = 1000;

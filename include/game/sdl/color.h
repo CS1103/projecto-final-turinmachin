@@ -3,7 +3,7 @@
 
 #include <SDL_pixels.h>
 
-namespace sdl::color {
+namespace game::sdl {
 
     constexpr SDL_Color WHITE = {255, 255, 255, SDL_ALPHA_OPAQUE};
     constexpr SDL_Color BLACK = {0, 0, 0, SDL_ALPHA_OPAQUE};
@@ -12,6 +12,6 @@ namespace sdl::color {
     constexpr SDL_Color GREEN = {50, 255, 50, SDL_ALPHA_OPAQUE};
     constexpr SDL_Color RED = {255, 50, 50, SDL_ALPHA_OPAQUE};
 
-}  // namespace sdl::color
+}  // namespace game::sdl
 
 #endif

@@ -4,7 +4,7 @@
 #include <fstream>
 #include <string>
 
-namespace data {
+namespace common {
 
     auto get_data_path() -> std::string;
 
@@ -12,6 +12,6 @@ namespace data {
 
     auto get_data_file(const std::string& path) -> std::ifstream;
 
-}  // namespace data
+}  // namespace common
 
 #endif

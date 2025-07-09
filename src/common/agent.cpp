@@ -9,16 +9,16 @@
 using utec::algebra::Tensor;
 using namespace utec::neural_network;
 
-namespace agent {
+namespace common {
 
     DigitReader::DigitReader(std::mt19937& rng) {
-        const auto he_init = [&](Tensor<double, 2> tensor) { init::he_init(tensor, rng); };
+        const auto he_init_t = [&](Tensor<double, 2>& tensor) { he_init(tensor, rng); };
 
-        net.add_layer<Dense<double>>(IMAGE_SIZE, 64, he_init, he_init);
+        net.add_layer<Dense<double>>(IMAGE_SIZE, 64, he_init_t, he_init_t);
         net.add_layer<ReLU<double>>();
-        net.add_layer<Dense<double>>(64, 32, he_init, he_init);
+        net.add_layer<Dense<double>>(64, 32, he_init_t, he_init_t);
         net.add_layer<ReLU<double>>();
-        net.add_layer<Dense<double>>(32, 10, he_init, he_init);
+        net.add_layer<Dense<double>>(32, 10, he_init_t, he_init_t);
         net.add_layer<Softmax<double>>();
         std::println("DigitReader initialized");
     }
@@ -44,7 +44,7 @@ namespace agent {
         return highest_score_index;
     }
 
-    void DigitReader::train(const std::vector<Sample>& samples,
+    void DigitReader::train(const std::vector<DigitSample>& samples,
                             const std::size_t epochs,
                             const double learning_rate,
                             std::mt19937& rng) {
@@ -65,7 +65,7 @@ namespace agent {
         net.train<CrossEntropyLoss>(inputs, outputs, epochs, samples.size(), learning_rate, rng);
     }
 
-    auto DigitReader::test_accuracy(const std::vector<Sample>& samples) -> double {
+    auto DigitReader::test_accuracy(const std::vector<DigitSample>& samples) -> double {
         std::size_t success_count = 0;
 
         for (const auto& sample : samples) {
@@ -86,4 +86,4 @@ namespace agent {
         net.save(out);
     }
 
-}  // namespace agent
+}  // namespace common

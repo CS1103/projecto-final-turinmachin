@@ -7,7 +7,7 @@
 #include <cstdint>
 #include <vector>
 
-namespace sdl::texture {
+namespace game::sdl {
 
     auto extract_pixel_data(SDL_Renderer* renderer,
                             SDL_Texture* texture,
@@ -16,6 +16,6 @@ namespace sdl::texture {
                             std::size_t height,
                             std::size_t bytes_per_pixel) -> std::vector<std::uint8_t>;
 
-}  // namespace sdl::texture
+}  // namespace game::sdl
 
 #endif

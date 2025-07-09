@@ -3,10 +3,11 @@
 
 #include <random>
 #include "utec/algebra/tensor.h"
-namespace init {
+
+namespace common {
 
     void he_init(utec::algebra::Tensor<double, 2>& tensor, std::mt19937& rng);
 
-}  // namespace init
+}  // namespace common
 
 #endif

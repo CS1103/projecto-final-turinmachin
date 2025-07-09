@@ -2,7 +2,7 @@
 #include <memory>
 #include "game/math/equation.h"
 
-namespace math {
+namespace game::math {
 
     AddEquationFactory::AddEquationFactory(std::mt19937& rng)
         : rng(rng) {}
@@ -37,4 +37,4 @@ namespace math {
         return std::make_unique<DivideEquation>(lhs, rhs);
     }
 
-}  // namespace math
+}  // namespace game::math

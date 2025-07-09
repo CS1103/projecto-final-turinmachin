@@ -5,7 +5,7 @@
 #include <string>
 #include "config.h"
 
-namespace data {
+namespace common {
 
     auto get_data_path() -> std::string {
         std::string installed_path = std::string(SHARE_DIR);
@@ -32,4 +32,4 @@ namespace data {
         return std::ifstream(full_path);
     }
 
-}  // namespace data
+}  // namespace common
