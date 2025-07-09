@@ -26,8 +26,6 @@ pkg_search_module(SDL2_gfx REQUIRED SDL2_gfx)
 
 file(GLOB_RECURSE trainer_source CONFIGURE_DEPENDS src/common/*.cpp
      src/trainer/*.cpp)
-file(GLOB_RECURSE trainer_kan_source CONFIGURE_DEPENDS src/common/*.cpp
-     src/trainer_kan/*.cpp)
 file(GLOB_RECURSE game_source CONFIGURE_DEPENDS src/common/*.cpp src/game/*.cpp)
 
 set(SHARE_INSTALL_DIR "share/${PROJECT_NAME}")
@@ -36,10 +34,8 @@ configure_file(${CMAKE_SOURCE_DIR}/config.h.in ${CMAKE_BINARY_DIR}/config.h)
 
 include_directories(${CMAKE_BINARY_DIR})
 
-add_executable(trainer ${trainer_source})
-add_executable(trainer_kan ${trainer_kan_source})
-target_include_directories(trainer PUBLIC include)
-target_include_directories(trainer_kan PUBLIC include)
+add_executable(brain_ager_trainer ${trainer_source})
+target_include_directories(brain_ager_trainer PUBLIC include)
 
 add_executable(brain_ager ${game_source})
 target_include_directories(brain_ager PUBLIC include)
@@ -47,7 +43,8 @@ target_link_libraries(brain_ager PRIVATE SDL2::SDL2 SDL2_ttf::SDL2_ttf SDL2_gfx)
 
 target_include_directories(brain_ager PRIVATE ${CMAKE_BINARY_DIR})
 
-install(TARGETS brain_ager trainer trainer_kan DESTINATION bin)
+install(TARGETS brain_ager DESTINATION bin)
+install(TARGETS brain_ager_trainer DESTINATION bin)
 install(DIRECTORY share/ DESTINATION ${SHARE_INSTALL_DIR})
 
 include(CTest)

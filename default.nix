@@ -36,12 +36,6 @@ pkgs.stdenv.mkDerivation {
   enableParallelBuilding = true;
   doCheck = true;
 
-  installPhase = ''
-    runHook preInstall
-    install -Dm755 brain_ager -t "$out/bin"
-    runHook postInstall
-  '';
-
   meta = with lib; {
     description = "A neural network-powered math game.";
     homepage = "https://github.com/CS1103/projecto-final-turinmachin";
