@@ -272,12 +272,10 @@ TEST_CASE("neural network learns sin(x) using ReLU", "[neural][train]") {
     constexpr float learning_rate = 0.01F;
     net.train<MSELoss>(x, y, epochs, inputs.size(), learning_rate, rng);
     auto pred = net.predict(x);
+
     for (size_t i = 0; i < inputs.size(); ++i) {
         float expected = y(i, 0);
         float output = pred(i, 0);
-        std::cout << std::fixed << std::setprecision(4) << "x = " << inputs[i]
-                  << ", sin(x) = " << expected << ", pred = " << output << '\n';
-
         REQUIRE(std::abs(output - expected) < 0.2F);
     }
 }
