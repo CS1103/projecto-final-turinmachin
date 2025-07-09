@@ -10,6 +10,10 @@ namespace common {
 
     auto get_data_file_path(const std::string& file_path) -> std::string;
 
+    auto get_data_file_path_unchecked(const std::string& file_path) -> std::string;
+
+    auto get_data_file_unchecked(const std::string& path) -> std::ifstream;
+
     auto get_data_file(const std::string& path) -> std::ifstream;
 
 }  // namespace common

@@ -12,6 +12,8 @@ using namespace utec::neural_network;
 namespace common {
 
     DigitReader::DigitReader(std::mt19937& rng) {
+        std::println("No existing network data file found. Initializing DigitReader...");
+
         const auto he_init_t = [&](Tensor<double, 2>& tensor) { he_init(tensor, rng); };
 
         net.add_layer<Dense<double>>(IMAGE_SIZE, 64, he_init_t, he_init_t);
@@ -20,7 +22,6 @@ namespace common {
         net.add_layer<ReLU<double>>();
         net.add_layer<Dense<double>>(32, 10, he_init_t, he_init_t);
         net.add_layer<Softmax<double>>();
-        std::println("DigitReader initialized");
     }
 
     DigitReader::DigitReader(std::istream& net_in)

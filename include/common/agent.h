@@ -29,7 +29,7 @@ namespace common {
     using IDigitAgent = IAgent<std::vector<double>, int>;
     using DigitSample = Sample<std::vector<double>, int>;
 
-    class DigitReader final : public IAgent<std::vector<double>, int> {
+    class DigitReader final : public IDigitAgent {
         utec::neural_network::NeuralNetwork<double> net;
 
     public:

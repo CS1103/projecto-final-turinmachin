@@ -19,7 +19,7 @@ namespace common {
     }
 
     auto get_data_file_path(const std::string& file_path) -> std::string {
-        const std::string full_path = get_data_path() + "/" + file_path;
+        const std::string full_path = get_data_file_path_unchecked(file_path);
         if (!std::filesystem::exists(full_path)) {
             throw std::runtime_error("Data file does not exist: " + file_path);
         }
@@ -27,8 +27,17 @@ namespace common {
         return full_path;
     }
 
+    auto get_data_file_path_unchecked(const std::string& file_path) -> std::string {
+        return get_data_path() + "/" + file_path;
+    }
+
     auto get_data_file(const std::string& file_path) -> std::ifstream {
         const std::string full_path = get_data_file_path(file_path);
+        return std::ifstream(full_path);
+    }
+
+    auto get_data_file_unchecked(const std::string& file_path) -> std::ifstream {
+        const std::string full_path = get_data_file_path_unchecked(file_path);
         return std::ifstream(full_path);
     }
 

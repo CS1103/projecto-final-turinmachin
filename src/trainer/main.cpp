@@ -22,7 +22,7 @@ auto main() -> int {
     training_file.close();
     test_file.close();
 
-    std::ifstream existing_net(common::get_data_file_path("net.pp20"));
+    std::ifstream existing_net(common::get_data_file_path_unchecked("net.pp20"));
     DigitReader agent = existing_net ? DigitReader(existing_net) : DigitReader(rng);
 
     constexpr std::size_t EPOCHS = 1000;
