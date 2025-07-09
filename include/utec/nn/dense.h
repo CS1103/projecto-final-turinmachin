@@ -34,7 +34,7 @@ namespace utec::neural_network {
         }
 
         auto backward(const algebra::Tensor<T, 2>& dZ) -> algebra::Tensor<T, 2> override {
-            gradient_weights = algebra::matrix_product(algebra::transpose_2d(activations), dZ);
+            gradient_weights = algebra::matrix_product(activations.transpose_2d(), dZ);
             auto dZ_shape = dZ.shape();
             gradient_biases.fill(T(0));
             for (size_t i = 0; i < dZ_shape[0]; i++) {
@@ -42,7 +42,7 @@ namespace utec::neural_network {
                     gradient_biases(0, j) += dZ(i, j);
                 }
             }
-            return algebra::matrix_product(dZ, algebra::transpose_2d(weights));
+            return algebra::matrix_product(dZ, weights.transpose_2d());
         }
 
         void update_params(IOptimizer<T>& optimizer) override {

@@ -13,11 +13,11 @@ namespace utec::neural_network {
     public:
         auto forward(const algebra::Tensor<T, 2>& z) -> algebra::Tensor<T, 2> override {
             input = z;
-            return algebra::apply(z, [](const T t) { return std::max(static_cast<T>(0), t); });
+            return z.apply([](const T t) { return std::max(static_cast<T>(0), t); });
         }
 
         auto backward(const algebra::Tensor<T, 2>& g) -> algebra::Tensor<T, 2> override {
-            return algebra::apply(input, [](const T t) { return T(t > 0); }) * g;
+            return input.apply([](const T t) { return T(t > 0); }) * g;
         }
 
         [[nodiscard]] auto id() const -> LayerId override {
@@ -31,12 +31,12 @@ namespace utec::neural_network {
 
     public:
         auto forward(const algebra::Tensor<T, 2>& z) -> algebra::Tensor<T, 2> override {
-            output = algebra::apply(z, [](const T t) { return 1 / (1 + std::exp(-t)); });
+            output = z.apply([](const T t) { return 1 / (1 + std::exp(-t)); });
             return output;
         }
 
         auto backward(const algebra::Tensor<T, 2>& g) -> algebra::Tensor<T, 2> override {
-            return algebra::apply(output, [](const T t) { return t * (1 - t); }) * g;
+            return output.apply([](const T t) { return t * (1 - t); }) * g;
         }
 
         [[nodiscard]] auto id() const -> LayerId override {

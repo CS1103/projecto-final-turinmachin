@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <array>
+#include <cstddef>
 #include <functional>
 #include <iostream>
 #include <iterator>
@@ -10,233 +11,143 @@
 #include <stdexcept>
 #include <vector>
 
+namespace {
+    template <std::size_t Size>
+    constexpr void apply_with_counter(const auto fn, const std::array<std::size_t, Size>& size) {
+        std::array<std::size_t, Size> index{};
+
+        const std::size_t total_size = std::ranges::fold_left(size, 1, std::multiplies());
+
+        for (std::size_t i = 0; i < total_size; ++i) {
+            fn(index);
+
+            index[0]++;
+
+            for (std::size_t j = 0; j < Size; ++j) {
+                if (index[j] < size[j]) {
+                    // Carry stops here
+                    break;
+                }
+
+                index[j] = 0;
+                if (j < Size - 1) {
+                    index[j + 1]++;
+                }
+            }
+        }
+    }
+}  // namespace
+
 namespace utec::algebra {
 
     template <typename T, size_t Rank>
     class Tensor {
-        std::array<size_t, Rank> dims_array;
-        std::array<size_t, Rank> steps;
-        std::vector<T> data;
+        std::array<size_t, Rank> m_shape;
+        std::array<size_t, Rank> m_steps;
+        std::vector<T> m_data;
 
         void update_steps() {
-            size_t current_step = 1;
-            for (size_t i = Rank; i-- > 0;) {
-                steps[i] = current_step;
-                current_step *= dims_array[i];
+            std::size_t current_step = 1;
+
+            for (std::size_t i = Rank - 1; i != static_cast<std::size_t>(-1); --i) {
+                m_steps[i] = current_step;
+                current_step *= m_shape[i];
             }
+        }
+
+        template <typename... Idxs>
+            requires(sizeof...(Idxs) == Rank)
+        constexpr auto physical_index(const Idxs... idxs) const -> std::size_t {
+            const std::array<std::size_t, Rank> idxs_arr{static_cast<std::size_t>(idxs)...};
+
+            std::size_t physical_index = 0;
+
+            for (std::size_t i = 0; i < Rank; ++i) {
+                if (idxs_arr[i] >= m_shape[i]) {
+                    throw std::out_of_range("Tensor index out of bounds");
+                }
+                physical_index += m_steps[i] * idxs_arr[i];
+            }
+
+            return physical_index;
         }
 
     public:
-        Tensor(const Tensor<T, Rank>& other) = default;
-        Tensor(Tensor<T, Rank>&& other) noexcept = default;
-        ~Tensor() = default;
-
         explicit Tensor(const std::array<size_t, Rank>& shape)
-            : dims_array(shape),
-              data(std::accumulate(shape.begin(),
-                                   shape.end(),
-                                   static_cast<size_t>(1),
-                                   std::multiplies())) {
+            : m_shape(shape),
+              m_data(std::accumulate(shape.begin(),
+                                     shape.end(),
+                                     static_cast<size_t>(1),
+                                     std::multiplies())) {
             update_steps();
         }
 
         template <typename... Dims>
             requires(sizeof...(Dims) == Rank)
-        explicit Tensor(Dims... dims)
-            : dims_array{static_cast<size_t>(dims)...},
-              data(std::accumulate(dims_array.begin(),
-                                   dims_array.end(),
-                                   static_cast<size_t>(1),
-                                   std::multiplies())) {
+        explicit Tensor(const Dims... dims)
+            : m_shape{static_cast<size_t>(dims)...},
+              m_data(std::ranges::fold_left(m_shape, 1, std::multiplies())) {
             update_steps();
-        }
-
-        template <std::ranges::sized_range Range>
-            requires std::convertible_to<std::ranges::range_value_t<Range>, T>
-        explicit Tensor(const Range& range, const std::array<size_t, Rank>& shape)
-            : dims_array(shape),
-              data(std::ranges::begin(range), std::ranges::end(range)) {
-            if (data.size() != std::accumulate(dims_array.begin(), dims_array.end(),
-                                               static_cast<size_t>(1), std::multiplies())) {
-                throw std::invalid_argument("Data size does not match tensor size");
-            }
-            update_steps();
-        }
-
-        template <std::ranges::sized_range Range, typename... Dims>
-            requires std::convertible_to<std::ranges::range_value_t<Range>, T> &&
-                         (sizeof...(Dims) == Rank)
-        explicit Tensor(const Range& range, Dims... dims)
-            : dims_array(static_cast<size_t>(dims)...),
-              data(std::ranges::begin(range), std::ranges::end(range)) {
-            if (data.size() != std::accumulate(dims_array.begin(), dims_array.end(),
-                                               static_cast<size_t>(1), std::multiplies())) {
-                throw std::invalid_argument("Data size does not match tensor size");
-            }
-            update_steps();
-        }
-
-        template <std::ranges::input_range Range>
-            requires(!std::ranges::sized_range<Range> &&
-                     std::convertible_to<std::ranges::range_value_t<Range>, T>)
-        explicit Tensor(const Range& range, const std::array<size_t, Rank>& shape)
-            : dims_array(shape),
-              data(std::ranges::begin(range), std::ranges::end(range)) {
-            if (data.size() != std::accumulate(dims_array.begin(), dims_array.end(),
-                                               static_cast<size_t>(1), std::multiplies())) {
-                throw std::invalid_argument("Data size does not match tensor size");
-            }
-            update_steps();
-        }
-
-        template <std::ranges::input_range Range, typename... Dims>
-            requires(!std::ranges::sized_range<Range> &&
-                     std::convertible_to<std::ranges::range_value_t<Range>, T>) &&
-                        (sizeof...(Dims) == Rank)
-        explicit Tensor(const Range& range, Dims... dims)
-            : dims_array(static_cast<size_t>(dims)...),
-              data(std::ranges::begin(range), std::ranges::end(range)) {
-            if (data.size() != std::accumulate(dims_array.begin(), dims_array.end(),
-                                               static_cast<size_t>(1), std::multiplies())) {
-                throw std::invalid_argument("Data size does not match tensor size");
-            }
-            update_steps();
-        }
-
-        explicit Tensor(std::initializer_list<T> list, const std::array<size_t, Rank>& shape)
-            : dims_array(shape),
-              data(list) {
-            if (data.size() != std::accumulate(dims_array.begin(), dims_array.end(),
-                                               static_cast<size_t>(1), std::multiplies())) {
-                throw std::invalid_argument("Data size does not match tensor size");
-            }
-            update_steps();
-        }
-
-        template <typename... Dims>
-            requires(sizeof...(Dims) == Rank)
-        Tensor(std::initializer_list<T> list, Dims... dims)
-            : dims_array(static_cast<size_t>(dims)...),
-              data(list) {
-            if (data.size() != std::accumulate(dims_array.begin(), dims_array.end(),
-                                               static_cast<size_t>(1), std::multiplies())) {
-                throw std::invalid_argument("Data size does not match tensor size");
-            }
-            update_steps();
-        }
-
-        [[nodiscard]] constexpr auto get_steps() const -> std::array<size_t, Rank> {
-            return steps;
         }
 
         [[nodiscard]] constexpr auto operator==(const Tensor<T, Rank>& other) const -> bool {
-            return dims_array == other.dims_array && data == other.data;
+            return m_shape == other.m_shape && m_data == other.m_data;
         }
 
-        constexpr auto operator=(const Tensor<T, Rank>& other) -> Tensor<T, Rank>& = default;
-        constexpr auto operator=(Tensor<T, Rank>&& other) noexcept -> Tensor<T, Rank>& = default;
-
-        template <std::ranges::sized_range Range>
-            requires std::convertible_to<std::ranges::range_value_t<Range>, T>
-        auto operator=(const Range& range) -> Tensor& {
-            if (std::ranges::size(range) != data.size()) {
-                throw std::invalid_argument("Data size does not match tensor size");
-            }
-            std::ranges::copy(range, data.begin());
-            return *this;
-        }
-
-        template <std::ranges::input_range Range>
-            requires(!std::ranges::sized_range<Range> &&
-                     std::convertible_to<std::ranges::range_value_t<Range>, T>)
-        auto operator=(const Range& range) -> Tensor& {
-            if (std::ranges::distance(range) != data.size()) {
+        auto operator=(std::initializer_list<T> list) -> Tensor<T, Rank>& {
+            if (list.size() != m_data.size()) {
                 throw std::invalid_argument("Data size does not match tensor size");
             }
 
-            std::ranges::copy(range, data.begin());
+            std::copy(list.begin(), list.end(), m_data.begin());
             return *this;
         }
 
-        auto operator=(std::initializer_list<T> list) -> Tensor& {
-            if (list.size() != data.size()) {
-                throw std::invalid_argument("Data size does not match tensor size");
-            }
-
-            std::copy(list.begin(), list.end(), data.begin());
-            return *this;
+        constexpr auto operator()(const auto... idxs) -> T& {
+            return m_data[physical_index(idxs...)];
         }
 
-        template <typename... Idxs>
-            requires(sizeof...(Idxs) == Rank)
-        auto operator()(const Idxs... idxs) -> T& {
-            size_t idx = 0;
-            size_t dim = 0;
-            ((static_cast<size_t>(idxs) < dims_array[dim]
-                  ? idx += steps[dim++] * idxs
-                  : throw std::out_of_range("Index out of bounds")),
-             ...);
-            return data[idx];
-        }
-
-        template <typename... Idxs>
-            requires(sizeof...(Idxs) == Rank)
-        auto operator()(const Idxs... idxs) const -> const T& {
-            size_t idx = 0;
-            size_t dim = 0;
-            ((static_cast<size_t>(idxs) < dims_array[dim]
-                  ? idx += steps[dim++] * idxs
-                  : throw std::out_of_range("Index out of bounds")),
-             ...);
-            return data[idx];
+        [[nodiscard]] constexpr auto operator()(const auto... idxs) const -> const T& {
+            return m_data[physical_index(idxs...)];
         }
 
         auto operator()(const std::array<size_t, Rank>& idxs) -> T& {
             size_t idx = 0;
             for (size_t dim = 0; dim < Rank; dim++) {
-                idxs[dim] < dims_array[dim] ? idx += steps[dim] * idxs[dim]
-                                            : throw std::out_of_range("Index out of bounds");
+                idxs[dim] < m_shape[dim] ? idx += m_steps[dim] * idxs[dim]
+                                         : throw std::out_of_range("Index out of bounds");
             }
-            return data[idx];
+            return m_data[idx];
         }
 
         auto operator()(const std::array<size_t, Rank>& idxs) const -> const T& {
             size_t idx = 0;
             for (size_t dim = 0; dim < Rank; dim++) {
-                idxs[dim] < dims_array[dim] ? idx += steps[dim] * idxs[dim]
-                                            : throw std::out_of_range("Index out of bounds");
+                idxs[dim] < m_shape[dim] ? idx += m_steps[dim] * idxs[dim]
+                                         : throw std::out_of_range("Index out of bounds");
             }
-            return data[idx];
+            return m_data[idx];
         }
 
         auto operator[](const size_t idx) -> T& {
-            if (idx >= data.size()) {
-                throw std::out_of_range("Index out of bounds");
-            }
-
-            return data[idx];
+            return m_data.at(idx);
         }
 
         auto operator[](const size_t idx) const -> const T& {
-            if (idx >= data.size()) {
-                throw std::out_of_range("Index out of bounds");
-            }
-
-            return data[idx];
+            return m_data.at(idx);
         }
 
         [[nodiscard]] auto size() const -> size_t {
-            return data.size();
+            return m_data.size();
         }
 
         auto shape() const noexcept -> const std::array<size_t, Rank>& {
-            return dims_array;
+            return m_shape;
         }
 
         void reshape(const std::array<size_t, Rank>& new_shape) {
-            data.resize(std::accumulate(new_shape.begin(), new_shape.end(), static_cast<size_t>(1),
-                                        std::multiplies()));
-            dims_array = new_shape;
+            m_data.resize(std::ranges::fold_left(new_shape, 1, std::multiplies()));
+            m_shape = new_shape;
             update_steps();
         }
 
@@ -244,52 +155,51 @@ namespace utec::algebra {
             requires(sizeof...(Dims) == Rank)
         void reshape(const Dims... dims) {
             std::array<size_t, Rank> new_shape{static_cast<size_t>(dims)...};
-            data.resize(std::accumulate(new_shape.begin(), new_shape.end(), static_cast<size_t>(1),
-                                        std::multiplies()));
-            dims_array = new_shape;
+            m_data.resize(std::ranges::fold_left(new_shape, 1, std::multiplies()));
+            m_shape = new_shape;
             update_steps();
         }
 
         void fill(const T& value) noexcept {
-            std::ranges::fill(data, value);
+            std::ranges::fill(m_data, value);
         }
 
-        auto row(size_t index) const -> Tensor<T, 2>
+        auto row(const size_t index) const -> Tensor<T, 2>
             requires(Rank == 2)
         {
-            if (index >= dims_array[0]) {
+            if (index >= m_shape[0]) {
                 throw std::out_of_range("Row index out of bounds");
             }
 
-            Tensor<T, 2> result({1, dims_array[1]});
-            for (size_t j = 0; j < dims_array[1]; ++j) {
+            Tensor<T, 2> result(1, m_shape[1]);
+            for (size_t j = 0; j < m_shape[1]; ++j) {
                 result(0, j) = (*this)(index, j);
             }
             return result;
         }
 
-        void set_row(size_t index, const Tensor<T, 2>& row_tensor)
+        void set_row(const size_t index, const Tensor<T, 2>& row_tensor)
             requires(Rank == 2)
         {
-            if (row_tensor.shape()[0] != 1 || row_tensor.shape()[1] != dims_array[1]) {
+            if (row_tensor.shape()[0] != 1 || row_tensor.shape()[1] != m_shape[1]) {
                 throw std::invalid_argument("Row shape does not match");
             }
 
-            for (size_t j = 0; j < dims_array[1]; ++j) {
+            for (size_t j = 0; j < m_shape[1]; ++j) {
                 (*this)(index, j) = row_tensor(0, j);
             }
         }
 
-        auto slice(size_t index) const -> Tensor<T, 2>
+        auto slice(const size_t index) const -> Tensor<T, 2>
             requires(Rank == 3)
         {
-            if (index >= dims_array[0]) {
+            if (index >= m_shape[0]) {
                 throw std::out_of_range("Index out of bounds");
             }
 
-            Tensor<T, 2> result(dims_array[1], dims_array[2]);
-            for (size_t j = 0; j < dims_array[1]; ++j) {
-                for (size_t k = 0; k < dims_array[2]; ++k) {
+            Tensor<T, 2> result(m_shape[1], m_shape[2]);
+            for (size_t j = 0; j < m_shape[1]; ++j) {
+                for (size_t k = 0; k < m_shape[2]; ++k) {
                     result(j, k) = (*this)(index, j, k);
                 }
             }
@@ -297,364 +207,269 @@ namespace utec::algebra {
             return result;
         }
 
-        void set_slice(size_t index, const Tensor<T, 2>& slice)
+        void set_slice(const size_t index, const Tensor<T, 2>& slice)
             requires(Rank == 3)
         {
-            if (index >= dims_array[0]) {
+            if (index >= m_shape[0]) {
                 throw std::out_of_range("Index out of bounds");
             }
 
-            if (slice.shape()[0] != dims_array[1] || slice.shape()[1] != dims_array[2]) {
+            if (slice.shape()[0] != m_shape[1] || slice.shape()[1] != m_shape[2]) {
                 throw std::invalid_argument("Slice shape does not match");
             }
 
-            for (size_t j = 0; j < dims_array[1]; ++j) {
-                for (size_t k = 0; k < dims_array[2]; ++k) {
+            for (size_t j = 0; j < m_shape[1]; ++j) {
+                for (size_t k = 0; k < m_shape[2]; ++k) {
                     (*this)(index, j, k) = slice(j, k);
                 }
             }
         }
 
-        template <size_t OtherRank>
-        auto apply_elementwise(const Tensor<T, OtherRank>& other, auto op) const
-            -> Tensor<T, std::max(Rank, OtherRank)> {
-            constexpr size_t ResultRank = std::max(Rank, OtherRank);
-            std::array<size_t, ResultRank> result_shape{};
+        auto broadcast(const Tensor<T, Rank>& rhs, auto fn) const -> Tensor<T, Rank> {
+            if (m_shape == rhs.m_shape) {
+                // Element-wise
+                Tensor<T, Rank> result{m_shape};
+                for (std::size_t i = 0; i < m_data.size(); ++i) {
+                    result[i] = fn(m_data[i], rhs[i]);
+                }
+                return result;
+            }
 
-            for (size_t i = 0; i < ResultRank; ++i) {
-                size_t dim_this = i < ResultRank - Rank ? 1 : dims_array[i - (ResultRank - Rank)];
-                size_t dim_other =
-                    i < ResultRank - OtherRank ? 1 : other.dims_array[i - (ResultRank - OtherRank)];
+            std::array<std::size_t, Rank> result_shape;
 
-                if (dim_this != dim_other && dim_this != 1 && dim_other != 1) {
+            for (std::size_t i = 0; i < Rank; ++i) {
+                if (m_shape[i] == rhs.m_shape[i]) {
+                    result_shape[i] = m_shape[i];
+                } else if (m_shape[i] == 1 || rhs.m_shape[i] == 1) {
+                    result_shape[i] = std::max(m_shape[i], rhs.m_shape[i]);
+                } else {
                     throw std::invalid_argument(
                         "Shapes do not match and they are not compatible for broadcasting");
                 }
-
-                result_shape[i] = std::max(dim_this, dim_other);
             }
 
-            Tensor<T, ResultRank> result(result_shape);
-            const auto result_steps = result.get_steps();
-            const size_t total = size();
+            Tensor<T, Rank> result{result_shape};
 
-            for (size_t idx = 0; idx < total; ++idx) {
-                size_t idx_this = 0;
-                size_t idx_other = 0;
-                size_t temp = idx;
+            apply_with_counter(
+                [&](const auto& result_index) {
+                    std::array<std::size_t, Rank> lhs_index{result_index};
+                    std::array<std::size_t, Rank> rhs_index{result_index};
 
-                for (size_t i = 0; i < ResultRank; ++i) {
-                    const size_t coord = temp / result_steps[i];
-                    temp %= result_steps[i];
-
-                    if (i >= ResultRank - Rank) {
-                        const size_t dim = i - (ResultRank - Rank);
-                        const size_t step = dims_array[dim] == 1 ? 0 : steps[dim];
-                        idx_this += coord * step;
+                    for (std::size_t i = 0; i < Rank; ++i) {
+                        lhs_index[i] %= m_shape[i];
                     }
 
-                    if (i >= ResultRank - OtherRank) {
-                        const size_t dim = i - (ResultRank - OtherRank);
-                        const size_t step = other.dims_array[dim] == 1 ? 0 : other.steps[dim];
-                        idx_other += coord * step;
+                    for (std::size_t i = 0; i < Rank; ++i) {
+                        rhs_index[i] %= rhs.m_shape[i];
                     }
-                }
 
-                result[idx] = op(data[idx_this], other[idx_other]);
-            }
+                    std::apply(result, result_index) =
+                        fn(std::apply(*this, lhs_index), std::apply(rhs, rhs_index));
+                },
+                result_shape);
 
             return result;
         }
 
-        template <size_t OtherRank>
-        auto operator+(const Tensor<T, OtherRank>& other) const
-            -> Tensor<T, std::max(Rank, OtherRank)> {
-            return apply_elementwise(other, std::plus());
+        auto operator+(const Tensor<T, Rank>& other) const -> Tensor<T, Rank> {
+            return broadcast(other, std::plus());
         }
 
-        template <size_t OtherRank>
-        auto operator-(const Tensor<T, OtherRank>& other) const
-            -> Tensor<T, std::max(Rank, OtherRank)> {
-            return apply_elementwise(other, std::minus());
+        auto operator-(const Tensor<T, Rank>& other) const -> Tensor<T, Rank> {
+            return broadcast(other, std::minus());
         }
 
-        template <size_t OtherRank>
-        auto operator*(const Tensor<T, OtherRank>& other) const
-            -> Tensor<T, std::max(Rank, OtherRank)> {
-            return apply_elementwise(other, std::multiplies());
+        auto operator*(const Tensor<T, Rank>& other) const -> Tensor<T, Rank> {
+            return broadcast(other, std::multiplies());
         }
 
-        template <size_t OtherRank>
-        auto operator/(const Tensor<T, OtherRank>& other) const
-            -> Tensor<T, std::max(Rank, OtherRank)> {
-            return apply_elementwise(other, std::divides());
+        auto operator/(const Tensor<T, Rank>& other) const -> Tensor<T, Rank> {
+            return broadcast(other, std::divides());
         }
 
         auto operator+(const T& scalar) const -> Tensor<T, Rank> {
-            Tensor<T, Rank> result(dims_array);
-            std::transform(data.begin(), data.end(), result.data.begin(),
-                           [&](const T& value) { return value + scalar; });
+            Tensor<T, Rank> result(m_shape);
+            std::ranges::transform(m_data, result.m_data.begin(),
+                                   [&](const T& value) { return value + scalar; });
+            return result;
+        }
+
+        auto operator-(const T& scalar) const -> Tensor<T, Rank> {
+            Tensor<T, Rank> result(m_shape);
+            std::ranges::transform(m_data, result.m_data.begin(),
+                                   [&](const T& value) { return value - scalar; });
+            return result;
+        }
+
+        auto operator*(const T& scalar) const -> Tensor<T, Rank> {
+            Tensor<T, Rank> result(m_shape);
+            std::ranges::transform(m_data, result.m_data.begin(),
+                                   [&](const T& value) { return value * scalar; });
+            return result;
+        }
+
+        auto operator/(const T& scalar) const -> Tensor<T, Rank> {
+            Tensor<T, Rank> result(m_shape);
+            std::ranges::transform(m_data, result.m_data.begin(),
+                                   [&](const T& value) { return value / scalar; });
             return result;
         }
 
         friend auto operator+(const T& scalar, const Tensor& tensor) -> Tensor<T, Rank> {
-            Tensor<T, Rank> result(tensor.dims_array);
-            std::transform(tensor.data.begin(), tensor.data.end(), result.data.begin(),
-                           [&](const T& value) { return scalar + value; });
+            Tensor<T, Rank> result(tensor.m_shape);
+            std::ranges::transform(tensor.m_data, result.m_data.begin(),
+                                   [&](const T& value) { return scalar + value; });
             return result;
         }
 
-        auto operator-(const T& scalar) const -> Tensor {
-            Tensor result(dims_array);
-            std::transform(data.begin(), data.end(), result.data.begin(),
-                           [&](const T& value) { return value - scalar; });
+        friend auto operator-(const T& scalar, const Tensor& tensor) -> Tensor<T, Rank> {
+            Tensor<T, Rank> result(tensor.m_shape);
+            std::ranges::transform(tensor.m_data, result.m_data.begin(),
+                                   [&](const T& value) { return scalar - value; });
             return result;
         }
 
-        friend auto operator-(const T& scalar, const Tensor& tensor) -> Tensor {
-            Tensor result(tensor.dims_array);
-            std::transform(tensor.data.begin(), tensor.data.end(), result.data.begin(),
-                           [&](const T& value) { return scalar - value; });
+        friend auto operator*(const T& scalar, const Tensor& tensor) -> Tensor<T, Rank> {
+            Tensor<T, Rank> result(tensor.m_shape);
+            std::ranges::transform(tensor.m_data, result.m_data.begin(),
+                                   [&](const T& value) { return scalar * value; });
             return result;
         }
 
-        auto operator*(const T& scalar) const -> Tensor {
-            Tensor result(dims_array);
-            std::transform(data.begin(), data.end(), result.data.begin(),
-                           [&](const T& value) { return value * scalar; });
+        friend auto operator/(const T& scalar, const Tensor& tensor) -> Tensor<T, Rank> {
+            Tensor<T, Rank> result(tensor.m_shape);
+            std::ranges::transform(tensor.m_data, result.m_data.begin(),
+                                   [&](const T& value) { return scalar / value; });
             return result;
         }
 
-        friend auto operator*(const T& scalar, const Tensor& tensor) -> Tensor {
-            Tensor result(tensor.dims_array);
-            std::transform(tensor.data.begin(), tensor.data.end(), result.data.begin(),
-                           [&](const T& value) { return scalar * value; });
+        auto operator-() const -> Tensor<T, Rank> {
+            Tensor<T, Rank> result(m_shape);
+            std::ranges::transform(m_data, result.m_data.begin(), std::negate());
             return result;
         }
 
-        auto operator/(const T& scalar) const -> Tensor {
-            Tensor result(dims_array);
-            std::transform(data.begin(), data.end(), result.data.begin(),
-                           [&](const T& value) { return value / scalar; });
-            return result;
-        }
+        friend auto operator<<(std::ostream& out, const Tensor<T, Rank>& tensor)
+            -> std::ostream& requires(Rank > 1) {
+                const auto& shape = tensor.shape();
+                std::array<size_t, Rank> index{};
 
-        friend auto operator/(const T& scalar, const Tensor& tensor) -> Tensor {
-            Tensor result(tensor.dims_array);
-            std::transform(tensor.data.begin(), tensor.data.end(), result.data.begin(),
-                           [&](const T& value) { return scalar / value; });
-            return result;
-        }
+                std::function<void(size_t, size_t)> print_recursive = [&](size_t dim,
+                                                                          const size_t indent) {
+                    out << std::string(indent, ' ') << "{\n";
 
-        auto operator+=(const T& scalar) -> Tensor& {
-            std::transform(data.begin(), data.end(), data.begin(),
-                           [&](const T& value) { return value + scalar; });
-            return *this;
-        }
+                    for (size_t i = 0; i < shape[dim]; ++i) {
+                        index[dim] = i;
 
-        auto operator-=(const T& scalar) -> Tensor& {
-            std::transform(data.begin(), data.end(), data.begin(),
-                           [&](const T& value) { return value - scalar; });
-            return *this;
-        }
-
-        auto operator*=(const T& scalar) -> Tensor& {
-            std::transform(data.begin(), data.end(), data.begin(),
-                           [&](const T& value) { return value * scalar; });
-            return *this;
-        }
-
-        auto operator/=(const T& scalar) -> Tensor& {
-            std::transform(data.begin(), data.end(), data.begin(),
-                           [&](const T& value) { return value / scalar; });
-            return *this;
-        }
-
-        auto operator-() const -> Tensor {
-            Tensor result(dims_array);
-            std::transform(data.begin(), data.end(), result.data.begin(), std::negate<T>());
-            return result;
-        }
-
-        friend auto operator<<(std::ostream& os, const Tensor& tensor) -> std::ostream&
-            requires(Rank > 1)
-        {
-            const auto& shape = tensor.shape();
-            std::array<size_t, Rank> index{};
-
-            std::function<void(size_t, size_t)> print_recursive = [&](size_t dim,
-                                                                      const size_t indent) {
-                os << std::string(indent, ' ') << "{\n";
-
-                for (size_t i = 0; i < shape[dim]; ++i) {
-                    index[dim] = i;
-
-                    if (dim == Rank - 2) {
-                        os << std::string(indent + 2, ' ');
-                        for (size_t j = 0; j < shape[Rank - 1]; ++j) {
-                            index[Rank - 1] = j;
-                            os << tensor(index) << " ";
+                        if (dim == Rank - 2) {
+                            out << std::string(indent + 2, ' ');
+                            for (size_t j = 0; j < shape[Rank - 1]; ++j) {
+                                index[Rank - 1] = j;
+                                out << tensor(index) << " ";
+                            }
+                            out << "\n";
+                        } else {
+                            print_recursive(dim + 1, indent + 2);
                         }
-                        os << "\n";
-                    } else {
-                        print_recursive(dim + 1, indent + 2);
                     }
-                }
 
-                os << std::string(indent, ' ') << "}\n";
-            };
+                    out << std::string(indent, ' ') << "}\n";
+                };
 
-            print_recursive(0, 0);
-            return os;
-        }
+                print_recursive(0, 0);
+                return out;
+            }
 
-        friend auto operator<<(std::ostream& os, const Tensor& tensor) -> std::ostream&
-            requires(Rank == 1)
-        {
-            std::ranges::copy(tensor, std::ostream_iterator<T>(os, " "));
-            os << "\n";
-            return os;
-        }
+        friend auto operator<<(std::ostream& out, const Tensor<T, Rank>& tensor)
+            -> std::ostream& requires(Rank == 1) {
+                std::ranges::copy(tensor, std::ostream_iterator<T>(out, " "));
+                return out;
+            }
 
         auto begin() noexcept {
-            return data.begin();
+            return m_data.begin();
         }
 
         auto end() noexcept {
-            return data.end();
+            return m_data.end();
         }
 
-        auto begin() const noexcept {
-            return data.begin();
+        [[nodiscard]] auto begin() const noexcept {
+            return m_data.begin();
         }
 
-        auto end() const noexcept {
-            return data.end();
+        [[nodiscard]] auto end() const noexcept {
+            return m_data.end();
         }
 
-        auto cbegin() const noexcept {
-            return data.cbegin();
+        [[nodiscard]] constexpr auto transpose_2d() const -> Tensor<T, 2> {
+            Tensor<T, 2> result(m_shape[1], m_shape[0]);
+
+            for (std::size_t i = 0; i < m_shape[0]; ++i) {
+                for (std::size_t j = 0; j < m_shape[1]; ++j) {
+                    result(j, i) = (*this)(i, j);
+                }
+            }
+
+            return result;
         }
 
-        auto cend() const noexcept {
-            return data.cend();
+        [[nodiscard]] constexpr auto transpose_2d() const -> Tensor<T, Rank>
+            requires(Rank > 2)
+        {
+            std::array<std::size_t, Rank> new_shape{m_shape};
+            std::swap(new_shape[Rank - 2], new_shape[Rank - 1]);
+
+            Tensor<T, Rank> result{new_shape};
+            std::array<std::size_t, Rank - 2> size{};
+
+            std::copy(m_shape.begin(), m_shape.end() - 2, size.begin());
+
+            apply_with_counter(
+                [&](const auto& index) {
+                    std::array<std::size_t, Rank> full_index;
+                    std::copy(index.begin(), index.end(), full_index.begin());
+
+                    for (std::size_t i = 0; i < m_shape[Rank - 2]; ++i) {
+                        for (std::size_t j = 0; j < m_shape[Rank - 1]; ++j) {
+                            full_index[Rank - 2] = i;
+                            full_index[Rank - 1] = j;
+                            const T src = std::apply(*this, full_index);
+
+                            full_index[Rank - 2] = j;
+                            full_index[Rank - 1] = i;
+                            T& dest = std::apply(result, full_index);
+
+                            dest = src;
+                        }
+                    }
+                },
+                size);
+
+            return result;
         }
 
-        auto rbegin() noexcept {
-            return data.rbegin();
-        }
-
-        auto rend() noexcept {
-            return data.rend();
-        }
-
-        auto rbegin() const noexcept {
-            return data.rbegin();
-        }
-
-        auto rend() const noexcept {
-            return data.rend();
-        }
-
-        auto crbegin() const noexcept {
-            return data.crbegin();
-        }
-
-        auto crend() const noexcept {
-            return data.crend();
+        constexpr auto apply(auto fn) const -> Tensor<T, Rank> {
+            Tensor<T, Rank> result(m_shape);
+            std::ranges::transform(m_data, result.m_data.begin(), fn);
+            return result;
         }
     };
 
-    template <typename T, size_t Rank>
-    auto transpose_2d(const Tensor<T, Rank>& tensor) -> Tensor<T, Rank>
-        requires(Rank > 1)
-    {
-        std::array<size_t, Rank> new_shape = tensor.shape();
-        std::swap(new_shape[Rank - 1], new_shape[Rank - 2]);
-
-        Tensor<T, Rank> result(new_shape);
-        const auto& result_steps = result.get_steps();
-        const auto& input_steps = tensor.get_steps();
-        const size_t total = tensor.size();
-
-        for (size_t idx = 0; idx < total; ++idx) {
-            size_t temp = idx;
-            size_t out_idx = 0;
-
-            for (size_t i = 0; i < Rank; ++i) {
-                const size_t coord = temp / input_steps[i];
-                temp %= input_steps[i];
-                out_idx += coord * result_steps[i == Rank - 2   ? Rank - 1
-                                                : i == Rank - 1 ? Rank - 2
-                                                                : i];
-            }
-
-            result[out_idx] = tensor[idx];
+    template <typename T>
+    [[nodiscard]] constexpr auto matrix_product(const Tensor<T, 2>& lhs, const Tensor<T, 2>& rhs)
+        -> Tensor<T, 2> {
+        if (lhs.shape()[1] != rhs.shape()[0]) {
+            throw std::invalid_argument("Incompatible matrix dimensions for multiplication");
         }
 
-        return result;
-    }
+        // Simple matrix multiplication
+        Tensor<T, 2> result(lhs.shape()[0], rhs.shape()[1]);
 
-    template <typename T, size_t Rank>
-    auto matrix_product(const Tensor<T, Rank>& tensor1, const Tensor<T, Rank>& tensor2)
-        -> Tensor<T, Rank> {
-        const auto& t1_shape = tensor1.shape();
-        const auto& t2_shape = tensor2.shape();
-
-        if (t1_shape[Rank - 1] != t2_shape[Rank - 2]) {
-            throw std::invalid_argument("Matrix dimensions are incompatible for multiplication");
-        }
-
-        for (size_t i = 0; i < Rank - 2; ++i) {
-            if (t1_shape[i] != t2_shape[i]) {
-                throw std::invalid_argument(
-                    "Matrix dimensions are compatible for multiplication BUT Batch dimensions do "
-                    "not match");
-            }
-        }
-
-        std::array<size_t, Rank> result_shape = t1_shape;
-        result_shape[Rank - 1] = t2_shape[Rank - 1];
-        Tensor<T, Rank> result(result_shape);
-
-        const auto& t1_steps = tensor1.get_steps();
-        const auto& t2_steps = tensor2.get_steps();
-        const auto& result_steps = result.get_steps();
-
-        size_t batch_size = 1;
-        for (size_t i = 0; i < Rank - 2; ++i) {
-            batch_size *= t1_shape[i];
-        }
-
-        const size_t M = t1_shape[Rank - 2];
-        const size_t N = t1_shape[Rank - 1];
-        const size_t P = t2_shape[Rank - 1];
-
-        for (size_t batch = 0; batch < batch_size; ++batch) {
-            size_t t1_offset = 0;
-            size_t t2_offset = 0;
-            size_t result_offset = 0;
-
-            size_t temp = batch;
-            for (size_t i = Rank - 2; i-- > 0;) {
-                size_t idx = temp % t1_shape[i];
-                temp /= t1_shape[i];
-                t1_offset += idx * t1_steps[i];
-                t2_offset += idx * t2_steps[i];
-                result_offset += idx * result_steps[i];
-            }
-
-            for (size_t i = 0; i < M; ++i) {
-                size_t t1_row_offset = t1_offset + (i * t1_steps[Rank - 2]);
-                size_t result_row_offset = result_offset + (i * result_steps[Rank - 2]);
-                for (size_t j = 0; j < P; ++j) {
-                    T sum{};
-                    for (size_t k = 0; k < N; ++k) {
-                        sum += tensor1[t1_row_offset + (k * t1_steps[Rank - 1])] *
-                               tensor2[t2_offset + (k * t2_steps[Rank - 2]) +
-                                       (j * t2_steps[Rank - 1])];
-                    }
-                    result[result_row_offset + (j * result_steps[Rank - 1])] = sum;
+        for (std::size_t i = 0; i < result.shape()[0]; ++i) {
+            for (std::size_t j = 0; j < result.shape()[1]; ++j) {
+                for (std::size_t k = 0; k < lhs.shape()[1]; ++k) {
+                    result(i, j) += lhs(i, k) * rhs(k, j);
                 }
             }
         }
@@ -662,10 +477,51 @@ namespace utec::algebra {
         return result;
     }
 
-    template <typename T, size_t Rank>
-    auto apply(Tensor<T, Rank> tensor, auto function) -> Tensor<T, Rank> {
-        std::transform(tensor.begin(), tensor.end(), tensor.begin(), function);
-        return tensor;
+    template <typename T, std::size_t Rank>
+        requires(Rank > 2)
+    [[nodiscard]] constexpr auto matrix_product(const Tensor<T, Rank>& lhs,
+                                                const Tensor<T, Rank>& rhs) -> Tensor<T, Rank> {
+        for (std::size_t i = 0; i < Rank - 2; ++i) {
+            if (lhs.shape()[i] != rhs.shape()[i]) {
+                throw std::invalid_argument("Incompatible batch dimensions for multiplication");
+            }
+        }
+
+        std::array<std::size_t, Rank> new_shape{lhs.shape()};
+        new_shape[Rank - 1] = rhs.shape()[Rank - 1];
+
+        Tensor<T, Rank> result(new_shape);
+        std::array<std::size_t, Rank - 2> size{};
+        std::copy(lhs.shape().begin(), lhs.shape().end() - 2, size.begin());
+
+        apply_with_counter(
+            [&](const auto& index) {
+                std::array<std::size_t, Rank> full_index;
+                std::ranges::copy(index, full_index.begin());
+
+                for (std::size_t i = 0; i < result.shape()[Rank - 2]; ++i) {
+                    for (std::size_t j = 0; j < result.shape()[Rank - 1]; ++j) {
+                        for (std::size_t k = 0; k < lhs.shape()[Rank - 1]; ++k) {
+                            full_index[Rank - 2] = i;
+                            full_index[Rank - 1] = k;
+                            const T& src1 = std::apply(lhs, full_index);
+
+                            full_index[Rank - 2] = k;
+                            full_index[Rank - 1] = j;
+                            const T& src2 = std::apply(rhs, full_index);
+
+                            full_index[Rank - 2] = i;
+                            full_index[Rank - 1] = j;
+                            T& dest = std::apply(result, full_index);
+
+                            dest += src1 * src2;
+                        }
+                    }
+                }
+            },
+            size);
+
+        return result;
     }
 
 }  // namespace utec::algebra

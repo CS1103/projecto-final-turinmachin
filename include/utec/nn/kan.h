@@ -131,7 +131,7 @@ namespace utec::neural_network {
                 }
             }
 
-            auto phi_w_T = algebra::transpose_2d(phi_weights);
+            auto phi_w_T = phi_weights.transpose_2d();
             auto out = algebra::matrix_product(psi_sum, phi_w_T);
 
             for (size_t b = 0; b < B; ++b) {
@@ -146,7 +146,7 @@ namespace utec::neural_network {
         auto backward(const algebra::Tensor<T, 2>& dZ) -> algebra::Tensor<T, 2> override {
             const size_t B = input.shape()[0];
 
-            gradient_phi_weights = algebra::matrix_product(algebra::transpose_2d(dZ), psi_sum);
+            gradient_phi_weights = algebra::matrix_product(dZ.transpose_2d(), psi_sum);
             // gradient_phi_weights = algebra::transpose_2d(gradient_phi_weights);
 
             gradient_phi_biases.fill(0);
