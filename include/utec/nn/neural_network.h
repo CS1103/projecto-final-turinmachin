@@ -43,7 +43,9 @@ namespace utec::neural_network {
             std::ranges::iota(indices, 0);
 
             for (size_t epoch = 0; epoch < epochs; ++epoch) {
-                std::println("Epoch {}", epoch);
+                if (epoch % 100 == 0) {
+                    std::println("Epoch {}", epoch);
+                }
 
                 std::ranges::shuffle(indices, rng);
 

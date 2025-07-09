@@ -2,6 +2,10 @@
 #define INCLUDE_GAME_CONSTANTS_H
 
 #include <cstddef>
+#include <string>
+
+constexpr std::string GAME_TITLE = "Brain Ager";
+
 constexpr int WINDOW_WIDTH = 960;
 constexpr int WINDOW_HEIGHT = 540;
 constexpr int FPS = 60;

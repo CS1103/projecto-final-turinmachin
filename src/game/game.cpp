@@ -17,18 +17,20 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include "common/agent.h"
 #include "game/constants.h"
 #include "game/math/factory.h"
 #include "game/pixels.h"
 #include "game/render.h"
 #include "game/sdl/color.h"
 #include "game/sdl/text.h"
-#include "utec/algebra/tensor.h"
+#include "game/sdl/texture.h"
 
-using utec::algebra::Tensor;
+using namespace agent;
 
-Game::Game(SDL_Renderer* const renderer, std::mt19937 rng)
-    : rng(rng),
+Game::Game(SDL_Renderer* const renderer, std::unique_ptr<IDigitAgent> agent, std::mt19937 rng)
+    : agent(std::move(agent)),
+      rng(rng),
       renderer(renderer),
       canvas_texture(SDL_CreateTexture(renderer,
                                        SDL_PIXELFORMAT_RGBA32,
@@ -76,51 +78,37 @@ void Game::handle_event(const SDL_Event& event) {
         case SDL_MOUSEBUTTONUP: {
             mouse_down = false;
 
-            if (!current_equation) {
-                break;
-            }
-
-            constexpr auto CANVAS_SIZE = static_cast<std::size_t>(CANVAS_WIDTH) * CANVAS_HEIGHT;
-            std::vector<std::uint8_t> pixel_data(CANVAS_SIZE * 4);
-
-            SDL_SetRenderTarget(renderer, canvas_texture);
-            if (SDL_RenderReadPixels(renderer, nullptr, SDL_PIXELFORMAT_RGBA8888, pixel_data.data(),
-                                     CANVAS_WIDTH * 4) != 0) {
-                throw std::runtime_error("Could not read texture pixels: " +
-                                         std::string(SDL_GetError()));
-            }
-            SDL_SetRenderTarget(renderer, nullptr);
-
-            std::vector<std::uint8_t> grayscale_data =
-                pixels::make_grayscale(pixel_data, CANVAS_WIDTH);
-
-            const SDL_Rect src_rect = {0, 0, CANVAS_WIDTH, CANVAS_HEIGHT};
-
-            std::vector<std::uint8_t> downscaled =
-                pixels::downscale_to_8x8(grayscale_data, src_rect, CANVAS_WIDTH);
-
-            Tensor<double, 2> input(1, 64);
-            std::ranges::transform(downscaled, input.begin(),
-                                   [](const auto pixel) { return (255 - pixel) / 255.0; });
-
-            const Tensor<double, 2> output = net.predict(input);
-
-            int drawn_number = 0;
-            for (int j = 1; j < 10; ++j) {
-                if (output[j] > output[drawn_number]) {
-                    drawn_number = j;
-                }
-            }
-
-            current_guess = drawn_number;
-            if (current_guess == (*current_equation)->answer()) {
-                state = State::Transitioning;
-                wait_delay = 60;
+            if (state == State::Playing && current_equation) {
+                process_drawing();
             }
             break;
         }
         default: {
         }
+    }
+}
+
+void Game::process_drawing() {
+    const std::vector<std::uint8_t> pixel_data = sdl::texture::extract_pixel_data(
+        renderer, canvas_texture, SDL_PIXELFORMAT_RGBA8888, CANVAS_WIDTH, CANVAS_HEIGHT, 4);
+
+    const std::vector<std::uint8_t> grayscale_data =
+        pixels::make_grayscale(pixel_data, CANVAS_WIDTH);
+
+    const SDL_Rect src_rect = {0, 0, CANVAS_WIDTH, CANVAS_HEIGHT};
+
+    const std::vector<std::uint8_t> downscaled =
+        pixels::downscale_to_8x8(grayscale_data, src_rect, CANVAS_WIDTH);
+
+    std::vector<double> features(downscaled.size());
+    std::ranges::transform(downscaled, features.begin(),
+                           [](const auto pixel) { return (255 - pixel) / 255.0; });
+
+    current_guess = agent->predict(features);
+
+    if (current_guess == (*current_equation)->answer()) {
+        state = State::WinTransition;
+        wait_delay = 60;
     }
 }
 
@@ -145,7 +133,7 @@ void Game::transition() {
 }
 
 void Game::update(const double delta) {
-    if (state == State::Transitioning) {
+    if (state == State::WinTransition) {
         wait_delay -= 60.0 * delta;
 
         if (wait_delay <= 0.0) {
@@ -199,14 +187,14 @@ void Game::render(const render::ResourceManager& resources) const {
     SDL_RenderClear(renderer);
 
     // Game title
-    sdl::text::draw_text(renderer, resources.font, "Brain Ager", CANVAS_X / 2, 20, 60,
+    sdl::text::draw_text(renderer, resources.font, GAME_TITLE, CANVAS_X / 2, 20, 60,
                          sdl::text::HAlign::Center, sdl::text::VAlign::Top, sdl::color::WHITE);
 
     // Draw texture
     const SDL_Rect canvas_rect = {CANVAS_X, CANVAS_Y, CANVAS_WIDTH, CANVAS_HEIGHT};
     SDL_RenderCopy(renderer, canvas_texture, nullptr, &canvas_rect);
 
-    const bool solved = state == State::Transitioning;
+    const bool solved = state == State::WinTransition;
 
     // Current equation
     if (current_equation) {

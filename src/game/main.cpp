@@ -3,9 +3,14 @@
 #include <SDL_ttf.h>
 #include <algorithm>
 #include <cstdint>
+#include <fstream>
 #include <iostream>
+#include <memory>
 #include <print>
 #include <random>
+#include <string>
+#include "common/agent.h"
+#include "common/data.h"
 #include "game/constants.h"
 #include "game/game.h"
 #include "game/render.h"
@@ -23,8 +28,8 @@ auto main() -> int {
     }
 
     SDL_Window* const window =
-        SDL_CreateWindow("Brain Ager", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH,
-                         WINDOW_HEIGHT, 0);
+        SDL_CreateWindow(GAME_TITLE.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+                         WINDOW_WIDTH, WINDOW_HEIGHT, 0);
     SDL_Renderer* const renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     if (window == nullptr || renderer == nullptr) {
@@ -45,16 +50,25 @@ auto main() -> int {
 
     std::random_device rd{};
 
-    Game state(renderer, std::mt19937(rd()));
-    render::ResourceManager resources{};
-    resources.font = TTF_OpenFont("../share/ComicShannsMono-Regular.ttf", 96);
+    using namespace agent;
 
-    while (!state.should_quit()) {
+    std::ifstream net_file = data::get_data_file("net.pp20");
+    std::unique_ptr<IDigitAgent> agent = std::make_unique<DigitReader>(net_file);
+    net_file.close();
+
+    Game game(renderer, std::move(agent), std::mt19937(rd()));
+
+    const std::string font_path = data::get_data_file_path("ComicShannsMono-Regular.ttf");
+
+    render::ResourceManager resources{};
+    resources.font = TTF_OpenFont(font_path.c_str(), 96);
+
+    while (!game.should_quit()) {
         const long double frame_start = sdl::time::get_performance_time();
 
         SDL_Event event{};
         while (SDL_PollEvent(&event) != 0) {
-            state.handle_event(event);
+            game.handle_event(event);
         }
 
         const long double new_time = sdl::time::get_performance_time();
@@ -62,11 +76,11 @@ auto main() -> int {
         last_time = new_time;
 
         while (time_accumulator >= DELTA) {
-            state.update(DELTA);
+            game.update(DELTA);
             time_accumulator -= DELTA;
         }
 
-        state.render(resources);
+        game.render(resources);
 
         const long double offset = sdl::time::get_performance_time() - frame_start;
         const long double delay = DELTA - offset;

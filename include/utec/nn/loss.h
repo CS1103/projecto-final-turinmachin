@@ -73,12 +73,14 @@ namespace utec::neural_network {
     class CrossEntropyLoss final : public ILoss<T, 2> {
         algebra::Tensor<T, 2> y_prediction;
         algebra::Tensor<T, 2> y_true;
+        T epsilon;
 
     public:
         template <typename Prediction, typename Expected>
-        CrossEntropyLoss(Prediction&& y_prediction, Expected&& y_true)
+        CrossEntropyLoss(Prediction&& y_prediction, Expected&& y_true, const T epsilon = 1e-7)
             : y_prediction(std::forward<Prediction>(y_prediction)),
-              y_true(std::forward<Expected>(y_true)) {
+              y_true(std::forward<Expected>(y_true)),
+              epsilon(epsilon) {
             if (y_prediction.shape() != y_true.shape()) {
                 throw std::invalid_argument("algebra::Tensors have incompatible shapes");
             }
@@ -91,7 +93,7 @@ namespace utec::neural_network {
 
             for (std::size_t i = 0; i < num_samples; ++i) {
                 for (std::size_t j = 0; j < num_classes; ++j) {
-                    const T pred = std::clamp(y_prediction(i, j), T(1e-7), T(1.0 - 1e-7));
+                    const T pred = std::clamp(y_prediction(i, j), epsilon, 1 - epsilon);
                     sum += y_true(i, j) * std::log(pred);
                 }
             }

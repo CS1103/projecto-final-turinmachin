@@ -39,7 +39,7 @@
 
 ### Requisitos e instalación
 
-1. **Compilador**: GCC 14
+1. **Compilador**: GCC 14+
 2. **Dependencias**:
 
    - CMake 3.29+
