@@ -36,7 +36,6 @@ target_include_directories(brain_ager_trainer PUBLIC include)
 
 add_executable(brain_ager ${game_source})
 target_include_directories(brain_ager PUBLIC include)
-target_include_directories(brain_ager PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(brain_ager PRIVATE SDL3::SDL3 SDL3_ttf::SDL3_ttf)
 
 install(TARGETS brain_ager DESTINATION bin)
