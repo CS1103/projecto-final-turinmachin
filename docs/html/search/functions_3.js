@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['data_0',['data',['../classCatch_1_1StringRef.html#a7f6ea2c2386b3800687ad1f7327b704b',1,'Catch::StringRef']]],
+  ['dataset_1',['Dataset',['../classDataset.html#a88023f55f12065da9d7797e9ea820d56',1,'Dataset']]],
+  ['defaultcolourmode_2',['defaultColourMode',['../classCatch_1_1IConfig.html#a1e50ac75407e1e7d808eae26a4e353dd',1,'Catch::IConfig::defaultColourMode()'],['../classCatch_1_1Config.html#a26266f99f3de3c5e2033a2ce50fdfade',1,'Catch::Config::defaultColourMode()']]],
+  ['defaultlistlisteners_3',['defaultListListeners',['../namespaceCatch.html#a906d1c90c5a8118e737bd14bef2885ea',1,'Catch']]],
+  ['defaultlistreporters_4',['defaultListReporters',['../namespaceCatch.html#a7fc9276bf852d1625d986c0cbc3eabce',1,'Catch']]],
+  ['defaultlisttags_5',['defaultListTags',['../namespaceCatch.html#a29d53521f0da176f732c3a022dbb04df',1,'Catch']]],
+  ['defaultlisttests_6',['defaultListTests',['../namespaceCatch.html#a6dce9f6d9a416fe7a06e6394d557606a',1,'Catch']]],
+  ['delta_7',['delta',['../structCatch_1_1Totals.html#a1a94a654f5f3786b75695e081fc9bca2',1,'Catch::Totals']]],
+  ['dense_8',['Dense',['../classutec_1_1neural__network_1_1Dense.html#a17f3a5bd7b0adf6a917e302ea1ea2694',1,'utec::neural_network::Dense::Dense(const size_t in_f, const size_t out_f)'],['../classutec_1_1neural__network_1_1Dense.html#a57d3b60d03f48a5ef5399658511eae39',1,'utec::neural_network::Dense::Dense(const size_t in_f, const size_t out_f, auto init_w_fun, auto init_b_fun)'],['../classDense.html#a17f3a5bd7b0adf6a917e302ea1ea2694',1,'Dense::Dense(const size_t in_f, const size_t out_f)'],['../classDense.html#a57d3b60d03f48a5ef5399658511eae39',1,'Dense::Dense(const size_t in_f, const size_t out_f, auto init_w_fun, auto init_b_fun)']]],
+  ['deoptimize_5fvalue_9',['deoptimize_value',['../namespaceCatch_1_1Benchmark.html#af5d85780971e55f9337023ad04caa247',1,'Catch::Benchmark']]],
+  ['describe_5fmulti_5fmatcher_10',['describe_multi_matcher',['../namespaceCatch_1_1Matchers_1_1Detail.html#a228a8fff5aa311bd0e3592b8cb711392',1,'Catch::Matchers::Detail']]],
+  ['destruct_11',['destruct',['../structCatch_1_1Benchmark_1_1Detail_1_1ObjectStorage.html#aa900bef7043eb089ebdf32b2df4a492b',1,'Catch::Benchmark::Detail::ObjectStorage']]],
+  ['digitreader_12',['DigitReader',['../classcommon_1_1DigitReader.html#a5ab09b3a2cf61f4da55dc400e8c2a8eb',1,'common::DigitReader::DigitReader(std::mt19937 &amp;rng)'],['../classcommon_1_1DigitReader.html#a07114f0d6697a514dc6eff8bdea15ac9',1,'common::DigitReader::DigitReader(std::istream &amp;net_in)']]],
+  ['directcompare_13',['directCompare',['../namespaceCatch_1_1Detail.html#a18fef8312d01399bbf5722432f099216',1,'Catch::Detail::directCompare(float lhs, float rhs)'],['../namespaceCatch_1_1Detail.html#a4e6b189b0908b0866a4f79b5ba5f9b7d',1,'Catch::Detail::directCompare(double lhs, double rhs)']]],
+  ['discard_14',['discard',['../classCatch_1_1SimplePcg32.html#a877e7a9c14d378af729ad19a0e959178',1,'Catch::SimplePcg32']]],
+  ['display_15',['display',['../classgame_1_1math_1_1AddEquation.html#a64c9e8c7f8cc9783a9b3f6d039546110',1,'game::math::AddEquation::display()'],['../classgame_1_1math_1_1SubtractEquation.html#aca511bd4478183dd4f50f88759cd59a2',1,'game::math::SubtractEquation::display()'],['../classgame_1_1math_1_1DivideEquation.html#a7dc63256840e41007c0509f7a140c977',1,'game::math::DivideEquation::display()'],['../structgame_1_1math_1_1IEquation.html#a51612bb2329d1489d8ea6d92d92d1035',1,'game::math::IEquation::display()']]],
+  ['display_5fsolved_16',['display_solved',['../classgame_1_1math_1_1AddEquation.html#ab0c1fe0a53fc3e87b0e2442d570b403e',1,'game::math::AddEquation::display_solved()'],['../classgame_1_1math_1_1SubtractEquation.html#afb25292003d57cb3868e2e4115347855',1,'game::math::SubtractEquation::display_solved()'],['../classgame_1_1math_1_1DivideEquation.html#a3a83eb7a7042095096f07736f35a4702',1,'game::math::DivideEquation::display_solved()'],['../structgame_1_1math_1_1IEquation.html#ae134a3ebbf36f5eb668f7bea6649223d',1,'game::math::IEquation::display_solved()']]],
+  ['divideequation_17',['DivideEquation',['../classgame_1_1math_1_1DivideEquation.html#ac01731507530fa811ea988872b3a93b7',1,'game::math::DivideEquation']]],
+  ['divideequationfactory_18',['DivideEquationFactory',['../classgame_1_1math_1_1DivideEquationFactory.html#ae82f214a4a28f84ad7404920ebe82b55',1,'game::math::DivideEquationFactory']]],
+  ['downscale_5fto_5f8x8_19',['downscale_to_8x8',['../namespacegame.html#ae74e3c466ae190bac8499607bff0cb62',1,'game']]],
+  ['draw_5ffilled_5fcircle_20',['draw_filled_circle',['../namespacegame_1_1sdl.html#adb783e04f762c3a7a87748ebf45e64d4',1,'game::sdl']]],
+  ['draw_5fline_21',['draw_line',['../namespacegame_1_1sdl.html#aa1f021f46015df99b614075f06563be8',1,'game::sdl']]],
+  ['draw_5ftext_22',['draw_text',['../namespacegame_1_1sdl.html#ae14cd298abdbd042fe9ff7e069fa9aaa',1,'game::sdl']]]
+];

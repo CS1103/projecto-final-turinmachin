@@ -1,0 +1,69 @@
+\doxysection{Catch\+::Test\+Case\+Handle Class Reference}
+\hypertarget{classCatch_1_1TestCaseHandle}{}\label{classCatch_1_1TestCaseHandle}\index{Catch::TestCaseHandle@{Catch::TestCaseHandle}}
+
+
+{\ttfamily \#include $<$catch\+\_\+amalgamated.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{classCatch_1_1TestCaseHandle_ae265e45e0c834125ebd1cb6a370ebb83}{Test\+Case\+Handle}} (\mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Test\+Case\+Info}} \texorpdfstring{$\ast$}{*}info, \mbox{\hyperlink{classCatch_1_1ITestInvoker}{ITest\+Invoker}} \texorpdfstring{$\ast$}{*}invoker)
+\item 
+void \mbox{\hyperlink{classCatch_1_1TestCaseHandle_a7e78330f0d1a6ddbb952369bf37b1e52}{prepare\+Test\+Case}} () const
+\item 
+void \mbox{\hyperlink{classCatch_1_1TestCaseHandle_ad243c3ac78d702cda848c909383da2d7}{tear\+Down\+Test\+Case}} () const
+\item 
+void \mbox{\hyperlink{classCatch_1_1TestCaseHandle_a3ceefa8ee4fecb6aba985fb539ef94f4}{invoke}} () const
+\item 
+constexpr \mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Test\+Case\+Info}} const \& \mbox{\hyperlink{classCatch_1_1TestCaseHandle_a9a89d26457c8585f93eb8baea0f39884}{get\+Test\+Case\+Info}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper over the test case information and the test case invoker
+
+Does not own either, and is specifically made to be cheap to copy around. 
+
+\label{doc-constructors}
+\Hypertarget{classCatch_1_1TestCaseHandle_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCatch_1_1TestCaseHandle_ae265e45e0c834125ebd1cb6a370ebb83}\index{Catch::TestCaseHandle@{Catch::TestCaseHandle}!TestCaseHandle@{TestCaseHandle}}
+\index{TestCaseHandle@{TestCaseHandle}!Catch::TestCaseHandle@{Catch::TestCaseHandle}}
+\doxysubsubsection{\texorpdfstring{TestCaseHandle()}{TestCaseHandle()}}
+{\footnotesize\ttfamily \label{classCatch_1_1TestCaseHandle_ae265e45e0c834125ebd1cb6a370ebb83} 
+Catch\+::\+Test\+Case\+Handle\+::\+Test\+Case\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Test\+Case\+Info}} \texorpdfstring{$\ast$}{*}}]{info}{, }\item[{\mbox{\hyperlink{classCatch_1_1ITestInvoker}{ITest\+Invoker}} \texorpdfstring{$\ast$}{*}}]{invoker}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classCatch_1_1TestCaseHandle_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCatch_1_1TestCaseHandle_a9a89d26457c8585f93eb8baea0f39884}\index{Catch::TestCaseHandle@{Catch::TestCaseHandle}!getTestCaseInfo@{getTestCaseInfo}}
+\index{getTestCaseInfo@{getTestCaseInfo}!Catch::TestCaseHandle@{Catch::TestCaseHandle}}
+\doxysubsubsection{\texorpdfstring{getTestCaseInfo()}{getTestCaseInfo()}}
+{\footnotesize\ttfamily \label{classCatch_1_1TestCaseHandle_a9a89d26457c8585f93eb8baea0f39884} 
+\mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Test\+Case\+Info}} const  \& Catch\+::\+Test\+Case\+Handle\+::get\+Test\+Case\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{classCatch_1_1TestCaseHandle_a3ceefa8ee4fecb6aba985fb539ef94f4}\index{Catch::TestCaseHandle@{Catch::TestCaseHandle}!invoke@{invoke}}
+\index{invoke@{invoke}!Catch::TestCaseHandle@{Catch::TestCaseHandle}}
+\doxysubsubsection{\texorpdfstring{invoke()}{invoke()}}
+{\footnotesize\ttfamily \label{classCatch_1_1TestCaseHandle_a3ceefa8ee4fecb6aba985fb539ef94f4} 
+void Catch\+::\+Test\+Case\+Handle\+::invoke (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCatch_1_1TestCaseHandle_a7e78330f0d1a6ddbb952369bf37b1e52}\index{Catch::TestCaseHandle@{Catch::TestCaseHandle}!prepareTestCase@{prepareTestCase}}
+\index{prepareTestCase@{prepareTestCase}!Catch::TestCaseHandle@{Catch::TestCaseHandle}}
+\doxysubsubsection{\texorpdfstring{prepareTestCase()}{prepareTestCase()}}
+{\footnotesize\ttfamily \label{classCatch_1_1TestCaseHandle_a7e78330f0d1a6ddbb952369bf37b1e52} 
+void Catch\+::\+Test\+Case\+Handle\+::prepare\+Test\+Case (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCatch_1_1TestCaseHandle_ad243c3ac78d702cda848c909383da2d7}\index{Catch::TestCaseHandle@{Catch::TestCaseHandle}!tearDownTestCase@{tearDownTestCase}}
+\index{tearDownTestCase@{tearDownTestCase}!Catch::TestCaseHandle@{Catch::TestCaseHandle}}
+\doxysubsubsection{\texorpdfstring{tearDownTestCase()}{tearDownTestCase()}}
+{\footnotesize\ttfamily \label{classCatch_1_1TestCaseHandle_ad243c3ac78d702cda848c909383da2d7} 
+void Catch\+::\+Test\+Case\+Handle\+::tear\+Down\+Test\+Case (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+deps/catch/\mbox{\hyperlink{catch__amalgamated_8hpp}{catch\+\_\+amalgamated.\+hpp}}\end{DoxyCompactItemize}

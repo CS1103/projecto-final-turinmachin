@@ -25,11 +25,16 @@ auto main() -> int {
     std::ifstream existing_net(common::get_data_file_path_unchecked("net.pp20"));
     DigitReader agent = existing_net ? DigitReader(existing_net) : DigitReader(rng);
 
-    constexpr std::size_t EPOCHS = 1000;
-    constexpr double LEARNING_RATE = 0.3;
+    std::size_t epochs = 0;
+    double learning_rate = 0.0;
 
-    std::println("Training for {} epochs at learning rate {}", EPOCHS, LEARNING_RATE);
-    agent.train(training_samples, EPOCHS, LEARNING_RATE, rng);
+    std::print("Epochs to train: ");
+    std::cin >> epochs;
+    std::print("Learning rate: ");
+    std::cin >> learning_rate;
+
+    std::println("Training for {} epochs at learning rate {}", epochs, learning_rate);
+    agent.train(training_samples, epochs, learning_rate, rng);
     std::println("Training done!");
 
     std::println("Saving network data to net.pp20...");

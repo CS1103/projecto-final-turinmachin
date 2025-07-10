@@ -18,7 +18,15 @@ else()
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-find_package(SDL3 REQUIRED CONFIG REQUIRED COMPONENTS SDL3-shared)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
+
+set(SDLTTF_VENDORED ON)
+
+add_subdirectory(vendored/SDL EXCLUDE_FROM_ALL)
+add_subdirectory(vendored/SDL_ttf EXCLUDE_FROM_ALL)
+
+# find_package(SDL3 REQUIRED CONFIG REQUIRED COMPONENTS SDL3-shared)
 find_package(SDL3_ttf REQUIRED CONFIG REQUIRED)
 
 file(GLOB_RECURSE trainer_source CONFIGURE_DEPENDS src/common/*.cpp
@@ -30,6 +38,7 @@ set(SHARE_INSTALL_DIR "share/${PROJECT_NAME}")
 configure_file(${CMAKE_SOURCE_DIR}/config.h.in ${CMAKE_BINARY_DIR}/config.h)
 
 include_directories(${CMAKE_BINARY_DIR})
+include_directories(deps)
 
 add_executable(brain_ager_trainer ${trainer_source})
 target_include_directories(brain_ager_trainer PUBLIC include)

@@ -1,0 +1,65 @@
+\doxysection{agent.\+h}
+\hypertarget{agent_8h_source}{}\label{agent_8h_source}\index{include/common/agent.h@{include/common/agent.h}}
+\mbox{\hyperlink{agent_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INCLUDE\_COMMON\_AGENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INCLUDE\_COMMON\_AGENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{neural__network_8h}{utec/nn/neural\_network.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacecommon}{common}}\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Input,\ \textcolor{keyword}{typename}\ Output>}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcommon_1_1Sample}{Sample}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ Input\ \mbox{\hyperlink{structcommon_1_1Sample_a19b60e375d5dc692232391b82958064d}{input}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ Output\ \mbox{\hyperlink{structcommon_1_1Sample_a21195ddd493071ccde2e4849c81e9222}{output}};}
+\DoxyCodeLine{00014\ \ \ \ \ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Input,\ \textcolor{keyword}{typename}\ Output>}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcommon_1_1IAgent}{IAgent}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classcommon_1_1IAgent_a8142ce57481ae3d313b81841e7385008}{\string~IAgent}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classcommon_1_1IAgent_a0309ec3596650d8f3f8f8b7bdc963743}{predict}}(\textcolor{keyword}{const}\ Input\&\ input)\ -\/>\ Output\ =\ 0;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1IAgent_a39ae6fd08819b1940c8388a173266076}{train}}(\textcolor{keyword}{const}\ std::vector<\mbox{\hyperlink{structcommon_1_1Sample}{Sample<Input,\ Output>}}>\&\ samples,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ epochs,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ learning\_rate,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::mt19937\&\ rng)\ =\ 0;}
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespacecommon_a24ec94b26b9df6cad3baa04781a4935d}{IDigitAgent}}\ =\ \mbox{\hyperlink{classcommon_1_1IAgent}{IAgent<std::vector<double>}},\ \textcolor{keywordtype}{int}>;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespacecommon_a169c669019f457c4b869ebc21fba4771}{DigitSample}}\ =\ \mbox{\hyperlink{structcommon_1_1Sample}{Sample<std::vector<double>}},\ \textcolor{keywordtype}{int}>;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcommon_1_1DigitReader_a5ab09b3a2cf61f4da55dc400e8c2a8eb}{DigitReader}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{namespacecommon_a24ec94b26b9df6cad3baa04781a4935d}{IDigitAgent}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec::neural\_network::NeuralNetwork<double>}}\ net;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classcommon_1_1DigitReader_a65a003b69fcc007a1a1f268b90b210f4}{Input}}\ =\ std::vector<double>;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classcommon_1_1DigitReader_a71823db65eebe9dbee5807d8cafe007c}{Output}}\ =\ int;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classcommon_1_1DigitReader_a5ab09b3a2cf61f4da55dc400e8c2a8eb}{DigitReader}}(std::mt19937\&\ rng);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classcommon_1_1DigitReader_a5ab09b3a2cf61f4da55dc400e8c2a8eb}{DigitReader}}(std::istream\&\ net\_in);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classcommon_1_1DigitReader_ab5b30e5eeeb2a4333ea910625ff152b9}{predict}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classcommon_1_1DigitReader_a65a003b69fcc007a1a1f268b90b210f4}{Input}}\&\ features)\ -\/>\ \textcolor{keywordtype}{int}\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1DigitReader_af162abf7c4b9464343ed5ec226b64d72}{train}}(\textcolor{keyword}{const}\ std::vector<DigitSample>\&\ samples,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ epochs,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ learning\_rate,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::mt19937\&\ rng)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classcommon_1_1DigitReader_a99026a34842f67885338bbc49b192526}{test\_accuracy}}(\textcolor{keyword}{const}\ std::vector<DigitSample>\&\ samples)\ -\/>\ double;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1DigitReader_a58f55c7f7f00416ebd4f0ade5c367e15}{load\_net}}(std::istream\&\ in);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1DigitReader_ab31f2434d3746c0a80c9c1fd930f2d68}{save\_net}}(std::ostream\&\ out)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ \ \ \ \ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \}\ \ \textcolor{comment}{//\ namespace\ common}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

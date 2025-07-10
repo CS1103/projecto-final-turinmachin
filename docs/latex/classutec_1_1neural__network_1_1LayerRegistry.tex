@@ -1,0 +1,37 @@
+\doxysection{utec\+::neural\+\_\+network\+::Layer\+Registry\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classutec_1_1neural__network_1_1LayerRegistry}{}\label{classutec_1_1neural__network_1_1LayerRegistry}\index{utec::neural\_network::LayerRegistry$<$ T $>$@{utec::neural\_network::LayerRegistry$<$ T $>$}}
+
+
+{\ttfamily \#include $<$layer\+\_\+registry.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1}{register\+\_\+layer}} (\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}} id, Layer\+Creator creator)
+\item 
+static auto \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry_a1ece92519c78577b1665f245ad71e376}{create}} (\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}} id, std\+::istream \&in) -\/$>$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{ILayer}}$<$ T $>$ $>$
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classutec_1_1neural__network_1_1LayerRegistry_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classutec_1_1neural__network_1_1LayerRegistry_a1ece92519c78577b1665f245ad71e376}\index{utec::neural\_network::LayerRegistry$<$ T $>$@{utec::neural\_network::LayerRegistry$<$ T $>$}!create@{create}}
+\index{create@{create}!utec::neural\_network::LayerRegistry$<$ T $>$@{utec::neural\_network::LayerRegistry$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1LayerRegistry_a1ece92519c78577b1665f245ad71e376} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry}{utec\+::neural\+\_\+network\+::\+Layer\+Registry}}$<$ T $>$\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}}}]{id}{, }\item[{std\+::istream \&}]{in}{}\end{DoxyParamCaption}) -\/$>$ std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{ILayer}}$<$T$>$$>$ \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1}\index{utec::neural\_network::LayerRegistry$<$ T $>$@{utec::neural\_network::LayerRegistry$<$ T $>$}!register\_layer@{register\_layer}}
+\index{register\_layer@{register\_layer}!utec::neural\_network::LayerRegistry$<$ T $>$@{utec::neural\_network::LayerRegistry$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{register\_layer()}{register\_layer()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry}{utec\+::neural\+\_\+network\+::\+Layer\+Registry}}$<$ T $>$\+::register\+\_\+layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}}}]{id}{, }\item[{Layer\+Creator}]{creator}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/utec/nn/\mbox{\hyperlink{layer__registry_8h}{layer\+\_\+registry.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,328 @@
+\doxysection{Catch\+::Benchmark\+::Detail Namespace Reference}
+\hypertarget{namespaceCatch_1_1Benchmark_1_1Detail}{}\label{namespaceCatch_1_1Benchmark_1_1Detail}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1BenchmarkFunction}{Benchmark\+Function}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1bootstrap__analysis}{bootstrap\+\_\+analysis}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1ChronometerConcept}{Chronometer\+Concept}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1ChronometerModel}{Chronometer\+Model}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1CompleteInvoker}{Complete\+Invoker}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1CompleteInvoker_3_01void_01_4}{Complete\+Invoker$<$ void $>$}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1CompleteType}{Complete\+Type}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1CompleteType_3_01void_01_4}{Complete\+Type$<$ void $>$}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1is__related}{is\+\_\+related}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1ObjectStorage}{Object\+Storage}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1repeater}{repeater}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ac01002836fbe714bcc1bb266c249258c}{Complete\+Type\+\_\+t}} = typename \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1CompleteType}{Complete\+Type}}$<$T$>$\+::type
+\item 
+{\footnotesize template$<$typename Clock, typename Fun$>$ }\\using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ae8c942e45f848e3f1f1a22d7e7528507}{run\+\_\+for\+\_\+at\+\_\+least\+\_\+argument\+\_\+t}} = std\+::conditional\+\_\+t$<$\mbox{\hyperlink{structCatch_1_1is__callable}{is\+\_\+callable}}$<$Fun(\mbox{\hyperlink{structCatch_1_1Benchmark_1_1Chronometer}{Chronometer}})$>$\+::value, \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Chronometer}{Chronometer}}, int$>$
+\item 
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ad7bb71eb022618e4a57e3378f5d70b13}{sample}} = std\+::vector$<$double$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a571030d8a3068b49d454220cfdea714f}{weighted\+\_\+average\+\_\+quantile}} (int k, int q, double \texorpdfstring{$\ast$}{*}first, double \texorpdfstring{$\ast$}{*}last)
+\item 
+\mbox{\hyperlink{structCatch_1_1Benchmark_1_1OutlierClassification}{Outlier\+Classification}} \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a523468c0e7dbf99ffb1801aad78e352d}{classify\+\_\+outliers}} (double const \texorpdfstring{$\ast$}{*}first, double const \texorpdfstring{$\ast$}{*}last)
+\item 
+double \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ac5f830d662344dd75387c26aa83e6ac3}{mean}} (double const \texorpdfstring{$\ast$}{*}first, double const \texorpdfstring{$\ast$}{*}last)
+\item 
+double \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_abc5e70b0f758f550b2fdff85512efdb5}{normal\+\_\+cdf}} (double \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}})
+\item 
+double \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a62d6c634e2c8901d02ffe8718817f1b4}{erfc\+\_\+inv}} (double \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}})
+\item 
+double \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_af3527090cdeb0456b1aacbdc29050841}{normal\+\_\+quantile}} (double \mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}})
+\item 
+\mbox{\hyperlink{structCatch_1_1Benchmark_1_1Estimate}{Estimate}}$<$ double $>$ \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a0a635ce60c227f5217d9606e2afe527c}{bootstrap}} (double confidence\+\_\+level, double \texorpdfstring{$\ast$}{*}first, double \texorpdfstring{$\ast$}{*}last, \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ad7bb71eb022618e4a57e3378f5d70b13}{sample}} const \&resample, double(\texorpdfstring{$\ast$}{*}estimator)(double const \texorpdfstring{$\ast$}{*}, double const \texorpdfstring{$\ast$}{*}))
+\item 
+\mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1bootstrap__analysis}{bootstrap\+\_\+analysis}} \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a1a4ae7ccc7fa8c996bc6e4ada5a7004b}{analyse\+\_\+samples}} (double confidence\+\_\+level, unsigned int n\+\_\+resamples, double \texorpdfstring{$\ast$}{*}first, double \texorpdfstring{$\ast$}{*}last)
+\item 
+{\footnotesize template$<$typename Fun$>$ }\\\mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1repeater}{repeater}}$<$ std\+::decay\+\_\+t$<$ Fun $>$ $>$ \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_aa94892c9c8fe45c0c82bde19bf0f8667}{repeat}} (Fun \&\&fun)
+\item 
+{\footnotesize template$<$typename Fun, typename... Args$>$ }\\\mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ac01002836fbe714bcc1bb266c249258c}{Complete\+Type\+\_\+t}}$<$ \mbox{\hyperlink{namespaceCatch_a38257f15bf2974c19a11341fe50eedc1}{Function\+Return\+Type}}$<$ Fun, Args... $>$ $>$ \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_abe0ffc409d126e1e7f4573c16abcbf84}{complete\+\_\+invoke}} (Fun \&\&fun, Args \&\&... args)
+\item 
+{\footnotesize template$<$typename Clock, typename Fun, typename... Args$>$ }\\\mbox{\hyperlink{namespaceCatch_1_1Benchmark_afea8ef765e5669143dfc9bbc8d81e1ac}{Timing\+Of}}$<$ Fun, Args... $>$ \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a1effa40e15b6b2c9cec48b3b734da8a4}{measure}} (Fun \&\&fun, Args \&\&... args)
+\item 
+{\footnotesize template$<$typename Clock, typename Fun$>$ }\\\mbox{\hyperlink{namespaceCatch_1_1Benchmark_afea8ef765e5669143dfc9bbc8d81e1ac}{Timing\+Of}}$<$ Fun, int $>$ \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a69e10795ffabb9fb2a472c5743c3b7ed}{measure\+\_\+one}} (Fun \&\&fun, int iters, std\+::false\+\_\+type)
+\item 
+{\footnotesize template$<$typename Clock, typename Fun$>$ }\\\mbox{\hyperlink{namespaceCatch_1_1Benchmark_afea8ef765e5669143dfc9bbc8d81e1ac}{Timing\+Of}}$<$ Fun, \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Chronometer}{Chronometer}} $>$ \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a61f9b87f4d97f9e59dfda4c29ce346de}{measure\+\_\+one}} (Fun \&\&fun, int iters, std\+::true\+\_\+type)
+\item 
+void \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_accb97601fac7308aa9c11dcdb439ddb8}{throw\+\_\+optimized\+\_\+away\+\_\+error}} ()
+\item 
+{\footnotesize template$<$typename Clock, typename Fun$>$ }\\\mbox{\hyperlink{namespaceCatch_1_1Benchmark_afea8ef765e5669143dfc9bbc8d81e1ac}{Timing\+Of}}$<$ Fun, \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ae8c942e45f848e3f1f1a22d7e7528507}{run\+\_\+for\+\_\+at\+\_\+least\+\_\+argument\+\_\+t}}$<$ Clock, Fun $>$ $>$ \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a3e1a65d3c8935e2e731ce6edb4932b7e}{run\+\_\+for\+\_\+at\+\_\+least}} (\mbox{\hyperlink{namespaceCatch_1_1Benchmark_a39a7da4c749ecf788244a1a91dc9adb0}{IDuration}} how\+\_\+long, const int initial\+\_\+iterations, Fun \&\&fun)
+\item 
+{\footnotesize template$<$typename Clock$>$ }\\std\+::vector$<$ double $>$ \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_af41e4c8ef30c33051b7330895f8effd1}{resolution}} (int k)
+\item 
+{\footnotesize template$<$typename Clock$>$ }\\int \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a7021d1312f7e031b95d9dc9697e8fa81}{warmup}} ()
+\item 
+{\footnotesize template$<$typename Clock$>$ }\\\mbox{\hyperlink{structCatch_1_1Benchmark_1_1EnvironmentEstimate}{Environment\+Estimate}} \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a5c57c45d75d53880caaf8c422aa1a5ab}{estimate\+\_\+clock\+\_\+resolution}} (int iterations)
+\item 
+{\footnotesize template$<$typename Clock$>$ }\\\mbox{\hyperlink{structCatch_1_1Benchmark_1_1EnvironmentEstimate}{Environment\+Estimate}} \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ac10ce6a746501524891ce359e61f3e43}{estimate\+\_\+clock\+\_\+cost}} (\mbox{\hyperlink{namespaceCatch_1_1Benchmark_a5e29f55ad3195ac7b08e7028b0095d02}{FDuration}} \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_af41e4c8ef30c33051b7330895f8effd1}{resolution}})
+\item 
+{\footnotesize template$<$typename Clock$>$ }\\\mbox{\hyperlink{structCatch_1_1Benchmark_1_1Environment}{Environment}} \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_adb6f098507d08daee7e92c9ab12dab09}{measure\+\_\+environment}} ()
+\item 
+\mbox{\hyperlink{structCatch_1_1Benchmark_1_1SampleAnalysis}{Sample\+Analysis}} \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a3ae31b1a7b7d447f0d6d46635bbff40c}{analyse}} (const \mbox{\hyperlink{classCatch_1_1IConfig}{IConfig}} \&cfg, \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a5e29f55ad3195ac7b08e7028b0095d02}{FDuration}} \texorpdfstring{$\ast$}{*}first, \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a5e29f55ad3195ac7b08e7028b0095d02}{FDuration}} \texorpdfstring{$\ast$}{*}last)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr auto \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a059e0c7024cc2e0e0dfd861d875fe97d}{warmup\+\_\+iterations}} = 10000
+\item 
+constexpr auto \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ad1a286fbe7a670a886ac5839289b5b2a}{warmup\+\_\+time}} = std\+::chrono\+::milliseconds(100)
+\item 
+constexpr auto \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_aec277578b65b8dfb2578b4b94e0b2562}{minimum\+\_\+ticks}} = 1000
+\item 
+constexpr auto \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a0cd94d0f213053517ee9b3ed487fa189}{warmup\+\_\+seed}} = 10000
+\item 
+constexpr auto \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a805143fb513ffc616374ea01f764f87c}{clock\+\_\+resolution\+\_\+estimation\+\_\+time}} = std\+::chrono\+::milliseconds(500)
+\item 
+constexpr auto \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a258a5fe6cc543b6ab8cceb3e175e1c1d}{clock\+\_\+cost\+\_\+estimation\+\_\+time\+\_\+limit}} = std\+::chrono\+::seconds(1)
+\item 
+constexpr auto \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a1ee35c3ddb5cdf0f4ad7354240e4288d}{clock\+\_\+cost\+\_\+estimation\+\_\+tick\+\_\+limit}} = 100000
+\item 
+constexpr auto \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a9b7d750760d2dbafad94a78957d85b68}{clock\+\_\+cost\+\_\+estimation\+\_\+time}} = std\+::chrono\+::milliseconds(10)
+\item 
+constexpr auto \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_a971609fd1bf1dffc78fbb645d649bcae}{clock\+\_\+cost\+\_\+estimation\+\_\+iterations}} = 10000
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_ac01002836fbe714bcc1bb266c249258c}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!CompleteType\_t@{CompleteType\_t}}
+\index{CompleteType\_t@{CompleteType\_t}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{CompleteType\_t}{CompleteType\_t}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_ac01002836fbe714bcc1bb266c249258c} 
+template$<$typename T$>$ \\
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ac01002836fbe714bcc1bb266c249258c}{Catch\+::\+Benchmark\+::\+Detail\+::\+Complete\+Type\+\_\+t}} = typename \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1CompleteType}{Complete\+Type}}$<$T$>$\+::type}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_ae8c942e45f848e3f1f1a22d7e7528507}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!run\_for\_at\_least\_argument\_t@{run\_for\_at\_least\_argument\_t}}
+\index{run\_for\_at\_least\_argument\_t@{run\_for\_at\_least\_argument\_t}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{run\_for\_at\_least\_argument\_t}{run\_for\_at\_least\_argument\_t}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_ae8c942e45f848e3f1f1a22d7e7528507} 
+template$<$typename Clock, typename Fun$>$ \\
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ae8c942e45f848e3f1f1a22d7e7528507}{Catch\+::\+Benchmark\+::\+Detail\+::run\+\_\+for\+\_\+at\+\_\+least\+\_\+argument\+\_\+t}} = std\+::conditional\+\_\+t$<$\mbox{\hyperlink{structCatch_1_1is__callable}{is\+\_\+callable}}$<$Fun(\mbox{\hyperlink{structCatch_1_1Benchmark_1_1Chronometer}{Chronometer}})$>$\+::value, \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Chronometer}{Chronometer}}, int$>$}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_ad7bb71eb022618e4a57e3378f5d70b13}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!sample@{sample}}
+\index{sample@{sample}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{sample}{sample}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_ad7bb71eb022618e4a57e3378f5d70b13} 
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ad7bb71eb022618e4a57e3378f5d70b13}{Catch\+::\+Benchmark\+::\+Detail\+::sample}} = std\+::vector$<$double$>$}
+
+
+
+\label{doc-func-members}
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a3ae31b1a7b7d447f0d6d46635bbff40c}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!analyse@{analyse}}
+\index{analyse@{analyse}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{analyse()}{analyse()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a3ae31b1a7b7d447f0d6d46635bbff40c} 
+\mbox{\hyperlink{structCatch_1_1Benchmark_1_1SampleAnalysis}{Sample\+Analysis}} Catch\+::\+Benchmark\+::\+Detail\+::analyse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCatch_1_1IConfig}{IConfig}} \&}]{cfg}{, }\item[{\mbox{\hyperlink{namespaceCatch_1_1Benchmark_a5e29f55ad3195ac7b08e7028b0095d02}{FDuration}} \texorpdfstring{$\ast$}{*}}]{first}{, }\item[{\mbox{\hyperlink{namespaceCatch_1_1Benchmark_a5e29f55ad3195ac7b08e7028b0095d02}{FDuration}} \texorpdfstring{$\ast$}{*}}]{last}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a1a4ae7ccc7fa8c996bc6e4ada5a7004b}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!analyse\_samples@{analyse\_samples}}
+\index{analyse\_samples@{analyse\_samples}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{analyse\_samples()}{analyse\_samples()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a1a4ae7ccc7fa8c996bc6e4ada5a7004b} 
+\mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1bootstrap__analysis}{bootstrap\+\_\+analysis}} Catch\+::\+Benchmark\+::\+Detail\+::analyse\+\_\+samples (\begin{DoxyParamCaption}\item[{double}]{confidence\+\_\+level}{, }\item[{unsigned int}]{n\+\_\+resamples}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{first}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{last}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a0a635ce60c227f5217d9606e2afe527c}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!bootstrap@{bootstrap}}
+\index{bootstrap@{bootstrap}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{bootstrap()}{bootstrap()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a0a635ce60c227f5217d9606e2afe527c} 
+\mbox{\hyperlink{structCatch_1_1Benchmark_1_1Estimate}{Estimate}}$<$ double $>$ Catch\+::\+Benchmark\+::\+Detail\+::bootstrap (\begin{DoxyParamCaption}\item[{double}]{confidence\+\_\+level}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{first}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{last}{, }\item[{\mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ad7bb71eb022618e4a57e3378f5d70b13}{sample}} const \&}]{resample}{, }\item[{double(\texorpdfstring{$\ast$}{*}}]{estimator~}{)(double const \texorpdfstring{$\ast$}{*}, double const \texorpdfstring{$\ast$}{*})}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a523468c0e7dbf99ffb1801aad78e352d}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!classify\_outliers@{classify\_outliers}}
+\index{classify\_outliers@{classify\_outliers}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{classify\_outliers()}{classify\_outliers()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a523468c0e7dbf99ffb1801aad78e352d} 
+\mbox{\hyperlink{structCatch_1_1Benchmark_1_1OutlierClassification}{Outlier\+Classification}} Catch\+::\+Benchmark\+::\+Detail\+::classify\+\_\+outliers (\begin{DoxyParamCaption}\item[{double const \texorpdfstring{$\ast$}{*}}]{first}{, }\item[{double const \texorpdfstring{$\ast$}{*}}]{last}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_abe0ffc409d126e1e7f4573c16abcbf84}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!complete\_invoke@{complete\_invoke}}
+\index{complete\_invoke@{complete\_invoke}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{complete\_invoke()}{complete\_invoke()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_abe0ffc409d126e1e7f4573c16abcbf84} 
+template$<$typename Fun, typename... Args$>$ \\
+\mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ac01002836fbe714bcc1bb266c249258c}{Complete\+Type\+\_\+t}}$<$ \mbox{\hyperlink{namespaceCatch_a38257f15bf2974c19a11341fe50eedc1}{Function\+Return\+Type}}$<$ Fun, Args... $>$ $>$ Catch\+::\+Benchmark\+::\+Detail\+::complete\+\_\+invoke (\begin{DoxyParamCaption}\item[{Fun \&\&}]{fun}{, }\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a62d6c634e2c8901d02ffe8718817f1b4}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!erfc\_inv@{erfc\_inv}}
+\index{erfc\_inv@{erfc\_inv}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{erfc\_inv()}{erfc\_inv()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a62d6c634e2c8901d02ffe8718817f1b4} 
+double Catch\+::\+Benchmark\+::\+Detail\+::erfc\+\_\+inv (\begin{DoxyParamCaption}\item[{double}]{x}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_ac10ce6a746501524891ce359e61f3e43}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!estimate\_clock\_cost@{estimate\_clock\_cost}}
+\index{estimate\_clock\_cost@{estimate\_clock\_cost}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{estimate\_clock\_cost()}{estimate\_clock\_cost()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_ac10ce6a746501524891ce359e61f3e43} 
+template$<$typename Clock$>$ \\
+\mbox{\hyperlink{structCatch_1_1Benchmark_1_1EnvironmentEstimate}{Environment\+Estimate}} Catch\+::\+Benchmark\+::\+Detail\+::estimate\+\_\+clock\+\_\+cost (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceCatch_1_1Benchmark_a5e29f55ad3195ac7b08e7028b0095d02}{FDuration}}}]{resolution}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a5c57c45d75d53880caaf8c422aa1a5ab}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!estimate\_clock\_resolution@{estimate\_clock\_resolution}}
+\index{estimate\_clock\_resolution@{estimate\_clock\_resolution}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{estimate\_clock\_resolution()}{estimate\_clock\_resolution()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a5c57c45d75d53880caaf8c422aa1a5ab} 
+template$<$typename Clock$>$ \\
+\mbox{\hyperlink{structCatch_1_1Benchmark_1_1EnvironmentEstimate}{Environment\+Estimate}} Catch\+::\+Benchmark\+::\+Detail\+::estimate\+\_\+clock\+\_\+resolution (\begin{DoxyParamCaption}\item[{int}]{iterations}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_ac5f830d662344dd75387c26aa83e6ac3}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!mean@{mean}}
+\index{mean@{mean}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{mean()}{mean()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_ac5f830d662344dd75387c26aa83e6ac3} 
+double Catch\+::\+Benchmark\+::\+Detail\+::mean (\begin{DoxyParamCaption}\item[{double const \texorpdfstring{$\ast$}{*}}]{first}{, }\item[{double const \texorpdfstring{$\ast$}{*}}]{last}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a1effa40e15b6b2c9cec48b3b734da8a4}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!measure@{measure}}
+\index{measure@{measure}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{measure()}{measure()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a1effa40e15b6b2c9cec48b3b734da8a4} 
+template$<$typename Clock, typename Fun, typename... Args$>$ \\
+\mbox{\hyperlink{namespaceCatch_1_1Benchmark_afea8ef765e5669143dfc9bbc8d81e1ac}{Timing\+Of}}$<$ Fun, Args... $>$ Catch\+::\+Benchmark\+::\+Detail\+::measure (\begin{DoxyParamCaption}\item[{Fun \&\&}]{fun}{, }\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_adb6f098507d08daee7e92c9ab12dab09}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!measure\_environment@{measure\_environment}}
+\index{measure\_environment@{measure\_environment}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{measure\_environment()}{measure\_environment()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_adb6f098507d08daee7e92c9ab12dab09} 
+template$<$typename Clock$>$ \\
+\mbox{\hyperlink{structCatch_1_1Benchmark_1_1Environment}{Environment}} Catch\+::\+Benchmark\+::\+Detail\+::measure\+\_\+environment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a69e10795ffabb9fb2a472c5743c3b7ed}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!measure\_one@{measure\_one}}
+\index{measure\_one@{measure\_one}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{measure\_one()}{measure\_one()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a69e10795ffabb9fb2a472c5743c3b7ed} 
+template$<$typename Clock, typename Fun$>$ \\
+\mbox{\hyperlink{namespaceCatch_1_1Benchmark_afea8ef765e5669143dfc9bbc8d81e1ac}{Timing\+Of}}$<$ Fun, int $>$ Catch\+::\+Benchmark\+::\+Detail\+::measure\+\_\+one (\begin{DoxyParamCaption}\item[{Fun \&\&}]{fun}{, }\item[{int}]{iters}{, }\item[{std\+::false\+\_\+type}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a61f9b87f4d97f9e59dfda4c29ce346de}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!measure\_one@{measure\_one}}
+\index{measure\_one@{measure\_one}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{measure\_one()}{measure\_one()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a61f9b87f4d97f9e59dfda4c29ce346de} 
+template$<$typename Clock, typename Fun$>$ \\
+\mbox{\hyperlink{namespaceCatch_1_1Benchmark_afea8ef765e5669143dfc9bbc8d81e1ac}{Timing\+Of}}$<$ Fun, \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Chronometer}{Chronometer}} $>$ Catch\+::\+Benchmark\+::\+Detail\+::measure\+\_\+one (\begin{DoxyParamCaption}\item[{Fun \&\&}]{fun}{, }\item[{int}]{iters}{, }\item[{std\+::true\+\_\+type}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_abc5e70b0f758f550b2fdff85512efdb5}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!normal\_cdf@{normal\_cdf}}
+\index{normal\_cdf@{normal\_cdf}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{normal\_cdf()}{normal\_cdf()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_abc5e70b0f758f550b2fdff85512efdb5} 
+double Catch\+::\+Benchmark\+::\+Detail\+::normal\+\_\+cdf (\begin{DoxyParamCaption}\item[{double}]{x}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_af3527090cdeb0456b1aacbdc29050841}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!normal\_quantile@{normal\_quantile}}
+\index{normal\_quantile@{normal\_quantile}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{normal\_quantile()}{normal\_quantile()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_af3527090cdeb0456b1aacbdc29050841} 
+double Catch\+::\+Benchmark\+::\+Detail\+::normal\+\_\+quantile (\begin{DoxyParamCaption}\item[{double}]{p}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_aa94892c9c8fe45c0c82bde19bf0f8667}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!repeat@{repeat}}
+\index{repeat@{repeat}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{repeat()}{repeat()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_aa94892c9c8fe45c0c82bde19bf0f8667} 
+template$<$typename Fun$>$ \\
+\mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1repeater}{repeater}}$<$ std\+::decay\+\_\+t$<$ Fun $>$ $>$ Catch\+::\+Benchmark\+::\+Detail\+::repeat (\begin{DoxyParamCaption}\item[{Fun \&\&}]{fun}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_af41e4c8ef30c33051b7330895f8effd1}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!resolution@{resolution}}
+\index{resolution@{resolution}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{resolution()}{resolution()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_af41e4c8ef30c33051b7330895f8effd1} 
+template$<$typename Clock$>$ \\
+std\+::vector$<$ double $>$ Catch\+::\+Benchmark\+::\+Detail\+::resolution (\begin{DoxyParamCaption}\item[{int}]{k}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a3e1a65d3c8935e2e731ce6edb4932b7e}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!run\_for\_at\_least@{run\_for\_at\_least}}
+\index{run\_for\_at\_least@{run\_for\_at\_least}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{run\_for\_at\_least()}{run\_for\_at\_least()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a3e1a65d3c8935e2e731ce6edb4932b7e} 
+template$<$typename Clock, typename Fun$>$ \\
+\mbox{\hyperlink{namespaceCatch_1_1Benchmark_afea8ef765e5669143dfc9bbc8d81e1ac}{Timing\+Of}}$<$ Fun, \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ae8c942e45f848e3f1f1a22d7e7528507}{run\+\_\+for\+\_\+at\+\_\+least\+\_\+argument\+\_\+t}}$<$ Clock, Fun $>$ $>$ Catch\+::\+Benchmark\+::\+Detail\+::run\+\_\+for\+\_\+at\+\_\+least (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceCatch_1_1Benchmark_a39a7da4c749ecf788244a1a91dc9adb0}{IDuration}}}]{how\+\_\+long}{, }\item[{const int}]{initial\+\_\+iterations}{, }\item[{Fun \&\&}]{fun}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_accb97601fac7308aa9c11dcdb439ddb8}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!throw\_optimized\_away\_error@{throw\_optimized\_away\_error}}
+\index{throw\_optimized\_away\_error@{throw\_optimized\_away\_error}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{throw\_optimized\_away\_error()}{throw\_optimized\_away\_error()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_accb97601fac7308aa9c11dcdb439ddb8} 
+void Catch\+::\+Benchmark\+::\+Detail\+::throw\+\_\+optimized\+\_\+away\+\_\+error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a7021d1312f7e031b95d9dc9697e8fa81}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!warmup@{warmup}}
+\index{warmup@{warmup}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{warmup()}{warmup()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a7021d1312f7e031b95d9dc9697e8fa81} 
+template$<$typename Clock$>$ \\
+int Catch\+::\+Benchmark\+::\+Detail\+::warmup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a571030d8a3068b49d454220cfdea714f}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!weighted\_average\_quantile@{weighted\_average\_quantile}}
+\index{weighted\_average\_quantile@{weighted\_average\_quantile}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{weighted\_average\_quantile()}{weighted\_average\_quantile()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a571030d8a3068b49d454220cfdea714f} 
+double Catch\+::\+Benchmark\+::\+Detail\+::weighted\+\_\+average\+\_\+quantile (\begin{DoxyParamCaption}\item[{int}]{k}{, }\item[{int}]{q}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{first}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{last}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-var-members}
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a971609fd1bf1dffc78fbb645d649bcae}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!clock\_cost\_estimation\_iterations@{clock\_cost\_estimation\_iterations}}
+\index{clock\_cost\_estimation\_iterations@{clock\_cost\_estimation\_iterations}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{clock\_cost\_estimation\_iterations}{clock\_cost\_estimation\_iterations}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a971609fd1bf1dffc78fbb645d649bcae} 
+auto Catch\+::\+Benchmark\+::\+Detail\+::clock\+\_\+cost\+\_\+estimation\+\_\+iterations = 10000\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a1ee35c3ddb5cdf0f4ad7354240e4288d}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!clock\_cost\_estimation\_tick\_limit@{clock\_cost\_estimation\_tick\_limit}}
+\index{clock\_cost\_estimation\_tick\_limit@{clock\_cost\_estimation\_tick\_limit}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{clock\_cost\_estimation\_tick\_limit}{clock\_cost\_estimation\_tick\_limit}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a1ee35c3ddb5cdf0f4ad7354240e4288d} 
+auto Catch\+::\+Benchmark\+::\+Detail\+::clock\+\_\+cost\+\_\+estimation\+\_\+tick\+\_\+limit = 100000\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a9b7d750760d2dbafad94a78957d85b68}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!clock\_cost\_estimation\_time@{clock\_cost\_estimation\_time}}
+\index{clock\_cost\_estimation\_time@{clock\_cost\_estimation\_time}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{clock\_cost\_estimation\_time}{clock\_cost\_estimation\_time}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a9b7d750760d2dbafad94a78957d85b68} 
+auto Catch\+::\+Benchmark\+::\+Detail\+::clock\+\_\+cost\+\_\+estimation\+\_\+time = std\+::chrono\+::milliseconds(10)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a258a5fe6cc543b6ab8cceb3e175e1c1d}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!clock\_cost\_estimation\_time\_limit@{clock\_cost\_estimation\_time\_limit}}
+\index{clock\_cost\_estimation\_time\_limit@{clock\_cost\_estimation\_time\_limit}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{clock\_cost\_estimation\_time\_limit}{clock\_cost\_estimation\_time\_limit}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a258a5fe6cc543b6ab8cceb3e175e1c1d} 
+auto Catch\+::\+Benchmark\+::\+Detail\+::clock\+\_\+cost\+\_\+estimation\+\_\+time\+\_\+limit = std\+::chrono\+::seconds(1)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a805143fb513ffc616374ea01f764f87c}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!clock\_resolution\_estimation\_time@{clock\_resolution\_estimation\_time}}
+\index{clock\_resolution\_estimation\_time@{clock\_resolution\_estimation\_time}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{clock\_resolution\_estimation\_time}{clock\_resolution\_estimation\_time}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a805143fb513ffc616374ea01f764f87c} 
+auto Catch\+::\+Benchmark\+::\+Detail\+::clock\+\_\+resolution\+\_\+estimation\+\_\+time = std\+::chrono\+::milliseconds(500)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_aec277578b65b8dfb2578b4b94e0b2562}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!minimum\_ticks@{minimum\_ticks}}
+\index{minimum\_ticks@{minimum\_ticks}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{minimum\_ticks}{minimum\_ticks}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_aec277578b65b8dfb2578b4b94e0b2562} 
+auto Catch\+::\+Benchmark\+::\+Detail\+::minimum\+\_\+ticks = 1000\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a059e0c7024cc2e0e0dfd861d875fe97d}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!warmup\_iterations@{warmup\_iterations}}
+\index{warmup\_iterations@{warmup\_iterations}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{warmup\_iterations}{warmup\_iterations}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a059e0c7024cc2e0e0dfd861d875fe97d} 
+auto Catch\+::\+Benchmark\+::\+Detail\+::warmup\+\_\+iterations = 10000\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_a0cd94d0f213053517ee9b3ed487fa189}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!warmup\_seed@{warmup\_seed}}
+\index{warmup\_seed@{warmup\_seed}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{warmup\_seed}{warmup\_seed}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_a0cd94d0f213053517ee9b3ed487fa189} 
+auto Catch\+::\+Benchmark\+::\+Detail\+::warmup\+\_\+seed = 10000\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_1_1Detail_ad1a286fbe7a670a886ac5839289b5b2a}\index{Catch::Benchmark::Detail@{Catch::Benchmark::Detail}!warmup\_time@{warmup\_time}}
+\index{warmup\_time@{warmup\_time}!Catch::Benchmark::Detail@{Catch::Benchmark::Detail}}
+\doxysubsubsection{\texorpdfstring{warmup\_time}{warmup\_time}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_1_1Detail_ad1a286fbe7a670a886ac5839289b5b2a} 
+auto Catch\+::\+Benchmark\+::\+Detail\+::warmup\+\_\+time = std\+::chrono\+::milliseconds(100)\hspace{0.3cm}{\ttfamily [constexpr]}}
+

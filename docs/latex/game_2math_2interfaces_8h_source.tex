@@ -1,0 +1,32 @@
+\doxysection{interfaces.\+h}
+\hypertarget{game_2math_2interfaces_8h_source}{}\label{game_2math_2interfaces_8h_source}\index{include/game/math/interfaces.h@{include/game/math/interfaces.h}}
+\mbox{\hyperlink{game_2math_2interfaces_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INCLUDE\_GAME\_MATH\_INTERFACES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INCLUDE\_GAME\_MATH\_INTERFACES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegame_1_1math}{game::math}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structgame_1_1math_1_1IEquation}{IEquation}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structgame_1_1math_1_1IEquation_ae4a5065b0f7ecdb16f3a63aa966a8081}{\string~IEquation}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{structgame_1_1math_1_1IEquation_ab439207a6a4080f99838ad92e3cca751}{answer}}()\ const\ -\/>\ \textcolor{keywordtype}{int}\ =\ 0;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ [[nodiscard]]\ virtual\ auto\ \mbox{\hyperlink{structgame_1_1math_1_1IEquation_a51612bb2329d1489d8ea6d92d92d1035}{display}}()\ const\ -\/>\ std::\textcolor{keywordtype}{string}\ =\ 0;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ [[nodiscard]]\ virtual\ auto\ \mbox{\hyperlink{structgame_1_1math_1_1IEquation_ae134a3ebbf36f5eb668f7bea6649223d}{display\_solved}}()\ const\ -\/>\ std::\textcolor{keywordtype}{string}\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ struct\ \mbox{\hyperlink{structgame_1_1math_1_1IEquationFactory}{IEquationFactory}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structgame_1_1math_1_1IEquationFactory_abf9098237a4dfa35acab2d3b59b98559}{\string~IEquationFactory}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{structgame_1_1math_1_1IEquationFactory_ae723b261b5c2bc5c70eafd11d3f2487b}{create}}()\ -\/>\ std::unique\_ptr<IEquation>\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \};}
+\DoxyCodeLine{00024\ \}\ \ \textcolor{comment}{//\ namespace\ game::math}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

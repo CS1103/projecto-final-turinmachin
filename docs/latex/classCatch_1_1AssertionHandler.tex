@@ -1,0 +1,122 @@
+\doxysection{Catch\+::Assertion\+Handler Class Reference}
+\hypertarget{classCatch_1_1AssertionHandler}{}\label{classCatch_1_1AssertionHandler}\index{Catch::AssertionHandler@{Catch::AssertionHandler}}
+
+
+{\ttfamily \#include $<$catch\+\_\+amalgamated.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCatch_1_1AssertionHandler_a74627e1e399b026e9acbaf95ea673643}{Assertion\+Handler}} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} macro\+Name, \mbox{\hyperlink{structCatch_1_1SourceLineInfo}{Source\+Line\+Info}} const \&line\+Info, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} captured\+Expression, \mbox{\hyperlink{structCatch_1_1ResultDisposition_a3396cad6e2259af326b3aae93e23e9d8}{Result\+Disposition\+::\+Flags}} result\+Disposition)
+\item 
+\mbox{\hyperlink{classCatch_1_1AssertionHandler_a1e839d810f6ac0fa6d127fe8350175ed}{\texorpdfstring{$\sim$}{\string~}\+Assertion\+Handler}} ()
+\item 
+{\footnotesize template$<$typename T$>$ }\\constexpr void \mbox{\hyperlink{classCatch_1_1AssertionHandler_ac061e1d051135385f450973b676b2579}{handle\+Expr}} (\mbox{\hyperlink{classCatch_1_1ExprLhs}{Expr\+Lhs}}$<$ T $>$ const \&expr)
+\item 
+void \mbox{\hyperlink{classCatch_1_1AssertionHandler_afe14d9cf1b1c7f70dae439fbdb51d0c4}{handle\+Expr}} (\mbox{\hyperlink{classCatch_1_1ITransientExpression}{ITransient\+Expression}} const \&expr)
+\item 
+void \mbox{\hyperlink{classCatch_1_1AssertionHandler_a9515fc80510d52fa6c22ea0eb4d3cc07}{handle\+Message}} (\mbox{\hyperlink{structCatch_1_1ResultWas_a624e1ee3661fcf6094ceef1f654601ef}{Result\+Was\+::\+Of\+Type}} result\+Type, std\+::string \&\&message)
+\item 
+void \mbox{\hyperlink{classCatch_1_1AssertionHandler_ab6caf765764a4064e90fce829eec201d}{handle\+Exception\+Thrown\+As\+Expected}} ()
+\item 
+void \mbox{\hyperlink{classCatch_1_1AssertionHandler_a7764d0adb6ed5eeb10964f6abc02fab1}{handle\+Unexpected\+Exception\+Not\+Thrown}} ()
+\item 
+void \mbox{\hyperlink{classCatch_1_1AssertionHandler_a51e4936e3af43b74690cedae6d2e297a}{handle\+Exception\+Not\+Thrown\+As\+Expected}} ()
+\item 
+void \mbox{\hyperlink{classCatch_1_1AssertionHandler_a67a194d5518f307c4a16faa03a7f7442}{handle\+Throwing\+Call\+Skipped}} ()
+\item 
+void \mbox{\hyperlink{classCatch_1_1AssertionHandler_aa2504dad6a91f3645e5f52c932c11270}{handle\+Unexpected\+Inflight\+Exception}} ()
+\item 
+void \mbox{\hyperlink{classCatch_1_1AssertionHandler_a878a9eb828d8a1863c8dcb6575f6f40e}{complete}} ()
+\item 
+auto \mbox{\hyperlink{classCatch_1_1AssertionHandler_a193bb3999494c46457f3059184c6b251}{allow\+Throws}} () const -\/$>$ bool
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classCatch_1_1AssertionHandler_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCatch_1_1AssertionHandler_a74627e1e399b026e9acbaf95ea673643}\index{Catch::AssertionHandler@{Catch::AssertionHandler}!AssertionHandler@{AssertionHandler}}
+\index{AssertionHandler@{AssertionHandler}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\doxysubsubsection{\texorpdfstring{AssertionHandler()}{AssertionHandler()}}
+{\footnotesize\ttfamily \label{classCatch_1_1AssertionHandler_a74627e1e399b026e9acbaf95ea673643} 
+Catch\+::\+Assertion\+Handler\+::\+Assertion\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}}}]{macro\+Name}{, }\item[{\mbox{\hyperlink{structCatch_1_1SourceLineInfo}{Source\+Line\+Info}} const \&}]{line\+Info}{, }\item[{\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}}}]{captured\+Expression}{, }\item[{\mbox{\hyperlink{structCatch_1_1ResultDisposition_a3396cad6e2259af326b3aae93e23e9d8}{Result\+Disposition\+::\+Flags}}}]{result\+Disposition}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classCatch_1_1AssertionHandler_a1e839d810f6ac0fa6d127fe8350175ed}\index{Catch::AssertionHandler@{Catch::AssertionHandler}!````~AssertionHandler@{\texorpdfstring{$\sim$}{\string~}AssertionHandler}}
+\index{````~AssertionHandler@{\texorpdfstring{$\sim$}{\string~}AssertionHandler}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AssertionHandler()}{\string~AssertionHandler()}}
+{\footnotesize\ttfamily \label{classCatch_1_1AssertionHandler_a1e839d810f6ac0fa6d127fe8350175ed} 
+Catch\+::\+Assertion\+Handler\+::\texorpdfstring{$\sim$}{\string~}\+Assertion\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classCatch_1_1AssertionHandler_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCatch_1_1AssertionHandler_a193bb3999494c46457f3059184c6b251}\index{Catch::AssertionHandler@{Catch::AssertionHandler}!allowThrows@{allowThrows}}
+\index{allowThrows@{allowThrows}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\doxysubsubsection{\texorpdfstring{allowThrows()}{allowThrows()}}
+{\footnotesize\ttfamily \label{classCatch_1_1AssertionHandler_a193bb3999494c46457f3059184c6b251} 
+auto Catch\+::\+Assertion\+Handler\+::allow\+Throws (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ bool}
+
+\Hypertarget{classCatch_1_1AssertionHandler_a878a9eb828d8a1863c8dcb6575f6f40e}\index{Catch::AssertionHandler@{Catch::AssertionHandler}!complete@{complete}}
+\index{complete@{complete}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\doxysubsubsection{\texorpdfstring{complete()}{complete()}}
+{\footnotesize\ttfamily \label{classCatch_1_1AssertionHandler_a878a9eb828d8a1863c8dcb6575f6f40e} 
+void Catch\+::\+Assertion\+Handler\+::complete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classCatch_1_1AssertionHandler_a51e4936e3af43b74690cedae6d2e297a}\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleExceptionNotThrownAsExpected@{handleExceptionNotThrownAsExpected}}
+\index{handleExceptionNotThrownAsExpected@{handleExceptionNotThrownAsExpected}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\doxysubsubsection{\texorpdfstring{handleExceptionNotThrownAsExpected()}{handleExceptionNotThrownAsExpected()}}
+{\footnotesize\ttfamily \label{classCatch_1_1AssertionHandler_a51e4936e3af43b74690cedae6d2e297a} 
+void Catch\+::\+Assertion\+Handler\+::handle\+Exception\+Not\+Thrown\+As\+Expected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classCatch_1_1AssertionHandler_ab6caf765764a4064e90fce829eec201d}\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleExceptionThrownAsExpected@{handleExceptionThrownAsExpected}}
+\index{handleExceptionThrownAsExpected@{handleExceptionThrownAsExpected}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\doxysubsubsection{\texorpdfstring{handleExceptionThrownAsExpected()}{handleExceptionThrownAsExpected()}}
+{\footnotesize\ttfamily \label{classCatch_1_1AssertionHandler_ab6caf765764a4064e90fce829eec201d} 
+void Catch\+::\+Assertion\+Handler\+::handle\+Exception\+Thrown\+As\+Expected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classCatch_1_1AssertionHandler_ac061e1d051135385f450973b676b2579}\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleExpr@{handleExpr}}
+\index{handleExpr@{handleExpr}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\doxysubsubsection{\texorpdfstring{handleExpr()}{handleExpr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classCatch_1_1AssertionHandler_ac061e1d051135385f450973b676b2579} 
+template$<$typename T$>$ \\
+void Catch\+::\+Assertion\+Handler\+::handle\+Expr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1ExprLhs}{Expr\+Lhs}}$<$ T $>$ const \&}]{expr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{classCatch_1_1AssertionHandler_afe14d9cf1b1c7f70dae439fbdb51d0c4}\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleExpr@{handleExpr}}
+\index{handleExpr@{handleExpr}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\doxysubsubsection{\texorpdfstring{handleExpr()}{handleExpr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classCatch_1_1AssertionHandler_afe14d9cf1b1c7f70dae439fbdb51d0c4} 
+void Catch\+::\+Assertion\+Handler\+::handle\+Expr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1ITransientExpression}{ITransient\+Expression}} const \&}]{expr}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classCatch_1_1AssertionHandler_a9515fc80510d52fa6c22ea0eb4d3cc07}\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleMessage@{handleMessage}}
+\index{handleMessage@{handleMessage}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\doxysubsubsection{\texorpdfstring{handleMessage()}{handleMessage()}}
+{\footnotesize\ttfamily \label{classCatch_1_1AssertionHandler_a9515fc80510d52fa6c22ea0eb4d3cc07} 
+void Catch\+::\+Assertion\+Handler\+::handle\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCatch_1_1ResultWas_a624e1ee3661fcf6094ceef1f654601ef}{Result\+Was\+::\+Of\+Type}}}]{result\+Type}{, }\item[{std\+::string \&\&}]{message}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classCatch_1_1AssertionHandler_a67a194d5518f307c4a16faa03a7f7442}\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleThrowingCallSkipped@{handleThrowingCallSkipped}}
+\index{handleThrowingCallSkipped@{handleThrowingCallSkipped}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\doxysubsubsection{\texorpdfstring{handleThrowingCallSkipped()}{handleThrowingCallSkipped()}}
+{\footnotesize\ttfamily \label{classCatch_1_1AssertionHandler_a67a194d5518f307c4a16faa03a7f7442} 
+void Catch\+::\+Assertion\+Handler\+::handle\+Throwing\+Call\+Skipped (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classCatch_1_1AssertionHandler_a7764d0adb6ed5eeb10964f6abc02fab1}\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleUnexpectedExceptionNotThrown@{handleUnexpectedExceptionNotThrown}}
+\index{handleUnexpectedExceptionNotThrown@{handleUnexpectedExceptionNotThrown}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\doxysubsubsection{\texorpdfstring{handleUnexpectedExceptionNotThrown()}{handleUnexpectedExceptionNotThrown()}}
+{\footnotesize\ttfamily \label{classCatch_1_1AssertionHandler_a7764d0adb6ed5eeb10964f6abc02fab1} 
+void Catch\+::\+Assertion\+Handler\+::handle\+Unexpected\+Exception\+Not\+Thrown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classCatch_1_1AssertionHandler_aa2504dad6a91f3645e5f52c932c11270}\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleUnexpectedInflightException@{handleUnexpectedInflightException}}
+\index{handleUnexpectedInflightException@{handleUnexpectedInflightException}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\doxysubsubsection{\texorpdfstring{handleUnexpectedInflightException()}{handleUnexpectedInflightException()}}
+{\footnotesize\ttfamily \label{classCatch_1_1AssertionHandler_aa2504dad6a91f3645e5f52c932c11270} 
+void Catch\+::\+Assertion\+Handler\+::handle\+Unexpected\+Inflight\+Exception (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+deps/catch/\mbox{\hyperlink{catch__amalgamated_8hpp}{catch\+\_\+amalgamated.\+hpp}}\item 
+deps/catch/\mbox{\hyperlink{catch__amalgamated_8cpp}{catch\+\_\+amalgamated.\+cpp}}\end{DoxyCompactItemize}

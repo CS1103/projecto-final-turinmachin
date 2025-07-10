@@ -1,0 +1,69 @@
+\doxysection{Sigmoid\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classSigmoid}{}\label{classSigmoid}\index{Sigmoid$<$ T $>$@{Sigmoid$<$ T $>$}}
+
+
+{\ttfamily \#include $<$activation.\+h$>$}
+
+Inheritance diagram for Sigmoid\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSigmoid}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{classSigmoid_a70102144b4313b2c7e6564d429cfd2ff}{forward}} (const algebra\+::\+Tensor$<$ T, 2 $>$ \&z) -\/$>$ algebra\+::\+Tensor$<$ T, 2 $>$ override
+\item 
+auto \mbox{\hyperlink{classSigmoid_adf8a7cea25b499a7dbfffd6bd95da147}{backward}} (const algebra\+::\+Tensor$<$ T, 2 $>$ \&g) -\/$>$ algebra\+::\+Tensor$<$ T, 2 $>$ override
+\item 
+auto \mbox{\hyperlink{classSigmoid_ab5e62d3ebf0ddb9ef958bbe2c991ab37}{id}} () const -\/$>$ Layer\+Id override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a6965ff90722a8ff3929fa55a1fd722f2}{\texorpdfstring{$\sim$}{\string~}\+ILayer}} ()=default
+\item 
+virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a22275b736574bf1ef9febb9889ba7a25}{forward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$=0
+\item 
+virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a1edb042d919a28e28c1523c1c29df07f}{backward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&gradients) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$=0
+\item 
+virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a07d2e3abb2656a40eef1dc4de099c86f}{update\+\_\+params}} (\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}$<$ T $>$ \&optimizer)
+\item 
+virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a0ddf898a100cec73a4e0df30caa6952e}{save}} (std\+::ostream \&out) const
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classSigmoid_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSigmoid_adf8a7cea25b499a7dbfffd6bd95da147}\index{Sigmoid$<$ T $>$@{Sigmoid$<$ T $>$}!backward@{backward}}
+\index{backward@{backward}!Sigmoid$<$ T $>$@{Sigmoid$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{backward()}{backward()}}
+{\footnotesize\ttfamily \label{classSigmoid_adf8a7cea25b499a7dbfffd6bd95da147} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid}{utec\+::neural\+\_\+network\+::\+Sigmoid}}$<$ T $>$\+::backward (\begin{DoxyParamCaption}\item[{const algebra\+::\+Tensor$<$ T, 2 $>$ \&}]{g}{}\end{DoxyParamCaption}) -\/$>$ algebra\+::\+Tensor$<$T, 2$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+\Hypertarget{classSigmoid_a70102144b4313b2c7e6564d429cfd2ff}\index{Sigmoid$<$ T $>$@{Sigmoid$<$ T $>$}!forward@{forward}}
+\index{forward@{forward}!Sigmoid$<$ T $>$@{Sigmoid$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily \label{classSigmoid_a70102144b4313b2c7e6564d429cfd2ff} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid}{utec\+::neural\+\_\+network\+::\+Sigmoid}}$<$ T $>$\+::forward (\begin{DoxyParamCaption}\item[{const algebra\+::\+Tensor$<$ T, 2 $>$ \&}]{z}{}\end{DoxyParamCaption}) -\/$>$ algebra\+::\+Tensor$<$T, 2$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+\Hypertarget{classSigmoid_ab5e62d3ebf0ddb9ef958bbe2c991ab37}\index{Sigmoid$<$ T $>$@{Sigmoid$<$ T $>$}!id@{id}}
+\index{id@{id}!Sigmoid$<$ T $>$@{Sigmoid$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{classSigmoid_ab5e62d3ebf0ddb9ef958bbe2c991ab37} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid}{utec\+::neural\+\_\+network\+::\+Sigmoid}}$<$ T $>$\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ Layer\+Id\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a16b50cd81a4b1c368797af2cce2b7d06}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/utec/nn/\mbox{\hyperlink{activation_8h}{activation.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\doxysection{Dataset Class Reference}
+\hypertarget{classDataset}{}\label{classDataset}\index{Dataset@{Dataset}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDataset_a88023f55f12065da9d7797e9ea820d56}{Dataset}} (std\+::ifstream \&infile)
+\item 
+auto \mbox{\hyperlink{classDataset_a0a98e13f88c110f2297f7a6cb82bf509}{get\+\_\+input\+\_\+tensor}} () const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ double, 2 $>$
+\item 
+auto \mbox{\hyperlink{classDataset_a76eb4503405215bb6726085e61d8c3fa}{get\+\_\+output\+\_\+tensor}} () const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ double, 2 $>$
+\item 
+void \mbox{\hyperlink{classDataset_af22e6119731d84dbac33dd8fcdac78c9}{train}} (\mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{Neural\+Network}}$<$ double $>$ \&net, std\+::mt19937 \&rng) const
+\item 
+auto \mbox{\hyperlink{classDataset_a83a714c7df9992a80718cada4ceb51f0}{test\+\_\+accuracy}} (\mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{Neural\+Network}}$<$ double $>$ \&net) const -\/$>$ double
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classDataset_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDataset_a88023f55f12065da9d7797e9ea820d56}\index{Dataset@{Dataset}!Dataset@{Dataset}}
+\index{Dataset@{Dataset}!Dataset@{Dataset}}
+\doxysubsubsection{\texorpdfstring{Dataset()}{Dataset()}}
+{\footnotesize\ttfamily \label{classDataset_a88023f55f12065da9d7797e9ea820d56} 
+Dataset\+::\+Dataset (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{infile}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classDataset_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDataset_a0a98e13f88c110f2297f7a6cb82bf509}\index{Dataset@{Dataset}!get\_input\_tensor@{get\_input\_tensor}}
+\index{get\_input\_tensor@{get\_input\_tensor}!Dataset@{Dataset}}
+\doxysubsubsection{\texorpdfstring{get\_input\_tensor()}{get\_input\_tensor()}}
+{\footnotesize\ttfamily \label{classDataset_a0a98e13f88c110f2297f7a6cb82bf509} 
+auto Dataset\+::get\+\_\+input\+\_\+tensor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$double, 2$>$ \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+\Hypertarget{classDataset_a76eb4503405215bb6726085e61d8c3fa}\index{Dataset@{Dataset}!get\_output\_tensor@{get\_output\_tensor}}
+\index{get\_output\_tensor@{get\_output\_tensor}!Dataset@{Dataset}}
+\doxysubsubsection{\texorpdfstring{get\_output\_tensor()}{get\_output\_tensor()}}
+{\footnotesize\ttfamily \label{classDataset_a76eb4503405215bb6726085e61d8c3fa} 
+auto Dataset\+::get\+\_\+output\+\_\+tensor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$double, 2$>$ \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+\Hypertarget{classDataset_a83a714c7df9992a80718cada4ceb51f0}\index{Dataset@{Dataset}!test\_accuracy@{test\_accuracy}}
+\index{test\_accuracy@{test\_accuracy}!Dataset@{Dataset}}
+\doxysubsubsection{\texorpdfstring{test\_accuracy()}{test\_accuracy()}}
+{\footnotesize\ttfamily \label{classDataset_a83a714c7df9992a80718cada4ceb51f0} 
+auto Dataset\+::test\+\_\+accuracy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{Neural\+Network}}$<$ double $>$ \&}]{net}{}\end{DoxyParamCaption}) const -\/$>$ double \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classDataset_af22e6119731d84dbac33dd8fcdac78c9}\index{Dataset@{Dataset}!train@{train}}
+\index{train@{train}!Dataset@{Dataset}}
+\doxysubsubsection{\texorpdfstring{train()}{train()}}
+{\footnotesize\ttfamily \label{classDataset_af22e6119731d84dbac33dd8fcdac78c9} 
+void Dataset\+::train (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{Neural\+Network}}$<$ double $>$ \&}]{net}{, }\item[{std\+::mt19937 \&}]{rng}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/trainer\+\_\+kan/\mbox{\hyperlink{trainer__kan_2main_8cpp}{main.\+cpp}}\end{DoxyCompactItemize}

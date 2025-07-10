@@ -1,0 +1,70 @@
+\doxysection{src/trainer\+\_\+kan/main.cpp File Reference}
+\hypertarget{trainer__kan_2main_8cpp}{}\label{trainer__kan_2main_8cpp}\index{src/trainer\_kan/main.cpp@{src/trainer\_kan/main.cpp}}
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$print$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$ranges$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}utec/algebra/tensor.\+h"{}}\newline
+{\ttfamily \#include "{}utec/nn/activation.\+h"{}}\newline
+{\ttfamily \#include "{}utec/nn/loss.\+h"{}}\newline
+{\ttfamily \#include "{}utec/nn/neural\+\_\+network.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSample}{Sample}}
+\item 
+class \mbox{\hyperlink{classDataset}{Dataset}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{trainer__kan_2main_8cpp_a8216c1645620cdb2f629cde3ac02ffef}{main}} () -\/$>$ int
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr std\+::size\+\_\+t \mbox{\hyperlink{trainer__kan_2main_8cpp_a255c3843a3e32a023800872e73cbcb85}{IMAGE\+\_\+\+WIDTH}} = 8
+\item 
+constexpr std\+::size\+\_\+t \mbox{\hyperlink{trainer__kan_2main_8cpp_a1d289104dd3e999bf287be3deaeae96b}{IMAGE\+\_\+\+HEIGHT}} = 8
+\item 
+constexpr std\+::size\+\_\+t \mbox{\hyperlink{trainer__kan_2main_8cpp_aa73c27ab02bf152a9a9591346bd3fdb7}{IMAGE\+\_\+\+LENGTH}} = \mbox{\hyperlink{trainer__kan_2main_8cpp_a255c3843a3e32a023800872e73cbcb85}{IMAGE\+\_\+\+WIDTH}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{trainer__kan_2main_8cpp_a1d289104dd3e999bf287be3deaeae96b}{IMAGE\+\_\+\+HEIGHT}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{trainer__kan_2main_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{trainer__kan_2main_8cpp_a8216c1645620cdb2f629cde3ac02ffef}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{trainer__kan_2main_8cpp_a8216c1645620cdb2f629cde3ac02ffef} 
+auto main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ int }
+
+
+
+\label{doc-var-members}
+\Hypertarget{trainer__kan_2main_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{trainer__kan_2main_8cpp_a1d289104dd3e999bf287be3deaeae96b}\index{main.cpp@{main.cpp}!IMAGE\_HEIGHT@{IMAGE\_HEIGHT}}
+\index{IMAGE\_HEIGHT@{IMAGE\_HEIGHT}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{IMAGE\_HEIGHT}{IMAGE\_HEIGHT}}
+{\footnotesize\ttfamily \label{trainer__kan_2main_8cpp_a1d289104dd3e999bf287be3deaeae96b} 
+std\+::size\+\_\+t IMAGE\+\_\+\+HEIGHT = 8\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{trainer__kan_2main_8cpp_aa73c27ab02bf152a9a9591346bd3fdb7}\index{main.cpp@{main.cpp}!IMAGE\_LENGTH@{IMAGE\_LENGTH}}
+\index{IMAGE\_LENGTH@{IMAGE\_LENGTH}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{IMAGE\_LENGTH}{IMAGE\_LENGTH}}
+{\footnotesize\ttfamily \label{trainer__kan_2main_8cpp_aa73c27ab02bf152a9a9591346bd3fdb7} 
+std\+::size\+\_\+t IMAGE\+\_\+\+LENGTH = \mbox{\hyperlink{trainer__kan_2main_8cpp_a255c3843a3e32a023800872e73cbcb85}{IMAGE\+\_\+\+WIDTH}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{trainer__kan_2main_8cpp_a1d289104dd3e999bf287be3deaeae96b}{IMAGE\+\_\+\+HEIGHT}}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{trainer__kan_2main_8cpp_a255c3843a3e32a023800872e73cbcb85}\index{main.cpp@{main.cpp}!IMAGE\_WIDTH@{IMAGE\_WIDTH}}
+\index{IMAGE\_WIDTH@{IMAGE\_WIDTH}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{IMAGE\_WIDTH}{IMAGE\_WIDTH}}
+{\footnotesize\ttfamily \label{trainer__kan_2main_8cpp_a255c3843a3e32a023800872e73cbcb85} 
+std\+::size\+\_\+t IMAGE\+\_\+\+WIDTH = 8\hspace{0.3cm}{\ttfamily [constexpr]}}
+

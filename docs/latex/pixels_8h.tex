@@ -1,0 +1,17 @@
+\doxysection{include/game/pixels.h File Reference}
+\hypertarget{pixels_8h}{}\label{pixels_8h}\index{include/game/pixels.h@{include/game/pixels.h}}
+{\ttfamily \#include $<$SDL3/\+SDL\+\_\+rect.\+h$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacegame}{game}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{namespacegame_ae7502fe16e6fcf9b6c84ceadaa22f7ac}{game\+::make\+\_\+grayscale}} (const std\+::vector$<$ std\+::uint8\+\_\+t $>$ \&pixel\+\_\+data, std\+::size\+\_\+t width) -\/$>$ std\+::vector$<$ std\+::uint8\+\_\+t $>$
+\item 
+auto \mbox{\hyperlink{namespacegame_ae74e3c466ae190bac8499607bff0cb62}{game\+::downscale\+\_\+to\+\_\+8x8}} (const std\+::vector$<$ std\+::uint8\+\_\+t $>$ \&grayscale\+\_\+data, const SDL\+\_\+\+Rect \&src\+\_\+rect, int width) -\/$>$ std\+::vector$<$ std\+::uint8\+\_\+t $>$
+\end{DoxyCompactItemize}

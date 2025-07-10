@@ -1,0 +1,119 @@
+\doxysection{loss.\+h}
+\hypertarget{loss_8h_source}{}\label{loss_8h_source}\index{include/utec/nn/loss.h@{include/utec/nn/loss.h}}
+\mbox{\hyperlink{loss_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PROG3\_NN\_FINAL\_PROJECT\_V2025\_01\_LOSS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PROG3\_NN\_FINAL\_PROJECT\_V2025\_01\_LOSS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utec_2nn_2interfaces_8h}{interfaces.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutec_1_1neural__network}{utec::neural\_network}}\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_a5b8a0c8a9480e4e5be6f233eab082c87}{MSELoss}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{ILoss}}<T,\ 2>\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ y\_prediction;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ y\_true;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Prediction,\ \textcolor{keyword}{typename}\ Expected>}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_a5b8a0c8a9480e4e5be6f233eab082c87}{MSELoss}}(Prediction\&\&\ y\_prediction,\ Expected\&\&\ y\_true)}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ :\ y\_prediction(std::forward<Prediction>(y\_prediction)),}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\_true(std::forward<Expected>(y\_true))\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\_prediction.shape()\ !=\ y\_true.shape())\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ throw\ std::invalid\_argument(\textcolor{stringliteral}{"{}algebra::Tensors\ have\ incompatible\ shapes"{}});}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_a43be1dc09b8f4fb0080de0dc1dfe1915}{loss}}()\ const\ -\/>\ T\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ T\ sum\ =\ 0;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ num\_elements\ =\ y\_true.size();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ num\_elements;\ ++i)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ difference\ =\ y\_prediction[i]\ -\/\ y\_true[i];}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ difference\ *\ difference;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sum\ /\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(num\_elements);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_ac42456ee183bddd85e5a40d92f5abae5}{loss\_gradient}}()\ const\ -\/>\ \mbox{\hyperlink{namespaceutec_1_1algebra}{algebra}}::\mbox{\hyperlink{classTensor}{Tensor}}<T,\ 2>\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ T(2)\ /\ y\_true.\mbox{\hyperlink{classTensor_a215437fdbb556e998f3feae08b02a51b}{size}}()\ *\ (y\_prediction\ -\/\ y\_true);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classutec_1_1neural__network_1_1BCELoss_ade896d425b018a6c103fce060fa20c60}{BCELoss}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{ILoss}}<T,\ 2>\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ y\_prediction;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ y\_true;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Prediction,\ \textcolor{keyword}{typename}\ Expected>}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1BCELoss_ade896d425b018a6c103fce060fa20c60}{BCELoss}}(Prediction\&\&\ y\_prediction,\ Expected\&\&\ y\_true)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ :\ y\_prediction(std::forward<Prediction>(y\_prediction)),}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\_true(std::forward<Expected>(y\_true))\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\_prediction.shape()\ !=\ y\_true.shape())\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ throw\ std::invalid\_argument(\textcolor{stringliteral}{"{}algebra::Tensors\ have\ incompatible\ shapes"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1BCELoss_ab92e716086286add59e2f17cd184c96a}{loss}}()\ const\ -\/>\ T\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ T\ sum\ =\ 0;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ num\_elements\ =\ y\_true.size();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ num\_elements;\ ++i)\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ y\_true[i]\ *\ std::log(y\_prediction[i])\ +}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1\ -\/\ y\_true[i])\ *\ std::log(1\ -\/\ y\_prediction[i]);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/sum\ /\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(num\_elements);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1BCELoss_ab0c0df07db8e212a88d3f3f75f9befd2}{loss\_gradient}}()\ const\ -\/>\ \mbox{\hyperlink{namespaceutec_1_1algebra}{algebra}}::\mbox{\hyperlink{classTensor}{Tensor}}<T,\ 2>\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/((y\_true\ /\ y\_prediction)\ -\/}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ -\/\ y\_true)\ /\ (\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ -\/\ y\_prediction)))\ /}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\_true.\mbox{\hyperlink{classTensor_a215437fdbb556e998f3feae08b02a51b}{size}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_a59da8b275aa07a9b8033d691812c6757}{CrossEntropyLoss}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{ILoss}}<T,\ 2>\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ y\_prediction;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ y\_true;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ T\ epsilon;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Prediction,\ \textcolor{keyword}{typename}\ Expected>}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_a59da8b275aa07a9b8033d691812c6757}{CrossEntropyLoss}}(Prediction\&\&\ y\_prediction,\ Expected\&\&\ y\_true,\ \textcolor{keyword}{const}\ T\ epsilon\ =\ 1e-\/7)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ :\ y\_prediction(std::forward<Prediction>(y\_prediction)),}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\_true(std::forward<Expected>(y\_true)),}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ epsilon(epsilon)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\_prediction.shape()\ !=\ y\_true.shape())\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ throw\ std::invalid\_argument(\textcolor{stringliteral}{"{}algebra::Tensors\ have\ incompatible\ shapes"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_a7c9ae10a49791b7cb37b985dd0ccb786}{loss}}()\ const\ -\/>\ T\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ T\ sum\ =\ 0;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::size\_t\ num\_samples\ =\ y\_true.shape()[0];}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::size\_t\ num\_classes\ =\ y\_true.shape()[1];}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ num\_samples;\ ++i)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ j\ =\ 0;\ j\ <\ num\_classes;\ ++j)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ pred\ =\ std::clamp(y\_prediction(i,\ j),\ epsilon,\ 1\ -\/\ epsilon);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ y\_true(i,\ j)\ *\ std::log(pred);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/sum\ /\ num\_samples;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_ad1a468fc0dd8bc6f825322015ffdbe13}{loss\_gradient}}()\ const\ -\/>\ \mbox{\hyperlink{namespaceutec_1_1algebra}{algebra}}::\mbox{\hyperlink{classTensor}{Tensor}}<T,\ 2>\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::size\_t\ num\_samples\ =\ y\_true.\mbox{\hyperlink{classTensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}()[0];}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ grad\ =\ y\_prediction\ -\/\ y\_true;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ grad\ /\ num\_samples;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \}\ \ \textcolor{comment}{//\ namespace\ utec::neural\_network}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

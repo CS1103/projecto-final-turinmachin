@@ -1,0 +1,25 @@
+\doxysection{texture.\+h}
+\hypertarget{texture_8h_source}{}\label{texture_8h_source}\index{include/game/sdl/texture.h@{include/game/sdl/texture.h}}
+\mbox{\hyperlink{texture_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INCLUDE\_GAME\_SDL\_TEXTURE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INCLUDE\_GAME\_SDL\_TEXTURE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL3/SDL\_render.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegame_1_1sdl}{game::sdl}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{namespacegame_1_1sdl_ab3fda8d5ec4dcf76cb9dda7f604d8ed6}{extract\_pixel\_data}}(SDL\_Renderer*\ renderer,}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SDL\_Texture*\ texture,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ width,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ height,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ bytes\_per\_pixel)\ -\/>\ std::vector<std::uint8\_t>;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \}\ \ \textcolor{comment}{//\ namespace\ game::sdl}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

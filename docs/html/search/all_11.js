@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['kan_0',['Kan',['../classKan.html',1,'Kan&lt; T &gt;'],['../classutec_1_1neural__network_1_1Kan.html',1,'utec::neural_network::Kan&lt; T &gt;'],['../classutec_1_1neural__network_1_1Kan.html#a39c44a271bd7c7af844001e8d89e543e',1,'utec::neural_network::Kan::Kan(const size_t in_f, const size_t out_f, const size_t knots, const T x_min=-1, const T x_max=+1)'],['../classutec_1_1neural__network_1_1Kan.html#a0e8f973f16a7a3bdcb5599957f4f67f5',1,'utec::neural_network::Kan::Kan(const size_t in_f, const size_t out_f, const size_t knots, auto init_psi_w_fun, auto init_phi_w_fun, auto init_phi_b_fun)'],['../classKan.html#a39c44a271bd7c7af844001e8d89e543e',1,'Kan::Kan(const size_t in_f, const size_t out_f, const size_t knots, const T x_min=-1, const T x_max=+1)'],['../classKan.html#a0e8f973f16a7a3bdcb5599957f4f67f5',1,'Kan::Kan(const size_t in_f, const size_t out_f, const size_t knots, auto init_psi_w_fun, auto init_phi_w_fun, auto init_phi_b_fun)'],['../namespaceutec_1_1neural__network.html#a8ecfa0c1de4e3b768035cb49e8962dabaf60e8dbbc0c325f558c189cc9c7c3e06',1,'utec::neural_network::Kan']]],
+  ['kan_2eh_1',['kan.h',['../kan_8h.html',1,'']]],
+  ['knots_2',['knots',['../structutec_1_1neural__network_1_1BSpline.html#af837076e9e3f2c77767370c7fa42bfe9',1,'utec::neural_network::BSpline']]]
+];

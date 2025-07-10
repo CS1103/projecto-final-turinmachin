@@ -1,0 +1,72 @@
+\doxysection{Catch\+::Tag Struct Reference}
+\hypertarget{structCatch_1_1Tag}{}\label{structCatch_1_1Tag}\index{Catch::Tag@{Catch::Tag}}
+
+
+{\ttfamily \#include $<$catch\+\_\+amalgamated.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{structCatch_1_1Tag_a48483975e19a945721ee675f5f452283}{Tag}} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} original\+\_\+)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} \mbox{\hyperlink{structCatch_1_1Tag_af589567e86a42fac84b69f4371b67dea}{original}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structCatch_1_1Tag_a54e22769a715c554d441e7c2d8987cc2}{operator$<$}} (\mbox{\hyperlink{structCatch_1_1Tag}{Tag}} const \&lhs, \mbox{\hyperlink{structCatch_1_1Tag}{Tag}} const \&rhs)
+\item 
+bool \mbox{\hyperlink{structCatch_1_1Tag_a9c1ed766a16aeca33c8215bfebba0a7f}{operator==}} (\mbox{\hyperlink{structCatch_1_1Tag}{Tag}} const \&lhs, \mbox{\hyperlink{structCatch_1_1Tag}{Tag}} const \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A {\bfseries{view}} of a tag string that provides case insensitive comparisons
+
+Note that in Catch2 internals, the square brackets around tags are not a part of tag\textquotesingle{}s representation, so e.\+g. "{}\mbox{[}cool-\/tag\mbox{]}"{} is represented as "{}cool-\/tag"{} internally. 
+
+\label{doc-constructors}
+\Hypertarget{structCatch_1_1Tag_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structCatch_1_1Tag_a48483975e19a945721ee675f5f452283}\index{Catch::Tag@{Catch::Tag}!Tag@{Tag}}
+\index{Tag@{Tag}!Catch::Tag@{Catch::Tag}}
+\doxysubsubsection{\texorpdfstring{Tag()}{Tag()}}
+{\footnotesize\ttfamily \label{structCatch_1_1Tag_a48483975e19a945721ee675f5f452283} 
+Catch\+::\+Tag\+::\+Tag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}}}]{original\+\_\+}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+\label{doc-related-members}
+\Hypertarget{structCatch_1_1Tag_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{structCatch_1_1Tag_a54e22769a715c554d441e7c2d8987cc2}\index{Catch::Tag@{Catch::Tag}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Catch::Tag@{Catch::Tag}}
+\doxysubsubsection{\texorpdfstring{operator$<$}{operator<}}
+{\footnotesize\ttfamily \label{structCatch_1_1Tag_a54e22769a715c554d441e7c2d8987cc2} 
+bool operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCatch_1_1Tag}{Tag}} const \&}]{lhs}{, }\item[{\mbox{\hyperlink{structCatch_1_1Tag}{Tag}} const \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{structCatch_1_1Tag_a9c1ed766a16aeca33c8215bfebba0a7f}\index{Catch::Tag@{Catch::Tag}!operator==@{operator==}}
+\index{operator==@{operator==}!Catch::Tag@{Catch::Tag}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily \label{structCatch_1_1Tag_a9c1ed766a16aeca33c8215bfebba0a7f} 
+bool operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCatch_1_1Tag}{Tag}} const \&}]{lhs}{, }\item[{\mbox{\hyperlink{structCatch_1_1Tag}{Tag}} const \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{structCatch_1_1Tag_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structCatch_1_1Tag_af589567e86a42fac84b69f4371b67dea}\index{Catch::Tag@{Catch::Tag}!original@{original}}
+\index{original@{original}!Catch::Tag@{Catch::Tag}}
+\doxysubsubsection{\texorpdfstring{original}{original}}
+{\footnotesize\ttfamily \label{structCatch_1_1Tag_af589567e86a42fac84b69f4371b67dea} 
+\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} Catch\+::\+Tag\+::original}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+deps/catch/\mbox{\hyperlink{catch__amalgamated_8hpp}{catch\+\_\+amalgamated.\+hpp}}\end{DoxyCompactItemize}

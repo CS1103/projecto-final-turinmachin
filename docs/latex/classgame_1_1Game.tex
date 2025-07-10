@@ -1,0 +1,81 @@
+\doxysection{game\+::Game Class Reference}
+\hypertarget{classgame_1_1Game}{}\label{classgame_1_1Game}\index{game::Game@{game::Game}}
+
+
+{\ttfamily \#include $<$game.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgame_1_1Game_a7063cc92d273a6f3d79d61dc081836d6}{Game}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{namespacecommon_a24ec94b26b9df6cad3baa04781a4935d}{common\+::\+IDigit\+Agent}} $>$ agent, std\+::mt19937 rng)
+\item 
+\mbox{\hyperlink{classgame_1_1Game_a9fd96a37b55d908071105879d015df8c}{\texorpdfstring{$\sim$}{\string~}\+Game}} ()
+\item 
+auto \mbox{\hyperlink{classgame_1_1Game_a39b28e6cb7a9e4c8e8c723947b4e445f}{should\+\_\+quit}} () const -\/$>$ bool
+\item 
+void \mbox{\hyperlink{classgame_1_1Game_a8bc9429fa173bf6572e69eafb95e42e9}{handle\+\_\+event}} (const SDL\+\_\+\+Event \&event)
+\item 
+void \mbox{\hyperlink{classgame_1_1Game_a467a92796c10009b036cb66363d58257}{update}} (double delta)
+\item 
+void \mbox{\hyperlink{classgame_1_1Game_a35e9a4a684067b0d128fd9beabaf9430}{clear\+\_\+canvas}} () const
+\item 
+void \mbox{\hyperlink{classgame_1_1Game_aca37aaff3901c041984294bdd74090c4}{render}} (const \mbox{\hyperlink{structgame_1_1ResourceManager}{Resource\+Manager}} \&resources) const
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classgame_1_1Game_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classgame_1_1Game_a7063cc92d273a6f3d79d61dc081836d6}\index{game::Game@{game::Game}!Game@{Game}}
+\index{Game@{Game}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily \label{classgame_1_1Game_a7063cc92d273a6f3d79d61dc081836d6} 
+game\+::\+Game\+::\+Game (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{, }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{namespacecommon_a24ec94b26b9df6cad3baa04781a4935d}{common\+::\+IDigit\+Agent}} $>$}]{agent}{, }\item[{std\+::mt19937}]{rng}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{classgame_1_1Game_a9fd96a37b55d908071105879d015df8c}\index{game::Game@{game::Game}!````~Game@{\texorpdfstring{$\sim$}{\string~}Game}}
+\index{````~Game@{\texorpdfstring{$\sim$}{\string~}Game}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Game()}{\string~Game()}}
+{\footnotesize\ttfamily \label{classgame_1_1Game_a9fd96a37b55d908071105879d015df8c} 
+game\+::\+Game\+::\texorpdfstring{$\sim$}{\string~}\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classgame_1_1Game_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classgame_1_1Game_a35e9a4a684067b0d128fd9beabaf9430}\index{game::Game@{game::Game}!clear\_canvas@{clear\_canvas}}
+\index{clear\_canvas@{clear\_canvas}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{clear\_canvas()}{clear\_canvas()}}
+{\footnotesize\ttfamily \label{classgame_1_1Game_a35e9a4a684067b0d128fd9beabaf9430} 
+void game\+::\+Game\+::clear\+\_\+canvas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classgame_1_1Game_a8bc9429fa173bf6572e69eafb95e42e9}\index{game::Game@{game::Game}!handle\_event@{handle\_event}}
+\index{handle\_event@{handle\_event}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{handle\_event()}{handle\_event()}}
+{\footnotesize\ttfamily \label{classgame_1_1Game_a8bc9429fa173bf6572e69eafb95e42e9} 
+void game\+::\+Game\+::handle\+\_\+event (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Event \&}]{event}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classgame_1_1Game_aca37aaff3901c041984294bdd74090c4}\index{game::Game@{game::Game}!render@{render}}
+\index{render@{render}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{classgame_1_1Game_aca37aaff3901c041984294bdd74090c4} 
+void game\+::\+Game\+::render (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structgame_1_1ResourceManager}{Resource\+Manager}} \&}]{resources}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classgame_1_1Game_a39b28e6cb7a9e4c8e8c723947b4e445f}\index{game::Game@{game::Game}!should\_quit@{should\_quit}}
+\index{should\_quit@{should\_quit}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{should\_quit()}{should\_quit()}}
+{\footnotesize\ttfamily \label{classgame_1_1Game_a39b28e6cb7a9e4c8e8c723947b4e445f} 
+auto game\+::\+Game\+::should\+\_\+quit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ bool\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+\Hypertarget{classgame_1_1Game_a467a92796c10009b036cb66363d58257}\index{game::Game@{game::Game}!update@{update}}
+\index{update@{update}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classgame_1_1Game_a467a92796c10009b036cb66363d58257} 
+void game\+::\+Game\+::update (\begin{DoxyParamCaption}\item[{double}]{delta}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/game/\mbox{\hyperlink{game_8h}{game.\+h}}\item 
+src/game/\mbox{\hyperlink{game_8cpp}{game.\+cpp}}\end{DoxyCompactItemize}

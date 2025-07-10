@@ -1,0 +1,31 @@
+\doxysection{include/utec/nn/interfaces.h File Reference}
+\hypertarget{utec_2nn_2interfaces_8h}{}\label{utec_2nn_2interfaces_8h}\index{include/utec/nn/interfaces.h@{include/utec/nn/interfaces.h}}
+{\ttfamily \#include "{}utec/algebra/tensor.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{utec\+::neural\+\_\+network\+::\+IOptimizer$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, Dims $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceutec}{utec}}
+\item 
+namespace \mbox{\hyperlink{namespaceutec_1_1neural__network}{utec\+::neural\+\_\+network}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{utec\+::neural\+\_\+network\+::\+Layer\+Id}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dabadd10d919fa85cf27fc78c0e06fe0b378}{utec\+::neural\+\_\+network\+::\+Re\+LU}} = 0
+, \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba21eebb164e4b8b9bcf64fdb4d8d5dff4}{utec\+::neural\+\_\+network\+::\+Sigmoid}} = 1
+, \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba9a71a13863c84ba34fc41595fc2ee0c6}{utec\+::neural\+\_\+network\+::\+Dense}} = 2
+, \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba31d953b9d49a6b4378f45097047976d0}{utec\+::neural\+\_\+network\+::\+Softmax}} = 3
+, \newline
+\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dabaf60e8dbbc0c325f558c189cc9c7c3e06}{utec\+::neural\+\_\+network\+::\+Kan}} = 4
+ \}
+\end{DoxyCompactItemize}

@@ -1,0 +1,51 @@
+\doxysection{interfaces.\+h}
+\hypertarget{utec_2nn_2interfaces_8h_source}{}\label{utec_2nn_2interfaces_8h_source}\index{include/utec/nn/interfaces.h@{include/utec/nn/interfaces.h}}
+\mbox{\hyperlink{utec_2nn_2interfaces_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PROG3\_NN\_FINAL\_PROJECT\_V2025\_01\_LAYER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PROG3\_NN\_FINAL\_PROJECT\_V2025\_01\_LAYER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tensor_8h}{utec/algebra/tensor.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutec_1_1neural__network}{utec::neural\_network}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{LayerId}}\ :\ uint8\_t\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1ReLU}{ReLU}}\ =\ 0,}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid}{Sigmoid}}\ =\ 1,}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense}{Dense}}\ =\ 2,}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Softmax}{Softmax}}\ =\ 3,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{Kan}}\ =\ 4,}
+\DoxyCodeLine{00014\ \ \ \ \ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a8535546f154901c74425495139d54b68}{\string~IOptimizer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{update}}(\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ params,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ gradients)\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a930832dc9b736845a83f5049c735dfe1}{step}}()\ \{\}}
+\DoxyCodeLine{00022\ \ \ \ \ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{ILayer}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a6965ff90722a8ff3929fa55a1fd722f2}{\string~ILayer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a22275b736574bf1ef9febb9889ba7a25}{forward}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}})\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a1edb042d919a28e28c1523c1c29df07f}{backward}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ gradients)\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ =\ 0;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a07d2e3abb2656a40eef1dc4de099c86f}{update\_params}}([[maybe\_unused]]\ \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer<T>}}\&\ optimizer)\ \{\}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a16b50cd81a4b1c368797af2cce2b7d06}{id}}()\ const\ -\/>\ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{LayerId}}\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a0ddf898a100cec73a4e0df30caa6952e}{save}}([[maybe\_unused]]\ std::ostream\&\ out)\textcolor{keyword}{\ const\ }\{\};}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keywordtype}{size\_t}\ Dims>}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{ILoss}}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_add5386c613a6166cedccf23b8cba066d}{\string~ILoss}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a7aefbeb1f4bd61f61491309de76f2726}{loss}}()\ const\ -\/>\ T\ =\ 0;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ virtual\ auto\ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270}{loss\_gradient}}()\ const\ -\/>\ \mbox{\hyperlink{namespaceutec_1_1algebra}{algebra}}::\mbox{\hyperlink{classTensor}{Tensor}}<T,\ Dims>\ =\ 0;}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \}\ \ \textcolor{comment}{//\ namespace\ utec::neural\_network}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
