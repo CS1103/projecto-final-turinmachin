@@ -18,7 +18,11 @@ else()
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-find_package(SDL3 REQUIRED CONFIG REQUIRED COMPONENTS SDL3-shared)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
+add_subdirectory(vendored/SDL EXCLUDE_FROM_ALL)
+
+# find_package(SDL3 REQUIRED CONFIG REQUIRED COMPONENTS SDL3-shared)
 find_package(SDL3_ttf REQUIRED CONFIG REQUIRED)
 
 file(GLOB_RECURSE trainer_source CONFIGURE_DEPENDS src/common/*.cpp
