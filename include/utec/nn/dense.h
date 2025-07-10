@@ -116,7 +116,8 @@ namespace utec::neural_network {
         }
 
         /**
-         * @brief Documentation pending,.
+         * @brief Guarda la red neuronal en formato pp20.
+         * @param output stream al que se le va escribir la informacion.
          */
         void save(std::ostream& out) const override {
             serialization::write_numeric<std::uint64_t>(out, weights.shape()[0]);
@@ -132,7 +133,8 @@ namespace utec::neural_network {
         }
 
         /**
-         * @brief Documentation pending.
+         * @brief Carga la red neuronal en formato pp20.
+         * @param in Formato a cargar.
          */
         static auto load(std::istream& in) -> Dense<T> {
             const auto in_feats = serialization::read_numeric<std::uint64_t>(in);

@@ -12,6 +12,14 @@
 #include <vector>
 
 namespace {
+
+    /**
+     * @brief Itera todas las posiciones posibles de las dimensiones dadas por el array.
+     * @param fn Funcion a aplicar con cada posicion.
+     * @param size Array de dimensiones.
+     * @tparam Size Tamanio del array.
+     * @complexity O(n) donde n es la cantida de posiciones posibles del array.
+     */
     template <std::size_t Size>
     constexpr void apply_with_counter(const auto fn, const std::array<std::size_t, Size>& size) {
         std::array<std::size_t, Size> index{};
@@ -172,12 +180,22 @@ namespace utec::algebra {
             return m_shape;
         }
 
+        /**
+         * @brief Cambia la forma del tensor actual.
+         * @param new_shape Nueva forma del tensor.
+         * @complexity O(Rank).
+         */
         void reshape(const std::array<size_t, Rank>& new_shape) {
             m_data.resize(std::ranges::fold_left(new_shape, 1, std::multiplies()));
             m_shape = new_shape;
             update_steps();
         }
 
+        /**
+         * @brief Cambia la forma del tensor actual.
+         * @taram Dims Nuevo "Rank" del tensor.
+         * @complexity O(Rank).
+         */
         template <typename... Dims>
             requires(sizeof...(Dims) == Rank)
         void reshape(const Dims... dims) {
@@ -187,10 +205,21 @@ namespace utec::algebra {
             update_steps();
         }
 
+        /**
+         * @brief Llena la data de un tesor con un valor.
+         * @param value El valor con el que se quiere llenar.
+         * @complexity O(n)
+         */
         void fill(const T& value) noexcept {
             std::ranges::fill(m_data, value);
         }
 
+        /**
+         * @brief Genera tensor con fila particular.
+         * @param index Fila particular.
+         * @complexity O(k) donde k es el tamanio de la fila.
+         * @return Fila que coincida con el indice otorgado de la matriz.
+         */
         auto row(const size_t index) const -> Tensor<T, 2>
             requires(Rank == 2)
         {
@@ -205,6 +234,12 @@ namespace utec::algebra {
             return result;
         }
 
+        /**
+         * @brief Cambia fila especifica de un tensor.
+         * @param index Posicion de la fila.
+         * @param row_tensor Nueva fila.
+         * @complexity O(k) donde k es el tamanio de la fila.
+         */
         void set_row(const size_t index, const Tensor<T, 2>& row_tensor)
             requires(Rank == 2)
         {
@@ -217,6 +252,12 @@ namespace utec::algebra {
             }
         }
 
+        /**
+         * @brief Genera tensor con fila particular para tensor de Rank 3.
+         * @param index Fila a cambiar.
+         * @complexity O(n*m) donde n y m son las dimensiones del subtensor rango 2.
+         * @return Tensor con la fila indicada.
+         */
         auto slice(const size_t index) const -> Tensor<T, 2>
             requires(Rank == 3)
         {
@@ -234,6 +275,11 @@ namespace utec::algebra {
             return result;
         }
 
+        /**
+         * @brief Cambia el subtensor asignado.
+         * @param index Posicion del subtensor a cambiar.
+         * @complexity O(n*m) donde n y m son las dimensiones del subtensor rango 2.
+         */
         void set_slice(const size_t index, const Tensor<T, 2>& slice)
             requires(Rank == 3)
         {
@@ -252,6 +298,13 @@ namespace utec::algebra {
             }
         }
 
+        /**
+         * @brief Realiza Broadcasting para un tensor.
+         * @param rhs Tensor de referencia para hacer broadcasting.
+         * @param fn Función que se va aplicar.
+         * @complexity O(n).
+         * @return Tensor adaptado apto para operaciones.
+         */
         auto broadcast(const Tensor<T, Rank>& rhs, auto fn) const -> Tensor<T, Rank> {
             if (m_shape == rhs.m_shape) {
                 // Element-wise
@@ -429,6 +482,11 @@ namespace utec::algebra {
             return m_data.end();
         }
 
+        /**
+         * @brief Trasponer un tensor de dimension 2.
+         * @complexity O(n).
+         * @return Tensor traspuesto.
+         */
         [[nodiscard]] constexpr auto transpose_2d() const -> Tensor<T, 2> {
             Tensor<T, 2> result(m_shape[1], m_shape[0]);
 
@@ -441,6 +499,11 @@ namespace utec::algebra {
             return result;
         }
 
+        /**
+         * @brief Trasponer un tensor de dimension n mayor a 2.
+         * @complexity O(n).
+         * @return Tensor traspuesto.
+         */
         [[nodiscard]] constexpr auto transpose_2d() const -> Tensor<T, Rank>
             requires(Rank > 2)
         {
@@ -476,6 +539,12 @@ namespace utec::algebra {
             return result;
         }
 
+        /**
+         * @brief Aplica una funcion a todos los elementos del tensor.
+         * @param fn Funcion a aplicar a los elementos del tensor.
+         * @complexity O(n)*F donde F es la complejidad de fn.
+         * @return Tensor modificado por la funcion.
+         */
         constexpr auto apply(auto fn) const -> Tensor<T, Rank> {
             Tensor<T, Rank> result(m_shape);
             std::ranges::transform(m_data, result.m_data.begin(), fn);
@@ -483,6 +552,13 @@ namespace utec::algebra {
         }
     };
 
+    /**
+     * @brief Realiza producto matricial entre 2 tensores de dimension 2.
+     * @param lhs Tensor 1 de la operacion.
+     * @param rhs Tensor 2 de la operacion.
+     * @complexity O(n^3).
+     * @return Tensor resultante de la operacion .
+     */
     template <typename T>
     [[nodiscard]] constexpr auto matrix_product(const Tensor<T, 2>& lhs, const Tensor<T, 2>& rhs)
         -> Tensor<T, 2> {
@@ -504,6 +580,13 @@ namespace utec::algebra {
         return result;
     }
 
+    /**
+     * @brief Realiza producto matricial entre 2 tensores de dimension mayor a 2.
+     * @param lhs Tensor 1 de la operacion.
+     * @param rhs Tensor 2 de la operacion.
+     * @complexity O(n).
+     * @return Tensor resultante de la operacion.
+     */
     template <typename T, std::size_t Rank>
         requires(Rank > 2)
     [[nodiscard]] constexpr auto matrix_product(const Tensor<T, Rank>& lhs,
