@@ -40,6 +40,17 @@ namespace {
 
 namespace utec::algebra {
 
+    /**
+     * @class Tensor
+     * @brief Representa un tensor de tipo T y rango Rank.
+     *
+     * Un tensor es una estructura de datos multidimensional que puede almacenar elementos
+     * de cualquier tipo T. Esta clase admite tensores de cualquier rango (dimensionalidad),
+     * con acceso eficiente, operaciones matemáticas, y soporte para broadcasting.
+     *
+     * @tparam T Tipo de dato almacenado (float, double, int, etc).
+     * @tparam Rank Dimensionalidad del tensor.
+     */
     template <typename T, size_t Rank>
     class Tensor {
         std::array<size_t, Rank> m_shape;
@@ -73,6 +84,11 @@ namespace utec::algebra {
         }
 
     public:
+        /**
+         * @brief Constructor que inicializa el tensor con una forma dada.
+         * @param shape Arreglo con el tamaño en cada dimensión.
+         * @complexity O(n), donde n es el producto de todas las dimensiones.
+         */
         explicit Tensor(const std::array<size_t, Rank>& shape)
             : m_shape(shape),
               m_data(std::accumulate(shape.begin(),
@@ -82,6 +98,11 @@ namespace utec::algebra {
             update_steps();
         }
 
+        /**
+         * @brief Constructor variádico para inicializar la forma del tensor.
+         * @param dims Dimensiones individuales.
+         * @complexity O(n), donde n es el producto de todas las dimensiones.
+         */
         template <typename... Dims>
             requires(sizeof...(Dims) == Rank)
         explicit Tensor(const Dims... dims)
@@ -103,6 +124,12 @@ namespace utec::algebra {
             return *this;
         }
 
+        /**
+         * @brief Acceso a un elemento por índices.
+         * @param idxs Lista de índices de acceso.
+         * @return Referencia al elemento en la posición dada.
+         * @complexity O(Rank)
+         */
         constexpr auto operator()(const auto... idxs) -> T& {
             return m_data[physical_index(idxs...)];
         }
