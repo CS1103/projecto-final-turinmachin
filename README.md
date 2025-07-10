@@ -75,29 +75,53 @@ Recreación del minijuego de matemáticas de Brain-Age usando redes neuronales e
 
 #### 2.1 Arquitectura de la solución
 
-- **Patrones de diseño**: ejemplo: Factory para capas, Strategy para optimizadores.
-- **Estructura de carpetas (ejemplo)**:
+- **Patrones de diseño**: Factory para ecuaciones del juego, Registry para capas.
+- **Estructura de carpetas**:
 
   ```
-  proyecto-final/
+  projecto-final-turinmachin
+  ├── docs/
+  ├── doxy.conf
+  ├── CMakeLists.txt
+  ├── config.h.in
+  ├── default.nix
+  ├── shell.nix
+  ├── flake.nix
+  ├── flake.lock
+  ├── deps/
+  │   └── catch/
+  ├── include
+  │   ├── common/
+  │   ├── game/
+  │   │   ├── math/
+  │   │   └── sdl/
+  │   ├── trainer/
+  │   └── utec/
+  │       ├── algebra/
+  │       ├── nn/
+  │       └── utils/
+  ├── LICENSE
+  ├── README.md
+  ├── share/
   ├── src/
-  │   ├── layers/
-  │   ├── optimizers/
-  │   └── main.cpp
-  ├── tests/
-  └── docs/
+  │   ├── common/
+  │   ├── game/
+  │   │   ├── math/
+  │   │   └── sdl/
+  │   ├── trainer/
+  │   └── trainer_kan/
+  └── tests/
   ```
 
 #### 2.2 Manual de uso y casos de prueba
 
-- **Cómo ejecutar**: `./build/neural_net_demo input.csv output.csv`
+- **Cómo ejecutar**: `./build/brain_ager`
 - **Casos de prueba**:
 
-  - Test unitario de capa densa.
-  - Test de función de activación ReLU.
-  - Test de convergencia en dataset de ejemplo.
-
-> _Personalizar rutas, comandos y casos reales._
+  - Test unitario de capa Dense, al verificar que una capa Dense y una capa de activación Sigmoid produce una salida del tamaño correcto y con valores entre 0 y 1, validando la propagación hacia adelante.
+  - Test de función de activación ReLU, para aproximar funciones lineales $(f(x) = 2x)$, no lineales $(f(x) = x^2)$ y periódicas $(f(x) = sin(x))$, evaluando que la salida predicha se acerca suficientemente al valor esperado.
+  - Se entrena una red con múltiples épocas sobre el dataset XOR. Se valida que la función de pérdida disminuye y que los resultados se ajustan a los valores esperados ($<0.2$ para $0$ y $>0.8$ para $1$).
+  - Verifica que una red neuronal sin capas devuelve exactamente el mismo tensor que recibe como entrada.
 
 ---
 
