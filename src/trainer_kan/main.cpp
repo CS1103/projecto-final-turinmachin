@@ -1,7 +1,7 @@
 #include <array>
 #include <cstddef>
 #include <fstream>
-#include <print>
+#include <iostream>
 #include <random>
 #include <ranges>
 #include <sstream>
@@ -109,7 +109,7 @@ namespace {
     auto load_neural_network(std::mt19937& rng) -> NeuralNetwork<double> {
         std::ifstream infile("../share/net_kan.pp20");
         if (infile) {
-            std::println("Loading existing network...");
+            std::cout << "Loading existing network..." << "\n";
             return NeuralNetwork<double>::load(infile);
         }
 
@@ -125,7 +125,7 @@ namespace {
             }
         };
 
-        std::println("No existing network data detected.");
+        std::cout << "No existing network data detected." << "\n";
 
         NeuralNetwork<double> net;
         net.add_layer<Kan<double>>(IMAGE_LENGTH, 64, 8, kan_init, kan_init, zero_init);
@@ -148,10 +148,10 @@ auto main() -> int {
     const Dataset training_data(training_file);
     const Dataset test_data(test_file);
 
-    std::println("Training...");
+    std::cout << "Training..." << "\n";
     training_data.train(net, rng);
 
-    std::println("Saving...");
+    std::cout << "Saving..." << "\n";
     {
         std::ofstream outfile("../share/net_kan.pp20");
         net.save(outfile);
@@ -159,7 +159,7 @@ auto main() -> int {
 
     const double accuracy_tra = training_data.test_accuracy(net);
     const double accuracy_tes = test_data.test_accuracy(net);
-    std::println("Accuracy (training): {:.2f}%", 100 * accuracy_tra);
-    std::println("Accuracy (test):     {:.2f}%", 100 * accuracy_tes);
+    std::cout << "Accuracy (training): " << 100 * accuracy_tra << "%" << "\n";
+    std::cout << "Accuracy (test):     " << 100 * accuracy_tes << "%" << "\n";
     return 0;
 }

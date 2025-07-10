@@ -6,7 +6,6 @@
 #include <fstream>
 #include <iostream>
 #include <memory>
-#include <print>
 #include <string>
 #include "common/agent.h"
 #include "common/data.h"
@@ -19,12 +18,12 @@ auto main() -> int {
     using namespace game;
 
     if (!SDL_Init(SDL_INIT_VIDEO)) {
-        std::println(std::cerr, "Could not initialize video: {}", SDL_GetError());
+        std::cerr << "Could not initialize video: " << SDL_GetError() << "\n";
         return 1;
     }
 
     if (!TTF_Init()) {
-        std::println(std::cerr, "Could not initialize TTF: {}", SDL_GetError());
+        std::cerr << "Could not initialize TTF: " << SDL_GetError() << "\n";
         return 1;
     }
 
@@ -32,7 +31,7 @@ auto main() -> int {
     SDL_Renderer* const renderer = SDL_CreateRenderer(window, nullptr);
 
     if (window == nullptr || renderer == nullptr) {
-        std::println(std::cerr, "Could not initialize window or renderer: {}", SDL_GetError());
+        std::cerr << "Could not initialize window or renderer: " << SDL_GetError() << "\n";
         return 1;
     }
 
