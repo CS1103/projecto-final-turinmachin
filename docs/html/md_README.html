@@ -99,9 +99,7 @@ Proyecto Final 2025-1: Brain Ager</h1>
 <b>CS2013 Programación III</b> · Informe Final</h2>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 <b>Descripción</b></h3>
-<blockquote class="doxtable">
-<p>Ejemplo: Implementación de una red neuronal multicapa en C++ para clasificación de dígitos manuscritos. </p>
-</blockquote>
+<p>Recreación del minijuego de matemáticas de Brain-Age usando redes neuronales en C++ para la identificación de dígitos.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 Contenidos</h3>
 <ol type="1">
@@ -171,31 +169,54 @@ Requisitos e instalación</h3>
 <h4 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
 2.1 Arquitectura de la solución</h4>
 <ul>
-<li><b>Patrones de diseño</b>: ejemplo: Factory para capas, Strategy para optimizadores.</li>
-<li><p class="startli"><b>Estructura de carpetas (ejemplo)</b>:</p>
-<div class="fragment"><div class="line">proyecto-final/</div>
+<li><b>Patrones de diseño</b>: Factory para ecuaciones del juego, Registry para capas.</li>
+<li><p class="startli"><b>Estructura de carpetas</b>:</p>
+<div class="fragment"><div class="line">projecto-final-turinmachin</div>
+<div class="line">├── docs/</div>
+<div class="line">├── doxy.conf</div>
+<div class="line">├── CMakeLists.txt</div>
+<div class="line">├── config.h.in</div>
+<div class="line">├── default.nix</div>
+<div class="line">├── shell.nix</div>
+<div class="line">├── flake.nix</div>
+<div class="line">├── flake.lock</div>
+<div class="line">├── deps/</div>
+<div class="line">│   └── catch/</div>
+<div class="line">├── include</div>
+<div class="line">│   ├── common/</div>
+<div class="line">│   ├── game/</div>
+<div class="line">│   │   ├── math/</div>
+<div class="line">│   │   └── sdl/</div>
+<div class="line">│   ├── trainer/</div>
+<div class="line">│   └── utec/</div>
+<div class="line">│       ├── algebra/</div>
+<div class="line">│       ├── nn/</div>
+<div class="line">│       └── utils/</div>
+<div class="line">├── LICENSE</div>
+<div class="line">├── README.md</div>
+<div class="line">├── share/</div>
 <div class="line">├── src/</div>
-<div class="line">│   ├── layers/</div>
-<div class="line">│   ├── optimizers/</div>
-<div class="line">│   └── main.cpp</div>
-<div class="line">├── tests/</div>
-<div class="line">└── docs/</div>
+<div class="line">│   ├── common/</div>
+<div class="line">│   ├── game/</div>
+<div class="line">│   │   ├── math/</div>
+<div class="line">│   │   └── sdl/</div>
+<div class="line">│   ├── trainer/</div>
+<div class="line">│   └── trainer_kan/</div>
+<div class="line">└── tests/</div>
 </div><!-- fragment --></li>
 </ul>
 <h4 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 2.2 Manual de uso y casos de prueba</h4>
 <ul>
-<li><b>Cómo ejecutar</b>: <span class="tt">./build/neural_net_demo input.csv output.csv</span></li>
+<li><b>Cómo ejecutar</b>: <span class="tt">./build/brain_ager</span></li>
 <li><b>Casos de prueba</b>:<ul>
-<li>Test unitario de capa densa.</li>
-<li>Test de función de activación ReLU.</li>
-<li>Test de convergencia en dataset de ejemplo.</li>
+<li>Test unitario de capa <a class="el" href="classDense.html">Dense</a>, al verificar que una capa <a class="el" href="classDense.html">Dense</a> y una capa de activación <a class="el" href="classSigmoid.html" title="Capa de activación Sigmoid. Convierte cada valor en el rango (0, 1) abierto usando la función logísti...">Sigmoid</a> produce una salida del tamaño correcto y con valores entre 0 y 1, validando la propagación hacia adelante.</li>
+<li>Test de función de activación ReLU, para aproximar funciones lineales $(f(x) = 2x)$, no lineales $(f(x) = x^2)$ y periódicas $(f(x) = sin(x))$, evaluando que la salida predicha se acerca suficientemente al valor esperado.</li>
+<li>Se entrena una red con múltiples épocas sobre el dataset XOR. Se valida que la función de pérdida disminuye y que los resultados se ajustan a los valores esperados ($&lt;0.2$ para $0$ y $&gt;0.8$ para $1$).</li>
+<li>Verifica que una red neuronal sin capas devuelve exactamente el mismo tensor que recibe como entrada.</li>
 </ul>
 </li>
 </ul>
-<blockquote class="doxtable">
-<p><em>Personalizar rutas, comandos y casos reales.</em> </p>
-</blockquote>
 <hr  />
 <h3 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
 3. Ejecución</h3>
@@ -261,7 +282,7 @@ Requisitos e instalación</h3>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 7. Bibliografía</h3>
 <blockquote class="doxtable">
-<p><em>Actualizar con bibliografia utilizada, al menos 4 referencias bibliograficas y usando formato IEEE de referencias bibliograficas.</em> </p>
+<p><em>Actualizar con bibliografía utilizada, al menos 4 referencias bibliográficas y usando formato IEEE de referencias bibliográficas.</em> </p>
 </blockquote>
 <hr  />
 <h3 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
