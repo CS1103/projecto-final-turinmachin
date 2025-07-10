@@ -10,7 +10,6 @@
 #include "utec/nn/activation.h"
 #include "utec/nn/dense.h"
 #include "utec/nn/interfaces.h"
-#include "utec/nn/kan.h"
 
 namespace utec::neural_network {
 
@@ -81,9 +80,6 @@ namespace utec::neural_network {
             LayerId::Softmax, [](std::istream&) { return std::make_unique<Softmax<T>>(); });
         LayerRegistry<T>::register_layer(LayerId::Dense, [](std::istream& in) {
             return std::make_unique<Dense<T>>(Dense<T>::load(in));
-        });
-        LayerRegistry<T>::register_layer(LayerId::Kan, [](std::istream& in) {
-            return std::make_unique<Kan<T>>(Kan<T>::load(in));
         });
     }
 
