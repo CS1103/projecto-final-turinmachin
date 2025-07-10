@@ -1,0 +1,9 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,78,102,104"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1algebra_1_1Tensor.html#a637c3147839433886d561c28a210cd33" title="Llena la data de un tesor con un valor." alt="" coords="150,5,290,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,75,151,50,153,55,89,80"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1algebra_1_1Tensor.html#a17fecc417ac1f38cf37ce43ac4a9952f" title="Cambia la forma del tensor actual." alt="" coords="150,71,290,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="102,88,134,88,134,94,102,94"/>
+<area shape="rect" id="Node000004" href="$classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="150,136,290,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="89,102,153,127,151,132,87,107"/>
+</map>

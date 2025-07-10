@@ -1,0 +1,5 @@
+<map id="utec::neural_network::NeuralNetwork::save" name="utec::neural_network::NeuralNetwork::save">
+<area shape="rect" id="Node000001" title="Guarda el modelo en un flujo de salida binario." alt="" coords="5,5,154,46"/>
+<area shape="rect" id="Node000002" href="$namespaceserialization.html#af7d3d5835d83a80288feeca38f538f4c" title=" " alt="" coords="202,5,325,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,23,186,23,186,28,154,28"/>
+</map>

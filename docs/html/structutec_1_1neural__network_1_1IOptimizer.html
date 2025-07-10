@@ -93,25 +93,42 @@ $(function(){initNavTree('structutec_1_1neural__network_1_1IOptimizer.html','','
 </div><!--header-->
 <div class="contents">
 
+<p>Interfaz para definir un optimizador (ej. <a class="el" href="classutec_1_1neural__network_1_1SGD.html" title="Optimizador Stochastic Gradient Descent (SGD). Actualiza los parámetros en dirección opuesta al gradi...">SGD</a>, <a class="el" href="classutec_1_1neural__network_1_1Adam.html" title="Optimizador Adam (Adaptive Moment Estimation). Combina momentum y RMSProp para un aprendizaje más est...">Adam</a>, ...). Un optimizador se encarga de actualizar los parámetros entrenables (como pesos y biases) en base a los gradientes.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="utec_2nn_2interfaces_8h_source.html">interfaces.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for utec::neural_network::IOptimizer&lt; T &gt;:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="structutec_1_1neural__network_1_1IOptimizer.png" usemap="#utec_3A_3Aneural_5Fnetwork_3A_3AIOptimizer_3C_20T_20_3E_map" alt=""/>
-  <map id="utec_3A_3Aneural_5Fnetwork_3A_3AIOptimizer_3C_20T_20_3E_map" name="utec_3A_3Aneural_5Fnetwork_3A_3AIOptimizer_3C_20T_20_3E_map">
-<area href="classutec_1_1neural__network_1_1Adam.html" alt="utec::neural_network::Adam&lt; T &gt;" shape="rect" coords="0,56,222,80"/>
-<area href="classutec_1_1neural__network_1_1SGD.html" alt="utec::neural_network::SGD&lt; T &gt;" shape="rect" coords="232,56,454,80"/>
-  </map>
-</div></div>
+<div class="center"><img src="structutec_1_1neural__network_1_1IOptimizer__inherit__graph.png" border="0" usemap="#autec_1_1neural__network_1_1IOptimizer_3_01T_01_4_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="autec_1_1neural__network_1_1IOptimizer_3_01T_01_4_inherit__map" id="autec_1_1neural__network_1_1IOptimizer_3_01T_01_4_inherit__map">
+<area shape="rect" title="Interfaz para definir un optimizador (ej. SGD, Adam, ...). Un optimizador se encarga de actualizar lo..." alt="" coords="87,5,227,46"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Adam.html" title="Optimizador Adam (Adaptive Moment Estimation). Combina momentum y RMSProp para un aprendizaje más est..." alt="" coords="5,94,146,135"/>
+<area shape="poly" title=" " alt="" coords="130,59,96,95,92,92,126,56"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1SGD.html" title="Optimizador Stochastic Gradient Descent (SGD). Actualiza los parámetros en dirección opuesta al gradi..." alt="" coords="169,94,310,135"/>
+<area shape="poly" title=" " alt="" coords="188,56,223,92,219,95,184,59"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8535546f154901c74425495139d54b68" id="r_a8535546f154901c74425495139d54b68"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8535546f154901c74425495139d54b68">~IOptimizer</a> ()=default</td></tr>
+<tr class="memdesc:a8535546f154901c74425495139d54b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor virtual.  <br /></td></tr>
 <tr class="memitem:af1b6f92a0513f3673df32902444800c8" id="r_af1b6f92a0513f3673df32902444800c8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1b6f92a0513f3673df32902444800c8">update</a> (<a class="el" href="classutec_1_1algebra_1_1Tensor.html">algebra::Tensor</a>&lt; T, 2 &gt; &amp;params, const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">algebra::Tensor</a>&lt; T, 2 &gt; &amp;gradients)=0</td></tr>
+<tr class="memdesc:af1b6f92a0513f3673df32902444800c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza los parámetros del modelo usando los gradientes.  <br /></td></tr>
 <tr class="memitem:a930832dc9b736845a83f5049c735dfe1" id="r_a930832dc9b736845a83f5049c735dfe1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a930832dc9b736845a83f5049c735dfe1">step</a> ()</td></tr>
+<tr class="memdesc:a930832dc9b736845a83f5049c735dfe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Avanza el estado interno del optimizador si este lo permite. Sólo aplica a aquellos optimizadores que llevan estados (ej. <a class="el" href="classutec_1_1neural__network_1_1Adam.html" title="Optimizador Adam (Adaptive Moment Estimation). Combina momentum y RMSProp para un aprendizaje más est...">Adam</a>). Para otros (ej. <a class="el" href="classutec_1_1neural__network_1_1SGD.html" title="Optimizador Stochastic Gradient Descent (SGD). Actualiza los parámetros en dirección opuesta al gradi...">SGD</a>), no hace nada.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+struct utec::neural_network::IOptimizer&lt; T &gt;</div><p>Interfaz para definir un optimizador (ej. <a class="el" href="classutec_1_1neural__network_1_1SGD.html" title="Optimizador Stochastic Gradient Descent (SGD). Actualiza los parámetros en dirección opuesta al gradi...">SGD</a>, <a class="el" href="classutec_1_1neural__network_1_1Adam.html" title="Optimizador Adam (Adaptive Moment Estimation). Combina momentum y RMSProp para un aprendizaje más est...">Adam</a>, ...). Un optimizador se encarga de actualizar los parámetros entrenables (como pesos y biases) en base a los gradientes. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Tipo de dato usado para los cálculos (usualmente float o double). </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8535546f154901c74425495139d54b68" name="a8535546f154901c74425495139d54b68"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8535546f154901c74425495139d54b68">&#9670;&#160;</a></span>~IOptimizer()</h2>
 
@@ -136,6 +153,8 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Destructor virtual. </p>
 
 </div>
 </div>
@@ -164,6 +183,8 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Avanza el estado interno del optimizador si este lo permite. Sólo aplica a aquellos optimizadores que llevan estados (ej. <a class="el" href="classutec_1_1neural__network_1_1Adam.html" title="Optimizador Adam (Adaptive Moment Estimation). Combina momentum y RMSProp para un aprendizaje más est...">Adam</a>). Para otros (ej. <a class="el" href="classutec_1_1neural__network_1_1SGD.html" title="Optimizador Stochastic Gradient Descent (SGD). Actualiza los parámetros en dirección opuesta al gradi...">SGD</a>), no hace nada. </p>
 
 <p>Reimplemented in <a class="el" href="classutec_1_1neural__network_1_1Adam.html#a0e9d2821852c9608f87a329e8a5cb45d">utec::neural_network::Adam&lt; T &gt;</a>.</p>
 
@@ -198,7 +219,28 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Actualiza los parámetros del modelo usando los gradientes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">params</td><td>Parámetros del modelo que se desean actualizar. </td></tr>
+    <tr><td class="paramname">gradients</td><td>Gradientes calculados con respecto a dichos parámetros. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="classutec_1_1neural__network_1_1Adam.html#afbc4ee15fa6b2be1e0a508be4e03eb32">utec::neural_network::Adam&lt; T &gt;</a>, and <a class="el" href="classutec_1_1neural__network_1_1SGD.html#a0a3a3344db4a34db76c0da2031a68225">utec::neural_network::SGD&lt; T &gt;</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8_icgraph.png" border="0" usemap="#astructutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8_icgraph" loading="lazy" alt=""/></div>
+<map name="astructutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8_icgraph" id="astructutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8_icgraph">
+<area shape="rect" title="Actualiza los parámetros del modelo usando los gradientes." alt="" coords="213,39,353,79"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Dense.html#a6a7adf0ad0f2097c68a3bcee3585265a" title="Actualiza los parámetros (pesos y biases) usando un optimizador." alt="" coords="5,5,165,46"/>
+<area shape="poly" title=" " alt="" coords="197,47,165,42,166,36,198,42"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Kan.html#a07b819255c3861f6b83f55cece8dbc61" title="Actualiza los parámetros internos de la capa (si tiene)." alt="" coords="12,71,158,111"/>
+<area shape="poly" title=" " alt="" coords="198,75,159,82,158,77,197,70"/>
+</map>
+</div>
 
 </div>
 </div>

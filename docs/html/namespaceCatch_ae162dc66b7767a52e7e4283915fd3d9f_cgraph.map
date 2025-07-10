@@ -1,0 +1,12 @@
+<map id="Catch::rangeToString" name="Catch::rangeToString">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,103,148,128"/>
+<area shape="rect" id="Node000002" href="$namespaceCatch.html#af13494e925a793e3e7143c6ce6f442c2" title=" " alt="" coords="231,29,373,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,100,195,64,219,57,220,62,197,69,107,105"/>
+<area shape="rect" id="Node000003" href="$classCatch_1_1ReusableStringStream.html#a3d93d9f26cddd6c5c48b6ef63c694119" title="Returns the serialized state." alt="" coords="196,103,408,128"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="148,113,180,113,180,118,148,118"/>
+<area shape="rect" id="Node000004" href="$namespaceCatch_1_1Detail.html#af0ad48344ffd3f92f3568465248a9880" title=" " alt="" coords="229,176,374,202"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="120,126,246,168,244,173,118,131"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="264,31,257,21,261,11,277,5,302,3,329,5,343,12,341,17,328,10,302,8,278,10,265,15,262,20,269,27"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="264,104,257,94,261,84,277,78,302,76,329,79,343,86,341,90,328,84,302,81,278,83,265,88,262,93,269,101"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="264,177,257,167,261,158,277,151,302,149,329,152,343,159,341,164,328,157,302,155,278,157,265,161,262,167,269,174"/>
+</map>

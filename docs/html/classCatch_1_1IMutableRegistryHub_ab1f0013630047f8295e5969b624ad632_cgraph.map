@@ -1,0 +1,21 @@
+<map id="Catch::IMutableRegistryHub::getMutableEnumValuesRegistry" name="Catch::IMutableRegistryHub::getMutableEnumValuesRegistry">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,98,217,138"/>
+<area shape="poly" id="edge4_Node000001_Node000001" title=" " alt="" coords="63,98,61,88,69,79,85,73,111,71,139,74,155,80,153,85,137,79,111,76,86,78,72,83,66,89,68,96"/>
+<area shape="rect" id="Node000002" href="$namespaceCatch.html#a0f78e9afdebc6d4512d18e76fbf54b8c" title=" " alt="" coords="312,31,422,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,95,264,65,297,56,298,61,265,70,172,100"/>
+<area shape="rect" id="Node000005" href="$namespaceCatch.html#a585459763f2c7610e57de2dd22dd1ad8" title=" " alt="" coords="269,80,465,106"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="217,105,253,101,253,107,217,110"/>
+<area shape="rect" id="Node000006" href="$namespaceCatch.html#a5d328566cb8da87b48f1fac3f319ac7a" title=" " alt="" coords="550,128,701,154"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="217,120,535,134,535,140,217,125"/>
+<area shape="rect" id="Node000007" href="$namespaceCatch.html#adafff91485eeeeb9e9333f317cc0e3b1" title=" " alt="" coords="265,183,469,208"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="182,137,308,175,307,180,180,142"/>
+<area shape="rect" id="Node000003" href="$namespaceCatch.html#ae50508f10ffc4ed873a31a4db4caea16" title=" " alt="" coords="549,5,702,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,36,533,25,534,30,422,41"/>
+<area shape="rect" id="Node000004" href="$namespaceCatch.html#a8bdb92cb53a4e016bc0dee66efd99118" title=" " alt="" coords="542,55,709,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="422,46,527,56,526,61,422,51"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="430,180,546,155,547,160,431,185"/>
+<area shape="rect" id="Node000008" href="$classCatch_1_1IRegistryHub.html#aa97defa756fe28dd6249b19c12bbbec1" title=" " alt="" coords="522,178,729,218"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="469,194,507,194,507,200,469,199"/>
+<area shape="rect" id="Node000009" href="$classCatch_1_1IExceptionTranslatorRegistry.html#af76ae8c331a17f2a94c9720bc0d686bb" title=" " alt="" coords="517,243,734,284"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="419,206,531,236,530,241,418,212"/>
+</map>

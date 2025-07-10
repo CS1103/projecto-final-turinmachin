@@ -1,0 +1,13 @@
+<map id="Catch::AssertionResult" name="Catch::AssertionResult">
+<area shape="rect" id="Node000001" title=" " alt="" coords="229,219,382,245"/>
+<area shape="rect" id="Node000002" href="$structCatch_1_1AssertionInfo.html" title=" " alt="" coords="144,122,283,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,157,296,217,292,220,234,161"/>
+<area shape="rect" id="Node000003" href="$classCatch_1_1StringRef.html" title=" " alt="" coords="5,5,121,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="68,46,75,73,91,96,116,114,145,124,143,129,113,118,87,100,70,75,63,47"/>
+<area shape="rect" id="Node000004" href="$structCatch_1_1SourceLineInfo.html" title=" " alt="" coords="144,5,294,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="220,47,217,122,212,122,215,46"/>
+<area shape="rect" id="Node000005" href="$structCatch_1_1AssertionResultData.html" title=" " alt="" coords="308,122,488,148"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="378,161,319,220,316,217,374,157"/>
+<area shape="rect" id="Node000006" href="$classCatch_1_1LazyExpression.html" title=" " alt="" coords="322,5,473,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="400,47,400,122,395,122,395,47"/>
+</map>

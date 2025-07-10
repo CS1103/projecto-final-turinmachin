@@ -93,17 +93,23 @@ $(function(){initNavTree('classutec_1_1algebra_1_1Tensor.html','','classutec_1_1
 </div><!--header-->
 <div class="contents">
 
+<p>Representa un tensor de tipo T y rango Rank.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="tensor_8h_source.html">tensor.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afef65c86595bc5e9f35eedc48228c7a1" id="r_afef65c86595bc5e9f35eedc48228c7a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afef65c86595bc5e9f35eedc48228c7a1">Tensor</a> (const std::array&lt; size_t, Rank &gt; &amp;<a class="el" href="#a26b6cbe28804d535a9bccc96bae9a3e5">shape</a>)</td></tr>
+<tr class="memdesc:afef65c86595bc5e9f35eedc48228c7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor que inicializa el tensor con una forma dada.  <br /></td></tr>
 <tr class="memitem:aa032eb5875ff92319a7c64b83a1e39a0" id="r_aa032eb5875ff92319a7c64b83a1e39a0"><td class="memTemplParams" colspan="2">template&lt;typename... Dims&gt; <br />
 requires (sizeof...(Dims) == Rank)</td></tr>
 <tr class="memitem:aa032eb5875ff92319a7c64b83a1e39a0 template"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa032eb5875ff92319a7c64b83a1e39a0">Tensor</a> (const Dims... dims)</td></tr>
+<tr class="memdesc:aa032eb5875ff92319a7c64b83a1e39a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor variádico para inicializar la forma del tensor.  <br /></td></tr>
 <tr class="memitem:abc82b477190acf69c9e09b46276147dd" id="r_abc82b477190acf69c9e09b46276147dd"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc82b477190acf69c9e09b46276147dd">operator==</a> (const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt; &amp;other) const -&gt; bool</td></tr>
 <tr class="memitem:aff520eafc9ad362d3d390c4ad5f77518" id="r_aff520eafc9ad362d3d390c4ad5f77518"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff520eafc9ad362d3d390c4ad5f77518">operator=</a> (std::initializer_list&lt; T &gt; list) -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt; &amp;</td></tr>
 <tr class="memitem:addc5fb80712265edf13d2c877fbf0ce4" id="r_addc5fb80712265edf13d2c877fbf0ce4"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addc5fb80712265edf13d2c877fbf0ce4">operator()</a> (const auto... idxs) -&gt; T &amp;</td></tr>
+<tr class="memdesc:addc5fb80712265edf13d2c877fbf0ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acceso a un elemento por índices.  <br /></td></tr>
 <tr class="memitem:a30f761ffe6a426e2705d92c790273165" id="r_a30f761ffe6a426e2705d92c790273165"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30f761ffe6a426e2705d92c790273165">operator()</a> (const auto... idxs) const -&gt; const T &amp;</td></tr>
 <tr class="memitem:a57764b269a44d7ca3dc39775d9e66f25" id="r_a57764b269a44d7ca3dc39775d9e66f25"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57764b269a44d7ca3dc39775d9e66f25">operator()</a> (const std::array&lt; size_t, Rank &gt; &amp;idxs) -&gt; T &amp;</td></tr>
 <tr class="memitem:ae63873da1de276f0defb7ddcf9a0a250" id="r_ae63873da1de276f0defb7ddcf9a0a250"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae63873da1de276f0defb7ddcf9a0a250">operator()</a> (const std::array&lt; size_t, Rank &gt; &amp;idxs) const -&gt; const T &amp;</td></tr>
@@ -112,15 +118,23 @@ requires (sizeof...(Dims) == Rank)</td></tr>
 <tr class="memitem:a215437fdbb556e998f3feae08b02a51b" id="r_a215437fdbb556e998f3feae08b02a51b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a215437fdbb556e998f3feae08b02a51b">size</a> () const -&gt; size_t</td></tr>
 <tr class="memitem:a26b6cbe28804d535a9bccc96bae9a3e5" id="r_a26b6cbe28804d535a9bccc96bae9a3e5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26b6cbe28804d535a9bccc96bae9a3e5">shape</a> () const noexcept -&gt; const std::array&lt; size_t, Rank &gt; &amp;</td></tr>
 <tr class="memitem:a17fecc417ac1f38cf37ce43ac4a9952f" id="r_a17fecc417ac1f38cf37ce43ac4a9952f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17fecc417ac1f38cf37ce43ac4a9952f">reshape</a> (const std::array&lt; size_t, Rank &gt; &amp;new_shape)</td></tr>
+<tr class="memdesc:a17fecc417ac1f38cf37ce43ac4a9952f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cambia la forma del tensor actual.  <br /></td></tr>
 <tr class="memitem:a54fa319d146817ef1b6f9cd85274752c" id="r_a54fa319d146817ef1b6f9cd85274752c"><td class="memTemplParams" colspan="2">template&lt;typename... Dims&gt; <br />
 requires (sizeof...(Dims) == Rank)</td></tr>
 <tr class="memitem:a54fa319d146817ef1b6f9cd85274752c template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54fa319d146817ef1b6f9cd85274752c">reshape</a> (const Dims... dims)</td></tr>
+<tr class="memdesc:a54fa319d146817ef1b6f9cd85274752c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cambia la forma del tensor actual. @taram Dims Nuevo "Rank" del tensor. @complexity O(Rank).  <br /></td></tr>
 <tr class="memitem:a637c3147839433886d561c28a210cd33" id="r_a637c3147839433886d561c28a210cd33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a637c3147839433886d561c28a210cd33">fill</a> (const T &amp;value) noexcept</td></tr>
+<tr class="memdesc:a637c3147839433886d561c28a210cd33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Llena la data de un tesor con un valor.  <br /></td></tr>
 <tr class="memitem:a51eb9eef03f17649b74063dd37574a03" id="r_a51eb9eef03f17649b74063dd37574a03"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51eb9eef03f17649b74063dd37574a03">row</a> (const size_t index) const -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, 2 &gt; requires(Rank==2)</td></tr>
+<tr class="memdesc:a51eb9eef03f17649b74063dd37574a03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera tensor con fila particular.  <br /></td></tr>
 <tr class="memitem:af442d67fa5f45db289396ff5b836ea0a" id="r_af442d67fa5f45db289396ff5b836ea0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af442d67fa5f45db289396ff5b836ea0a">set_row</a> (const size_t index, const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, 2 &gt; &amp;row_tensor)</td></tr>
+<tr class="memdesc:af442d67fa5f45db289396ff5b836ea0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cambia fila especifica de un tensor.  <br /></td></tr>
 <tr class="memitem:a91fb9304cb7603e83a4414dfb6000c5c" id="r_a91fb9304cb7603e83a4414dfb6000c5c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91fb9304cb7603e83a4414dfb6000c5c">slice</a> (const size_t index) const -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, 2 &gt; requires(Rank==3)</td></tr>
+<tr class="memdesc:a91fb9304cb7603e83a4414dfb6000c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera tensor con fila particular para tensor de Rank 3.  <br /></td></tr>
 <tr class="memitem:ae9d375f3d8c7e60eceb238dbe0df593a" id="r_ae9d375f3d8c7e60eceb238dbe0df593a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9d375f3d8c7e60eceb238dbe0df593a">set_slice</a> (const size_t index, const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, 2 &gt; &amp;<a class="el" href="#a91fb9304cb7603e83a4414dfb6000c5c">slice</a>)</td></tr>
+<tr class="memdesc:ae9d375f3d8c7e60eceb238dbe0df593a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cambia el subtensor asignado.  <br /></td></tr>
 <tr class="memitem:adac07192ba798e56630fb5c547b38747" id="r_adac07192ba798e56630fb5c547b38747"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adac07192ba798e56630fb5c547b38747">broadcast</a> (const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt; &amp;rhs, auto fn) const -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt;</td></tr>
+<tr class="memdesc:adac07192ba798e56630fb5c547b38747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza Broadcasting para un tensor.  <br /></td></tr>
 <tr class="memitem:a7f68b0a3fbf84213e7f0a4928f54fb05" id="r_a7f68b0a3fbf84213e7f0a4928f54fb05"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f68b0a3fbf84213e7f0a4928f54fb05">operator+</a> (const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt; &amp;other) const -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt;</td></tr>
 <tr class="memitem:a1cf64d6d7bdf6131ee5748949a37f187" id="r_a1cf64d6d7bdf6131ee5748949a37f187"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cf64d6d7bdf6131ee5748949a37f187">operator-</a> (const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt; &amp;other) const -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt;</td></tr>
 <tr class="memitem:ad90e82d91ec2f95c449eea378024df98" id="r_ad90e82d91ec2f95c449eea378024df98"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad90e82d91ec2f95c449eea378024df98">operator*</a> (const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt; &amp;other) const -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt;</td></tr>
@@ -135,8 +149,11 @@ requires (sizeof...(Dims) == Rank)</td></tr>
 <tr class="memitem:aecaf859f41c82bbe3e9c65ffe22d8192" id="r_aecaf859f41c82bbe3e9c65ffe22d8192"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecaf859f41c82bbe3e9c65ffe22d8192">begin</a> () const noexcept</td></tr>
 <tr class="memitem:a7be8b942f98b3c988a7dc040fe7c72d5" id="r_a7be8b942f98b3c988a7dc040fe7c72d5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7be8b942f98b3c988a7dc040fe7c72d5">end</a> () const noexcept</td></tr>
 <tr class="memitem:a271cbdb704f0c4a7c348121322212c70" id="r_a271cbdb704f0c4a7c348121322212c70"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a271cbdb704f0c4a7c348121322212c70">transpose_2d</a> () const -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, 2 &gt;</td></tr>
+<tr class="memdesc:a271cbdb704f0c4a7c348121322212c70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trasponer un tensor de dimension 2. @complexity O(n).  <br /></td></tr>
 <tr class="memitem:aa3bbc9568b2b1fabd0fd584827603c7e" id="r_aa3bbc9568b2b1fabd0fd584827603c7e"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3bbc9568b2b1fabd0fd584827603c7e">transpose_2d</a> () const -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt; requires(Rank &gt; 2)</td></tr>
+<tr class="memdesc:aa3bbc9568b2b1fabd0fd584827603c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trasponer un tensor de dimension n mayor a 2. @complexity O(n).  <br /></td></tr>
 <tr class="memitem:a4f81c73f3b7da0e466c384906bc85e16" id="r_a4f81c73f3b7da0e466c384906bc85e16"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f81c73f3b7da0e466c384906bc85e16">apply</a> (auto fn) const -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt;</td></tr>
+<tr class="memdesc:a4f81c73f3b7da0e466c384906bc85e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aplica una funcion a todos los elementos del tensor.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -147,7 +164,18 @@ Friends</h2></td></tr>
 <tr class="memitem:ae94cc2c4fe2ddc07580e21b96eeb1f8e" id="r_ae94cc2c4fe2ddc07580e21b96eeb1f8e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae94cc2c4fe2ddc07580e21b96eeb1f8e">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt; &amp;tensor) -&gt; std::ostream &amp;requires(Rank &gt; 1)</td></tr>
 <tr class="memitem:ab4131352cf1e7e232047d3f79498fa48" id="r_ab4131352cf1e7e232047d3f79498fa48"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4131352cf1e7e232047d3f79498fa48">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt; &amp;tensor) -&gt; std::ostream &amp;requires(Rank==1)</td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, size_t Rank&gt;<br />
+class utec::algebra::Tensor&lt; T, Rank &gt;</div><p>Representa un tensor de tipo T y rango Rank. </p>
+<p>Un tensor es una estructura de datos multidimensional que puede almacenar elementos de cualquier tipo T. Esta clase admite tensores de cualquier rango (dimensionalidad), con acceso eficiente, operaciones matemáticas, y soporte para broadcasting.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Tipo de dato almacenado (float, double, int, etc). </td></tr>
+    <tr><td class="paramname">Rank</td><td>Dimensionalidad del tensor. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afef65c86595bc5e9f35eedc48228c7a1" name="afef65c86595bc5e9f35eedc48228c7a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afef65c86595bc5e9f35eedc48228c7a1">&#9670;&#160;</a></span>Tensor() <span class="overload">[1/2]</span></h2>
 
@@ -172,6 +200,108 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Constructor que inicializa el tensor con una forma dada. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shape</td><td>Arreglo con el tamaño en cada dimensión. @complexity O(n), donde n es el producto de todas las dimensiones. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1_cgraph" id="aclassutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1_cgraph">
+<area shape="rect" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="207,5,348,46"/>
+<area shape="poly" title=" " alt="" coords="145,61,191,47,193,52,147,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="194,70,361,96"/>
+<area shape="poly" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="207,120,348,161"/>
+<area shape="poly" title=" " alt="" coords="147,100,193,114,191,119,145,105"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1_icgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1_icgraph" id="aclassutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1_icgraph">
+<area shape="rect" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="657,728,797,769"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a4f81c73f3b7da0e466c384906bc85e16" title="Aplica una funcion a todos los elementos del tensor." alt="" coords="455,5,595,46"/>
+<area shape="poly" title=" " alt="" coords="721,713,711,573,691,381,675,282,656,192,634,118,621,89,607,66,587,48,590,44,611,63,625,86,639,116,662,191,681,281,696,380,717,572,726,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#adac07192ba798e56630fb5c547b38747" title="Realiza Broadcasting para un tensor." alt="" coords="455,171,595,211"/>
+<area shape="poly" title=" " alt="" coords="719,713,705,604,681,461,648,323,628,269,607,231,586,214,589,210,611,228,633,267,653,322,686,460,710,603,724,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ad90e82d91ec2f95c449eea378024df98" title=" " alt="" coords="250,72,391,113"/>
+<area shape="poly" title=" " alt="" coords="722,712,714,581,695,403,680,314,660,233,636,168,622,143,607,125,584,108,558,95,502,80,444,77,391,81,391,76,444,72,503,75,560,90,587,103,611,121,626,140,641,165,665,231,685,312,700,402,719,580,727,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a7f68b0a3fbf84213e7f0a4928f54fb05" title=" " alt="" coords="250,140,391,181"/>
+<area shape="poly" title=" " alt="" coords="721,713,713,587,694,419,679,335,660,260,636,200,622,177,607,161,582,145,555,134,526,128,497,126,437,131,384,142,383,137,437,125,497,121,527,123,557,129,585,140,610,157,626,174,641,197,665,258,684,334,699,418,719,587,727,713"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a1cf64d6d7bdf6131ee5748949a37f187" title=" " alt="" coords="250,211,391,251"/>
+<area shape="poly" title=" " alt="" coords="719,713,705,613,682,484,667,420,649,362,629,316,607,285,584,267,558,253,502,235,444,227,391,227,391,221,445,222,503,230,560,248,587,263,611,281,634,313,654,361,672,419,687,483,711,612,724,713"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a6556ae085ce1e8b3906c68d020331878" title=" " alt="" coords="250,277,391,318"/>
+<area shape="poly" title=" " alt="" coords="718,713,704,621,680,503,665,446,647,394,628,353,607,326,583,310,557,298,501,285,444,282,391,287,391,281,444,277,502,279,559,293,586,306,610,322,633,350,652,392,670,444,685,502,709,620,724,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a9e168810c56913a57f0e569300d33271" title=" " alt="" coords="455,336,595,377"/>
+<area shape="poly" title=" " alt="" coords="721,713,713,645,694,560,679,515,660,471,636,429,607,392,591,379,595,375,611,388,641,426,665,468,684,513,699,559,718,645,726,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a0eef42b1eb01e70f175d427230ca3710" title=" " alt="" coords="455,401,595,442"/>
+<area shape="poly" title=" " alt="" coords="718,713,706,658,685,589,653,519,632,486,607,457,591,445,594,440,611,453,636,483,658,516,690,587,711,656,723,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a4d5c7867448ca6070dd77d76e7503d0a" title=" " alt="" coords="455,467,595,507"/>
+<area shape="poly" title=" " alt="" coords="713,714,699,670,676,619,646,568,607,522,590,510,593,506,610,518,650,564,681,617,703,668,718,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a77343720ccea1fe9b6eb35d15b5fe9e9" title=" " alt="" coords="455,532,595,573"/>
+<area shape="poly" title=" " alt="" coords="706,716,666,651,638,617,607,588,588,576,591,571,610,584,642,614,670,648,711,713"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a112907a1abc16c6c425bfd1e8e4ab0f1" title=" " alt="" coords="455,597,595,638"/>
+<area shape="poly" title=" " alt="" coords="692,719,653,685,607,653,583,641,586,636,610,649,656,681,696,715"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afe345e8834b5d29becc99333effac546" title=" " alt="" coords="455,663,595,703"/>
+<area shape="poly" title=" " alt="" coords="647,725,589,707,591,701,649,720"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ab21fecbff07e86f38dcdd0723a545213" title=" " alt="" coords="455,728,595,769"/>
+<area shape="poly" title=" " alt="" coords="641,751,596,751,596,746,641,746"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a332afc2da9d7aff2b9d261f3e4275ac0" title=" " alt="" coords="455,793,595,834"/>
+<area shape="poly" title=" " alt="" coords="649,776,591,795,589,790,647,771"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#abac937f7e9269d2523f4dac39fbb6e5d" title=" " alt="" coords="455,859,595,899"/>
+<area shape="poly" title=" " alt="" coords="696,781,656,815,610,848,586,860,583,856,607,843,653,811,692,777"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ae94cc2c4fe2ddc07580e21b96eeb1f8e" title=" " alt="" coords="455,924,595,965"/>
+<area shape="poly" title=" " alt="" coords="711,784,670,849,642,883,610,913,591,926,588,921,607,909,638,879,666,846,706,781"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ab4131352cf1e7e232047d3f79498fa48" title=" " alt="" coords="455,989,595,1030"/>
+<area shape="poly" title=" " alt="" coords="718,785,703,828,681,880,650,932,610,978,593,991,590,987,607,974,646,929,676,877,699,826,713,783"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#aff520eafc9ad362d3d390c4ad5f77518" title=" " alt="" coords="455,1055,595,1095"/>
+<area shape="poly" title=" " alt="" coords="723,785,711,840,690,909,658,980,636,1014,611,1044,594,1056,591,1052,607,1040,632,1011,653,978,685,907,706,839,718,784"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#abc82b477190acf69c9e09b46276147dd" title=" " alt="" coords="455,1120,595,1161"/>
+<area shape="poly" title=" " alt="" coords="726,785,718,852,699,938,684,984,665,1028,641,1071,611,1109,595,1122,591,1118,607,1105,636,1068,660,1026,679,982,694,937,713,851,721,784"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a51eb9eef03f17649b74063dd37574a03" title="Genera tensor con fila particular." alt="" coords="441,1250,609,1276"/>
+<area shape="poly" title=" " alt="" coords="724,785,710,889,687,1025,671,1092,654,1154,633,1204,611,1239,595,1252,591,1247,607,1236,629,1202,648,1152,666,1091,681,1024,705,888,719,784"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#af442d67fa5f45db289396ff5b836ea0a" title="Cambia fila especifica de un tensor." alt="" coords="455,1185,595,1226"/>
+<area shape="poly" title=" " alt="" coords="728,784,724,863,707,966,692,1021,672,1076,645,1128,611,1174,595,1187,592,1183,607,1171,641,1125,667,1074,687,1020,702,965,718,862,723,784"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ae9d375f3d8c7e60eceb238dbe0df593a" title="Cambia el subtensor asignado." alt="" coords="250,1316,391,1357"/>
+<area shape="poly" title=" " alt="" coords="727,784,719,913,701,1086,686,1172,666,1250,641,1313,627,1337,610,1354,583,1372,553,1382,521,1387,488,1387,424,1377,370,1360,372,1355,426,1371,488,1381,520,1382,551,1377,581,1367,607,1350,622,1334,636,1311,661,1249,680,1171,695,1085,714,912,722,784"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a91fb9304cb7603e83a4414dfb6000c5c" title="Genera tensor con fila particular para tensor de Rank 3." alt="" coords="455,1300,595,1341"/>
+<area shape="poly" title=" " alt="" coords="725,784,712,897,689,1048,673,1124,655,1193,634,1250,611,1290,597,1302,594,1298,607,1287,630,1248,650,1191,668,1122,684,1047,707,897,720,783"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a271cbdb704f0c4a7c348121322212c70" title="Trasponer un tensor de dimension 2. @complexity O(n)." alt="" coords="455,1415,595,1455"/>
+<area shape="poly" title=" " alt="" coords="726,785,715,918,694,1100,678,1192,660,1277,637,1348,611,1398,590,1416,587,1412,607,1395,632,1346,655,1276,673,1191,688,1099,710,917,721,784"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#aa3bbc9568b2b1fabd0fd584827603c7e" title="Trasponer un tensor de dimension n mayor a 2. @complexity O(n)." alt="" coords="455,1480,595,1521"/>
+<area shape="poly" title=" " alt="" coords="727,785,719,931,699,1135,684,1239,665,1334,641,1413,626,1444,611,1469,597,1481,593,1478,607,1465,622,1442,636,1411,660,1333,679,1238,694,1134,713,931,722,784"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Adam.html#afbc4ee15fa6b2be1e0a508be4e03eb32" title="Actualiza los parámetros del modelo usando el algoritmo de Adam." alt="" coords="250,5,391,46"/>
+<area shape="poly" title=" " alt="" coords="439,28,391,28,391,23,439,23"/>
+<area shape="poly" title=" " alt="" coords="466,166,364,116,366,111,469,161"/>
+<area shape="poly" title=" " alt="" coords="439,181,391,173,392,168,440,176"/>
+<area shape="poly" title=" " alt="" coords="440,210,392,220,391,215,439,205"/>
+<area shape="poly" title=" " alt="" coords="475,221,395,265,367,279,365,274,392,261,473,217"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1NeuralNetwork.html#ab2da2c55dc3be175816a870c7c91d2e3" title="Entrena la red neuronal usando descenso por lotes." alt="" coords="248,1227,393,1267"/>
+<area shape="poly" title=" " alt="" coords="426,1258,394,1255,394,1250,426,1253"/>
+<area shape="rect" href="test__nn_8cpp.html#aa2bb994d7d8e1db56c35dd2c3861fbfe" title=" " alt="" coords="103,1136,200,1161"/>
+<area shape="poly" title=" " alt="" coords="274,1220,199,1175,179,1164,181,1159,201,1170,277,1216"/>
+<area shape="rect" href="test__nn_8cpp.html#a2791441892e427b263bab683de9e2bf7" title=" " alt="" coords="103,1185,200,1210"/>
+<area shape="poly" title=" " alt="" coords="233,1224,197,1214,199,1208,235,1219"/>
+<area shape="rect" href="test__nn_8cpp.html#af6625554e4b688cb1905733083af326c" title=" " alt="" coords="103,1234,200,1260"/>
+<area shape="poly" title=" " alt="" coords="232,1250,200,1250,200,1244,232,1244"/>
+<area shape="rect" href="test__nn_8cpp.html#afad5a7c3f459ccea90c483b9c1827af0" title=" " alt="" coords="103,1284,200,1309"/>
+<area shape="poly" title=" " alt="" coords="235,1275,199,1286,197,1280,233,1270"/>
+<area shape="rect" href="classDataset.html#af22e6119731d84dbac33dd8fcdac78c9" title=" " alt="" coords="103,1333,200,1358"/>
+<area shape="poly" title=" " alt="" coords="277,1278,201,1324,181,1335,179,1330,199,1319,274,1274"/>
+<area shape="rect" href="trainer__kan_2main_8cpp.html#a8216c1645620cdb2f629cde3ac02ffef" title=" " alt="" coords="5,1333,55,1358"/>
+<area shape="poly" title=" " alt="" coords="87,1348,55,1348,55,1343,87,1343"/>
+<area shape="poly" title=" " alt="" coords="440,1226,394,1235,393,1230,439,1220"/>
+<area shape="poly" title=" " alt="" coords="439,1330,391,1334,391,1328,439,1324"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -203,6 +333,14 @@ requires (sizeof...(Dims) == Rank)</div>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor variádico para inicializar la forma del tensor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dims</td><td>Dimensiones individuales. @complexity O(n), donde n es el producto de todas las dimensiones. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -230,6 +368,41 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Aplica una funcion a todos los elementos del tensor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fn</td><td>Funcion a aplicar a los elementos del tensor. @complexity O(n)*F donde F es la complejidad de fn. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classutec_1_1algebra_1_1Tensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> modificado por la funcion. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16_cgraph" id="aclassutec_1_1algebra_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16_cgraph">
+<area shape="rect" title="Aplica una funcion a todos los elementos del tensor." alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,63,334,103"/>
+<area shape="poly" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,5,536,46"/>
+<area shape="poly" title=" " alt="" coords="334,61,380,47,381,52,335,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,70,549,96"/>
+<area shape="poly" title=" " alt="" coords="334,80,366,80,366,86,334,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,120,536,161"/>
+<area shape="poly" title=" " alt="" coords="335,100,381,114,380,119,334,105"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16_icgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16_icgraph" id="aclassutec_1_1algebra_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16_icgraph">
+<area shape="rect" title="Aplica una funcion a todos los elementos del tensor." alt="" coords="194,5,334,46"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Adam.html#afbc4ee15fa6b2be1e0a508be4e03eb32" title="Actualiza los parámetros del modelo usando el algoritmo de Adam." alt="" coords="5,5,146,46"/>
+<area shape="poly" title=" " alt="" coords="178,28,146,28,146,23,178,23"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -284,6 +457,92 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_ac3fe489f64db9697f6c9295aebb5d136_icgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_ac3fe489f64db9697f6c9295aebb5d136_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_ac3fe489f64db9697f6c9295aebb5d136_icgraph" id="aclassutec_1_1algebra_1_1Tensor_ac3fe489f64db9697f6c9295aebb5d136_icgraph">
+<area shape="rect" title=" " alt="" coords="849,729,989,770"/>
+<area shape="rect" href="classcommon_1_1DigitReader.html#ab5b30e5eeeb2a4333ea910625ff152b9" title=" " alt="" coords="657,351,801,391"/>
+<area shape="poly" title=" " alt="" coords="898,716,738,393,743,391,903,714"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="659,761,799,802"/>
+<area shape="poly" title=" " alt="" coords="834,767,800,773,799,767,833,761"/>
+<area shape="rect" href="classcommon_1_1DigitReader.html#a99026a34842f67885338bbc49b192526" title=" " alt="" coords="453,5,597,46"/>
+<area shape="poly" title=" " alt="" coords="721,336,710,277,689,204,655,128,633,92,607,61,591,49,594,45,611,57,637,89,660,125,694,202,715,276,726,335"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a4f81c73f3b7da0e466c384906bc85e16" title="Aplica una funcion a todos los elementos del tensor." alt="" coords="455,71,595,111"/>
+<area shape="poly" title=" " alt="" coords="718,746,654,403,649,360,648,321,651,254,650,223,644,193,630,161,607,126,593,114,597,110,611,123,635,158,649,191,655,223,657,254,654,321,654,359,659,403,723,745"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#adac07192ba798e56630fb5c547b38747" title="Realiza Broadcasting para un tensor." alt="" coords="455,367,595,407"/>
+<area shape="poly" title=" " alt="" coords="722,746,713,680,693,596,678,551,659,507,635,465,607,428,584,410,588,406,611,424,640,462,664,504,683,549,698,594,718,679,727,745"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ad90e82d91ec2f95c449eea378024df98" title=" " alt="" coords="250,268,391,309"/>
+<area shape="poly" title=" " alt="" coords="721,747,707,646,684,518,668,454,650,397,630,351,607,321,584,304,558,292,501,278,444,274,392,278,391,273,444,269,502,272,560,287,586,300,611,317,634,348,655,395,673,452,689,516,713,645,726,746"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a7f68b0a3fbf84213e7f0a4928f54fb05" title=" " alt="" coords="250,336,391,377"/>
+<area shape="poly" title=" " alt="" coords="720,746,706,652,682,534,667,476,649,424,629,383,607,357,582,342,556,332,497,324,439,328,387,338,386,333,439,322,498,319,557,327,585,337,610,353,633,380,654,422,672,474,687,532,711,651,726,745"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a1cf64d6d7bdf6131ee5748949a37f187" title=" " alt="" coords="250,407,391,447"/>
+<area shape="poly" title=" " alt="" coords="722,746,712,688,692,616,677,579,658,543,635,510,607,482,583,466,557,452,500,435,443,426,391,425,391,419,444,421,501,429,559,447,586,461,610,478,639,507,663,540,682,576,697,614,717,686,727,745"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a6556ae085ce1e8b3906c68d020331878" title=" " alt="" coords="250,473,391,514"/>
+<area shape="poly" title=" " alt="" coords="720,746,709,694,688,632,673,601,655,572,633,545,607,522,583,508,556,497,499,484,443,481,391,485,391,479,443,476,500,479,558,492,585,503,610,518,637,541,659,569,678,599,693,630,714,693,725,745"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a9e168810c56913a57f0e569300d33271" title=" " alt="" coords="455,597,595,638"/>
+<area shape="poly" title=" " alt="" coords="702,750,661,701,635,676,607,653,586,641,588,636,610,649,639,672,665,697,706,747"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a0eef42b1eb01e70f175d427230ca3710" title=" " alt="" coords="455,663,595,703"/>
+<area shape="poly" title=" " alt="" coords="678,756,608,719,580,706,582,702,610,714,680,751"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a4d5c7867448ca6070dd77d76e7503d0a" title=" " alt="" coords="455,728,595,769"/>
+<area shape="poly" title=" " alt="" coords="643,770,595,762,596,757,644,765"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a77343720ccea1fe9b6eb35d15b5fe9e9" title=" " alt="" coords="455,793,595,834"/>
+<area shape="poly" title=" " alt="" coords="644,798,596,805,595,800,643,792"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a112907a1abc16c6c425bfd1e8e4ab0f1" title=" " alt="" coords="455,859,595,899"/>
+<area shape="poly" title=" " alt="" coords="679,812,610,848,581,861,579,856,608,843,677,808"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afe345e8834b5d29becc99333effac546" title=" " alt="" coords="455,924,595,965"/>
+<area shape="poly" title=" " alt="" coords="706,816,665,865,638,891,610,913,588,926,586,921,607,909,635,887,661,862,702,813"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ab21fecbff07e86f38dcdd0723a545213" title=" " alt="" coords="455,989,595,1030"/>
+<area shape="poly" title=" " alt="" coords="717,817,700,854,677,897,647,940,610,978,592,991,589,986,607,974,643,937,672,894,695,852,712,815"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a332afc2da9d7aff2b9d261f3e4275ac0" title=" " alt="" coords="455,1055,595,1095"/>
+<area shape="poly" title=" " alt="" coords="723,818,709,868,687,928,654,989,634,1018,610,1044,593,1056,590,1052,607,1040,630,1015,650,986,682,926,704,866,718,817"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#abac937f7e9269d2523f4dac39fbb6e5d" title=" " alt="" coords="455,1120,595,1161"/>
+<area shape="poly" title=" " alt="" coords="727,818,716,880,696,957,680,998,662,1037,638,1075,611,1109,595,1122,591,1117,607,1105,634,1072,657,1035,676,995,691,955,711,878,721,817"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ae94cc2c4fe2ddc07580e21b96eeb1f8e" title=" " alt="" coords="455,1185,595,1226"/>
+<area shape="poly" title=" " alt="" coords="729,818,722,891,704,985,689,1036,669,1085,643,1132,611,1174,595,1187,592,1183,607,1170,638,1129,664,1083,684,1034,699,984,717,890,724,818"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ab4131352cf1e7e232047d3f79498fa48" title=" " alt="" coords="455,1251,595,1291"/>
+<area shape="poly" title=" " alt="" coords="731,817,728,901,712,1013,697,1073,676,1132,647,1189,611,1239,596,1252,592,1248,607,1236,643,1186,671,1130,692,1071,707,1012,722,901,726,817"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#aff520eafc9ad362d3d390c4ad5f77518" title=" " alt="" coords="455,1316,595,1357"/>
+<area shape="poly" title=" " alt="" coords="726,818,712,928,688,1073,672,1145,654,1211,634,1266,611,1305,596,1317,593,1313,607,1301,629,1264,649,1210,667,1144,683,1072,707,927,721,817"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#abc82b477190acf69c9e09b46276147dd" title=" " alt="" coords="455,1381,595,1422"/>
+<area shape="poly" title=" " alt="" coords="727,818,715,940,692,1104,677,1187,658,1263,636,1326,611,1370,596,1383,593,1379,607,1367,631,1324,653,1261,671,1186,687,1103,710,939,722,817"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a51eb9eef03f17649b74063dd37574a03" title="Genera tensor con fila particular." alt="" coords="441,1497,609,1522"/>
+<area shape="poly" title=" " alt="" coords="729,818,719,960,699,1157,684,1258,664,1350,640,1426,626,1456,611,1479,585,1498,582,1494,607,1476,621,1453,635,1424,659,1348,679,1257,694,1157,714,960,723,817"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#af442d67fa5f45db289396ff5b836ea0a" title="Cambia fila especifica de un tensor." alt="" coords="455,1547,595,1587"/>
+<area shape="poly" title=" " alt="" coords="729,818,722,971,703,1185,687,1294,667,1395,642,1478,627,1511,611,1537,598,1549,594,1545,607,1533,623,1509,637,1476,662,1394,682,1293,697,1184,716,970,724,817"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ae9d375f3d8c7e60eceb238dbe0df593a" title="Cambia el subtensor asignado." alt="" coords="250,1421,391,1462"/>
+<area shape="poly" title=" " alt="" coords="729,818,723,955,704,1142,689,1236,669,1321,643,1390,628,1416,610,1436,586,1452,560,1464,531,1471,502,1475,444,1473,391,1465,392,1459,444,1468,502,1469,530,1466,558,1459,584,1448,607,1432,623,1413,638,1388,664,1320,684,1235,699,1142,717,955,724,817"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a91fb9304cb7603e83a4414dfb6000c5c" title="Genera tensor con fila particular para tensor de Rank 3." alt="" coords="455,532,595,573"/>
+<area shape="poly" title=" " alt="" coords="712,748,695,711,672,668,643,625,607,588,589,576,592,571,610,584,647,622,677,665,700,709,717,746"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a271cbdb704f0c4a7c348121322212c70" title="Trasponer un tensor de dimension 2. @complexity O(n)." alt="" coords="455,136,595,177"/>
+<area shape="poly" title=" " alt="" coords="718,746,657,425,624,264,606,191,593,179,596,175,611,188,629,263,662,424,723,745"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#aa3bbc9568b2b1fabd0fd584827603c7e" title="Trasponer un tensor de dimension n mayor a 2. @complexity O(n)." alt="" coords="455,201,595,242"/>
+<area shape="poly" title=" " alt="" coords="719,747,667,477,634,338,619,289,607,262,586,245,589,240,611,259,624,287,639,336,672,475,724,746"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Adam.html#afbc4ee15fa6b2be1e0a508be4e03eb32" title="Actualiza los parámetros del modelo usando el algoritmo de Adam." alt="" coords="250,71,391,111"/>
+<area shape="poly" title=" " alt="" coords="439,94,391,94,391,88,439,88"/>
+<area shape="poly" title=" " alt="" coords="466,362,364,312,366,307,469,357"/>
+<area shape="poly" title=" " alt="" coords="439,377,391,369,392,364,440,372"/>
+<area shape="poly" title=" " alt="" coords="440,406,392,416,391,411,439,401"/>
+<area shape="poly" title=" " alt="" coords="475,417,395,461,367,475,365,470,392,457,473,413"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1NeuralNetwork.html#ab2da2c55dc3be175816a870c7c91d2e3" title="Entrena la red neuronal usando descenso por lotes." alt="" coords="248,1508,393,1549"/>
+<area shape="poly" title=" " alt="" coords="426,1521,394,1524,394,1519,426,1516"/>
+<area shape="rect" href="test__nn_8cpp.html#aa2bb994d7d8e1db56c35dd2c3861fbfe" title=" " alt="" coords="103,1417,200,1442"/>
+<area shape="poly" title=" " alt="" coords="274,1502,199,1456,179,1445,181,1441,201,1451,277,1497"/>
+<area shape="rect" href="test__nn_8cpp.html#a2791441892e427b263bab683de9e2bf7" title=" " alt="" coords="103,1466,200,1492"/>
+<area shape="poly" title=" " alt="" coords="233,1506,197,1495,199,1490,235,1501"/>
+<area shape="rect" href="test__nn_8cpp.html#af6625554e4b688cb1905733083af326c" title=" " alt="" coords="103,1516,200,1541"/>
+<area shape="poly" title=" " alt="" coords="232,1531,200,1531,200,1526,232,1526"/>
+<area shape="rect" href="test__nn_8cpp.html#afad5a7c3f459ccea90c483b9c1827af0" title=" " alt="" coords="103,1565,200,1590"/>
+<area shape="poly" title=" " alt="" coords="235,1556,199,1567,197,1562,233,1551"/>
+<area shape="rect" href="classDataset.html#af22e6119731d84dbac33dd8fcdac78c9" title=" " alt="" coords="103,1614,200,1640"/>
+<area shape="poly" title=" " alt="" coords="277,1559,201,1605,181,1616,179,1611,199,1601,274,1555"/>
+<area shape="rect" href="trainer__kan_2main_8cpp.html#a8216c1645620cdb2f629cde3ac02ffef" title=" " alt="" coords="5,1614,55,1640"/>
+<area shape="poly" title=" " alt="" coords="87,1630,55,1630,55,1624,87,1624"/>
+<area shape="poly" title=" " alt="" coords="439,1553,393,1545,394,1540,440,1548"/>
+<area shape="poly" title=" " alt="" coords="446,585,443,587,425,617,408,657,381,758,360,879,345,1010,329,1260,325,1421,319,1421,324,1260,340,1010,355,878,376,756,403,655,420,615,439,584,442,581"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -315,6 +574,48 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Realiza Broadcasting para un tensor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td><a class="el" href="classutec_1_1algebra_1_1Tensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> de referencia para hacer broadcasting. </td></tr>
+    <tr><td class="paramname">fn</td><td>Función que se va aplicar. @complexity O(n). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classutec_1_1algebra_1_1Tensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> adaptado apto para operaciones. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_adac07192ba798e56630fb5c547b38747_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_adac07192ba798e56630fb5c547b38747_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_adac07192ba798e56630fb5c547b38747_cgraph" id="aclassutec_1_1algebra_1_1Tensor_adac07192ba798e56630fb5c547b38747_cgraph">
+<area shape="rect" title="Realiza Broadcasting para un tensor." alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,63,334,103"/>
+<area shape="poly" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,5,536,46"/>
+<area shape="poly" title=" " alt="" coords="334,61,380,47,381,52,335,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,70,549,96"/>
+<area shape="poly" title=" " alt="" coords="334,80,366,80,366,86,334,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,120,536,161"/>
+<area shape="poly" title=" " alt="" coords="335,100,381,114,380,119,334,105"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_adac07192ba798e56630fb5c547b38747_icgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_adac07192ba798e56630fb5c547b38747_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_adac07192ba798e56630fb5c547b38747_icgraph" id="aclassutec_1_1algebra_1_1Tensor_adac07192ba798e56630fb5c547b38747_icgraph">
+<area shape="rect" title="Realiza Broadcasting para un tensor." alt="" coords="194,104,334,145"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ad90e82d91ec2f95c449eea378024df98" title=" " alt="" coords="5,5,146,46"/>
+<area shape="poly" title=" " alt="" coords="212,98,144,61,120,49,122,44,147,57,215,94"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a7f68b0a3fbf84213e7f0a4928f54fb05" title=" " alt="" coords="5,71,146,111"/>
+<area shape="poly" title=" " alt="" coords="178,112,146,106,146,101,179,107"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a1cf64d6d7bdf6131ee5748949a37f187" title=" " alt="" coords="5,136,146,177"/>
+<area shape="poly" title=" " alt="" coords="179,141,146,147,146,142,178,136"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a6556ae085ce1e8b3906c68d020331878" title=" " alt="" coords="5,201,146,242"/>
+<area shape="poly" title=" " alt="" coords="214,155,147,191,122,203,119,198,144,186,211,150"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -369,6 +670,88 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a816fdc2f8ac497140778fc071b813024_icgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a816fdc2f8ac497140778fc071b813024_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a816fdc2f8ac497140778fc071b813024_icgraph" id="aclassutec_1_1algebra_1_1Tensor_a816fdc2f8ac497140778fc071b813024_icgraph">
+<area shape="rect" title=" " alt="" coords="845,736,1012,761"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="657,728,797,769"/>
+<area shape="poly" title=" " alt="" coords="829,751,797,751,797,746,829,746"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a4f81c73f3b7da0e466c384906bc85e16" title="Aplica una funcion a todos los elementos del tensor." alt="" coords="455,5,595,46"/>
+<area shape="poly" title=" " alt="" coords="721,713,711,573,691,381,675,282,656,192,634,118,621,89,607,66,587,48,590,44,611,63,625,86,639,116,662,191,681,281,696,380,717,572,726,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#adac07192ba798e56630fb5c547b38747" title="Realiza Broadcasting para un tensor." alt="" coords="455,171,595,211"/>
+<area shape="poly" title=" " alt="" coords="719,713,705,604,681,461,648,323,628,269,607,231,586,214,589,210,611,228,633,267,653,322,686,460,710,603,724,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ad90e82d91ec2f95c449eea378024df98" title=" " alt="" coords="250,72,391,113"/>
+<area shape="poly" title=" " alt="" coords="722,712,714,581,695,403,680,314,660,233,636,168,622,143,607,125,584,108,558,95,502,80,444,77,391,81,391,76,444,72,503,75,560,90,587,103,611,121,626,140,641,165,665,231,685,312,700,402,719,580,727,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a7f68b0a3fbf84213e7f0a4928f54fb05" title=" " alt="" coords="250,140,391,181"/>
+<area shape="poly" title=" " alt="" coords="721,713,713,587,694,419,679,335,660,260,636,200,622,177,607,161,582,145,555,134,526,128,497,126,437,131,384,142,383,137,437,125,497,121,527,123,557,129,585,140,610,157,626,174,641,197,665,258,684,334,699,418,719,587,727,713"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a1cf64d6d7bdf6131ee5748949a37f187" title=" " alt="" coords="250,211,391,251"/>
+<area shape="poly" title=" " alt="" coords="719,713,705,613,682,484,667,420,649,362,629,316,607,285,584,267,558,253,502,235,444,227,391,227,391,221,445,222,503,230,560,248,587,263,611,281,634,313,654,361,672,419,687,483,711,612,724,713"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a6556ae085ce1e8b3906c68d020331878" title=" " alt="" coords="250,277,391,318"/>
+<area shape="poly" title=" " alt="" coords="718,713,704,621,680,503,665,446,647,394,628,353,607,326,583,310,557,298,501,285,444,282,391,287,391,281,444,277,502,279,559,293,586,306,610,322,633,350,652,392,670,444,685,502,709,620,724,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a9e168810c56913a57f0e569300d33271" title=" " alt="" coords="455,336,595,377"/>
+<area shape="poly" title=" " alt="" coords="721,713,713,645,694,560,679,515,660,471,636,429,607,392,591,379,595,375,611,388,641,426,665,468,684,513,699,559,718,645,726,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a0eef42b1eb01e70f175d427230ca3710" title=" " alt="" coords="455,401,595,442"/>
+<area shape="poly" title=" " alt="" coords="718,713,706,658,685,589,653,519,632,486,607,457,591,445,594,440,611,453,636,483,658,516,690,587,711,656,723,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a4d5c7867448ca6070dd77d76e7503d0a" title=" " alt="" coords="455,467,595,507"/>
+<area shape="poly" title=" " alt="" coords="713,714,699,670,676,619,646,568,607,522,590,510,593,506,610,518,650,564,681,617,703,668,718,712"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a77343720ccea1fe9b6eb35d15b5fe9e9" title=" " alt="" coords="455,532,595,573"/>
+<area shape="poly" title=" " alt="" coords="706,716,666,651,638,617,607,588,588,576,591,571,610,584,642,614,670,648,711,713"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a112907a1abc16c6c425bfd1e8e4ab0f1" title=" " alt="" coords="455,597,595,638"/>
+<area shape="poly" title=" " alt="" coords="692,719,653,685,607,653,583,641,586,636,610,649,656,681,696,715"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afe345e8834b5d29becc99333effac546" title=" " alt="" coords="455,663,595,703"/>
+<area shape="poly" title=" " alt="" coords="647,725,589,707,591,701,649,720"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ab21fecbff07e86f38dcdd0723a545213" title=" " alt="" coords="455,728,595,769"/>
+<area shape="poly" title=" " alt="" coords="641,751,596,751,596,746,641,746"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a332afc2da9d7aff2b9d261f3e4275ac0" title=" " alt="" coords="455,793,595,834"/>
+<area shape="poly" title=" " alt="" coords="649,776,591,795,589,790,647,771"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#abac937f7e9269d2523f4dac39fbb6e5d" title=" " alt="" coords="455,859,595,899"/>
+<area shape="poly" title=" " alt="" coords="696,781,656,815,610,848,586,860,583,856,607,843,653,811,692,777"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ae94cc2c4fe2ddc07580e21b96eeb1f8e" title=" " alt="" coords="455,924,595,965"/>
+<area shape="poly" title=" " alt="" coords="711,784,670,849,642,883,610,913,591,926,588,921,607,909,638,879,666,846,706,781"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ab4131352cf1e7e232047d3f79498fa48" title=" " alt="" coords="455,989,595,1030"/>
+<area shape="poly" title=" " alt="" coords="718,785,703,828,681,880,650,932,610,978,593,991,590,987,607,974,646,929,676,877,699,826,713,783"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#aff520eafc9ad362d3d390c4ad5f77518" title=" " alt="" coords="455,1055,595,1095"/>
+<area shape="poly" title=" " alt="" coords="723,785,711,840,690,909,658,980,636,1014,611,1044,594,1056,591,1052,607,1040,632,1011,653,978,685,907,706,839,718,784"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#abc82b477190acf69c9e09b46276147dd" title=" " alt="" coords="455,1120,595,1161"/>
+<area shape="poly" title=" " alt="" coords="726,785,718,852,699,938,684,984,665,1028,641,1071,611,1109,595,1122,591,1118,607,1105,636,1068,660,1026,679,982,694,937,713,851,721,784"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a51eb9eef03f17649b74063dd37574a03" title="Genera tensor con fila particular." alt="" coords="441,1250,609,1276"/>
+<area shape="poly" title=" " alt="" coords="724,785,710,889,687,1025,671,1092,654,1154,633,1204,611,1239,595,1252,591,1247,607,1236,629,1202,648,1152,666,1091,681,1024,705,888,719,784"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#af442d67fa5f45db289396ff5b836ea0a" title="Cambia fila especifica de un tensor." alt="" coords="455,1185,595,1226"/>
+<area shape="poly" title=" " alt="" coords="728,784,724,863,707,966,692,1021,672,1076,645,1128,611,1174,595,1187,592,1183,607,1171,641,1125,667,1074,687,1020,702,965,718,862,723,784"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ae9d375f3d8c7e60eceb238dbe0df593a" title="Cambia el subtensor asignado." alt="" coords="250,1316,391,1357"/>
+<area shape="poly" title=" " alt="" coords="727,784,719,913,701,1086,686,1172,666,1250,641,1313,627,1337,610,1354,583,1372,553,1382,521,1387,488,1387,424,1377,370,1360,372,1355,426,1371,488,1381,520,1382,551,1377,581,1367,607,1350,622,1334,636,1311,661,1249,680,1171,695,1085,714,912,722,784"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a91fb9304cb7603e83a4414dfb6000c5c" title="Genera tensor con fila particular para tensor de Rank 3." alt="" coords="455,1300,595,1341"/>
+<area shape="poly" title=" " alt="" coords="725,784,712,897,689,1048,673,1124,655,1193,634,1250,611,1290,597,1302,594,1298,607,1287,630,1248,650,1191,668,1122,684,1047,707,897,720,783"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a271cbdb704f0c4a7c348121322212c70" title="Trasponer un tensor de dimension 2. @complexity O(n)." alt="" coords="455,1415,595,1455"/>
+<area shape="poly" title=" " alt="" coords="726,785,715,918,694,1100,678,1192,660,1277,637,1348,611,1398,590,1416,587,1412,607,1395,632,1346,655,1276,673,1191,688,1099,710,917,721,784"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#aa3bbc9568b2b1fabd0fd584827603c7e" title="Trasponer un tensor de dimension n mayor a 2. @complexity O(n)." alt="" coords="455,1480,595,1521"/>
+<area shape="poly" title=" " alt="" coords="727,785,719,931,699,1135,684,1239,665,1334,641,1413,626,1444,611,1469,597,1481,593,1478,607,1465,622,1442,636,1411,660,1333,679,1238,694,1134,713,931,722,784"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Adam.html#afbc4ee15fa6b2be1e0a508be4e03eb32" title="Actualiza los parámetros del modelo usando el algoritmo de Adam." alt="" coords="250,5,391,46"/>
+<area shape="poly" title=" " alt="" coords="439,28,391,28,391,23,439,23"/>
+<area shape="poly" title=" " alt="" coords="466,166,364,116,366,111,469,161"/>
+<area shape="poly" title=" " alt="" coords="439,181,391,173,392,168,440,176"/>
+<area shape="poly" title=" " alt="" coords="440,210,392,220,391,215,439,205"/>
+<area shape="poly" title=" " alt="" coords="475,221,395,265,367,279,365,274,392,261,473,217"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1NeuralNetwork.html#ab2da2c55dc3be175816a870c7c91d2e3" title="Entrena la red neuronal usando descenso por lotes." alt="" coords="248,1227,393,1267"/>
+<area shape="poly" title=" " alt="" coords="426,1258,394,1255,394,1250,426,1253"/>
+<area shape="rect" href="test__nn_8cpp.html#aa2bb994d7d8e1db56c35dd2c3861fbfe" title=" " alt="" coords="103,1136,200,1161"/>
+<area shape="poly" title=" " alt="" coords="274,1220,199,1175,179,1164,181,1159,201,1170,277,1216"/>
+<area shape="rect" href="test__nn_8cpp.html#a2791441892e427b263bab683de9e2bf7" title=" " alt="" coords="103,1185,200,1210"/>
+<area shape="poly" title=" " alt="" coords="233,1224,197,1214,199,1208,235,1219"/>
+<area shape="rect" href="test__nn_8cpp.html#af6625554e4b688cb1905733083af326c" title=" " alt="" coords="103,1234,200,1260"/>
+<area shape="poly" title=" " alt="" coords="232,1250,200,1250,200,1244,232,1244"/>
+<area shape="rect" href="test__nn_8cpp.html#afad5a7c3f459ccea90c483b9c1827af0" title=" " alt="" coords="103,1284,200,1309"/>
+<area shape="poly" title=" " alt="" coords="235,1275,199,1286,197,1280,233,1270"/>
+<area shape="rect" href="classDataset.html#af22e6119731d84dbac33dd8fcdac78c9" title=" " alt="" coords="103,1333,200,1358"/>
+<area shape="poly" title=" " alt="" coords="277,1278,201,1324,181,1335,179,1330,199,1319,274,1274"/>
+<area shape="rect" href="trainer__kan_2main_8cpp.html#a8216c1645620cdb2f629cde3ac02ffef" title=" " alt="" coords="5,1333,55,1358"/>
+<area shape="poly" title=" " alt="" coords="87,1348,55,1348,55,1343,87,1343"/>
+<area shape="poly" title=" " alt="" coords="440,1226,394,1235,393,1230,439,1220"/>
+<area shape="poly" title=" " alt="" coords="439,1330,391,1334,391,1328,439,1324"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -397,6 +780,30 @@ template&lt;typename T, size_t Rank&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Llena la data de un tesor con un valor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>El valor con el que se quiere llenar. @complexity O(n) </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a637c3147839433886d561c28a210cd33_icgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a637c3147839433886d561c28a210cd33_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a637c3147839433886d561c28a210cd33_icgraph" id="aclassutec_1_1algebra_1_1Tensor_a637c3147839433886d561c28a210cd33_icgraph">
+<area shape="rect" title="Llena la data de un tesor con un valor." alt="" coords="194,88,334,129"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Kan.html#aba3256bdb697b3791dab07d32514ed0b" title="Propagación hacia atrás de la capa." alt="" coords="5,5,146,46"/>
+<area shape="poly" title=" " alt="" coords="201,84,123,49,125,44,203,79"/>
+<area shape="rect" href="test__tensor_8cpp.html#a605b7149e6f53c62017b2ec394b5295b" title=" " alt="" coords="27,70,124,96"/>
+<area shape="poly" title=" " alt="" coords="178,100,124,92,124,87,179,94"/>
+<area shape="rect" href="test__nn_8cpp.html#af27e6227eee7f46c4bd67cb010c35d64" title=" " alt="" coords="27,120,124,145"/>
+<area shape="poly" title=" " alt="" coords="179,122,124,129,124,124,178,117"/>
+<area shape="rect" href="test__nn_8cpp.html#aa2bb994d7d8e1db56c35dd2c3861fbfe" title=" " alt="" coords="27,169,124,194"/>
+<area shape="poly" title=" " alt="" coords="202,138,147,160,118,171,116,166,145,155,200,133"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="addc5fb80712265edf13d2c877fbf0ce4" name="addc5fb80712265edf13d2c877fbf0ce4"></a>
@@ -423,6 +830,15 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Acceso a un elemento por índices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idxs</td><td>Lista de índices de acceso. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Referencia al elemento en la posición dada. @complexity O(Rank) </dd></dl>
 
 </div>
 </div>
@@ -531,6 +947,22 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a9e168810c56913a57f0e569300d33271_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a9e168810c56913a57f0e569300d33271_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a9e168810c56913a57f0e569300d33271_cgraph" id="aclassutec_1_1algebra_1_1Tensor_a9e168810c56913a57f0e569300d33271_cgraph">
+<area shape="rect" title=" " alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,63,334,103"/>
+<area shape="poly" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,5,536,46"/>
+<area shape="poly" title=" " alt="" coords="334,61,380,47,381,52,335,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,70,549,96"/>
+<area shape="poly" title=" " alt="" coords="334,80,366,80,366,86,334,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,120,536,161"/>
+<area shape="poly" title=" " alt="" coords="335,100,381,114,380,119,334,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -558,6 +990,25 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_ad90e82d91ec2f95c449eea378024df98_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_ad90e82d91ec2f95c449eea378024df98_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_ad90e82d91ec2f95c449eea378024df98_cgraph" id="aclassutec_1_1algebra_1_1Tensor_ad90e82d91ec2f95c449eea378024df98_cgraph">
+<area shape="rect" title=" " alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#adac07192ba798e56630fb5c547b38747" title="Realiza Broadcasting para un tensor." alt="" coords="194,33,334,74"/>
+<area shape="poly" title=" " alt="" coords="146,69,178,64,179,70,146,75"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="382,63,522,103"/>
+<area shape="poly" title=" " alt="" coords="146,82,194,83,334,83,366,82,366,88,334,88,194,88,146,88"/>
+<area shape="poly" title=" " alt="" coords="335,62,367,67,366,72,334,67"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="584,5,724,46"/>
+<area shape="poly" title=" " alt="" coords="522,61,568,47,570,52,523,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="570,70,738,96"/>
+<area shape="poly" title=" " alt="" coords="523,80,555,80,555,86,523,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="584,120,724,161"/>
+<area shape="poly" title=" " alt="" coords="523,100,570,114,568,119,522,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -585,6 +1036,22 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a4d5c7867448ca6070dd77d76e7503d0a_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a4d5c7867448ca6070dd77d76e7503d0a_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a4d5c7867448ca6070dd77d76e7503d0a_cgraph" id="aclassutec_1_1algebra_1_1Tensor_a4d5c7867448ca6070dd77d76e7503d0a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,63,334,103"/>
+<area shape="poly" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,5,536,46"/>
+<area shape="poly" title=" " alt="" coords="334,61,380,47,381,52,335,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,70,549,96"/>
+<area shape="poly" title=" " alt="" coords="334,80,366,80,366,86,334,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,120,536,161"/>
+<area shape="poly" title=" " alt="" coords="335,100,381,114,380,119,334,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -612,6 +1079,25 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a7f68b0a3fbf84213e7f0a4928f54fb05_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a7f68b0a3fbf84213e7f0a4928f54fb05_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a7f68b0a3fbf84213e7f0a4928f54fb05_cgraph" id="aclassutec_1_1algebra_1_1Tensor_a7f68b0a3fbf84213e7f0a4928f54fb05_cgraph">
+<area shape="rect" title=" " alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#adac07192ba798e56630fb5c547b38747" title="Realiza Broadcasting para un tensor." alt="" coords="194,33,334,74"/>
+<area shape="poly" title=" " alt="" coords="146,69,178,64,179,70,146,75"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="382,63,522,103"/>
+<area shape="poly" title=" " alt="" coords="146,82,194,83,334,83,366,82,366,88,334,88,194,88,146,88"/>
+<area shape="poly" title=" " alt="" coords="335,62,367,67,366,72,334,67"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="584,5,724,46"/>
+<area shape="poly" title=" " alt="" coords="522,61,568,47,570,52,523,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="570,70,738,96"/>
+<area shape="poly" title=" " alt="" coords="523,80,555,80,555,86,523,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="584,120,724,161"/>
+<area shape="poly" title=" " alt="" coords="523,100,570,114,568,119,522,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -639,6 +1125,22 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a112907a1abc16c6c425bfd1e8e4ab0f1_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a112907a1abc16c6c425bfd1e8e4ab0f1_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a112907a1abc16c6c425bfd1e8e4ab0f1_cgraph" id="aclassutec_1_1algebra_1_1Tensor_a112907a1abc16c6c425bfd1e8e4ab0f1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,63,334,103"/>
+<area shape="poly" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,5,536,46"/>
+<area shape="poly" title=" " alt="" coords="334,61,380,47,381,52,335,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,70,549,96"/>
+<area shape="poly" title=" " alt="" coords="334,80,366,80,366,86,334,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,120,536,161"/>
+<area shape="poly" title=" " alt="" coords="335,100,381,114,380,119,334,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -666,6 +1168,22 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_afe345e8834b5d29becc99333effac546_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_afe345e8834b5d29becc99333effac546_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_afe345e8834b5d29becc99333effac546_cgraph" id="aclassutec_1_1algebra_1_1Tensor_afe345e8834b5d29becc99333effac546_cgraph">
+<area shape="rect" title=" " alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,63,334,103"/>
+<area shape="poly" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,5,536,46"/>
+<area shape="poly" title=" " alt="" coords="334,61,380,47,381,52,335,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,70,549,96"/>
+<area shape="poly" title=" " alt="" coords="334,80,366,80,366,86,334,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,120,536,161"/>
+<area shape="poly" title=" " alt="" coords="335,100,381,114,380,119,334,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -693,6 +1211,25 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a1cf64d6d7bdf6131ee5748949a37f187_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a1cf64d6d7bdf6131ee5748949a37f187_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a1cf64d6d7bdf6131ee5748949a37f187_cgraph" id="aclassutec_1_1algebra_1_1Tensor_a1cf64d6d7bdf6131ee5748949a37f187_cgraph">
+<area shape="rect" title=" " alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#adac07192ba798e56630fb5c547b38747" title="Realiza Broadcasting para un tensor." alt="" coords="194,33,334,74"/>
+<area shape="poly" title=" " alt="" coords="146,69,178,64,179,70,146,75"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="382,63,522,103"/>
+<area shape="poly" title=" " alt="" coords="146,82,194,83,334,83,366,82,366,88,334,88,194,88,146,88"/>
+<area shape="poly" title=" " alt="" coords="335,62,367,67,366,72,334,67"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="584,5,724,46"/>
+<area shape="poly" title=" " alt="" coords="522,61,568,47,570,52,523,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="570,70,738,96"/>
+<area shape="poly" title=" " alt="" coords="523,80,555,80,555,86,523,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="584,120,724,161"/>
+<area shape="poly" title=" " alt="" coords="523,100,570,114,568,119,522,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -720,6 +1257,22 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a332afc2da9d7aff2b9d261f3e4275ac0_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a332afc2da9d7aff2b9d261f3e4275ac0_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a332afc2da9d7aff2b9d261f3e4275ac0_cgraph" id="aclassutec_1_1algebra_1_1Tensor_a332afc2da9d7aff2b9d261f3e4275ac0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,63,334,103"/>
+<area shape="poly" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,5,536,46"/>
+<area shape="poly" title=" " alt="" coords="334,61,380,47,381,52,335,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,70,549,96"/>
+<area shape="poly" title=" " alt="" coords="334,80,366,80,366,86,334,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,120,536,161"/>
+<area shape="poly" title=" " alt="" coords="335,100,381,114,380,119,334,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -747,6 +1300,25 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a6556ae085ce1e8b3906c68d020331878_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a6556ae085ce1e8b3906c68d020331878_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a6556ae085ce1e8b3906c68d020331878_cgraph" id="aclassutec_1_1algebra_1_1Tensor_a6556ae085ce1e8b3906c68d020331878_cgraph">
+<area shape="rect" title=" " alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#adac07192ba798e56630fb5c547b38747" title="Realiza Broadcasting para un tensor." alt="" coords="194,33,334,74"/>
+<area shape="poly" title=" " alt="" coords="146,69,178,64,179,70,146,75"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="382,63,522,103"/>
+<area shape="poly" title=" " alt="" coords="146,82,194,83,334,83,366,82,366,88,334,88,194,88,146,88"/>
+<area shape="poly" title=" " alt="" coords="335,62,367,67,366,72,334,67"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="584,5,724,46"/>
+<area shape="poly" title=" " alt="" coords="522,61,568,47,570,52,523,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="570,70,738,96"/>
+<area shape="poly" title=" " alt="" coords="523,80,555,80,555,86,523,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="584,120,724,161"/>
+<area shape="poly" title=" " alt="" coords="523,100,570,114,568,119,522,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -774,6 +1346,22 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_aff520eafc9ad362d3d390c4ad5f77518_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_aff520eafc9ad362d3d390c4ad5f77518_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_aff520eafc9ad362d3d390c4ad5f77518_cgraph" id="aclassutec_1_1algebra_1_1Tensor_aff520eafc9ad362d3d390c4ad5f77518_cgraph">
+<area shape="rect" title=" " alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,63,334,103"/>
+<area shape="poly" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,5,536,46"/>
+<area shape="poly" title=" " alt="" coords="334,61,380,47,381,52,335,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,70,549,96"/>
+<area shape="poly" title=" " alt="" coords="334,80,366,80,366,86,334,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,120,536,161"/>
+<area shape="poly" title=" " alt="" coords="335,100,381,114,380,119,334,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -801,6 +1389,22 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_abc82b477190acf69c9e09b46276147dd_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_abc82b477190acf69c9e09b46276147dd_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_abc82b477190acf69c9e09b46276147dd_cgraph" id="aclassutec_1_1algebra_1_1Tensor_abc82b477190acf69c9e09b46276147dd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,63,334,103"/>
+<area shape="poly" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,5,536,46"/>
+<area shape="poly" title=" " alt="" coords="334,61,380,47,381,52,335,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,70,549,96"/>
+<area shape="poly" title=" " alt="" coords="334,80,366,80,366,86,334,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,120,536,161"/>
+<area shape="poly" title=" " alt="" coords="335,100,381,114,380,119,334,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -886,6 +1490,8 @@ requires (sizeof...(Dims) == Rank)</div>
 </table>
 </div><div class="memdoc">
 
+<p>Cambia la forma del tensor actual. @taram Dims Nuevo "Rank" del tensor. @complexity O(Rank). </p>
+
 </div>
 </div>
 <a id="a17fecc417ac1f38cf37ce43ac4a9952f" name="a17fecc417ac1f38cf37ce43ac4a9952f"></a>
@@ -912,6 +1518,24 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Cambia la forma del tensor actual. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_shape</td><td>Nueva forma del tensor. @complexity O(Rank). </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a17fecc417ac1f38cf37ce43ac4a9952f_icgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a17fecc417ac1f38cf37ce43ac4a9952f_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a17fecc417ac1f38cf37ce43ac4a9952f_icgraph" id="aclassutec_1_1algebra_1_1Tensor_a17fecc417ac1f38cf37ce43ac4a9952f_icgraph">
+<area shape="rect" title="Cambia la forma del tensor actual." alt="" coords="150,5,290,46"/>
+<area shape="rect" href="test__tensor_8cpp.html#a605b7149e6f53c62017b2ec394b5295b" title=" " alt="" coords="5,13,102,38"/>
+<area shape="poly" title=" " alt="" coords="134,28,102,28,102,23,134,23"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -941,6 +1565,53 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Genera tensor con fila particular. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Fila particular. @complexity O(k) donde k es el tamanio de la fila. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Fila que coincida con el indice otorgado de la matriz. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a51eb9eef03f17649b74063dd37574a03_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a51eb9eef03f17649b74063dd37574a03_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a51eb9eef03f17649b74063dd37574a03_cgraph" id="aclassutec_1_1algebra_1_1Tensor_a51eb9eef03f17649b74063dd37574a03_cgraph">
+<area shape="rect" title="Genera tensor con fila particular." alt="" coords="5,70,173,96"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="221,63,361,103"/>
+<area shape="poly" title=" " alt="" coords="173,80,206,80,206,86,173,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="422,5,563,46"/>
+<area shape="poly" title=" " alt="" coords="361,61,407,47,408,52,362,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="409,70,576,96"/>
+<area shape="poly" title=" " alt="" coords="361,80,393,80,393,86,361,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="422,120,563,161"/>
+<area shape="poly" title=" " alt="" coords="362,100,408,114,407,119,361,105"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a51eb9eef03f17649b74063dd37574a03_icgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a51eb9eef03f17649b74063dd37574a03_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a51eb9eef03f17649b74063dd37574a03_icgraph" id="aclassutec_1_1algebra_1_1Tensor_a51eb9eef03f17649b74063dd37574a03_icgraph">
+<area shape="rect" title="Genera tensor con fila particular." alt="" coords="441,104,609,130"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1NeuralNetwork.html#ab2da2c55dc3be175816a870c7c91d2e3" title="Entrena la red neuronal usando descenso por lotes." alt="" coords="248,96,393,137"/>
+<area shape="poly" title=" " alt="" coords="426,120,394,120,394,114,426,114"/>
+<area shape="rect" href="test__nn_8cpp.html#aa2bb994d7d8e1db56c35dd2c3861fbfe" title=" " alt="" coords="103,5,200,31"/>
+<area shape="poly" title=" " alt="" coords="274,90,199,44,179,34,181,29,201,40,277,86"/>
+<area shape="rect" href="test__nn_8cpp.html#a2791441892e427b263bab683de9e2bf7" title=" " alt="" coords="103,55,200,80"/>
+<area shape="poly" title=" " alt="" coords="233,94,197,83,199,78,235,89"/>
+<area shape="rect" href="test__nn_8cpp.html#af6625554e4b688cb1905733083af326c" title=" " alt="" coords="103,104,200,130"/>
+<area shape="poly" title=" " alt="" coords="232,120,200,120,200,114,232,114"/>
+<area shape="rect" href="test__nn_8cpp.html#afad5a7c3f459ccea90c483b9c1827af0" title=" " alt="" coords="103,153,200,179"/>
+<area shape="poly" title=" " alt="" coords="235,145,199,155,197,150,233,140"/>
+<area shape="rect" href="classDataset.html#af22e6119731d84dbac33dd8fcdac78c9" title=" " alt="" coords="103,203,200,228"/>
+<area shape="poly" title=" " alt="" coords="277,148,201,194,181,205,179,200,199,189,274,143"/>
+<area shape="rect" href="trainer__kan_2main_8cpp.html#a8216c1645620cdb2f629cde3ac02ffef" title=" " alt="" coords="5,203,55,228"/>
+<area shape="poly" title=" " alt="" coords="87,218,55,218,55,213,87,213"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -973,6 +1644,53 @@ template&lt;typename T, size_t Rank&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Cambia fila especifica de un tensor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Posicion de la fila. </td></tr>
+    <tr><td class="paramname">row_tensor</td><td>Nueva fila. @complexity O(k) donde k es el tamanio de la fila. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a_cgraph" id="aclassutec_1_1algebra_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a_cgraph">
+<area shape="rect" title="Cambia fila especifica de un tensor." alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,63,334,103"/>
+<area shape="poly" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,5,536,46"/>
+<area shape="poly" title=" " alt="" coords="334,61,380,47,381,52,335,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,70,549,96"/>
+<area shape="poly" title=" " alt="" coords="334,80,366,80,366,86,334,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,120,536,161"/>
+<area shape="poly" title=" " alt="" coords="335,100,381,114,380,119,334,105"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a_icgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a_icgraph" id="aclassutec_1_1algebra_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a_icgraph">
+<area shape="rect" title="Cambia fila especifica de un tensor." alt="" coords="441,96,582,137"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1NeuralNetwork.html#ab2da2c55dc3be175816a870c7c91d2e3" title="Entrena la red neuronal usando descenso por lotes." alt="" coords="248,96,393,137"/>
+<area shape="poly" title=" " alt="" coords="426,120,394,120,394,114,426,114"/>
+<area shape="rect" href="test__nn_8cpp.html#aa2bb994d7d8e1db56c35dd2c3861fbfe" title=" " alt="" coords="103,5,200,31"/>
+<area shape="poly" title=" " alt="" coords="274,90,199,44,179,34,181,29,201,40,277,86"/>
+<area shape="rect" href="test__nn_8cpp.html#a2791441892e427b263bab683de9e2bf7" title=" " alt="" coords="103,55,200,80"/>
+<area shape="poly" title=" " alt="" coords="233,94,197,83,199,78,235,89"/>
+<area shape="rect" href="test__nn_8cpp.html#af6625554e4b688cb1905733083af326c" title=" " alt="" coords="103,104,200,130"/>
+<area shape="poly" title=" " alt="" coords="232,120,200,120,200,114,232,114"/>
+<area shape="rect" href="test__nn_8cpp.html#afad5a7c3f459ccea90c483b9c1827af0" title=" " alt="" coords="103,153,200,179"/>
+<area shape="poly" title=" " alt="" coords="235,145,199,155,197,150,233,140"/>
+<area shape="rect" href="classDataset.html#af22e6119731d84dbac33dd8fcdac78c9" title=" " alt="" coords="103,203,200,228"/>
+<area shape="poly" title=" " alt="" coords="277,148,201,194,181,205,179,200,199,189,274,143"/>
+<area shape="rect" href="trainer__kan_2main_8cpp.html#a8216c1645620cdb2f629cde3ac02ffef" title=" " alt="" coords="5,203,55,228"/>
+<area shape="poly" title=" " alt="" coords="87,218,55,218,55,213,87,213"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ae9d375f3d8c7e60eceb238dbe0df593a" name="ae9d375f3d8c7e60eceb238dbe0df593a"></a>
@@ -1004,6 +1722,33 @@ template&lt;typename T, size_t Rank&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Cambia el subtensor asignado. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Posicion del subtensor a cambiar. @complexity O(n*m) donde n y m son las dimensiones del subtensor rango 2. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_ae9d375f3d8c7e60eceb238dbe0df593a_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_ae9d375f3d8c7e60eceb238dbe0df593a_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_ae9d375f3d8c7e60eceb238dbe0df593a_cgraph" id="aclassutec_1_1algebra_1_1Tensor_ae9d375f3d8c7e60eceb238dbe0df593a_cgraph">
+<area shape="rect" title="Cambia el subtensor asignado." alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a91fb9304cb7603e83a4414dfb6000c5c" title="Genera tensor con fila particular para tensor de Rank 3." alt="" coords="194,33,334,74"/>
+<area shape="poly" title=" " alt="" coords="146,69,178,64,179,70,146,75"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="382,63,522,103"/>
+<area shape="poly" title=" " alt="" coords="146,82,194,83,334,83,366,82,366,88,334,88,194,88,146,88"/>
+<area shape="poly" title=" " alt="" coords="335,62,367,67,366,72,334,67"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="584,5,724,46"/>
+<area shape="poly" title=" " alt="" coords="522,61,568,47,570,52,523,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="570,70,738,96"/>
+<area shape="poly" title=" " alt="" coords="523,80,555,80,555,86,523,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="584,120,724,161"/>
+<area shape="poly" title=" " alt="" coords="523,100,570,114,568,119,522,105"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a26b6cbe28804d535a9bccc96bae9a3e5" name="a26b6cbe28804d535a9bccc96bae9a3e5"></a>
@@ -1030,6 +1775,109 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5_icgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5_icgraph" id="aclassutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5_icgraph">
+<area shape="rect" title=" " alt="" coords="845,351,985,391"/>
+<area shape="rect" href="namespacecommon.html#a4e225e1ee5ea060aae09a8ba907a7044" title=" " alt="" coords="669,82,784,108"/>
+<area shape="poly" title=" " alt="" coords="891,339,795,191,736,110,740,107,799,188,895,336"/>
+<area shape="rect" href="namespaceutec_1_1algebra.html#ae9c4a2995ea5148ad6653d79058621ac" title="Realiza producto matricial entre 2 tensores de dimension 2." alt="" coords="659,201,794,242"/>
+<area shape="poly" title=" " alt="" coords="885,340,844,298,795,257,775,245,778,240,799,253,848,294,888,337"/>
+<area shape="rect" href="namespaceutec_1_1algebra.html#a34bfff2098201ce115fd8d11b820a434" title="Realiza producto matricial entre 2 tensores de dimension mayor a 2." alt="" coords="659,267,794,307"/>
+<area shape="poly" title=" " alt="" coords="852,346,773,310,775,305,855,341"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ae94cc2c4fe2ddc07580e21b96eeb1f8e" title=" " alt="" coords="455,381,595,422"/>
+<area shape="poly" title=" " alt="" coords="830,380,596,399,595,394,829,375"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="657,1117,797,1158"/>
+<area shape="poly" title=" " alt="" coords="908,407,736,1117,731,1116,903,406"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Adam.html#afbc4ee15fa6b2be1e0a508be4e03eb32" title="Actualiza los parámetros del modelo usando el algoritmo de Adam." alt="" coords="250,1884,391,1925"/>
+<area shape="poly" title=" " alt="" coords="915,407,900,704,881,925,854,1165,815,1405,790,1518,762,1623,731,1717,695,1798,655,1864,633,1890,610,1910,584,1926,556,1937,526,1943,495,1945,435,1940,382,1928,383,1923,436,1934,495,1939,525,1938,554,1932,582,1922,607,1906,629,1886,651,1860,690,1796,726,1715,757,1621,785,1517,809,1404,848,1164,876,924,894,704,910,407"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1NeuralNetwork.html#ab2da2c55dc3be175816a870c7c91d2e3" title="Entrena la red neuronal usando descenso por lotes." alt="" coords="248,447,393,487"/>
+<area shape="poly" title=" " alt="" coords="829,356,746,346,647,341,543,348,492,357,442,372,412,387,384,407,341,448,337,444,381,403,409,383,440,367,490,352,542,343,647,335,746,340,830,351"/>
+<area shape="rect" href="test__tensor_8cpp.html#a605b7149e6f53c62017b2ec394b5295b" title=" " alt="" coords="679,1972,775,1997"/>
+<area shape="poly" title=" " alt="" coords="916,407,909,725,891,1214,875,1465,856,1687,831,1858,816,1917,799,1954,776,1973,773,1969,795,1951,811,1915,825,1857,850,1687,870,1464,885,1214,904,724,911,407"/>
+<area shape="rect" href="classcommon_1_1DigitReader.html#a5ab09b3a2cf61f4da55dc400e8c2a8eb" title=" " alt="" coords="453,5,597,46"/>
+<area shape="poly" title=" " alt="" coords="672,79,586,49,587,44,674,74"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Dense.html#a34eff47b14246879296fefce593d3a3d" title="Propagación hacia atrás (backpropagation). Calcula los gradientes con respecto a pesos,..." alt="" coords="455,71,595,111"/>
+<area shape="poly" title=" " alt="" coords="692,193,653,159,607,127,583,114,586,110,610,122,656,155,696,189"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Kan.html#aba3256bdb697b3791dab07d32514ed0b" title="Propagación hacia atrás de la capa." alt="" coords="455,136,595,177"/>
+<area shape="poly" title=" " alt="" coords="647,199,589,180,591,175,649,194"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Dense.html#adf5510eaa5e3bc10bbefcde60f895238" title="Propagación hacia adelante de la capa. Calcula: output = x * weights + biases." alt="" coords="455,201,595,242"/>
+<area shape="poly" title=" " alt="" coords="644,224,596,224,596,219,644,219"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Kan.html#adbcf3683376205b4f7987aaa2ecac36c" title="Propagación hacia adelante de la capa." alt="" coords="455,267,595,307"/>
+<area shape="poly" title=" " alt="" coords="649,250,591,269,589,263,647,245"/>
+<area shape="poly" title=" " alt="" coords="721,1102,713,959,693,760,678,659,659,566,635,489,621,460,607,437,593,424,597,421,611,433,626,457,640,488,664,565,683,658,698,759,718,958,727,1102"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a4f81c73f3b7da0e466c384906bc85e16" title="Aplica una funcion a todos los elementos del tensor." alt="" coords="455,1856,595,1897"/>
+<area shape="poly" title=" " alt="" coords="727,1174,718,1318,699,1517,683,1619,664,1713,640,1790,626,1821,611,1845,597,1857,593,1854,607,1841,621,1818,635,1788,659,1711,678,1618,693,1517,713,1317,721,1173"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#adac07192ba798e56630fb5c547b38747" title="Realiza Broadcasting para un tensor." alt="" coords="455,1495,595,1535"/>
+<area shape="poly" title=" " alt="" coords="725,1174,715,1237,695,1317,680,1360,661,1402,638,1442,611,1478,588,1496,584,1492,607,1474,634,1439,657,1400,675,1358,690,1316,710,1236,720,1173"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ad90e82d91ec2f95c449eea378024df98" title=" " alt="" coords="250,1396,391,1437"/>
+<area shape="poly" title=" " alt="" coords="722,1174,710,1223,688,1281,656,1337,635,1362,610,1384,585,1399,558,1411,500,1425,443,1430,391,1428,391,1423,443,1424,499,1420,556,1406,583,1394,607,1380,631,1359,652,1334,684,1278,705,1221,717,1173"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a7f68b0a3fbf84213e7f0a4928f54fb05" title=" " alt="" coords="250,1464,391,1505"/>
+<area shape="poly" title=" " alt="" coords="725,1174,715,1232,695,1303,680,1339,662,1374,638,1407,610,1435,572,1453,516,1466,392,1482,391,1477,515,1461,571,1447,607,1430,634,1403,657,1371,676,1337,690,1301,710,1231,720,1173"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a1cf64d6d7bdf6131ee5748949a37f187" title=" " alt="" coords="250,1535,391,1575"/>
+<area shape="poly" title=" " alt="" coords="723,1173,709,1263,685,1377,670,1433,652,1483,632,1523,610,1549,586,1565,558,1576,501,1586,443,1585,391,1577,391,1571,443,1579,500,1581,557,1571,583,1560,607,1545,628,1520,647,1481,665,1431,680,1376,704,1262,718,1172"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a6556ae085ce1e8b3906c68d020331878" title=" " alt="" coords="250,1601,391,1642"/>
+<area shape="poly" title=" " alt="" coords="724,1174,710,1272,687,1398,672,1460,654,1516,634,1561,611,1592,586,1609,560,1622,502,1637,444,1640,391,1637,392,1632,444,1635,501,1631,558,1617,584,1604,607,1588,629,1559,649,1514,667,1459,682,1397,705,1271,719,1173"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a9e168810c56913a57f0e569300d33271" title=" " alt="" coords="455,1660,595,1701"/>
+<area shape="poly" title=" " alt="" coords="724,1174,709,1280,685,1419,652,1553,632,1606,611,1643,589,1662,586,1657,607,1640,628,1604,647,1551,680,1418,704,1279,719,1173"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a0eef42b1eb01e70f175d427230ca3710" title=" " alt="" coords="455,1725,595,1766"/>
+<area shape="poly" title=" " alt="" coords="725,1174,713,1293,691,1454,675,1535,657,1609,636,1671,611,1714,596,1727,593,1723,607,1711,631,1669,652,1608,670,1534,685,1453,708,1293,720,1173"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a4d5c7867448ca6070dd77d76e7503d0a" title=" " alt="" coords="455,1791,595,1831"/>
+<area shape="poly" title=" " alt="" coords="726,1174,716,1306,695,1486,679,1578,660,1661,638,1731,625,1758,611,1779,597,1792,593,1788,607,1776,620,1755,633,1729,655,1660,674,1577,689,1485,710,1306,721,1174"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a77343720ccea1fe9b6eb35d15b5fe9e9" title=" " alt="" coords="455,512,595,553"/>
+<area shape="poly" title=" " alt="" coords="720,1102,708,983,685,824,670,743,652,670,631,609,607,567,593,555,596,551,611,564,635,607,657,668,675,742,691,823,713,983,725,1102"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a112907a1abc16c6c425bfd1e8e4ab0f1" title=" " alt="" coords="455,577,595,618"/>
+<area shape="poly" title=" " alt="" coords="719,1102,705,995,681,855,666,785,648,721,628,669,607,633,593,621,596,617,611,629,633,667,653,720,671,784,686,854,710,994,724,1101"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afe345e8834b5d29becc99333effac546" title=" " alt="" coords="455,643,595,683"/>
+<area shape="poly" title=" " alt="" coords="724,1102,720,1020,704,913,689,856,669,799,642,746,607,698,592,686,595,682,611,695,646,743,674,797,695,854,709,912,725,1020,729,1101"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ab21fecbff07e86f38dcdd0723a545213" title=" " alt="" coords="455,708,595,749"/>
+<area shape="poly" title=" " alt="" coords="722,1102,714,1032,696,942,681,894,662,847,637,803,607,764,592,751,595,747,611,760,642,800,667,845,686,892,701,941,720,1031,727,1102"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a332afc2da9d7aff2b9d261f3e4275ac0" title=" " alt="" coords="455,773,595,814"/>
+<area shape="poly" title=" " alt="" coords="719,1102,708,1044,688,971,655,895,633,860,607,829,591,817,595,813,611,825,637,857,660,893,693,969,713,1043,724,1101"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#abac937f7e9269d2523f4dac39fbb6e5d" title=" " alt="" coords="455,839,595,879"/>
+<area shape="poly" title=" " alt="" coords="715,1103,701,1056,679,1001,648,944,629,918,607,894,590,882,593,878,610,890,633,914,652,941,684,998,706,1055,720,1101"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ab4131352cf1e7e232047d3f79498fa48" title=" " alt="" coords="455,904,595,945"/>
+<area shape="poly" title=" " alt="" coords="709,1104,669,1031,641,992,607,958,590,947,593,943,610,954,645,989,674,1028,714,1102"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#aff520eafc9ad362d3d390c4ad5f77518" title=" " alt="" coords="455,1019,595,1059"/>
+<area shape="poly" title=" " alt="" coords="676,1112,607,1075,580,1062,582,1057,610,1070,679,1107"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#abc82b477190acf69c9e09b46276147dd" title=" " alt="" coords="455,1084,595,1125"/>
+<area shape="poly" title=" " alt="" coords="641,1126,595,1119,596,1113,642,1121"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a51eb9eef03f17649b74063dd37574a03" title="Genera tensor con fila particular." alt="" coords="441,969,609,994"/>
+<area shape="poly" title=" " alt="" coords="702,1106,661,1056,635,1031,607,1009,583,998,586,993,610,1005,639,1027,665,1052,706,1103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#af442d67fa5f45db289396ff5b836ea0a" title="Cambia fila especifica de un tensor." alt="" coords="455,447,595,487"/>
+<area shape="poly" title=" " alt="" coords="721,1102,710,970,689,791,674,701,655,618,633,549,607,502,593,490,597,486,611,499,638,547,660,616,679,700,694,791,716,970,726,1101"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ae9d375f3d8c7e60eceb238dbe0df593a" title="Cambia el subtensor asignado." alt="" coords="250,1179,391,1219"/>
+<area shape="poly" title=" " alt="" coords="686,1169,650,1189,609,1204,553,1214,495,1218,391,1212,391,1207,495,1212,552,1209,608,1199,647,1184,683,1164"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a91fb9304cb7603e83a4414dfb6000c5c" title="Genera tensor con fila particular para tensor de Rank 3." alt="" coords="455,1149,595,1190"/>
+<area shape="poly" title=" " alt="" coords="642,1154,596,1161,595,1156,641,1149"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a271cbdb704f0c4a7c348121322212c70" title="Trasponer un tensor de dimension 2. @complexity O(n)." alt="" coords="455,1264,595,1305"/>
+<area shape="poly" title=" " alt="" coords="699,1171,658,1210,610,1248,579,1266,576,1261,607,1243,655,1206,695,1167"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#aa3bbc9568b2b1fabd0fd584827603c7e" title="Trasponer un tensor de dimension n mayor a 2. @complexity O(n)." alt="" coords="455,1329,595,1370"/>
+<area shape="poly" title=" " alt="" coords="713,1173,673,1246,644,1284,610,1318,591,1331,588,1326,607,1314,640,1281,669,1243,708,1171"/>
+<area shape="poly" title=" " alt="" coords="440,1891,392,1897,391,1892,439,1885"/>
+<area shape="poly" title=" " alt="" coords="466,1490,364,1440,366,1435,469,1485"/>
+<area shape="poly" title=" " alt="" coords="439,1505,391,1497,392,1492,440,1500"/>
+<area shape="poly" title=" " alt="" coords="440,1534,392,1544,391,1539,439,1529"/>
+<area shape="poly" title=" " alt="" coords="475,1545,395,1589,367,1603,365,1598,392,1585,473,1541"/>
+<area shape="poly" title=" " alt="" coords="443,962,439,958,415,921,394,866,375,800,359,728,335,587,322,488,327,488,340,587,364,727,380,799,399,865,420,918,443,955,447,958"/>
+<area shape="rect" href="test__nn_8cpp.html#aa2bb994d7d8e1db56c35dd2c3861fbfe" title=" " alt="" coords="103,356,200,381"/>
+<area shape="poly" title=" " alt="" coords="274,440,199,395,179,384,181,379,201,390,277,436"/>
+<area shape="rect" href="test__nn_8cpp.html#a2791441892e427b263bab683de9e2bf7" title=" " alt="" coords="103,405,200,430"/>
+<area shape="poly" title=" " alt="" coords="233,444,197,434,199,428,235,439"/>
+<area shape="rect" href="test__nn_8cpp.html#af6625554e4b688cb1905733083af326c" title=" " alt="" coords="103,454,200,480"/>
+<area shape="poly" title=" " alt="" coords="232,470,200,470,200,464,232,464"/>
+<area shape="rect" href="test__nn_8cpp.html#afad5a7c3f459ccea90c483b9c1827af0" title=" " alt="" coords="103,504,200,529"/>
+<area shape="poly" title=" " alt="" coords="235,495,199,506,197,500,233,490"/>
+<area shape="rect" href="classDataset.html#af22e6119731d84dbac33dd8fcdac78c9" title=" " alt="" coords="103,553,200,578"/>
+<area shape="poly" title=" " alt="" coords="277,498,201,544,181,555,179,550,199,539,274,494"/>
+<area shape="rect" href="trainer__kan_2main_8cpp.html#a8216c1645620cdb2f629cde3ac02ffef" title=" " alt="" coords="5,553,55,578"/>
+<area shape="poly" title=" " alt="" coords="87,568,55,568,55,563,87,563"/>
+<area shape="poly" title=" " alt="" coords="439,470,394,470,394,464,439,464"/>
+<area shape="poly" title=" " alt="" coords="440,1185,392,1192,391,1186,439,1179"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1057,6 +1905,22 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a215437fdbb556e998f3feae08b02a51b_icgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a215437fdbb556e998f3feae08b02a51b_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a215437fdbb556e998f3feae08b02a51b_icgraph" id="aclassutec_1_1algebra_1_1Tensor_a215437fdbb556e998f3feae08b02a51b_icgraph">
+<area shape="rect" title=" " alt="" coords="295,63,435,103"/>
+<area shape="rect" href="classcommon_1_1DigitReader.html#af162abf7c4b9464343ed5ec226b64d72" title=" " alt="" coords="103,5,247,46"/>
+<area shape="poly" title=" " alt="" coords="280,60,244,49,245,44,282,55"/>
+<area shape="rect" href="classDataset.html#af22e6119731d84dbac33dd8fcdac78c9" title=" " alt="" coords="126,70,224,96"/>
+<area shape="poly" title=" " alt="" coords="279,86,224,86,224,80,279,80"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#aa3bbc9568b2b1fabd0fd584827603c7e" title="Trasponer un tensor de dimension n mayor a 2. @complexity O(n)." alt="" coords="105,120,245,161"/>
+<area shape="poly" title=" " alt="" coords="282,111,245,122,244,117,280,106"/>
+<area shape="rect" href="trainer__kan_2main_8cpp.html#a8216c1645620cdb2f629cde3ac02ffef" title=" " alt="" coords="5,70,55,96"/>
+<area shape="poly" title=" " alt="" coords="111,86,55,86,55,80,111,80"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1087,6 +1951,41 @@ template&lt;typename T, size_t Rank&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Genera tensor con fila particular para tensor de Rank 3. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Fila a cambiar. @complexity O(n*m) donde n y m son las dimensiones del subtensor rango 2. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classutec_1_1algebra_1_1Tensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> con la fila indicada. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c_cgraph" id="aclassutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c_cgraph">
+<area shape="rect" title="Genera tensor con fila particular para tensor de Rank 3." alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,63,334,103"/>
+<area shape="poly" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,5,536,46"/>
+<area shape="poly" title=" " alt="" coords="334,61,380,47,381,52,335,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,70,549,96"/>
+<area shape="poly" title=" " alt="" coords="334,80,366,80,366,86,334,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,120,536,161"/>
+<area shape="poly" title=" " alt="" coords="335,100,381,114,380,119,334,105"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c_icgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c_icgraph" id="aclassutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c_icgraph">
+<area shape="rect" title="Genera tensor con fila particular para tensor de Rank 3." alt="" coords="194,5,334,46"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ae9d375f3d8c7e60eceb238dbe0df593a" title="Cambia el subtensor asignado." alt="" coords="5,5,146,46"/>
+<area shape="poly" title=" " alt="" coords="178,28,146,28,146,23,178,23"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a271cbdb704f0c4a7c348121322212c70" name="a271cbdb704f0c4a7c348121322212c70"></a>
@@ -1113,6 +2012,25 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Trasponer un tensor de dimension 2. @complexity O(n). </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classutec_1_1algebra_1_1Tensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> traspuesto. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_a271cbdb704f0c4a7c348121322212c70_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_a271cbdb704f0c4a7c348121322212c70_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_a271cbdb704f0c4a7c348121322212c70_cgraph" id="aclassutec_1_1algebra_1_1Tensor_a271cbdb704f0c4a7c348121322212c70_cgraph">
+<area shape="rect" title="Trasponer un tensor de dimension 2. @complexity O(n)." alt="" coords="5,63,146,103"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,63,334,103"/>
+<area shape="poly" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,5,536,46"/>
+<area shape="poly" title=" " alt="" coords="334,61,380,47,381,52,335,66"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,70,549,96"/>
+<area shape="poly" title=" " alt="" coords="334,80,366,80,366,86,334,86"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,120,536,161"/>
+<area shape="poly" title=" " alt="" coords="335,100,381,114,380,119,334,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1142,6 +2060,27 @@ template&lt;typename T, size_t Rank&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Trasponer un tensor de dimension n mayor a 2. @complexity O(n). </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classutec_1_1algebra_1_1Tensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> traspuesto. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1algebra_1_1Tensor_aa3bbc9568b2b1fabd0fd584827603c7e_cgraph.png" border="0" usemap="#aclassutec_1_1algebra_1_1Tensor_aa3bbc9568b2b1fabd0fd584827603c7e_cgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1algebra_1_1Tensor_aa3bbc9568b2b1fabd0fd584827603c7e_cgraph" id="aclassutec_1_1algebra_1_1Tensor_aa3bbc9568b2b1fabd0fd584827603c7e_cgraph">
+<area shape="rect" title="Trasponer un tensor de dimension n mayor a 2. @complexity O(n)." alt="" coords="5,39,146,79"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a215437fdbb556e998f3feae08b02a51b" title=" " alt="" coords="194,5,334,46"/>
+<area shape="poly" title=" " alt="" coords="145,44,178,38,179,43,146,49"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,71,334,111"/>
+<area shape="poly" title=" " alt="" coords="146,68,179,74,178,79,146,74"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,13,536,54"/>
+<area shape="poly" title=" " alt="" coords="334,69,380,55,381,60,335,74"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,78,549,104"/>
+<area shape="poly" title=" " alt="" coords="334,88,366,88,366,94,334,94"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,128,536,169"/>
+<area shape="poly" title=" " alt="" coords="335,108,381,122,380,127,334,113"/>
+</map>
+</div>
 
 </div>
 </div>

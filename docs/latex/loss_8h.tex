@@ -2,19 +2,35 @@
 \hypertarget{loss_8h}{}\label{loss_8h}\index{include/utec/nn/loss.h@{include/utec/nn/loss.h}}
 {\ttfamily \#include $<$cmath$>$}\newline
 {\ttfamily \#include "{}interfaces.\+h"{}}\newline
+Include dependency graph for loss.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{loss_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{loss_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss}{utec\+::neural\+\_\+network\+::\+MSELoss$<$ T $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em Función de pérdida MSE (Error Cuadrático Medio). Mide el promedio de los cuadrados de las diferencias entre las predicciones y los valores reales. Es común en tareas de regresión. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classutec_1_1neural__network_1_1BCELoss}{utec\+::neural\+\_\+network\+::\+BCELoss$<$ T $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em Función de pérdida Binary Cross Entropy (entropía cruzada binaria). Usada típicamente en clasificación binaria. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss}{utec\+::neural\+\_\+network\+::\+Cross\+Entropy\+Loss$<$ T $>$}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Función de pérdida Cross Entropy para clasificación multiclase. Requiere que las etiquetas verdaderas estén codificadas one-\/hot. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutec}{utec}}
 \item 
 namespace \mbox{\hyperlink{namespaceutec_1_1neural__network}{utec\+::neural\+\_\+network}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Capa de activación de Rectified Linear Unit (\doxylink{classutec_1_1neural__network_1_1ReLU}{Re\+LU}). Los valores negativos del input se convierten en 0. Los valores no negativos permanecen igual. \end{DoxyCompactList}\end{DoxyCompactItemize}

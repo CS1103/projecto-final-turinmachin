@@ -93,14 +93,28 @@ $(function(){initNavTree('classutec_1_1neural__network_1_1LayerRegistry.html',''
 </div><!--header-->
 <div class="contents">
 
+<p>Registro de tipos de capas para deserialización.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="layer__registry_8h_source.html">layer_registry.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a34bb46eabb8fc2cedacbd4a0ce2181a1" id="r_a34bb46eabb8fc2cedacbd4a0ce2181a1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34bb46eabb8fc2cedacbd4a0ce2181a1">register_layer</a> (<a class="el" href="namespaceutec_1_1neural__network.html#a8ecfa0c1de4e3b768035cb49e8962dab">LayerId</a> id, LayerCreator creator)</td></tr>
+<tr class="memdesc:a34bb46eabb8fc2cedacbd4a0ce2181a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra un tipo de capa junto con su función de construcción. Se asocia el identificador con una función que sabe cómo crear la capa correspondiente.  <br /></td></tr>
 <tr class="memitem:a1ece92519c78577b1665f245ad71e376" id="r_a1ece92519c78577b1665f245ad71e376"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ece92519c78577b1665f245ad71e376">create</a> (<a class="el" href="namespaceutec_1_1neural__network.html#a8ecfa0c1de4e3b768035cb49e8962dab">LayerId</a> id, std::istream &amp;in) -&gt; std::unique_ptr&lt; <a class="el" href="structutec_1_1neural__network_1_1ILayer.html">ILayer</a>&lt; T &gt; &gt;</td></tr>
+<tr class="memdesc:a1ece92519c78577b1665f245ad71e376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una instancia de una capa registrada a partir de su ID. Busca la función asociada al ID proporcionado y la invoca con el flujo de entrada.  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+class utec::neural_network::LayerRegistry&lt; T &gt;</div><p>Registro de tipos de capas para deserialización. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Tipo de dato utilizado por las capas (por ejemplo, float o double). </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a1ece92519c78577b1665f245ad71e376" name="a1ece92519c78577b1665f245ad71e376"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ece92519c78577b1665f245ad71e376">&#9670;&#160;</a></span>create()</h2>
 
@@ -129,6 +143,32 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Crea una instancia de una capa registrada a partir de su ID. Busca la función asociada al ID proporcionado y la invoca con el flujo de entrada. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identificador del tipo de capa a crear. </td></tr>
+    <tr><td class="paramname">in</td><td>Flujo binario de entrada desde el cual leer los datos de la capa. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Puntero a la capa recién creada. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Si no se ha registrado una capa con el ID dado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1neural__network_1_1LayerRegistry_a1ece92519c78577b1665f245ad71e376_icgraph.png" border="0" usemap="#aclassutec_1_1neural__network_1_1LayerRegistry_a1ece92519c78577b1665f245ad71e376_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1neural__network_1_1LayerRegistry_a1ece92519c78577b1665f245ad71e376_icgraph" id="aclassutec_1_1neural__network_1_1LayerRegistry_a1ece92519c78577b1665f245ad71e376_icgraph">
+<area shape="rect" title="Crea una instancia de una capa registrada a partir de su ID. Busca la función asociada al ID proporci..." alt="" coords="198,5,346,46"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1NeuralNetwork.html#a3bdc71040fd54c9787781173a2fb7acd" title="Carga una red neuronal desde un flujo de entrada binario." alt="" coords="5,5,150,46"/>
+<area shape="poly" title=" " alt="" coords="182,28,150,28,150,23,182,23"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -160,6 +200,29 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Registra un tipo de capa junto con su función de construcción. Se asocia el identificador con una función que sabe cómo crear la capa correspondiente. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identificador único del tipo de capa. </td></tr>
+    <tr><td class="paramname">creator</td><td>Función que crea una instancia de esa capa leyendo desde un flujo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1_icgraph.png" border="0" usemap="#aclassutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1_icgraph" id="aclassutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1_icgraph">
+<area shape="rect" title="Registra un tipo de capa junto con su función de construcción. Se asocia el identificador con una fun..." alt="" coords="641,5,831,46"/>
+<area shape="rect" href="namespaceutec_1_1neural__network.html#ae41bef2d9885dfcabb4f2b261eba3c0f" title="Registra todas las capas disponibles en el sistema. Llamado al inicio del programa para asegurar que ..." alt="" coords="453,5,593,46"/>
+<area shape="poly" title=" " alt="" coords="626,28,594,28,594,23,626,23"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1NeuralNetwork.html#a03cb30174664f403618acfe0e9df38e8" title="Constructor por defecto." alt="" coords="198,5,405,46"/>
+<area shape="poly" title=" " alt="" coords="437,28,406,28,406,23,437,23"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1NeuralNetwork.html#a3bdc71040fd54c9787781173a2fb7acd" title="Carga una red neuronal desde un flujo de entrada binario." alt="" coords="5,5,150,46"/>
+<area shape="poly" title=" " alt="" coords="182,28,150,28,150,23,182,23"/>
+</map>
+</div>
 
 </div>
 </div>

@@ -1,0 +1,13 @@
+<map id="utec::algebra::Tensor::transpose_2d" name="utec::algebra::Tensor::transpose_2d">
+<area shape="rect" id="Node000001" title="Trasponer un tensor de dimension n mayor a 2. @complexity O(n)." alt="" coords="5,39,146,79"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1algebra_1_1Tensor.html#a215437fdbb556e998f3feae08b02a51b" title=" " alt="" coords="194,5,334,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,44,178,38,179,43,146,49"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,71,334,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,68,179,74,178,79,146,74"/>
+<area shape="rect" id="Node000004" href="$classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,13,536,54"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="334,69,380,55,381,60,335,74"/>
+<area shape="rect" id="Node000005" href="$classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,78,549,104"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="334,88,366,88,366,94,334,94"/>
+<area shape="rect" id="Node000006" href="$classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,128,536,169"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="335,108,381,122,380,127,334,113"/>
+</map>

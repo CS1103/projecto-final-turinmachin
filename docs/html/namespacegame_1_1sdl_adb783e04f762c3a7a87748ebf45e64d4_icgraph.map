@@ -1,0 +1,7 @@
+<map id="game::sdl::draw_filled_circle" name="game::sdl::draw_filled_circle">
+<area shape="rect" id="Node000001" title=" " alt="" coords="378,5,521,46"/>
+<area shape="rect" id="Node000002" href="$namespacegame_1_1sdl.html#aa1f021f46015df99b614075f06563be8" title=" " alt="" coords="193,13,330,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="362,28,330,28,330,23,362,23"/>
+<area shape="rect" id="Node000003" href="$classgame_1_1Game.html#a467a92796c10009b036cb66363d58257" title=" " alt="" coords="5,13,145,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="177,28,145,28,145,23,177,23"/>
+</map>

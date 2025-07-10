@@ -1,0 +1,9 @@
+<map id="utec::neural_network::Kan::backward" name="utec::neural_network::Kan::backward">
+<area shape="rect" id="Node000001" title="Propagación hacia atrás de la capa." alt="" coords="5,39,146,79"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1algebra_1_1Tensor.html#a637c3147839433886d561c28a210cd33" title="Llena la data de un tesor con un valor." alt="" coords="194,5,334,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,44,178,38,179,43,146,49"/>
+<area shape="rect" id="Node000003" href="$namespaceutec_1_1algebra.html#ae9c4a2995ea5148ad6653d79058621ac" title="Realiza producto matricial entre 2 tensores de dimension 2." alt="" coords="196,71,332,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,68,181,74,180,80,146,74"/>
+<area shape="rect" id="Node000004" href="$classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="382,71,522,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="332,88,366,88,366,94,332,94"/>
+</map>

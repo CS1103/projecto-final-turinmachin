@@ -1,22 +1,38 @@
 \doxysection{include/utec/nn/interfaces.h File Reference}
 \hypertarget{utec_2nn_2interfaces_8h}{}\label{utec_2nn_2interfaces_8h}\index{include/utec/nn/interfaces.h@{include/utec/nn/interfaces.h}}
 {\ttfamily \#include "{}utec/algebra/tensor.\+h"{}}\newline
+Include dependency graph for interfaces.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utec_2nn_2interfaces_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utec_2nn_2interfaces_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{utec\+::neural\+\_\+network\+::\+IOptimizer$<$ T $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em Interfaz para definir un optimizador (ej. \doxylink{classutec_1_1neural__network_1_1SGD}{SGD}, \doxylink{classutec_1_1neural__network_1_1Adam}{Adam}, ...). Un optimizador se encarga de actualizar los parámetros entrenables (como pesos y biases) en base a los gradientes. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em Interfaz para una capa de la red neuronal. Permite que distintas capas se conecten entre sí con polimorfismo. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, Dims $>$}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Interfaz para una función de pérdida (loss). Se encarga de calcular qué tan mal lo hizo la red con respecto a los resultados reales y obtener el gradiente necesario para ajustar los parámetros. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutec}{utec}}
 \item 
 namespace \mbox{\hyperlink{namespaceutec_1_1neural__network}{utec\+::neural\+\_\+network}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Capa de activación de Rectified Linear Unit (\doxylink{classutec_1_1neural__network_1_1ReLU}{Re\+LU}). Los valores negativos del input se convierten en 0. Los valores no negativos permanecen igual. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,4 +44,4 @@ enum class \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b7680
 , \newline
 \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dabaf60e8dbbc0c325f558c189cc9c7c3e06}{utec\+::neural\+\_\+network\+::\+Kan}} = 4
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Identificador para los diferentes tipos de capas en la red neuronal. Se emplea uint8\+\_\+t (unsigned 8-\/bit int, valores de 0-\/255) para ahorrar memoria. \end{DoxyCompactList}\end{DoxyCompactItemize}

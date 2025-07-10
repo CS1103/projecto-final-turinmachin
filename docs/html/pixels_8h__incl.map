@@ -1,0 +1,9 @@
+<map id="include/game/pixels.h" name="include/game/pixels.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="110,5,256,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,129,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,34,101,73,98,68,162,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="153,79,213,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,31,186,63,180,63,180,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="237,79,294,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="199,30,242,67,239,71,195,34"/>
+</map>

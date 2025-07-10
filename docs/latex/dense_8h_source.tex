@@ -8,88 +8,91 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utec_2nn_2interfaces_8h}{interfaces.h}}"{}}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serialization_8h}{utec/utils/serialization.h}}"{}}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutec_1_1neural__network}{utec::neural\_network}}\ \{}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDense_a17f3a5bd7b0adf6a917e302ea1ea2694}{Dense}}\ final\ :\ \textcolor{keyword}{public}\ ILayer<T>\ \{}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ weights;}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ biases;}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ activations;}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ gradient\_weights;}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ gradient\_biases;}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a17f3a5bd7b0adf6a917e302ea1ea2694}{Dense}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ in\_f,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ out\_f)}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ :\ weights(std::array\{in\_f,\ out\_f\}),}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ biases(std::array<size\_t,\ 2>\{1,\ out\_f\}),}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ activations(std::array<size\_t,\ 2>\{1,\ out\_f\}),}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_weights(std::array\{in\_f,\ out\_f\}),}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_biases(std::array<size\_t,\ 2>\{1,\ out\_f\})\ \{\}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutec_1_1neural__network}{utec::neural\_network}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDense_a17f3a5bd7b0adf6a917e302ea1ea2694}{Dense}}\ final\ :\ \textcolor{keyword}{public}\ ILayer<T>\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ weights;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ biases;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ activations;}
 \DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a57d3b60d03f48a5ef5399658511eae39}{Dense}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ in\_f,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ out\_f,\ \textcolor{keyword}{auto}\ init\_w\_fun,\ \textcolor{keyword}{auto}\ init\_b\_fun)}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a17f3a5bd7b0adf6a917e302ea1ea2694}{Dense}}(in\_f,\ out\_f)\ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ init\_w\_fun(weights);}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ init\_b\_fun(biases);}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ gradient\_weights;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ gradient\_biases;}
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_adf5510eaa5e3bc10bbefcde60f895238}{forward}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}})\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ \textcolor{keyword}{override}\ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ activations\ =\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}};}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{algebra::matrix\_product}}(\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}},\ weights)\ +\ biases;}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a34eff47b14246879296fefce593d3a3d}{backward}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ dZ)\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ \textcolor{keyword}{override}\ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_weights\ =\ \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{algebra::matrix\_product}}(activations.transpose\_2d(),\ dZ);}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ dZ\_shape\ =\ dZ.shape();}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_biases.fill(T(0));}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ dZ\_shape[0];\ i++)\ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ dZ\_shape[1];\ j++)\ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_biases(0,\ j)\ +=\ dZ(i,\ j);}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{algebra::matrix\_product}}(dZ,\ weights.transpose\_2d());}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a6a7adf0ad0f2097c68a3bcee3585265a}{update\_params}}(\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer<T>}}\&\ optimizer)\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ optimizer.\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{update}}(weights,\ gradient\_weights);}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ optimizer.\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{update}}(biases,\ gradient\_biases);}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_aa8c7cad728a0680188a19dc323aa15fb}{id}}()\ const\ -\/>\ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{LayerId}}\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba9a71a13863c84ba34fc41595fc2ee0c6}{LayerId::Dense}};}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a075f90b95ce06ffc39e1999e911e75f1}{save}}(std::ostream\&\ out)\textcolor{keyword}{\ const\ override\ }\{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<std::uint64\_t>}}(out,\ weights.shape()[0]);}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<std::uint64\_t>}}(out,\ weights.shape()[1]);}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ weights)\ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<T>}}(out,\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}});}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ biases)\ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<T>}}(out,\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}});}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_affa01afde1f0b8e320d789465c57040f}{load}}(std::istream\&\ in)\ -\/>\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a17f3a5bd7b0adf6a917e302ea1ea2694}{Dense<T>}}\ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ in\_feats\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<std::uint64\_t>}}(in);}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ out\_feats\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<std::uint64\_t>}}(in);}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a17f3a5bd7b0adf6a917e302ea1ea2694}{Dense<T>}}\ result(in\_feats,\ out\_feats);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a17f3a5bd7b0adf6a917e302ea1ea2694}{Dense}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ in\_f,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ out\_f)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ :\ weights(std::array\{in\_f,\ out\_f\}),}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ biases(std::array<size\_t,\ 2>\{1,\ out\_f\}),}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ activations(std::array<size\_t,\ 2>\{1,\ out\_f\}),}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_weights(std::array\{in\_f,\ out\_f\}),}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_biases(std::array<size\_t,\ 2>\{1,\ out\_f\})\ \{\}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a57d3b60d03f48a5ef5399658511eae39}{Dense}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ in\_f,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ out\_f,\ \textcolor{keyword}{auto}\ init\_w\_fun,\ \textcolor{keyword}{auto}\ init\_b\_fun)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a17f3a5bd7b0adf6a917e302ea1ea2694}{Dense}}(in\_f,\ out\_f)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ init\_w\_fun(weights);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ init\_b\_fun(biases);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_adf5510eaa5e3bc10bbefcde60f895238}{forward}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}})\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ activations\ =\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{algebra::matrix\_product}}(\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}},\ weights)\ +\ biases;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ result.weights)\ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<T>}}(in);}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ result.biases)\ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<T>}}(in);}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00086\ \ \ \ \ \};}
-\DoxyCodeLine{00087\ \}\ \ \textcolor{comment}{//\ namespace\ utec::neural\_network}}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a34eff47b14246879296fefce593d3a3d}{backward}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ dZ)\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_weights\ =\ \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{algebra::matrix\_product}}(activations.transpose\_2d(),\ dZ);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ dZ\_shape\ =\ dZ.shape();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_biases.fill(T(0));}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ dZ\_shape[0];\ i++)\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ dZ\_shape[1];\ j++)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_biases(0,\ j)\ +=\ dZ(i,\ j);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{algebra::matrix\_product}}(dZ,\ weights.transpose\_2d());}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a6a7adf0ad0f2097c68a3bcee3585265a}{update\_params}}(\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer<T>}}\&\ optimizer)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ optimizer.\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{update}}(weights,\ gradient\_weights);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ optimizer.\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{update}}(biases,\ gradient\_biases);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_aa8c7cad728a0680188a19dc323aa15fb}{id}}()\ const\ -\/>\ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{LayerId}}\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba9a71a13863c84ba34fc41595fc2ee0c6}{LayerId::Dense}};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a075f90b95ce06ffc39e1999e911e75f1}{save}}(std::ostream\&\ out)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<std::uint64\_t>}}(out,\ weights.shape()[0]);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<std::uint64\_t>}}(out,\ weights.shape()[1]);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ weights)\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<T>}}(out,\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}});}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ biases)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<T>}}(out,\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}});}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_affa01afde1f0b8e320d789465c57040f}{load}}(std::istream\&\ in)\ -\/>\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a17f3a5bd7b0adf6a917e302ea1ea2694}{Dense<T>}}\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ in\_feats\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<std::uint64\_t>}}(in);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ out\_feats\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<std::uint64\_t>}}(in);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a17f3a5bd7b0adf6a917e302ea1ea2694}{Dense<T>}}\ result(in\_feats,\ out\_feats);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ result.weights)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<T>}}(in);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ result.biases)\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<T>}}(in);}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \};}
+\DoxyCodeLine{00156\ \}\ \ \textcolor{comment}{//\ namespace\ utec::neural\_network}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

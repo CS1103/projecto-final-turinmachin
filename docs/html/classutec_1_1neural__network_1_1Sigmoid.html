@@ -93,28 +93,57 @@ $(function(){initNavTree('classutec_1_1neural__network_1_1Sigmoid.html','','clas
 </div><!--header-->
 <div class="contents">
 
+<p>Capa de activación <a class="el" href="classutec_1_1neural__network_1_1Sigmoid.html" title="Capa de activación Sigmoid. Convierte cada valor en el rango (0, 1) abierto usando la función logísti...">Sigmoid</a>. Convierte cada valor en el rango (0, 1) abierto usando la función logística. No tiene parámetros entrenables.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="activation_8h_source.html">activation.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for utec::neural_network::Sigmoid&lt; T &gt;:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classutec_1_1neural__network_1_1Sigmoid.png" usemap="#utec_3A_3Aneural_5Fnetwork_3A_3ASigmoid_3C_20T_20_3E_map" alt=""/>
-  <map id="utec_3A_3Aneural_5Fnetwork_3A_3ASigmoid_3C_20T_20_3E_map" name="utec_3A_3Aneural_5Fnetwork_3A_3ASigmoid_3C_20T_20_3E_map">
-<area href="structutec_1_1neural__network_1_1ILayer.html" alt="utec::neural_network::ILayer&lt; T &gt;" shape="rect" coords="0,0,210,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="classutec_1_1neural__network_1_1Sigmoid__inherit__graph.png" border="0" usemap="#autec_1_1neural__network_1_1Sigmoid_3_01T_01_4_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="autec_1_1neural__network_1_1Sigmoid_3_01T_01_4_inherit__map" id="autec_1_1neural__network_1_1Sigmoid_3_01T_01_4_inherit__map">
+<area shape="rect" title="Capa de activación Sigmoid. Convierte cada valor en el rango (0, 1) abierto usando la función logísti..." alt="" coords="5,94,146,135"/>
+<area shape="rect" href="structutec_1_1neural__network_1_1ILayer.html" title="Interfaz para una capa de la red neuronal. Permite que distintas capas se conecten entre sí con polim..." alt="" coords="5,5,146,46"/>
+<area shape="poly" title=" " alt="" coords="78,62,78,94,73,94,73,62"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for utec::neural_network::Sigmoid&lt; T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="classutec_1_1neural__network_1_1Sigmoid__coll__graph.png" border="0" usemap="#autec_1_1neural__network_1_1Sigmoid_3_01T_01_4_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="autec_1_1neural__network_1_1Sigmoid_3_01T_01_4_coll__map" id="autec_1_1neural__network_1_1Sigmoid_3_01T_01_4_coll__map">
+<area shape="rect" title="Capa de activación Sigmoid. Convierte cada valor en el rango (0, 1) abierto usando la función logísti..." alt="" coords="5,94,146,135"/>
+<area shape="rect" href="structutec_1_1neural__network_1_1ILayer.html" title="Interfaz para una capa de la red neuronal. Permite que distintas capas se conecten entre sí con polim..." alt="" coords="5,5,146,46"/>
+<area shape="poly" title=" " alt="" coords="78,62,78,94,73,94,73,62"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a70102144b4313b2c7e6564d429cfd2ff" id="r_a70102144b4313b2c7e6564d429cfd2ff"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70102144b4313b2c7e6564d429cfd2ff">forward</a> (const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">algebra::Tensor</a>&lt; T, 2 &gt; &amp;z) -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">algebra::Tensor</a>&lt; T, 2 &gt; override</td></tr>
+<tr class="memdesc:a70102144b4313b2c7e6564d429cfd2ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propagación hacia adelante aplicando sigmoide.  <br /></td></tr>
 <tr class="memitem:adf8a7cea25b499a7dbfffd6bd95da147" id="r_adf8a7cea25b499a7dbfffd6bd95da147"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf8a7cea25b499a7dbfffd6bd95da147">backward</a> (const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">algebra::Tensor</a>&lt; T, 2 &gt; &amp;g) -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">algebra::Tensor</a>&lt; T, 2 &gt; override</td></tr>
+<tr class="memdesc:adf8a7cea25b499a7dbfffd6bd95da147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propagación hacia atrás: gradiente de la función sigmoide.  <br /></td></tr>
 <tr class="memitem:ab5e62d3ebf0ddb9ef958bbe2c991ab37" id="r_ab5e62d3ebf0ddb9ef958bbe2c991ab37"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5e62d3ebf0ddb9ef958bbe2c991ab37">id</a> () const -&gt; <a class="el" href="namespaceutec_1_1neural__network.html#a8ecfa0c1de4e3b768035cb49e8962dab">LayerId</a> override</td></tr>
+<tr class="memdesc:ab5e62d3ebf0ddb9ef958bbe2c991ab37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identificador único de la capa <a class="el" href="classutec_1_1neural__network_1_1Sigmoid.html" title="Capa de activación Sigmoid. Convierte cada valor en el rango (0, 1) abierto usando la función logísti...">Sigmoid</a>.  <br /></td></tr>
 <tr class="inherit_header pub_methods_structutec_1_1neural__network_1_1ILayer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_structutec_1_1neural__network_1_1ILayer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="structutec_1_1neural__network_1_1ILayer.html">utec::neural_network::ILayer&lt; T &gt;</a></td></tr>
 <tr class="memitem:a6965ff90722a8ff3929fa55a1fd722f2 inherit pub_methods_structutec_1_1neural__network_1_1ILayer" id="r_a6965ff90722a8ff3929fa55a1fd722f2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutec_1_1neural__network_1_1ILayer.html#a6965ff90722a8ff3929fa55a1fd722f2">~ILayer</a> ()=default</td></tr>
+<tr class="memdesc:a6965ff90722a8ff3929fa55a1fd722f2 inherit pub_methods_structutec_1_1neural__network_1_1ILayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor virtual.  <br /></td></tr>
 <tr class="memitem:a07d2e3abb2656a40eef1dc4de099c86f inherit pub_methods_structutec_1_1neural__network_1_1ILayer" id="r_a07d2e3abb2656a40eef1dc4de099c86f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutec_1_1neural__network_1_1ILayer.html#a07d2e3abb2656a40eef1dc4de099c86f">update_params</a> (<a class="el" href="structutec_1_1neural__network_1_1IOptimizer.html">IOptimizer</a>&lt; T &gt; &amp;optimizer)</td></tr>
+<tr class="memdesc:a07d2e3abb2656a40eef1dc4de099c86f inherit pub_methods_structutec_1_1neural__network_1_1ILayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza los parámetros internos de la capa (si tiene).  <br /></td></tr>
 <tr class="memitem:a0ddf898a100cec73a4e0df30caa6952e inherit pub_methods_structutec_1_1neural__network_1_1ILayer" id="r_a0ddf898a100cec73a4e0df30caa6952e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutec_1_1neural__network_1_1ILayer.html#a0ddf898a100cec73a4e0df30caa6952e">save</a> (std::ostream &amp;out) const</td></tr>
+<tr class="memdesc:a0ddf898a100cec73a4e0df30caa6952e inherit pub_methods_structutec_1_1neural__network_1_1ILayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda los parámetros internos de la capa en un flujo binario.  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+class utec::neural_network::Sigmoid&lt; T &gt;</div><p>Capa de activación <a class="el" href="classutec_1_1neural__network_1_1Sigmoid.html" title="Capa de activación Sigmoid. Convierte cada valor en el rango (0, 1) abierto usando la función logísti...">Sigmoid</a>. Convierte cada valor en el rango (0, 1) abierto usando la función logística. No tiene parámetros entrenables. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Tipo de dato (usualmente float o double). </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="adf8a7cea25b499a7dbfffd6bd95da147" name="adf8a7cea25b499a7dbfffd6bd95da147"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf8a7cea25b499a7dbfffd6bd95da147">&#9670;&#160;</a></span>backward()</h2>
 
@@ -139,6 +168,15 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Propagación hacia atrás: gradiente de la función sigmoide. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Gradiente de la siguiente capa. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Gradiente respecto a la entrada de esta capa. @complexity O(n*m*r), donde: n*m es el tamaño del tensor de salida, r es el número de dimensiones del resultado (por broadcasting). En la práctica, si no hay broadcasting, se reduce a O(n*m). </dd></dl>
 
 <p>Implements <a class="el" href="structutec_1_1neural__network_1_1ILayer.html#a1edb042d919a28e28c1523c1c29df07f">utec::neural_network::ILayer&lt; T &gt;</a>.</p>
 
@@ -169,6 +207,15 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Propagación hacia adelante aplicando sigmoide. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">z</td><td><a class="el" href="classTensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> de entrada. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classTensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> con valores entre 0 y 1. @complexity O(n*m), dado un tensor de entrada z de tamaño n*m. </dd></dl>
+
 <p>Implements <a class="el" href="structutec_1_1neural__network_1_1ILayer.html#a22275b736574bf1ef9febb9889ba7a25">utec::neural_network::ILayer&lt; T &gt;</a>.</p>
 
 </div>
@@ -197,6 +244,9 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Identificador único de la capa <a class="el" href="classutec_1_1neural__network_1_1Sigmoid.html" title="Capa de activación Sigmoid. Convierte cada valor en el rango (0, 1) abierto usando la función logísti...">Sigmoid</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>LayerID::Sigmoid (o bien 1) @complexity O(1). </dd></dl>
 
 <p>Implements <a class="el" href="structutec_1_1neural__network_1_1ILayer.html#a16b50cd81a4b1c368797af2cce2b7d06">utec::neural_network::ILayer&lt; T &gt;</a>.</p>
 

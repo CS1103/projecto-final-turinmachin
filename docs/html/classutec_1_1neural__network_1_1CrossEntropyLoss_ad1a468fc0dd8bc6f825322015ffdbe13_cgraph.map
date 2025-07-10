@@ -1,0 +1,5 @@
+<map id="utec::neural_network::CrossEntropyLoss::loss_gradient" name="utec::neural_network::CrossEntropyLoss::loss_gradient">
+<area shape="rect" id="Node000001" title="Gradiente de la pérdida Cross Entropy. Simplemente calcula la diferencia entre predicción y etiqueta." alt="" coords="5,5,169,61"/>
+<area shape="rect" id="Node000002" href="$classTensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="217,20,319,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,30,201,30,201,36,169,36"/>
+</map>

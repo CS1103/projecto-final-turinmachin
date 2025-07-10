@@ -1,0 +1,9 @@
+<map id="Catch::Detail::splitReporterSpec" name="Catch::Detail::splitReporterSpec">
+<area shape="rect" id="Node000001" title="Splits the reporter spec into reporter name and kv&#45;pair options." alt="" coords="698,5,902,31"/>
+<area shape="rect" id="Node000002" href="$namespaceCatch.html#ae987bd04fd59321f5183794daeffd4cf" title=" " alt="" coords="478,5,650,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="683,21,651,21,651,16,683,16"/>
+<area shape="rect" id="Node000003" href="$namespaceCatch.html#a96d773398ae9697da7845bbf5027e35e" title=" " alt="" coords="215,5,430,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="462,21,430,21,430,16,462,16"/>
+<area shape="rect" id="Node000004" href="$classCatch_1_1Session.html#a4564992e2b028770e38a1dcc6fff8b34" title=" " alt="" coords="5,5,167,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="199,21,167,21,167,16,199,16"/>
+</map>

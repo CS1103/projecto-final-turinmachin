@@ -2,28 +2,59 @@
 \hypertarget{classutec_1_1neural__network_1_1Adam}{}\label{classutec_1_1neural__network_1_1Adam}\index{utec::neural\_network::Adam$<$ T $>$@{utec::neural\_network::Adam$<$ T $>$}}
 
 
+Optimizador \doxylink{classutec_1_1neural__network_1_1Adam}{Adam} (Adaptive Moment Estimation). Combina momentum y RMSProp para un aprendizaje más estable y rápido.  
+
+
+
+
 {\ttfamily \#include $<$optimizer.\+h$>$}
 
-Inheritance diagram for utec\+::neural\+\_\+network\+::Adam\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::Adam\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classutec_1_1neural__network_1_1Adam}
+\includegraphics[width=185pt]{classutec_1_1neural__network_1_1Adam__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utec\+::neural\+\_\+network\+::Adam\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classutec_1_1neural__network_1_1Adam__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_af9ad301bc405fb5ec4909d4fb5d5dabf}{Adam}} (T learning\+\_\+rate=0.\+001, T beta1=0.\+9, T beta2=0.\+999, T epsilon=1e-\/8)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{classutec_1_1neural__network_1_1Adam}{Adam} con parámetros configurables. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_afbc4ee15fa6b2be1e0a508be4e03eb32}{update}} (\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&params, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&grads) override
-\item 
+\begin{DoxyCompactList}\small\item\em Actualiza los parámetros del modelo usando el algoritmo de \doxylink{classutec_1_1neural__network_1_1Adam}{Adam}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_a0e9d2821852c9608f87a329e8a5cb45d}{step}} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Incrementa el contador de pasos. Es importante para las correcciones de sesgo de \doxylink{classutec_1_1neural__network_1_1Adam}{Adam}. @complexity O(1) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{utec\+::neural\+\_\+network\+::\+IOptimizer$<$ T $>$}}}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a8535546f154901c74425495139d54b68}{\texorpdfstring{$\sim$}{\string~}\+IOptimizer}} ()=default
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor virtual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class utec\+::neural\+\_\+network\+::\+Adam$<$ T $>$}
+Optimizador \doxylink{classutec_1_1neural__network_1_1Adam}{Adam} (Adaptive Moment Estimation). Combina momentum y RMSProp para un aprendizaje más estable y rápido. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo de dato (float, double, etc.). \\
+\hline
+\end{DoxyTemplParams}
 
 
 \label{doc-constructors}
@@ -38,6 +69,21 @@ template$<$typename T$>$ \\
 
 
 
+Constructor de \doxylink{classutec_1_1neural__network_1_1Adam}{Adam} con parámetros configurables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em learning\+\_\+rate} & Tasa de aprendizaje. \\
+\hline
+{\em beta1} & Coeficiente para el promedio del primer momento. \\
+\hline
+{\em beta2} & Coeficiente para el promedio del segundo momento. \\
+\hline
+{\em epsilon} & Valor pequeño para estabilizar la división. @complexity O(1) \\
+\hline
+\end{DoxyParams}
+
+
 \label{doc-func-members}
 \Hypertarget{classutec_1_1neural__network_1_1Adam_doc-func-members}
 \doxysubsection{Member Function Documentation}
@@ -50,8 +96,20 @@ void \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam}{utec\+::neural\+\_\+
 
 
 
+Incrementa el contador de pasos. Es importante para las correcciones de sesgo de \doxylink{classutec_1_1neural__network_1_1Adam}{Adam}. @complexity O(1) 
+
+
+
 Reimplemented from \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a930832dc9b736845a83f5049c735dfe1}{utec\+::neural\+\_\+network\+::\+IOptimizer$<$ T $>$}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{classutec_1_1neural__network_1_1Adam_a0e9d2821852c9608f87a329e8a5cb45d_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{classutec_1_1neural__network_1_1Adam_afbc4ee15fa6b2be1e0a508be4e03eb32}\index{utec::neural\_network::Adam$<$ T $>$@{utec::neural\_network::Adam$<$ T $>$}!update@{update}}
 \index{update@{update}!utec::neural\_network::Adam$<$ T $>$@{utec::neural\_network::Adam$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
@@ -61,8 +119,27 @@ void \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam}{utec\+::neural\+\_\+
 
 
 
+Actualiza los parámetros del modelo usando el algoritmo de \doxylink{classutec_1_1neural__network_1_1Adam}{Adam}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Parámetros actuales. \\
+\hline
+{\em grads} & Gradientes correspondientes. @complexity O(n\texorpdfstring{$\ast$}{*}m), donde n\texorpdfstring{$\ast$}{*}m es el tamaño de los tensores. Incluye\+: operaciones de actualización para m, v, normalización con m̂ y v̂, y la división final. \\
+\hline
+\end{DoxyParams}
+
+
 Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{utec\+::neural\+\_\+network\+::\+IOptimizer$<$ T $>$}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classutec_1_1neural__network_1_1Adam_afbc4ee15fa6b2be1e0a508be4e03eb32_cgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

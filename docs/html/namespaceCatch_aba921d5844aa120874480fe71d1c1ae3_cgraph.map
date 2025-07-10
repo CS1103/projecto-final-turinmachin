@@ -1,0 +1,9 @@
+<map id="Catch::getSeed" name="Catch::getSeed">
+<area shape="rect" id="Node000001" title="Returns Catch2&#39;s current RNG seed." alt="" coords="5,55,115,80"/>
+<area shape="rect" id="Node000002" href="$classCatch_1_1Context.html#a9b9038b5e6bd8495cbb247ff8a39fc41" title=" " alt="" coords="163,5,328,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,51,179,33,180,38,112,57"/>
+<area shape="rect" id="Node000003" href="$namespaceCatch.html#a8b23533de8c7d123687ac2c8d36b653a" title=" " alt="" coords="163,55,328,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,65,147,65,147,70,115,70"/>
+<area shape="rect" id="Node000004" href="$classCatch_1_1IConfig.html#a71994ea53eb66e353e5e195088f9bad7" title=" " alt="" coords="168,104,323,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="112,78,180,97,179,102,111,84"/>
+</map>

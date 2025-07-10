@@ -1,0 +1,6 @@
+<map id="Catch::StringMaker&lt; R, std::enable_if_t&lt; is_range&lt; R &gt;::value &amp;&amp;!::Catch::Detail::IsStreamInsertable&lt; R &gt;::value &gt; &gt;::convert" name="Catch::StringMaker&lt; R, std::enable_if_t&lt; is_range&lt; R &gt;::value &amp;&amp;!::Catch::Detail::IsStreamInsertable&lt; R &gt;::value &gt; &gt;::convert">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,247,91"/>
+<area shape="rect" id="Node000002" href="$namespaceCatch.html#af13494e925a793e3e7143c6ce6f442c2" title=" " alt="" coords="295,35,437,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,46,279,46,279,51,247,51"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="326,37,318,27,323,17,339,11,366,9,396,11,410,19,408,23,394,17,366,14,340,16,327,21,324,26,330,33"/>
+</map>

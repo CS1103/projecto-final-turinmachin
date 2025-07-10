@@ -1,0 +1,9 @@
+<map id="Catch::SectionEndInfo" name="Catch::SectionEndInfo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="92,199,241,224"/>
+<area shape="rect" id="Node000002" href="$structCatch_1_1SectionInfo.html" title=" " alt="" coords="16,102,144,128"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,141,111,173,143,196,139,200,107,176,87,144"/>
+<area shape="rect" id="Node000003" href="$structCatch_1_1SourceLineInfo.html" title=" " alt="" coords="5,5,155,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,46,83,101,77,101,77,46"/>
+<area shape="rect" id="Node000004" href="$structCatch_1_1Counts.html" title=" " alt="" coords="168,102,270,128"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="207,143,176,199,171,197,202,140"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="utec::algebra::Tensor::slice" name="utec::algebra::Tensor::slice">
+<area shape="rect" id="Node000001" title="Genera tensor con fila particular para tensor de Rank 3." alt="" coords="194,5,334,46"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1algebra_1_1Tensor.html#ae9d375f3d8c7e60eceb238dbe0df593a" title="Cambia el subtensor asignado." alt="" coords="5,5,146,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,28,146,28,146,23,178,23"/>
+</map>

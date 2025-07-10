@@ -1,0 +1,15 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,128,102,153"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1neural__network_1_1NeuralNetwork.html#a5da3f9a12e283f092fb303599b7e08af" title="Agrega una nueva capa a la red." alt="" coords="152,5,328,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,125,101,91,148,55,157,51,159,55,151,60,104,95,69,129"/>
+<area shape="rect" id="Node000003" href="$classNeuralNetwork.html#a3bdc71040fd54c9787781173a2fb7acd" title="Carga una red neuronal desde un flujo de entrada binario." alt="" coords="171,70,309,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="93,124,149,106,175,98,176,103,150,111,94,129"/>
+<area shape="rect" id="Node000004" href="$classutec_1_1neural__network_1_1NeuralNetwork.html#a8728e0e068d299d39200701221cde58a" title="Realiza una predicción sobre un conjunto de datos." alt="" coords="160,120,320,161"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="102,138,144,138,144,143,102,143"/>
+<area shape="rect" id="Node000005" href="$classutec_1_1neural__network_1_1NeuralNetwork.html#a01bcec163b0d6dba854f8f89a6552508" title="Guarda el modelo en un flujo de salida binario." alt="" coords="166,185,314,226"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="93,151,166,177,164,182,92,156"/>
+<area shape="rect" id="Node000007" href="$namespaceCatch_1_1Matchers.html#a13a915665906ab3efb39e118c649285f" title=" " alt="" coords="150,250,330,276"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="66,152,101,193,124,216,151,235,163,241,160,246,148,240,121,220,97,197,62,156"/>
+<area shape="rect" id="Node000006" href="$namespaceserialization.html#af7d3d5835d83a80288feeca38f538f4c" title=" " alt="" coords="378,185,501,226"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="315,203,363,203,363,208,315,208"/>
+</map>

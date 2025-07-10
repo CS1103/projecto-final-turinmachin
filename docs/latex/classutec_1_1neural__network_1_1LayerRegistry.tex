@@ -2,15 +2,32 @@
 \hypertarget{classutec_1_1neural__network_1_1LayerRegistry}{}\label{classutec_1_1neural__network_1_1LayerRegistry}\index{utec::neural\_network::LayerRegistry$<$ T $>$@{utec::neural\_network::LayerRegistry$<$ T $>$}}
 
 
+Registro de tipos de capas para deserialización.  
+
+
+
+
 {\ttfamily \#include $<$layer\+\_\+registry.\+h$>$}
 
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static void \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1}{register\+\_\+layer}} (\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}} id, Layer\+Creator creator)
-\item 
+\begin{DoxyCompactList}\small\item\em Registra un tipo de capa junto con su función de construcción. Se asocia el identificador con una función que sabe cómo crear la capa correspondiente. \end{DoxyCompactList}\item 
 static auto \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry_a1ece92519c78577b1665f245ad71e376}{create}} (\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}} id, std\+::istream \&in) -\/$>$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{ILayer}}$<$ T $>$ $>$
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Crea una instancia de una capa registrada a partir de su ID. Busca la función asociada al ID proporcionado y la invoca con el flujo de entrada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class utec\+::neural\+\_\+network\+::\+Layer\+Registry$<$ T $>$}
+Registro de tipos de capas para deserialización. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo de dato utilizado por las capas (por ejemplo, float o double). \\
+\hline
+\end{DoxyTemplParams}
 
 
 \label{doc-func-members}
@@ -23,6 +40,33 @@ static auto \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry_a1ece
 template$<$typename T$>$ \\
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry}{utec\+::neural\+\_\+network\+::\+Layer\+Registry}}$<$ T $>$\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}}}]{id}{, }\item[{std\+::istream \&}]{in}{}\end{DoxyParamCaption}) -\/$>$ std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{ILayer}}$<$T$>$$>$ \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+
+Crea una instancia de una capa registrada a partir de su ID. Busca la función asociada al ID proporcionado y la invoca con el flujo de entrada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identificador del tipo de capa a crear. \\
+\hline
+{\em in} & Flujo binario de entrada desde el cual leer los datos de la capa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Puntero a la capa recién creada. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & Si no se ha registrado una capa con el ID dado. \\
+\hline
+\end{DoxyExceptions}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classutec_1_1neural__network_1_1LayerRegistry_a1ece92519c78577b1665f245ad71e376_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{classutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1}\index{utec::neural\_network::LayerRegistry$<$ T $>$@{utec::neural\_network::LayerRegistry$<$ T $>$}!register\_layer@{register\_layer}}
 \index{register\_layer@{register\_layer}!utec::neural\_network::LayerRegistry$<$ T $>$@{utec::neural\_network::LayerRegistry$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{register\_layer()}{register\_layer()}}
@@ -30,6 +74,25 @@ auto \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry}{utec\+::neu
 template$<$typename T$>$ \\
 void \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry}{utec\+::neural\+\_\+network\+::\+Layer\+Registry}}$<$ T $>$\+::register\+\_\+layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}}}]{id}{, }\item[{Layer\+Creator}]{creator}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+
+Registra un tipo de capa junto con su función de construcción. Se asocia el identificador con una función que sabe cómo crear la capa correspondiente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identificador único del tipo de capa. \\
+\hline
+{\em creator} & Función que crea una instancia de esa capa leyendo desde un flujo. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -1,0 +1,23 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,78,102,104"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1neural__network_1_1NeuralNetwork.html#a5da3f9a12e283f092fb303599b7e08af" title="Agrega una nueva capa a la red." alt="" coords="150,5,325,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,75,163,49,165,54,93,80"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1neural__network_1_1NeuralNetwork.html#a8728e0e068d299d39200701221cde58a" title="Realiza una predicción sobre un conjunto de datos." alt="" coords="158,71,317,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="102,88,142,88,142,94,102,94"/>
+<area shape="rect" id="Node000004" href="$classutec_1_1neural__network_1_1NeuralNetwork.html#ab2da2c55dc3be175816a870c7c91d2e3" title="Entrena la red neuronal usando descenso por lotes." alt="" coords="165,136,310,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="93,102,165,128,163,133,91,107"/>
+<area shape="rect" id="Node000005" href="$classutec_1_1algebra_1_1Tensor.html#a51eb9eef03f17649b74063dd37574a03" title="Genera tensor con fila particular." alt="" coords="373,86,540,112"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="310,135,389,114,390,119,311,140"/>
+<area shape="rect" id="Node000009" href="$classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="790,193,930,234"/>
+<area shape="poly" id="edge11_Node000004_Node000009" title=" " alt="" coords="311,173,373,186,481,198,590,206,775,211,775,217,590,211,481,203,373,191,310,179"/>
+<area shape="rect" id="Node000010" href="$classutec_1_1algebra_1_1Tensor.html#af442d67fa5f45db289396ff5b836ea0a" title="Cambia fila especifica de un tensor." alt="" coords="386,136,527,177"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="310,154,371,154,371,159,310,159"/>
+<area shape="rect" id="Node000006" href="$classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="588,136,729,177"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="505,110,574,130,573,135,504,115"/>
+<area shape="rect" id="Node000007" href="$classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="790,79,930,119"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="728,134,774,121,776,126,730,139"/>
+<area shape="rect" id="Node000008" href="$classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="777,144,944,169"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="729,154,761,154,761,159,729,159"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="730,174,776,187,774,192,728,179"/>
+<area shape="poly" id="edge10_Node000010_Node000006" title=" " alt="" coords="527,154,573,154,573,159,527,159"/>
+</map>

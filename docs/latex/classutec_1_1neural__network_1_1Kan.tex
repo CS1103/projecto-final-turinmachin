@@ -4,10 +4,24 @@
 
 {\ttfamily \#include $<$kan.\+h$>$}
 
-Inheritance diagram for utec\+::neural\+\_\+network\+::Kan\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::Kan\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classutec_1_1neural__network_1_1Kan}
+\includegraphics[width=185pt]{classutec_1_1neural__network_1_1Kan__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utec\+::neural\+\_\+network\+::Kan\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classutec_1_1neural__network_1_1Kan__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -18,20 +32,20 @@ Inheritance diagram for utec\+::neural\+\_\+network\+::Kan\texorpdfstring{$<$}{<
 \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a0e8f973f16a7a3bdcb5599957f4f67f5}{Kan}} (const size\+\_\+t in\+\_\+f, const size\+\_\+t out\+\_\+f, const size\+\_\+t knots, auto init\+\_\+psi\+\_\+w\+\_\+fun, auto init\+\_\+phi\+\_\+w\+\_\+fun, auto init\+\_\+phi\+\_\+b\+\_\+fun)
 \item 
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_adbcf3683376205b4f7987aaa2ecac36c}{forward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ override
-\item 
+\begin{DoxyCompactList}\small\item\em Propagación hacia adelante de la capa. \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_aba3256bdb697b3791dab07d32514ed0b}{backward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&dZ) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ override
-\item 
+\begin{DoxyCompactList}\small\item\em Propagación hacia atrás de la capa. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a07b819255c3861f6b83f55cece8dbc61}{update\+\_\+params}} (\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}$<$ T $>$ \&optimizer) override
-\item 
+\begin{DoxyCompactList}\small\item\em Actualiza los parámetros internos de la capa (si tiene). \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_adab78480bb6877e8971bf50dafe2cd43}{id}} () const -\/$>$ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}} override
-\item 
+\begin{DoxyCompactList}\small\item\em Devuelve el tipo de la capa. Sirve para serialización o reconstrucción de la red. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a7a43138e7b9987fa218db1a267f9abfa}{save}} (std\+::ostream \&out) const override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Guarda los parámetros internos de la capa en un flujo binario. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a6965ff90722a8ff3929fa55a1fd722f2}{\texorpdfstring{$\sim$}{\string~}\+ILayer}} ()=default
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor virtual. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -49,6 +63,14 @@ static auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a5ae5e51738dbeb
 template$<$typename T$>$ \\
 \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+network\+::\+Kan}}$<$ T $>$\mbox{\hyperlink{classKan}{\+::\+Kan}} (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{in\+\_\+f}{, }\item[{const size\+\_\+t}]{out\+\_\+f}{, }\item[{const size\+\_\+t}]{knots}{, }\item[{const T}]{x\+\_\+min}{ = {\ttfamily -\/1}, }\item[{const T}]{x\+\_\+max}{ = {\ttfamily +1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classutec_1_1neural__network_1_1Kan_a39c44a271bd7c7af844001e8d89e543e_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{classutec_1_1neural__network_1_1Kan_a0e8f973f16a7a3bdcb5599957f4f67f5}\index{utec::neural\_network::Kan$<$ T $>$@{utec::neural\_network::Kan$<$ T $>$}!Kan@{Kan}}
 \index{Kan@{Kan}!utec::neural\_network::Kan$<$ T $>$@{utec::neural\_network::Kan$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{Kan()}{Kan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -56,6 +78,14 @@ template$<$typename T$>$ \\
 template$<$typename T$>$ \\
 \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+network\+::\+Kan}}$<$ T $>$\mbox{\hyperlink{classKan}{\+::\+Kan}} (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{in\+\_\+f}{, }\item[{const size\+\_\+t}]{out\+\_\+f}{, }\item[{const size\+\_\+t}]{knots}{, }\item[{auto}]{init\+\_\+psi\+\_\+w\+\_\+fun}{, }\item[{auto}]{init\+\_\+phi\+\_\+w\+\_\+fun}{, }\item[{auto}]{init\+\_\+phi\+\_\+b\+\_\+fun}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{classutec_1_1neural__network_1_1Kan_a0e8f973f16a7a3bdcb5599957f4f67f5_cgraph}
+\end{center}
+\end{figure}
 
 
 \label{doc-func-members}
@@ -66,30 +96,77 @@ template$<$typename T$>$ \\
 \doxysubsubsection{\texorpdfstring{backward()}{backward()}}
 {\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1Kan_aba3256bdb697b3791dab07d32514ed0b} 
 template$<$typename T$>$ \\
-auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+network\+::\+Kan}}$<$ T $>$\+::backward (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{dZ}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$T, 2$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+network\+::\+Kan}}$<$ T $>$\+::backward (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{gradients}{}\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Propagación hacia atrás de la capa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gradients} & Gradiente de la pérdida respecto a la salida de esta capa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Gradiente de la pérdida respecto a la entrada de esta capa. 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a1edb042d919a28e28c1523c1c29df07f}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classutec_1_1neural__network_1_1Kan_aba3256bdb697b3791dab07d32514ed0b_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{classutec_1_1neural__network_1_1Kan_adbcf3683376205b4f7987aaa2ecac36c}\index{utec::neural\_network::Kan$<$ T $>$@{utec::neural\_network::Kan$<$ T $>$}!forward@{forward}}
 \index{forward@{forward}!utec::neural\_network::Kan$<$ T $>$@{utec::neural\_network::Kan$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{forward()}{forward()}}
 {\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1Kan_adbcf3683376205b4f7987aaa2ecac36c} 
 template$<$typename T$>$ \\
-auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+network\+::\+Kan}}$<$ T $>$\+::forward (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{x}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$T, 2$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+network\+::\+Kan}}$<$ T $>$\+::forward (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{x}{}\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Propagación hacia adelante de la capa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Tensor2D input de la capa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Salida producida dependiendo de lo que haga la capa. 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a22275b736574bf1ef9febb9889ba7a25}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classutec_1_1neural__network_1_1Kan_adbcf3683376205b4f7987aaa2ecac36c_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{classutec_1_1neural__network_1_1Kan_adab78480bb6877e8971bf50dafe2cd43}\index{utec::neural\_network::Kan$<$ T $>$@{utec::neural\_network::Kan$<$ T $>$}!id@{id}}
 \index{id@{id}!utec::neural\_network::Kan$<$ T $>$@{utec::neural\_network::Kan$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{id()}{id()}}
 {\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1Kan_adab78480bb6877e8971bf50dafe2cd43} 
 template$<$typename T$>$ \\
-auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+network\+::\+Kan}}$<$ T $>$\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+network\+::\+Kan}}$<$ T $>$\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$  \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Devuelve el tipo de la capa. Sirve para serialización o reconstrucción de la red. 
+
+\begin{DoxyReturn}{Returns}
+Identificador único de tipo Layer\+ID. 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a16b50cd81a4b1c368797af2cce2b7d06}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
@@ -101,6 +178,22 @@ Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a16b50cd81a4
 template$<$typename T$>$ \\
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+network\+::\+Kan}}$<$ T $>$\+::load (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{Kan}}$<$T$>$ \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{classutec_1_1neural__network_1_1Kan_a5ae5e51738dbeb57770d191c7442dae0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classutec_1_1neural__network_1_1Kan_a5ae5e51738dbeb57770d191c7442dae0_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{classutec_1_1neural__network_1_1Kan_a7a43138e7b9987fa218db1a267f9abfa}\index{utec::neural\_network::Kan$<$ T $>$@{utec::neural\_network::Kan$<$ T $>$}!save@{save}}
 \index{save@{save}!utec::neural\_network::Kan$<$ T $>$@{utec::neural\_network::Kan$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{save()}{save()}}
@@ -110,8 +203,28 @@ void \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+n
 
 
 
+Guarda los parámetros internos de la capa en un flujo binario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Flujo de salida (por ejemplo, un archivo binario). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Capas sin parámetros (Re\+Lu, \doxylink{classutec_1_1neural__network_1_1Sigmoid}{Sigmoid}, \doxylink{classutec_1_1neural__network_1_1Softmax}{Softmax}) pueden dejar esta función vacía. Se usa principalmente para guardar el modelo entrenado. 
+\end{DoxyNote}
+
+
 Reimplemented from \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a0ddf898a100cec73a4e0df30caa6952e}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classutec_1_1neural__network_1_1Kan_a7a43138e7b9987fa218db1a267f9abfa_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{classutec_1_1neural__network_1_1Kan_a07b819255c3861f6b83f55cece8dbc61}\index{utec::neural\_network::Kan$<$ T $>$@{utec::neural\_network::Kan$<$ T $>$}!update\_params@{update\_params}}
 \index{update\_params@{update\_params}!utec::neural\_network::Kan$<$ T $>$@{utec::neural\_network::Kan$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{update\_params()}{update\_params()}}
@@ -121,8 +234,28 @@ void \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+n
 
 
 
+Actualiza los parámetros internos de la capa (si tiene). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em optimizer} & Instancia del optimizador a usar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Si la capa no tiene parámetros entrenables (como \doxylink{classutec_1_1neural__network_1_1ReLU}{Re\+LU} o \doxylink{classutec_1_1neural__network_1_1Softmax}{Softmax}), no necesita hacer nada en esta función. 
+\end{DoxyNote}
+
+
 Reimplemented from \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a07d2e3abb2656a40eef1dc4de099c86f}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classutec_1_1neural__network_1_1Kan_a07b819255c3861f6b83f55cece8dbc61_cgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

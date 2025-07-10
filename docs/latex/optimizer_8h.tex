@@ -2,17 +2,33 @@
 \hypertarget{optimizer_8h}{}\label{optimizer_8h}\index{include/utec/nn/optimizer.h@{include/utec/nn/optimizer.h}}
 {\ttfamily \#include $<$cmath$>$}\newline
 {\ttfamily \#include "{}interfaces.\+h"{}}\newline
+Include dependency graph for optimizer.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{optimizer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{optimizer_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classutec_1_1neural__network_1_1SGD}{utec\+::neural\+\_\+network\+::\+SGD$<$ T $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em Optimizador Stochastic Gradient Descent (\doxylink{classutec_1_1neural__network_1_1SGD}{SGD}). Actualiza los parámetros en dirección opuesta al gradiente multiplicado por el learning rate. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam}{utec\+::neural\+\_\+network\+::\+Adam$<$ T $>$}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Optimizador \doxylink{classutec_1_1neural__network_1_1Adam}{Adam} (Adaptive Moment Estimation). Combina momentum y RMSProp para un aprendizaje más estable y rápido. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutec}{utec}}
 \item 
 namespace \mbox{\hyperlink{namespaceutec_1_1neural__network}{utec\+::neural\+\_\+network}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Capa de activación de Rectified Linear Unit (\doxylink{classutec_1_1neural__network_1_1ReLU}{Re\+LU}). Los valores negativos del input se convierten en 0. Los valores no negativos permanecen igual. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -2,28 +2,59 @@
 \hypertarget{classutec_1_1neural__network_1_1MSELoss}{}\label{classutec_1_1neural__network_1_1MSELoss}\index{utec::neural\_network::MSELoss$<$ T $>$@{utec::neural\_network::MSELoss$<$ T $>$}}
 
 
+Función de pérdida MSE (Error Cuadrático Medio). Mide el promedio de los cuadrados de las diferencias entre las predicciones y los valores reales. Es común en tareas de regresión.  
+
+
+
+
 {\ttfamily \#include $<$loss.\+h$>$}
 
-Inheritance diagram for utec\+::neural\+\_\+network\+::MSELoss\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::MSELoss\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classutec_1_1neural__network_1_1MSELoss}
+\includegraphics[width=185pt]{classutec_1_1neural__network_1_1MSELoss__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utec\+::neural\+\_\+network\+::MSELoss\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classutec_1_1neural__network_1_1MSELoss__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename Prediction, typename Expected$>$ }\\\mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_a5b8a0c8a9480e4e5be6f233eab082c87}{MSELoss}} (Prediction \&\&y\+\_\+prediction, Expected \&\&y\+\_\+true)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor que recibe predicciones y valores reales. \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_a43be1dc09b8f4fb0080de0dc1dfe1915}{loss}} () const -\/$>$ T override
-\item 
+\begin{DoxyCompactList}\small\item\em Devuelve el valor de la pérdida MSE. \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_ac42456ee183bddd85e5a40d92f5abae5}{loss\+\_\+gradient}} () const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gradiente de la pérdida con respecto a las predicciones. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, 2 $>$}}}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_add5386c613a6166cedccf23b8cba066d}{\texorpdfstring{$\sim$}{\string~}\+ILoss}} ()=default
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor virtual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class utec\+::neural\+\_\+network\+::\+MSELoss$<$ T $>$}
+Función de pérdida MSE (Error Cuadrático Medio). Mide el promedio de los cuadrados de las diferencias entre las predicciones y los valores reales. Es común en tareas de regresión. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo de dato (float, double, etc.). \\
+\hline
+\end{DoxyTemplParams}
 
 
 \label{doc-constructors}
@@ -39,6 +70,22 @@ template$<$typename Prediction, typename Expected$>$ \\
 
 
 
+Constructor que recibe predicciones y valores reales. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y\+\_\+prediction} & Tensores con las predicciones del modelo. \\
+\hline
+{\em y\+\_\+true} & Tensores con los valores verdaderos (etiquetas). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & si las dimensiones no coinciden. @complexity O(1). \\
+\hline
+\end{DoxyExceptions}
+
+
 \label{doc-func-members}
 \Hypertarget{classutec_1_1neural__network_1_1MSELoss_doc-func-members}
 \doxysubsection{Member Function Documentation}
@@ -49,6 +96,13 @@ template$<$typename Prediction, typename Expected$>$ \\
 template$<$typename T$>$ \\
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss}{utec\+::neural\+\_\+network\+::\+MSELoss}}$<$ T $>$\+::loss (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ T\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Devuelve el valor de la pérdida MSE. 
+
+\begin{DoxyReturn}{Returns}
+Escalar con el valor medio del error cuadrático. @complexity O(n\texorpdfstring{$\ast$}{*}m), donde n\texorpdfstring{$\ast$}{*}m es el tamaño del tensor. 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a7aefbeb1f4bd61f61491309de76f2726}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, 2 $>$}}.
@@ -62,8 +116,23 @@ auto \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss}{utec\+::neural\+\
 
 
 
+Gradiente de la pérdida con respecto a las predicciones. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classTensor}{Tensor} con el mismo shape que y\+\_\+prediction. @complexity O(n\texorpdfstring{$\ast$}{*}m), siendo n\texorpdfstring{$\ast$}{*}m el tamaño del tensor. 
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, 2 $>$}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{classutec_1_1neural__network_1_1MSELoss_ac42456ee183bddd85e5a40d92f5abae5_cgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

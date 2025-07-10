@@ -2,26 +2,43 @@
 \hypertarget{classNeuralNetwork}{}\label{classNeuralNetwork}\index{NeuralNetwork$<$ T $>$@{NeuralNetwork$<$ T $>$}}
 
 
+Clase que representa una red neuronal completamente conectada.  
+
+
+
+
 {\ttfamily \#include $<$neural\+\_\+network.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classNeuralNetwork_a03cb30174664f403618acfe0e9df38e8}{Neural\+Network}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename L, typename... Args$>$ }\\void \mbox{\hyperlink{classNeuralNetwork_a5da3f9a12e283f092fb303599b7e08af}{add\+\_\+layer}} (Args \&\&... args)
-\item 
+\begin{DoxyCompactList}\small\item\em Agrega una nueva capa a la red. \end{DoxyCompactList}\item 
 {\footnotesize template$<$template$<$ typename... $>$ class Loss\+Type, template$<$ typename... $>$ class Optimizer\+Type = SGD$>$ }\\void \mbox{\hyperlink{classNeuralNetwork_ab2da2c55dc3be175816a870c7c91d2e3}{train}} (const algebra\+::\+Tensor$<$ T, 2 $>$ \&\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}, const algebra\+::\+Tensor$<$ T, 2 $>$ \&y, const size\+\_\+t epochs, const size\+\_\+t batch\+\_\+size, T learning\+\_\+rate, std\+::mt19937 \&rng)
-\item 
+\begin{DoxyCompactList}\small\item\em Entrena la red neuronal usando descenso por lotes. \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classNeuralNetwork_a8728e0e068d299d39200701221cde58a}{predict}} (const algebra\+::\+Tensor$<$ T, 2 $>$ \&X) -\/$>$ algebra\+::\+Tensor$<$ T, 2 $>$
-\item 
+\begin{DoxyCompactList}\small\item\em Realiza una predicción sobre un conjunto de datos. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classNeuralNetwork_a01bcec163b0d6dba854f8f89a6552508}{save}} (std\+::ostream \&out) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Guarda el modelo en un flujo de salida binario. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static auto \mbox{\hyperlink{classNeuralNetwork_a3bdc71040fd54c9787781173a2fb7acd}{load}} (std\+::istream \&in) -\/$>$ \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{Neural\+Network}}$<$ T $>$
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Carga una red neuronal desde un flujo de entrada binario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Neural\+Network$<$ T $>$}
+Clase que representa una red neuronal completamente conectada. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo de dato para los pesos y cálculos (float, double, etc.). \\
+\hline
+\end{DoxyTemplParams}
 
 
 \label{doc-constructors}
@@ -36,6 +53,10 @@ template$<$typename T$>$ \\
 
 
 
+Constructor por defecto. 
+
+
+
 \label{doc-func-members}
 \Hypertarget{classNeuralNetwork_doc-func-members}
 \doxysubsection{Member Function Documentation}
@@ -47,6 +68,22 @@ template$<$typename T$>$ \\
 template$<$typename L, typename... Args$>$ \\
 void \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neural\+\_\+network\+::\+Neural\+Network}}$<$ T $>$\+::add\+\_\+layer (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Agrega una nueva capa a la red. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em L} & Tipo de capa (e.\+g., \doxylink{classDense}{Dense}, Re\+LU). \\
+\hline
+{\em Args} & Tipos de argumentos para el constructor de la capa. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Argumentos para inicializar la capa. @complexity O(1). \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classNeuralNetwork_a3bdc71040fd54c9787781173a2fb7acd}\index{NeuralNetwork$<$ T $>$@{NeuralNetwork$<$ T $>$}!load@{load}}
 \index{load@{load}!NeuralNetwork$<$ T $>$@{NeuralNetwork$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{load()}{load()}}
@@ -54,6 +91,26 @@ void \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neu
 template$<$typename T$>$ \\
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neural\+\_\+network\+::\+Neural\+Network}}$<$ T $>$\+::load (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{Neural\+Network}}$<$T$>$ \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+
+Carga una red neuronal desde un flujo de entrada binario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Flujo de entrada desde el cual se carga la red. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Instancia de \doxylink{classNeuralNetwork}{Neural\+Network} cargada con sus capas (y pesos si es que la capa lo permite). @complexity O(\+L\texorpdfstring{$\ast$}{*}s), donde L es el número de capas y s el tamaño serializado de cada una. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classNeuralNetwork_a3bdc71040fd54c9787781173a2fb7acd_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{classNeuralNetwork_a8728e0e068d299d39200701221cde58a}\index{NeuralNetwork$<$ T $>$@{NeuralNetwork$<$ T $>$}!predict@{predict}}
 \index{predict@{predict}!NeuralNetwork$<$ T $>$@{NeuralNetwork$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{predict()}{predict()}}
@@ -61,6 +118,18 @@ auto \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neu
 template$<$typename T$>$ \\
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neural\+\_\+network\+::\+Neural\+Network}}$<$ T $>$\+::predict (\begin{DoxyParamCaption}\item[{const algebra\+::\+Tensor$<$ T, 2 $>$ \&}]{X}{}\end{DoxyParamCaption}) -\/$>$ algebra\+::\+Tensor$<$T, 2$>$ \hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Realiza una predicción sobre un conjunto de datos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Datos de entrada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classTensor}{Tensor} con la predicción de salida. @complexity O(\+L\texorpdfstring{$\ast$}{*}f), donde L es el número de capas y f es el costo del forward. 
+\end{DoxyReturn}
 \Hypertarget{classNeuralNetwork_a01bcec163b0d6dba854f8f89a6552508}\index{NeuralNetwork$<$ T $>$@{NeuralNetwork$<$ T $>$}!save@{save}}
 \index{save@{save}!NeuralNetwork$<$ T $>$@{NeuralNetwork$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{save()}{save()}}
@@ -68,6 +137,15 @@ auto \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neu
 template$<$typename T$>$ \\
 void \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neural\+\_\+network\+::\+Neural\+Network}}$<$ T $>$\+::save (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Guarda el modelo en un flujo de salida binario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Flujo de salida donde se guarda la red. @complexity O(\+L\texorpdfstring{$\ast$}{*}s), donde s es el tamaño serializado de cada capa. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classNeuralNetwork_ab2da2c55dc3be175816a870c7c91d2e3}\index{NeuralNetwork$<$ T $>$@{NeuralNetwork$<$ T $>$}!train@{train}}
 \index{train@{train}!NeuralNetwork$<$ T $>$@{NeuralNetwork$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{train()}{train()}}
@@ -76,6 +154,41 @@ template$<$typename T$>$ \\
 template$<$template$<$ typename... $>$ class Loss\+Type, template$<$ typename... $>$ class Optimizer\+Type = SGD$>$ \\
 void \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neural\+\_\+network\+::\+Neural\+Network}}$<$ T $>$\+::train (\begin{DoxyParamCaption}\item[{const algebra\+::\+Tensor$<$ T, 2 $>$ \&}]{x}{, }\item[{const algebra\+::\+Tensor$<$ T, 2 $>$ \&}]{y}{, }\item[{const size\+\_\+t}]{epochs}{, }\item[{const size\+\_\+t}]{batch\+\_\+size}{, }\item[{T}]{learning\+\_\+rate}{, }\item[{std\+::mt19937 \&}]{rng}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Entrena la red neuronal usando descenso por lotes. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Loss\+Type} & Tipo de función de pérdida (ej. MSELoss, BCELoss, ...). \\
+\hline
+{\em Optimizer\+Type} & Tipo de optimizador (ej. SGD, Adam, ...). Por defecto es SGD. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Datos de entrada. \\
+\hline
+{\em y} & Etiquetas esperadas. \\
+\hline
+{\em epochs} & Número de épocas de entrenamiento. \\
+\hline
+{\em batch\+\_\+size} & Tamaño del batch. \\
+\hline
+{\em learning\+\_\+rate} & Tasa de aprendizaje. \\
+\hline
+{\em rng} & Generador aleatorio para mezclar los datos. @complexity O(e\texorpdfstring{$\ast$}{*}(n/b)\texorpdfstring{$\ast$}{*}\+L\texorpdfstring{$\ast$}{*}(f+b+u))), donde\+:
+\begin{DoxyItemize}
+\item e\+: número de épocas
+\item n\+: número total de muestras
+\item b\+: batch size
+\item L\+: número de capas
+\item f\+: costo forward de una capa
+\item b\+: costo backward de una capa
+\item u\+: costo de actualización de parámetros por capa 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

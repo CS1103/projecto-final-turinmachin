@@ -1,0 +1,9 @@
+<map id="Catch::Clara::Help::Help" name="Catch::Clara::Help::Help">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,130,75"/>
+<area shape="rect" id="Node000002" href="$classCatch_1_1Clara_1_1Detail_1_1BasicResult.html#a4d9c94c86f71eaa76356ab808a221b62" title=" " alt="" coords="178,5,416,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,44,162,40,162,46,131,50"/>
+<area shape="rect" id="Node000003" href="$classCatch_1_1Clara_1_1Opt.html#a5c03617b158d29d339b58358464afe14" title=" " alt="" coords="224,70,370,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="130,60,209,70,208,75,130,65"/>
+<area shape="rect" id="Node000004" href="$classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl.html#a04749012641bd3596b1bad797623214e" title=" " alt="" coords="464,55,606,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="370,80,448,80,448,86,370,86"/>
+</map>

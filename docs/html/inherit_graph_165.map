@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$structutec_1_1neural__network_1_1ILoss.html" title=" " alt="" coords="5,71,146,111"/>
+<area shape="rect" id="Node000001" href="$classutec_1_1neural__network_1_1BCELoss.html" title="Función de pérdida Binary Cross Entropy (entropía cruzada binaria). Usada típicamente en clasificació..." alt="" coords="205,5,346,46"/>
+<area shape="poly" id="edge86_Node000000_Node000001" title=" " alt="" coords="153,63,210,44,211,49,155,68"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1neural__network_1_1CrossEntropyLoss.html" title="Función de pérdida Cross Entropy para clasificación multiclase. Requiere que las etiquetas verdaderas..." alt="" coords="194,71,357,111"/>
+<area shape="poly" id="edge87_Node000000_Node000002" title=" " alt="" coords="161,88,193,88,193,94,161,94"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1neural__network_1_1MSELoss.html" title="Función de pérdida MSE (Error Cuadrático Medio). Mide el promedio de los cuadrados de las diferencias..." alt="" coords="205,136,346,177"/>
+<area shape="poly" id="edge88_Node000000_Node000003" title=" " alt="" coords="155,114,211,133,210,138,153,119"/>
+</map>

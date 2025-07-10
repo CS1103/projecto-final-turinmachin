@@ -1,0 +1,18 @@
+<map id="utec::neural_network::NeuralNetwork::NeuralNetwork" name="utec::neural_network::NeuralNetwork::NeuralNetwork">
+<area shape="rect" id="Node000001" title="Constructor por defecto." alt="" coords="5,103,213,143"/>
+<area shape="rect" id="Node000002" href="$namespaceutec_1_1neural__network.html#ae41bef2d9885dfcabb4f2b261eba3c0f" title="Registra todas las capas disponibles en el sistema. Llamado al inicio del programa para asegurar que ..." alt="" coords="261,103,401,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,120,245,120,245,126,213,126"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1neural__network_1_1Dense.html#affa01afde1f0b8e320d789465c57040f" title="Carga la red neuronal en formato pp20." alt="" coords="474,37,614,78"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="398,100,460,81,461,86,400,105"/>
+<area shape="rect" id="Node000006" href="$classutec_1_1neural__network_1_1Kan.html#a5ae5e51738dbeb57770d191c7442dae0" title=" " alt="" coords="474,103,614,143"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="402,120,458,120,458,126,402,126"/>
+<area shape="rect" id="Node000008" href="$classutec_1_1neural__network_1_1LayerRegistry.html#a34bb46eabb8fc2cedacbd4a0ce2181a1" title="Registra un tipo de capa junto con su función de construcción. Se asocia el identificador con una fun..." alt="" coords="449,168,638,209"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="400,141,461,160,460,165,398,146"/>
+<area shape="rect" id="Node000004" href="$classutec_1_1neural__network_1_1Dense.html#a17f3a5bd7b0adf6a917e302ea1ea2694" title="Constructor que inicializa los tensores internos con ceros." alt="" coords="686,5,827,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="614,44,671,36,671,41,615,50"/>
+<area shape="rect" id="Node000005" href="$namespaceserialization.html#ae73eaddd61e96690c3a59219c1f1e7c4" title=" " alt="" coords="696,71,817,111"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="615,66,681,77,681,82,614,71"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="614,110,681,100,681,105,615,115"/>
+<area shape="rect" id="Node000007" href="$classutec_1_1neural__network_1_1Kan.html#a39c44a271bd7c7af844001e8d89e543e" title=" " alt="" coords="686,136,827,177"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="615,131,671,140,671,146,614,137"/>
+</map>

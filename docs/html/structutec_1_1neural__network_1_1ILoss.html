@@ -93,15 +93,31 @@ $(function(){initNavTree('structutec_1_1neural__network_1_1ILoss.html','','struc
 </div><!--header-->
 <div class="contents">
 
+<p>Interfaz para una función de pérdida (loss). Se encarga de calcular qué tan mal lo hizo la red con respecto a los resultados reales y obtener el gradiente necesario para ajustar los parámetros.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="utec_2nn_2interfaces_8h_source.html">interfaces.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:add5386c613a6166cedccf23b8cba066d" id="r_add5386c613a6166cedccf23b8cba066d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add5386c613a6166cedccf23b8cba066d">~ILoss</a> ()=default</td></tr>
+<tr class="memdesc:add5386c613a6166cedccf23b8cba066d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor virtual.  <br /></td></tr>
 <tr class="memitem:a7aefbeb1f4bd61f61491309de76f2726" id="r_a7aefbeb1f4bd61f61491309de76f2726"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7aefbeb1f4bd61f61491309de76f2726">loss</a> () const -&gt; T=0</td></tr>
+<tr class="memdesc:a7aefbeb1f4bd61f61491309de76f2726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el valor escalar de la pérdida.  <br /></td></tr>
 <tr class="memitem:a16d09111b224ccf3a9e5676e4170e270" id="r_a16d09111b224ccf3a9e5676e4170e270"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16d09111b224ccf3a9e5676e4170e270">loss_gradient</a> () const -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">algebra::Tensor</a>&lt; T, Dims &gt;=0</td></tr>
+<tr class="memdesc:a16d09111b224ccf3a9e5676e4170e270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el gradiente de la pérdida respecto a la predicción.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, size_t Dims&gt;<br />
+struct utec::neural_network::ILoss&lt; T, Dims &gt;</div><p>Interfaz para una función de pérdida (loss). Se encarga de calcular qué tan mal lo hizo la red con respecto a los resultados reales y obtener el gradiente necesario para ajustar los parámetros. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Tipo de dato (usualmente float o double). </td></tr>
+    <tr><td class="paramname">Dims</td><td>Número de dimensiones del tensor de entrada (usualmente dos). </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="add5386c613a6166cedccf23b8cba066d" name="add5386c613a6166cedccf23b8cba066d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add5386c613a6166cedccf23b8cba066d">&#9670;&#160;</a></span>~ILoss()</h2>
 
@@ -126,6 +142,8 @@ template&lt;typename T, size_t Dims&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Destructor virtual. </p>
 
 </div>
 </div>
@@ -154,6 +172,9 @@ template&lt;typename T, size_t Dims&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Devuelve el valor escalar de la pérdida. </p>
+<dl class="section return"><dt>Returns</dt><dd>Valor numérico que representa el "error" actual de la red. </dd></dl>
 
 <p>Implemented in <a class="el" href="classutec_1_1neural__network_1_1BCELoss.html#ab92e716086286add59e2f17cd184c96a">utec::neural_network::BCELoss&lt; T &gt;</a>, <a class="el" href="classutec_1_1neural__network_1_1CrossEntropyLoss.html#a7c9ae10a49791b7cb37b985dd0ccb786">utec::neural_network::CrossEntropyLoss&lt; T &gt;</a>, and <a class="el" href="classutec_1_1neural__network_1_1MSELoss.html#a43be1dc09b8f4fb0080de0dc1dfe1915">utec::neural_network::MSELoss&lt; T &gt;</a>.</p>
 
@@ -184,7 +205,28 @@ template&lt;typename T, size_t Dims&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Devuelve el gradiente de la pérdida respecto a la predicción. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classTensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> con el gradiente (mismo shape que la predicción). </dd></dl>
+
 <p>Implemented in <a class="el" href="classutec_1_1neural__network_1_1BCELoss.html#ab0c0df07db8e212a88d3f3f75f9befd2">utec::neural_network::BCELoss&lt; T &gt;</a>, <a class="el" href="classutec_1_1neural__network_1_1CrossEntropyLoss.html#ad1a468fc0dd8bc6f825322015ffdbe13">utec::neural_network::CrossEntropyLoss&lt; T &gt;</a>, and <a class="el" href="classutec_1_1neural__network_1_1MSELoss.html#ac42456ee183bddd85e5a40d92f5abae5">utec::neural_network::MSELoss&lt; T &gt;</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270_cgraph.png" border="0" usemap="#astructutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270_cgraph" loading="lazy" alt=""/></div>
+<map name="astructutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270_cgraph" id="astructutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270_cgraph">
+<area shape="rect" title="Devuelve el gradiente de la pérdida respecto a la predicción." alt="" coords="5,29,149,70"/>
+<area shape="poly" title=" " alt="" coords="49,29,48,20,52,11,62,5,77,3,93,5,103,12,100,16,91,10,77,8,64,10,56,14,53,20,54,28"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270_icgraph.png" border="0" usemap="#astructutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270_icgraph" loading="lazy" alt=""/></div>
+<map name="astructutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270_icgraph" id="astructutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270_icgraph">
+<area shape="rect" title="Devuelve el gradiente de la pérdida respecto a la predicción." alt="" coords="5,29,149,70"/>
+<area shape="poly" title=" " alt="" coords="100,16,91,10,77,8,64,10,56,14,53,20,54,28,49,29,48,20,52,11,62,5,77,3,93,5,103,12"/>
+</map>
+</div>
 
 </div>
 </div>

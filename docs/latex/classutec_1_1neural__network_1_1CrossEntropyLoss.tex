@@ -2,28 +2,59 @@
 \hypertarget{classutec_1_1neural__network_1_1CrossEntropyLoss}{}\label{classutec_1_1neural__network_1_1CrossEntropyLoss}\index{utec::neural\_network::CrossEntropyLoss$<$ T $>$@{utec::neural\_network::CrossEntropyLoss$<$ T $>$}}
 
 
+Función de pérdida Cross Entropy para clasificación multiclase. Requiere que las etiquetas verdaderas estén codificadas one-\/hot.  
+
+
+
+
 {\ttfamily \#include $<$loss.\+h$>$}
 
-Inheritance diagram for utec\+::neural\+\_\+network\+::Cross\+Entropy\+Loss\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::Cross\+Entropy\+Loss\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classutec_1_1neural__network_1_1CrossEntropyLoss}
+\includegraphics[width=203pt]{classutec_1_1neural__network_1_1CrossEntropyLoss__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utec\+::neural\+\_\+network\+::Cross\+Entropy\+Loss\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classutec_1_1neural__network_1_1CrossEntropyLoss__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename Prediction, typename Expected$>$ }\\\mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_a59da8b275aa07a9b8033d691812c6757}{Cross\+Entropy\+Loss}} (Prediction \&\&y\+\_\+prediction, Expected \&\&y\+\_\+true, const T epsilon=1e-\/7)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor que recibe tensores de predicciones y etiquetas reales. \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_a7c9ae10a49791b7cb37b985dd0ccb786}{loss}} () const -\/$>$ T override
-\item 
+\begin{DoxyCompactList}\small\item\em Valor de la pérdida Cross Entropy. Aplica logaritmo y protección contra valores extremos. \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_ad1a468fc0dd8bc6f825322015ffdbe13}{loss\+\_\+gradient}} () const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gradiente de la pérdida Cross Entropy. Simplemente calcula la diferencia entre predicción y etiqueta. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, 2 $>$}}}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_add5386c613a6166cedccf23b8cba066d}{\texorpdfstring{$\sim$}{\string~}\+ILoss}} ()=default
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor virtual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class utec\+::neural\+\_\+network\+::\+Cross\+Entropy\+Loss$<$ T $>$}
+Función de pérdida Cross Entropy para clasificación multiclase. Requiere que las etiquetas verdaderas estén codificadas one-\/hot. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo de dato (float, double, etc.). \\
+\hline
+\end{DoxyTemplParams}
 
 
 \label{doc-constructors}
@@ -39,6 +70,22 @@ template$<$typename Prediction, typename Expected$>$ \\
 
 
 
+Constructor que recibe tensores de predicciones y etiquetas reales. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y\+\_\+prediction} & Tensores con probabilidades predichas. \\
+\hline
+{\em y\+\_\+true} & Tensores one-\/hot con etiquetas verdaderas. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & si las dimensiones no coinciden. @complexity O(1). \\
+\hline
+\end{DoxyExceptions}
+
+
 \label{doc-func-members}
 \Hypertarget{classutec_1_1neural__network_1_1CrossEntropyLoss_doc-func-members}
 \doxysubsection{Member Function Documentation}
@@ -49,6 +96,13 @@ template$<$typename Prediction, typename Expected$>$ \\
 template$<$typename T$>$ \\
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss}{utec\+::neural\+\_\+network\+::\+Cross\+Entropy\+Loss}}$<$ T $>$\+::loss (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ T\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Valor de la pérdida Cross Entropy. Aplica logaritmo y protección contra valores extremos. 
+
+\begin{DoxyReturn}{Returns}
+Promedio negativo del logaritmo de las probabilidades verdaderas. @complexity O(n\texorpdfstring{$\ast$}{*}m), donde n es el número de muestras y m el número de clases. 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a7aefbeb1f4bd61f61491309de76f2726}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, 2 $>$}}.
@@ -62,8 +116,23 @@ auto \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss}{utec\+::
 
 
 
+Gradiente de la pérdida Cross Entropy. Simplemente calcula la diferencia entre predicción y etiqueta. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classTensor}{Tensor} del mismo shape que la entrada. @complexity O(n\texorpdfstring{$\ast$}{*}m). 
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, 2 $>$}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{classutec_1_1neural__network_1_1CrossEntropyLoss_ad1a468fc0dd8bc6f825322015ffdbe13_cgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

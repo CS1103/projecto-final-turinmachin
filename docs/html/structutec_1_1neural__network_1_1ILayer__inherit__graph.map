@@ -1,0 +1,13 @@
+<map id="utec::neural_network::ILayer&lt; T &gt;" name="utec::neural_network::ILayer&lt; T &gt;">
+<area shape="rect" id="Node000001" title="Interfaz para una capa de la red neuronal. Permite que distintas capas se conecten entre sí con polim..." alt="" coords="5,136,146,177"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1neural__network_1_1Dense.html" title=" " alt="" coords="194,5,334,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,124,147,90,192,57,214,44,217,49,195,61,150,94,111,128"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1neural__network_1_1Kan.html" title=" " alt="" coords="194,71,334,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,128,202,109,204,114,151,133"/>
+<area shape="rect" id="Node000004" href="$classutec_1_1neural__network_1_1ReLU.html" title=" " alt="" coords="194,136,334,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="161,154,193,154,193,159,161,159"/>
+<area shape="rect" id="Node000005" href="$classutec_1_1neural__network_1_1Sigmoid.html" title="Capa de activación Sigmoid. Convierte cada valor en el rango (0, 1) abierto usando la función logísti..." alt="" coords="194,201,334,242"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="151,180,204,198,202,203,150,185"/>
+<area shape="rect" id="Node000006" href="$classutec_1_1neural__network_1_1Softmax.html" title="Capa de activación Softmax. Convierte un vector de valores en probabilidades las cualesal ser sumadas..." alt="" coords="194,267,334,307"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="111,185,150,219,195,251,217,264,214,268,192,256,147,223,108,189"/>
+</map>

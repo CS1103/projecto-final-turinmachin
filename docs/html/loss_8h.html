@@ -94,19 +94,69 @@ $(function(){initNavTree('loss_8h.html','',''); });
 <div class="contents">
 <div class="textblock"><code>#include &lt;cmath&gt;</code><br />
 <code>#include &quot;<a class="el" href="utec_2nn_2interfaces_8h_source.html">interfaces.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for loss.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="loss_8h__incl.png" border="0" usemap="#ainclude_2utec_2nn_2loss_8h" loading="lazy" alt=""/></div>
+<map name="ainclude_2utec_2nn_2loss_8h" id="ainclude_2utec_2nn_2loss_8h">
+<area shape="rect" title=" " alt="" coords="280,5,427,31"/>
+<area shape="rect" title=" " alt="" coords="276,79,334,105"/>
+<area shape="poly" title=" " alt="" coords="347,33,324,67,320,64,343,30"/>
+<area shape="rect" href="utec_2nn_2interfaces_8h.html" title=" " alt="" coords="358,79,447,105"/>
+<area shape="poly" title=" " alt="" coords="364,30,388,65,383,68,359,33"/>
+<area shape="rect" href="tensor_8h.html" title=" " alt="" coords="331,153,474,178"/>
+<area shape="poly" title=" " alt="" coords="405,105,405,137,400,137,400,105"/>
+<area shape="rect" title=" " alt="" coords="5,226,80,252"/>
+<area shape="poly" title=" " alt="" coords="335,182,96,228,95,223,334,176"/>
+<area shape="rect" title=" " alt="" coords="103,226,152,252"/>
+<area shape="poly" title=" " alt="" coords="352,182,168,228,167,223,350,176"/>
+<area shape="rect" title=" " alt="" coords="177,226,241,252"/>
+<area shape="poly" title=" " alt="" coords="371,181,257,223,255,218,369,176"/>
+<area shape="rect" title=" " alt="" coords="265,226,342,252"/>
+<area shape="poly" title=" " alt="" coords="387,181,334,219,331,215,384,177"/>
+<area shape="rect" title=" " alt="" coords="367,226,438,252"/>
+<area shape="poly" title=" " alt="" coords="405,179,405,211,400,211,400,179"/>
+<area shape="rect" title=" " alt="" coords="462,226,524,252"/>
+<area shape="poly" title=" " alt="" coords="420,177,468,215,465,219,416,181"/>
+<area shape="rect" title=" " alt="" coords="548,226,615,252"/>
+<area shape="poly" title=" " alt="" coords="434,176,538,218,536,223,432,181"/>
+<area shape="rect" title=" " alt="" coords="638,226,716,252"/>
+<area shape="poly" title=" " alt="" coords="450,176,624,221,623,227,448,181"/>
+<area shape="rect" title=" " alt="" coords="740,226,798,252"/>
+<area shape="poly" title=" " alt="" coords="474,175,589,195,726,223,725,229,588,200,474,181"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="loss_8h__dep__incl.png" border="0" usemap="#ainclude_2utec_2nn_2loss_8hdep" loading="lazy" alt=""/></div>
+<map name="ainclude_2utec_2nn_2loss_8hdep" id="ainclude_2utec_2nn_2loss_8hdep">
+<area shape="rect" title=" " alt="" coords="191,5,338,31"/>
+<area shape="rect" href="agent_8cpp.html" title=" " alt="" coords="5,79,159,105"/>
+<area shape="poly" title=" " alt="" coords="221,39,114,81,112,76,219,34"/>
+<area shape="rect" href="trainer__kan_2main_8cpp.html" title=" " alt="" coords="183,79,346,105"/>
+<area shape="poly" title=" " alt="" coords="267,46,267,79,262,79,262,46"/>
+<area shape="rect" href="test__nn_8cpp.html" title=" " alt="" coords="371,79,492,105"/>
+<area shape="poly" title=" " alt="" coords="308,35,404,76,402,81,306,40"/>
+</map>
+</div>
 </div>
 <p><a href="loss_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:utec_3A_3Aneural_5Fnetwork_3A_3AMSELoss_3C_20T_20_3E" id="r_utec_3A_3Aneural_5Fnetwork_3A_3AMSELoss_3C_20T_20_3E"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1MSELoss.html">utec::neural_network::MSELoss&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de pérdida MSE (Error Cuadrático Medio). Mide el promedio de los cuadrados de las diferencias entre las predicciones y los valores reales. Es común en tareas de regresión.  <a href="classutec_1_1neural__network_1_1MSELoss.html#details">More...</a><br /></td></tr>
 <tr class="memitem:utec_3A_3Aneural_5Fnetwork_3A_3ABCELoss_3C_20T_20_3E" id="r_utec_3A_3Aneural_5Fnetwork_3A_3ABCELoss_3C_20T_20_3E"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1BCELoss.html">utec::neural_network::BCELoss&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de pérdida Binary Cross Entropy (entropía cruzada binaria). Usada típicamente en clasificación binaria.  <a href="classutec_1_1neural__network_1_1BCELoss.html#details">More...</a><br /></td></tr>
 <tr class="memitem:utec_3A_3Aneural_5Fnetwork_3A_3ACrossEntropyLoss_3C_20T_20_3E" id="r_utec_3A_3Aneural_5Fnetwork_3A_3ACrossEntropyLoss_3C_20T_20_3E"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1CrossEntropyLoss.html">utec::neural_network::CrossEntropyLoss&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de pérdida Cross Entropy para clasificación multiclase. Requiere que las etiquetas verdaderas estén codificadas one-hot.  <a href="classutec_1_1neural__network_1_1CrossEntropyLoss.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:utec" id="r_utec"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutec.html">utec</a></td></tr>
 <tr class="memitem:utec_3A_3Aneural_5Fnetwork" id="r_utec_3A_3Aneural_5Fnetwork"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutec_1_1neural__network.html">utec::neural_network</a></td></tr>
+<tr class="memdesc:namespaceutec_1_1neural__network"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capa de activación de Rectified Linear Unit (<a class="el" href="classutec_1_1neural__network_1_1ReLU.html">ReLU</a>). Los valores negativos del input se convierten en 0. Los valores no negativos permanecen igual. <br /></td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

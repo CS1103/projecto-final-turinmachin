@@ -1,0 +1,7 @@
+<map id="NeuralNetwork::load" name="NeuralNetwork::load">
+<area shape="rect" id="Node000001" title="Carga una red neuronal desde un flujo de entrada binario." alt="" coords="198,42,336,68"/>
+<area shape="rect" id="Node000002" href="$classcommon_1_1DigitReader.html#a58f55c7f7f00416ebd4f0ade5c367e15" title=" " alt="" coords="5,5,150,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,45,149,39,150,34,182,39"/>
+<area shape="rect" id="Node000003" href="$test__nn_8cpp.html#ad0ab5818ba49422e20209aaab2ddc9ea" title=" " alt="" coords="29,70,126,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,70,127,79,126,73,182,65"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="Catch::Detail::convertIntoString" name="Catch::Detail::convertIntoString">
+<area shape="rect" id="Node000001" title="Encases `string in quotes, and optionally escapes invisibles." alt="" coords="219,179,384,219"/>
+<area shape="rect" id="Node000002" href="$structCatch_1_1StringMaker_3_01char_01_5_01_4.html#a6f0642657bcd943dadfb3be075095e26" title=" " alt="" coords="22,5,154,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="275,168,229,114,200,86,169,61,148,49,150,44,172,57,204,82,233,110,279,165"/>
+<area shape="rect" id="Node000003" href="$structCatch_1_1StringMaker_3_01char_0fSZ_0e_4.html#a095e415534f9145300271befe9853357" title=" " alt="" coords="18,71,158,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="254,173,169,125,145,114,147,109,172,121,256,168"/>
+<area shape="rect" id="Node000004" href="$structCatch_1_1StringMaker_3_01signed_01char_0fSZ_0e_4.html#a23ac689cc79dbcfe9b1765fe9e25690e" title=" " alt="" coords="19,135,157,191"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="203,185,157,177,158,172,204,180"/>
+<area shape="rect" id="Node000005" href="$structCatch_1_1StringMaker_3_01std_1_1string_01_4.html#aeb3af973a07047e84544d4c6ab81ce8d" title=" " alt="" coords="14,215,162,255"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="204,218,163,225,162,220,203,213"/>
+<area shape="rect" id="Node000006" href="$structCatch_1_1StringMaker_3_01unsigned_01char_0fSZ_0e_4.html#a590d64c72b0cc75c113f1eea95d52b66" title=" " alt="" coords="15,279,161,335"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="249,229,172,269,149,281,146,276,169,265,247,224"/>
+<area shape="rect" id="Node000007" href="$namespaceCatch_1_1Detail.html#a0dc4241ab150d3d8e1d0a3d30c781c39" title="Encases string in quotes, and escapes invisibles if user requested it via CLI." alt="" coords="5,359,171,399"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="280,234,234,292,205,322,172,349,153,360,150,356,169,345,201,319,230,289,276,231"/>
+</map>

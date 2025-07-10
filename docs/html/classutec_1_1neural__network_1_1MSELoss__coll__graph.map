@@ -1,0 +1,5 @@
+<map id="utec::neural_network::MSELoss&lt; T &gt;" name="utec::neural_network::MSELoss&lt; T &gt;">
+<area shape="rect" id="Node000001" title="Función de pérdida MSE (Error Cuadrático Medio). Mide el promedio de los cuadrados de las diferencias..." alt="" coords="5,94,146,135"/>
+<area shape="rect" id="Node000002" href="$structutec_1_1neural__network_1_1ILoss.html" title=" " alt="" coords="5,5,146,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,62,78,94,73,94,73,62"/>
+</map>

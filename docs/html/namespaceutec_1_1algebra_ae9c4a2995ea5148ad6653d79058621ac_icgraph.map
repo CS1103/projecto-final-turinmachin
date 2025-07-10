@@ -1,0 +1,11 @@
+<map id="utec::algebra::matrix_product" name="utec::algebra::matrix_product">
+<area shape="rect" id="Node000001" title="Realiza producto matricial entre 2 tensores de dimension 2." alt="" coords="194,104,329,145"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1neural__network_1_1Dense.html#a34eff47b14246879296fefce593d3a3d" title="Propagación hacia atrás (backpropagation). Calcula los gradientes con respecto a pesos,..." alt="" coords="5,5,146,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,98,144,61,120,49,122,44,147,57,213,94"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1neural__network_1_1Kan.html#aba3256bdb697b3791dab07d32514ed0b" title="Propagación hacia atrás de la capa." alt="" coords="5,71,146,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="178,112,146,106,147,101,179,107"/>
+<area shape="rect" id="Node000004" href="$classutec_1_1neural__network_1_1Dense.html#adf5510eaa5e3bc10bbefcde60f895238" title="Propagación hacia adelante de la capa. Calcula: output = x * weights + biases." alt="" coords="5,136,146,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="179,141,147,147,146,142,178,136"/>
+<area shape="rect" id="Node000005" href="$classutec_1_1neural__network_1_1Kan.html#adbcf3683376205b4f7987aaa2ecac36c" title="Propagación hacia adelante de la capa." alt="" coords="5,201,146,242"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="212,155,147,191,122,203,120,198,144,186,210,150"/>
+</map>

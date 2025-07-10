@@ -2,29 +2,50 @@
 \hypertarget{structutec_1_1neural__network_1_1ILayer}{}\label{structutec_1_1neural__network_1_1ILayer}\index{utec::neural\_network::ILayer$<$ T $>$@{utec::neural\_network::ILayer$<$ T $>$}}
 
 
+Interfaz para una capa de la red neuronal. Permite que distintas capas se conecten entre sí con polimorfismo.  
+
+
+
+
 {\ttfamily \#include $<$interfaces.\+h$>$}
 
-Inheritance diagram for utec\+::neural\+\_\+network\+::ILayer\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::ILayer\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.027523cm]{structutec_1_1neural__network_1_1ILayer}
+\includegraphics[width=327pt]{structutec_1_1neural__network_1_1ILayer__inherit__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a6965ff90722a8ff3929fa55a1fd722f2}{\texorpdfstring{$\sim$}{\string~}\+ILayer}} ()=default
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor virtual. \end{DoxyCompactList}\item 
 virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a22275b736574bf1ef9febb9889ba7a25}{forward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$=0
-\item 
+\begin{DoxyCompactList}\small\item\em Propagación hacia adelante de la capa. \end{DoxyCompactList}\item 
 virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a1edb042d919a28e28c1523c1c29df07f}{backward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&gradients) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$=0
-\item 
+\begin{DoxyCompactList}\small\item\em Propagación hacia atrás de la capa. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a07d2e3abb2656a40eef1dc4de099c86f}{update\+\_\+params}} (\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}$<$ T $>$ \&optimizer)
-\item 
+\begin{DoxyCompactList}\small\item\em Actualiza los parámetros internos de la capa (si tiene). \end{DoxyCompactList}\item 
 virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a16b50cd81a4b1c368797af2cce2b7d06}{id}} () const -\/$>$ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}}=0
-\item 
+\begin{DoxyCompactList}\small\item\em Devuelve el tipo de la capa. Sirve para serialización o reconstrucción de la red. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a0ddf898a100cec73a4e0df30caa6952e}{save}} (std\+::ostream \&out) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Guarda los parámetros internos de la capa en un flujo binario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}
+Interfaz para una capa de la red neuronal. Permite que distintas capas se conecten entre sí con polimorfismo. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo de dato usado en los tensores. \\
+\hline
+\end{DoxyTemplParams}
 
 
 \label{doc-constructors}
@@ -36,6 +57,10 @@ virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a0ddf898a1
 {\footnotesize\ttfamily \label{structutec_1_1neural__network_1_1ILayer_a6965ff90722a8ff3929fa55a1fd722f2} 
 template$<$typename T$>$ \\
 virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::neural\+\_\+network\+::\+ILayer}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{ILayer}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor virtual. 
 
 
 
@@ -51,6 +76,18 @@ virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::n
 
 
 
+Propagación hacia atrás de la capa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gradients} & Gradiente de la pérdida respecto a la salida de esta capa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Gradiente de la pérdida respecto a la entrada de esta capa. 
+\end{DoxyReturn}
+
+
 Implemented in \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a34eff47b14246879296fefce593d3a3d}{utec\+::neural\+\_\+network\+::\+Dense$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_aba3256bdb697b3791dab07d32514ed0b}{utec\+::neural\+\_\+network\+::\+Kan$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1ReLU_a9111ceb82a89442d0c49d28df5ae00f2}{utec\+::neural\+\_\+network\+::\+Re\+LU$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid_adf8a7cea25b499a7dbfffd6bd95da147}{utec\+::neural\+\_\+network\+::\+Sigmoid$<$ T $>$}}, and \mbox{\hyperlink{classutec_1_1neural__network_1_1Softmax_a30543b5bcb7aa7109df27fc1a6e820e5}{utec\+::neural\+\_\+network\+::\+Softmax$<$ T $>$}}.
 
 \Hypertarget{structutec_1_1neural__network_1_1ILayer_a22275b736574bf1ef9febb9889ba7a25}\index{utec::neural\_network::ILayer$<$ T $>$@{utec::neural\_network::ILayer$<$ T $>$}!forward@{forward}}
@@ -60,6 +97,18 @@ Implemented in \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a34eff47b1
 template$<$typename T$>$ \\
 virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::neural\+\_\+network\+::\+ILayer}}$<$ T $>$\+::forward (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{x}{}\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Propagación hacia adelante de la capa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Tensor2D input de la capa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Salida producida dependiendo de lo que haga la capa. 
+\end{DoxyReturn}
 
 
 Implemented in \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_adf5510eaa5e3bc10bbefcde60f895238}{utec\+::neural\+\_\+network\+::\+Dense$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_adbcf3683376205b4f7987aaa2ecac36c}{utec\+::neural\+\_\+network\+::\+Kan$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1ReLU_a077adae0377b6b213ffa1fb832ec5919}{utec\+::neural\+\_\+network\+::\+Re\+LU$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid_a70102144b4313b2c7e6564d429cfd2ff}{utec\+::neural\+\_\+network\+::\+Sigmoid$<$ T $>$}}, and \mbox{\hyperlink{classutec_1_1neural__network_1_1Softmax_a5978859677c653f1ba7c87c68e82e227}{utec\+::neural\+\_\+network\+::\+Softmax$<$ T $>$}}.
@@ -73,6 +122,13 @@ virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::n
 
 
 
+Devuelve el tipo de la capa. Sirve para serialización o reconstrucción de la red. 
+
+\begin{DoxyReturn}{Returns}
+Identificador único de tipo Layer\+ID. 
+\end{DoxyReturn}
+
+
 Implemented in \mbox{\hyperlink{classDense_aa8c7cad728a0680188a19dc323aa15fb}{Dense$<$ T $>$}}, \mbox{\hyperlink{classKan_adab78480bb6877e8971bf50dafe2cd43}{Kan$<$ T $>$}}, \mbox{\hyperlink{classSigmoid_ab5e62d3ebf0ddb9ef958bbe2c991ab37}{Sigmoid$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_aa8c7cad728a0680188a19dc323aa15fb}{utec\+::neural\+\_\+network\+::\+Dense$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_adab78480bb6877e8971bf50dafe2cd43}{utec\+::neural\+\_\+network\+::\+Kan$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1ReLU_a13514d4f286dc2f67cbc992e820d830e}{utec\+::neural\+\_\+network\+::\+Re\+LU$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid_ab5e62d3ebf0ddb9ef958bbe2c991ab37}{utec\+::neural\+\_\+network\+::\+Sigmoid$<$ T $>$}}, and \mbox{\hyperlink{classutec_1_1neural__network_1_1Softmax_a6a2b3250e565980852bd89110e55db00}{utec\+::neural\+\_\+network\+::\+Softmax$<$ T $>$}}.
 
 \Hypertarget{structutec_1_1neural__network_1_1ILayer_a0ddf898a100cec73a4e0df30caa6952e}\index{utec::neural\_network::ILayer$<$ T $>$@{utec::neural\_network::ILayer$<$ T $>$}!save@{save}}
@@ -84,8 +140,36 @@ virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::n
 
 
 
+Guarda los parámetros internos de la capa en un flujo binario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Flujo de salida (por ejemplo, un archivo binario). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Capas sin parámetros (Re\+Lu, \doxylink{classutec_1_1neural__network_1_1Sigmoid}{Sigmoid}, \doxylink{classutec_1_1neural__network_1_1Softmax}{Softmax}) pueden dejar esta función vacía. Se usa principalmente para guardar el modelo entrenado. 
+\end{DoxyNote}
+
+
 Reimplemented in \mbox{\hyperlink{classDense_a075f90b95ce06ffc39e1999e911e75f1}{Dense$<$ T $>$}}, \mbox{\hyperlink{classKan_a7a43138e7b9987fa218db1a267f9abfa}{Kan$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a075f90b95ce06ffc39e1999e911e75f1}{utec\+::neural\+\_\+network\+::\+Dense$<$ T $>$}}, and \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a7a43138e7b9987fa218db1a267f9abfa}{utec\+::neural\+\_\+network\+::\+Kan$<$ T $>$}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{structutec_1_1neural__network_1_1ILayer_a0ddf898a100cec73a4e0df30caa6952e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{structutec_1_1neural__network_1_1ILayer_a0ddf898a100cec73a4e0df30caa6952e_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{structutec_1_1neural__network_1_1ILayer_a07d2e3abb2656a40eef1dc4de099c86f}\index{utec::neural\_network::ILayer$<$ T $>$@{utec::neural\_network::ILayer$<$ T $>$}!update\_params@{update\_params}}
 \index{update\_params@{update\_params}!utec::neural\_network::ILayer$<$ T $>$@{utec::neural\_network::ILayer$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{update\_params()}{update\_params()}}
@@ -93,6 +177,18 @@ Reimplemented in \mbox{\hyperlink{classDense_a075f90b95ce06ffc39e1999e911e75f1}{
 template$<$typename T$>$ \\
 virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::neural\+\_\+network\+::\+ILayer}}$<$ T $>$\+::update\+\_\+params (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}$<$ T $>$ \&}]{optimizer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
+
+
+Actualiza los parámetros internos de la capa (si tiene). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em optimizer} & Instancia del optimizador a usar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Si la capa no tiene parámetros entrenables (como \doxylink{classutec_1_1neural__network_1_1ReLU}{Re\+LU} o \doxylink{classutec_1_1neural__network_1_1Softmax}{Softmax}), no necesita hacer nada en esta función. 
+\end{DoxyNote}
 
 
 Reimplemented in \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_a6a7adf0ad0f2097c68a3bcee3585265a}{utec\+::neural\+\_\+network\+::\+Dense$<$ T $>$}}, and \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a07b819255c3861f6b83f55cece8dbc61}{utec\+::neural\+\_\+network\+::\+Kan$<$ T $>$}}.

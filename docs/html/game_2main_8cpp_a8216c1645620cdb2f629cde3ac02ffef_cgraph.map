@@ -1,0 +1,14 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,55,82"/>
+<area shape="rect" id="Node000002" href="$namespacecommon.html#a3af0ebf74ebb96ec732c9fdc72cc34b0" title=" " alt="" coords="133,5,284,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,59,145,33,147,38,56,65"/>
+<area shape="rect" id="Node000003" href="$namespacecommon.html#ae42a5092739465bb023945ee3383d58e" title=" " alt="" coords="362,31,544,56"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="55,65,347,47,347,52,55,70"/>
+<area shape="rect" id="Node000006" href="$namespacegame_1_1sdl.html#a6a8c509b0c541df4b0279ccf89b6062c" title=" " alt="" coords="103,107,314,132"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="56,73,147,99,145,104,54,78"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="284,23,347,30,346,35,283,29"/>
+<area shape="rect" id="Node000004" href="$namespacecommon.html#a7caa7d504427e910b86523bb0eb31b74" title=" " alt="" coords="592,23,743,64"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="545,41,577,41,577,46,545,46"/>
+<area shape="rect" id="Node000005" href="$namespacecommon.html#adbe69ab4371185d9ccec582988dd38be" title=" " alt="" coords="791,31,950,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="743,41,775,41,775,46,743,46"/>
+</map>

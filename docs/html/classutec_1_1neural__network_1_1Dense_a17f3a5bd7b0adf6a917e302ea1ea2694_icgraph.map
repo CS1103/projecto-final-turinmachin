@@ -1,0 +1,13 @@
+<map id="utec::neural_network::Dense::Dense" name="utec::neural_network::Dense::Dense">
+<area shape="rect" id="Node000001" title="Constructor que inicializa los tensores internos con ceros." alt="" coords="830,39,970,79"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1neural__network_1_1Dense.html#a57d3b60d03f48a5ef5399658511eae39" title="Constructor que permite inicializar pesos y biases con funciones personalizadas." alt="" coords="641,5,782,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="814,47,782,41,782,35,815,41"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1neural__network_1_1Dense.html#affa01afde1f0b8e320d789465c57040f" title="Carga la red neuronal en formato pp20." alt="" coords="641,71,782,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="815,76,782,82,782,76,814,71"/>
+<area shape="rect" id="Node000004" href="$namespaceutec_1_1neural__network.html#ae41bef2d9885dfcabb4f2b261eba3c0f" title="Registra todas las capas disponibles en el sistema. Llamado al inicio del programa para asegurar que ..." alt="" coords="453,71,593,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="626,94,594,94,594,88,626,88"/>
+<area shape="rect" id="Node000005" href="$classutec_1_1neural__network_1_1NeuralNetwork.html#a03cb30174664f403618acfe0e9df38e8" title="Constructor por defecto." alt="" coords="198,71,405,111"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="437,94,406,94,406,88,437,88"/>
+<area shape="rect" id="Node000006" href="$classutec_1_1neural__network_1_1NeuralNetwork.html#a3bdc71040fd54c9787781173a2fb7acd" title="Carga una red neuronal desde un flujo de entrada binario." alt="" coords="5,71,150,111"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="182,94,150,94,150,88,182,88"/>
+</map>

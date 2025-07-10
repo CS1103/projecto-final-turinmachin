@@ -10,20 +10,36 @@
 {\ttfamily \#include "{}utec/nn/dense.\+h"{}}\newline
 {\ttfamily \#include "{}utec/nn/interfaces.\+h"{}}\newline
 {\ttfamily \#include "{}utec/nn/kan.\+h"{}}\newline
+Include dependency graph for layer\+\_\+registry.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{layer__registry_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{layer__registry_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry}{utec\+::neural\+\_\+network\+::\+Layer\+Registry$<$ T $>$}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Registro de tipos de capas para deserialización. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutec}{utec}}
 \item 
 namespace \mbox{\hyperlink{namespaceutec_1_1neural__network}{utec\+::neural\+\_\+network}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Capa de activación de Rectified Linear Unit (\doxylink{classutec_1_1neural__network_1_1ReLU}{Re\+LU}). Los valores negativos del input se convierten en 0. Los valores no negativos permanecen igual. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{namespaceutec_1_1neural__network_ae41bef2d9885dfcabb4f2b261eba3c0f}{utec\+::neural\+\_\+network\+::register\+\_\+all\+\_\+layers}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Registra todas las capas disponibles en el sistema. Llamado al inicio del programa para asegurar que todos los tipos de capas estén disponibles al deserializar una red neuronal. Capas sin parámetros (ej. \doxylink{classutec_1_1neural__network_1_1ReLU}{Re\+LU}, \doxylink{classutec_1_1neural__network_1_1Softmax}{Softmax}) se crean directamente. Capas parametrizadas (ej. \doxylink{classutec_1_1neural__network_1_1Dense}{Dense}) leen sus parámetros del flujo de entrada. \end{DoxyCompactList}\end{DoxyCompactItemize}

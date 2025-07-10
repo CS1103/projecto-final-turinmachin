@@ -1,0 +1,7 @@
+<map id="Catch::Clara::Detail::is_unary_function&lt; F, Catch::Detail::void_t&lt; decltype(std::declval&lt; F &gt;()(fake_arg())) &gt; &gt;" name="Catch::Clara::Detail::is_unary_function&lt; F, Catch::Detail::void_t&lt; decltype(std::declval&lt; F &gt;()(fake_arg())) &gt; &gt;">
+<area shape="rect" id="Node000001" title=" " alt="" coords="40,79,200,165"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,110,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,43,96,77,92,80,71,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="134,5,232,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,46,149,80,144,77,165,43"/>
+</map>

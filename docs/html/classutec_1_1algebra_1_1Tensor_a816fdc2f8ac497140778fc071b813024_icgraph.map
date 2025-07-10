@@ -1,0 +1,77 @@
+<map id="utec::algebra::Tensor::end" name="utec::algebra::Tensor::end">
+<area shape="rect" id="Node000001" title=" " alt="" coords="845,736,1012,761"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="657,728,797,769"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="829,751,797,751,797,746,829,746"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1algebra_1_1Tensor.html#a4f81c73f3b7da0e466c384906bc85e16" title="Aplica una funcion a todos los elementos del tensor." alt="" coords="455,5,595,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="721,713,711,573,691,381,675,282,656,192,634,118,621,89,607,66,587,48,590,44,611,63,625,86,639,116,662,191,681,281,696,380,717,572,726,712"/>
+<area shape="rect" id="Node000005" href="$classutec_1_1algebra_1_1Tensor.html#adac07192ba798e56630fb5c547b38747" title="Realiza Broadcasting para un tensor." alt="" coords="455,171,595,211"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="719,713,705,604,681,461,648,323,628,269,607,231,586,214,589,210,611,228,633,267,653,322,686,460,710,603,724,712"/>
+<area shape="rect" id="Node000006" href="$classutec_1_1algebra_1_1Tensor.html#ad90e82d91ec2f95c449eea378024df98" title=" " alt="" coords="250,72,391,113"/>
+<area shape="poly" id="edge11_Node000002_Node000006" title=" " alt="" coords="722,712,714,581,695,403,680,314,660,233,636,168,622,143,607,125,584,108,558,95,502,80,444,77,391,81,391,76,444,72,503,75,560,90,587,103,611,121,626,140,641,165,665,231,685,312,700,402,719,580,727,712"/>
+<area shape="rect" id="Node000007" href="$classutec_1_1algebra_1_1Tensor.html#a7f68b0a3fbf84213e7f0a4928f54fb05" title=" " alt="" coords="250,140,391,181"/>
+<area shape="poly" id="edge14_Node000002_Node000007" title=" " alt="" coords="721,713,713,587,694,419,679,335,660,260,636,200,622,177,607,161,582,145,555,134,526,128,497,126,437,131,384,142,383,137,437,125,497,121,527,123,557,129,585,140,610,157,626,174,641,197,665,258,684,334,699,418,719,587,727,713"/>
+<area shape="rect" id="Node000008" href="$classutec_1_1algebra_1_1Tensor.html#a1cf64d6d7bdf6131ee5748949a37f187" title=" " alt="" coords="250,211,391,251"/>
+<area shape="poly" id="edge18_Node000002_Node000008" title=" " alt="" coords="719,713,705,613,682,484,667,420,649,362,629,316,607,285,584,267,558,253,502,235,444,227,391,227,391,221,445,222,503,230,560,248,587,263,611,281,634,313,654,361,672,419,687,483,711,612,724,713"/>
+<area shape="rect" id="Node000009" href="$classutec_1_1algebra_1_1Tensor.html#a6556ae085ce1e8b3906c68d020331878" title=" " alt="" coords="250,277,391,318"/>
+<area shape="poly" id="edge21_Node000002_Node000009" title=" " alt="" coords="718,713,704,621,680,503,665,446,647,394,628,353,607,326,583,310,557,298,501,285,444,282,391,287,391,281,444,277,502,279,559,293,586,306,610,322,633,350,652,392,670,444,685,502,709,620,724,712"/>
+<area shape="rect" id="Node000010" href="$classutec_1_1algebra_1_1Tensor.html#a9e168810c56913a57f0e569300d33271" title=" " alt="" coords="455,336,595,377"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="721,713,713,645,694,560,679,515,660,471,636,429,607,392,591,379,595,375,611,388,641,426,665,468,684,513,699,559,718,645,726,712"/>
+<area shape="rect" id="Node000011" href="$classutec_1_1algebra_1_1Tensor.html#a0eef42b1eb01e70f175d427230ca3710" title=" " alt="" coords="455,401,595,442"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="718,713,706,658,685,589,653,519,632,486,607,457,591,445,594,440,611,453,636,483,658,516,690,587,711,656,723,712"/>
+<area shape="rect" id="Node000012" href="$classutec_1_1algebra_1_1Tensor.html#a4d5c7867448ca6070dd77d76e7503d0a" title=" " alt="" coords="455,467,595,507"/>
+<area shape="poly" id="edge12_Node000002_Node000012" title=" " alt="" coords="713,714,699,670,676,619,646,568,607,522,590,510,593,506,610,518,650,564,681,617,703,668,718,712"/>
+<area shape="rect" id="Node000013" href="$classutec_1_1algebra_1_1Tensor.html#a77343720ccea1fe9b6eb35d15b5fe9e9" title=" " alt="" coords="455,532,595,573"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="706,716,666,651,638,617,607,588,588,576,591,571,610,584,642,614,670,648,711,713"/>
+<area shape="rect" id="Node000014" href="$classutec_1_1algebra_1_1Tensor.html#a112907a1abc16c6c425bfd1e8e4ab0f1" title=" " alt="" coords="455,597,595,638"/>
+<area shape="poly" id="edge15_Node000002_Node000014" title=" " alt="" coords="692,719,653,685,607,653,583,641,586,636,610,649,656,681,696,715"/>
+<area shape="rect" id="Node000015" href="$classutec_1_1algebra_1_1Tensor.html#afe345e8834b5d29becc99333effac546" title=" " alt="" coords="455,663,595,703"/>
+<area shape="poly" id="edge16_Node000002_Node000015" title=" " alt="" coords="647,725,589,707,591,701,649,720"/>
+<area shape="rect" id="Node000016" href="$classutec_1_1algebra_1_1Tensor.html#ab21fecbff07e86f38dcdd0723a545213" title=" " alt="" coords="455,728,595,769"/>
+<area shape="poly" id="edge17_Node000002_Node000016" title=" " alt="" coords="641,751,596,751,596,746,641,746"/>
+<area shape="rect" id="Node000017" href="$classutec_1_1algebra_1_1Tensor.html#a332afc2da9d7aff2b9d261f3e4275ac0" title=" " alt="" coords="455,793,595,834"/>
+<area shape="poly" id="edge19_Node000002_Node000017" title=" " alt="" coords="649,776,591,795,589,790,647,771"/>
+<area shape="rect" id="Node000018" href="$classutec_1_1algebra_1_1Tensor.html#abac937f7e9269d2523f4dac39fbb6e5d" title=" " alt="" coords="455,859,595,899"/>
+<area shape="poly" id="edge20_Node000002_Node000018" title=" " alt="" coords="696,781,656,815,610,848,586,860,583,856,607,843,653,811,692,777"/>
+<area shape="rect" id="Node000019" href="$classutec_1_1algebra_1_1Tensor.html#ae94cc2c4fe2ddc07580e21b96eeb1f8e" title=" " alt="" coords="455,924,595,965"/>
+<area shape="poly" id="edge22_Node000002_Node000019" title=" " alt="" coords="711,784,670,849,642,883,610,913,591,926,588,921,607,909,638,879,666,846,706,781"/>
+<area shape="rect" id="Node000020" href="$classutec_1_1algebra_1_1Tensor.html#ab4131352cf1e7e232047d3f79498fa48" title=" " alt="" coords="455,989,595,1030"/>
+<area shape="poly" id="edge23_Node000002_Node000020" title=" " alt="" coords="718,785,703,828,681,880,650,932,610,978,593,991,590,987,607,974,646,929,676,877,699,826,713,783"/>
+<area shape="rect" id="Node000021" href="$classutec_1_1algebra_1_1Tensor.html#aff520eafc9ad362d3d390c4ad5f77518" title=" " alt="" coords="455,1055,595,1095"/>
+<area shape="poly" id="edge24_Node000002_Node000021" title=" " alt="" coords="723,785,711,840,690,909,658,980,636,1014,611,1044,594,1056,591,1052,607,1040,632,1011,653,978,685,907,706,839,718,784"/>
+<area shape="rect" id="Node000022" href="$classutec_1_1algebra_1_1Tensor.html#abc82b477190acf69c9e09b46276147dd" title=" " alt="" coords="455,1120,595,1161"/>
+<area shape="poly" id="edge25_Node000002_Node000022" title=" " alt="" coords="726,785,718,852,699,938,684,984,665,1028,641,1071,611,1109,595,1122,591,1118,607,1105,636,1068,660,1026,679,982,694,937,713,851,721,784"/>
+<area shape="rect" id="Node000023" href="$classutec_1_1algebra_1_1Tensor.html#a51eb9eef03f17649b74063dd37574a03" title="Genera tensor con fila particular." alt="" coords="441,1250,609,1276"/>
+<area shape="poly" id="edge26_Node000002_Node000023" title=" " alt="" coords="724,785,710,889,687,1025,671,1092,654,1154,633,1204,611,1239,595,1252,591,1247,607,1236,629,1202,648,1152,666,1091,681,1024,705,888,719,784"/>
+<area shape="rect" id="Node000031" href="$classutec_1_1algebra_1_1Tensor.html#af442d67fa5f45db289396ff5b836ea0a" title="Cambia fila especifica de un tensor." alt="" coords="455,1185,595,1226"/>
+<area shape="poly" id="edge34_Node000002_Node000031" title=" " alt="" coords="728,784,724,863,707,966,692,1021,672,1076,645,1128,611,1174,595,1187,592,1183,607,1171,641,1125,667,1074,687,1020,702,965,718,862,723,784"/>
+<area shape="rect" id="Node000032" href="$classutec_1_1algebra_1_1Tensor.html#ae9d375f3d8c7e60eceb238dbe0df593a" title="Cambia el subtensor asignado." alt="" coords="250,1316,391,1357"/>
+<area shape="poly" id="edge36_Node000002_Node000032" title=" " alt="" coords="727,784,719,913,701,1086,686,1172,666,1250,641,1313,627,1337,610,1354,583,1372,553,1382,521,1387,488,1387,424,1377,370,1360,372,1355,426,1371,488,1381,520,1382,551,1377,581,1367,607,1350,622,1334,636,1311,661,1249,680,1171,695,1085,714,912,722,784"/>
+<area shape="rect" id="Node000033" href="$classutec_1_1algebra_1_1Tensor.html#a91fb9304cb7603e83a4414dfb6000c5c" title="Genera tensor con fila particular para tensor de Rank 3." alt="" coords="455,1300,595,1341"/>
+<area shape="poly" id="edge37_Node000002_Node000033" title=" " alt="" coords="725,784,712,897,689,1048,673,1124,655,1193,634,1250,611,1290,597,1302,594,1298,607,1287,630,1248,650,1191,668,1122,684,1047,707,897,720,783"/>
+<area shape="rect" id="Node000034" href="$classutec_1_1algebra_1_1Tensor.html#a271cbdb704f0c4a7c348121322212c70" title="Trasponer un tensor de dimension 2. @complexity O(n)." alt="" coords="455,1415,595,1455"/>
+<area shape="poly" id="edge39_Node000002_Node000034" title=" " alt="" coords="726,785,715,918,694,1100,678,1192,660,1277,637,1348,611,1398,590,1416,587,1412,607,1395,632,1346,655,1276,673,1191,688,1099,710,917,721,784"/>
+<area shape="rect" id="Node000035" href="$classutec_1_1algebra_1_1Tensor.html#aa3bbc9568b2b1fabd0fd584827603c7e" title="Trasponer un tensor de dimension n mayor a 2. @complexity O(n)." alt="" coords="455,1480,595,1521"/>
+<area shape="poly" id="edge40_Node000002_Node000035" title=" " alt="" coords="727,785,719,931,699,1135,684,1239,665,1334,641,1413,626,1444,611,1469,597,1481,593,1478,607,1465,622,1442,636,1411,660,1333,679,1238,694,1134,713,931,722,784"/>
+<area shape="rect" id="Node000004" href="$classutec_1_1neural__network_1_1Adam.html#afbc4ee15fa6b2be1e0a508be4e03eb32" title="Actualiza los parámetros del modelo usando el algoritmo de Adam." alt="" coords="250,5,391,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="439,28,391,28,391,23,439,23"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="466,166,364,116,366,111,469,161"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="439,181,391,173,392,168,440,176"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="440,210,392,220,391,215,439,205"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="475,221,395,265,367,279,365,274,392,261,473,217"/>
+<area shape="rect" id="Node000024" href="$classutec_1_1neural__network_1_1NeuralNetwork.html#ab2da2c55dc3be175816a870c7c91d2e3" title="Entrena la red neuronal usando descenso por lotes." alt="" coords="248,1227,393,1267"/>
+<area shape="poly" id="edge27_Node000023_Node000024" title=" " alt="" coords="426,1258,394,1255,394,1250,426,1253"/>
+<area shape="rect" id="Node000025" href="$test__nn_8cpp.html#aa2bb994d7d8e1db56c35dd2c3861fbfe" title=" " alt="" coords="103,1136,200,1161"/>
+<area shape="poly" id="edge28_Node000024_Node000025" title=" " alt="" coords="274,1220,199,1175,179,1164,181,1159,201,1170,277,1216"/>
+<area shape="rect" id="Node000026" href="$test__nn_8cpp.html#a2791441892e427b263bab683de9e2bf7" title=" " alt="" coords="103,1185,200,1210"/>
+<area shape="poly" id="edge29_Node000024_Node000026" title=" " alt="" coords="233,1224,197,1214,199,1208,235,1219"/>
+<area shape="rect" id="Node000027" href="$test__nn_8cpp.html#af6625554e4b688cb1905733083af326c" title=" " alt="" coords="103,1234,200,1260"/>
+<area shape="poly" id="edge30_Node000024_Node000027" title=" " alt="" coords="232,1250,200,1250,200,1244,232,1244"/>
+<area shape="rect" id="Node000028" href="$test__nn_8cpp.html#afad5a7c3f459ccea90c483b9c1827af0" title=" " alt="" coords="103,1284,200,1309"/>
+<area shape="poly" id="edge31_Node000024_Node000028" title=" " alt="" coords="235,1275,199,1286,197,1280,233,1270"/>
+<area shape="rect" id="Node000029" href="$classDataset.html#af22e6119731d84dbac33dd8fcdac78c9" title=" " alt="" coords="103,1333,200,1358"/>
+<area shape="poly" id="edge32_Node000024_Node000029" title=" " alt="" coords="277,1278,201,1324,181,1335,179,1330,199,1319,274,1274"/>
+<area shape="rect" id="Node000030" href="$trainer__kan_2main_8cpp.html#a8216c1645620cdb2f629cde3ac02ffef" title=" " alt="" coords="5,1333,55,1358"/>
+<area shape="poly" id="edge33_Node000029_Node000030" title=" " alt="" coords="87,1348,55,1348,55,1343,87,1343"/>
+<area shape="poly" id="edge35_Node000031_Node000024" title=" " alt="" coords="440,1226,394,1235,393,1230,439,1220"/>
+<area shape="poly" id="edge38_Node000033_Node000032" title=" " alt="" coords="439,1330,391,1334,391,1328,439,1324"/>
+</map>

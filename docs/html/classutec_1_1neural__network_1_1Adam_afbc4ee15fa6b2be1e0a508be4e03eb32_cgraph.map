@@ -1,0 +1,16 @@
+<map id="utec::neural_network::Adam::update" name="utec::neural_network::Adam::update">
+<area shape="rect" id="Node000001" title="Actualiza los parámetros del modelo usando el algoritmo de Adam." alt="" coords="5,120,146,161"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1algebra_1_1Tensor.html#a4f81c73f3b7da0e466c384906bc85e16" title="Aplica una funcion a todos los elementos del tensor." alt="" coords="194,63,334,103"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,117,179,106,181,111,145,122"/>
+<area shape="rect" id="Node000006" href="$classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="584,120,724,161"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="146,138,568,138,568,143,146,143"/>
+<area shape="rect" id="Node000007" href="$classutec_1_1neural__network_1_1Adam.html#a0e9d2821852c9608f87a329e8a5cb45d" title="Incrementa el contador de pasos. Es importante para las correcciones de sesgo de Adam...." alt="" coords="194,177,334,218"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="145,159,181,170,179,175,144,164"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="382,63,522,103"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="334,80,367,80,367,86,334,86"/>
+<area shape="rect" id="Node000004" href="$classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="584,5,724,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="522,61,568,47,570,52,523,66"/>
+<area shape="rect" id="Node000005" href="$classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="570,70,738,96"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="523,80,555,80,555,86,523,86"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="523,100,570,114,568,119,522,105"/>
+</map>

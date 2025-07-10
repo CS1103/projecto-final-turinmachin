@@ -4,15 +4,15 @@
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Representa un tensor de tipo T y rango Rank. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename T$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{matrix\+\_\+product}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&lhs, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&rhs) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$
-\item 
+\begin{DoxyCompactList}\small\item\em Realiza producto matricial entre 2 tensores de dimension 2. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T, std\+::size\+\_\+t Rank$>$ \newline
 requires (Rank $>$ 2)}\\constexpr auto \mbox{\hyperlink{namespaceutec_1_1algebra_a34bfff2098201ce115fd8d11b820a434}{matrix\+\_\+product}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&lhs, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&rhs) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Realiza producto matricial entre 2 tensores de dimension mayor a 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \label{doc-func-members}
@@ -25,6 +25,36 @@ requires (Rank $>$ 2)}\\constexpr auto \mbox{\hyperlink{namespaceutec_1_1algebra
 template$<$typename T$>$ \\
 auto utec\+::algebra\+::matrix\+\_\+product (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&}]{rhs}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, 2$>$ \hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [constexpr]}}
 
+
+
+Realiza producto matricial entre 2 tensores de dimension 2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & \doxylink{classutec_1_1algebra_1_1Tensor}{Tensor} 1 de la operacion. \\
+\hline
+{\em rhs} & \doxylink{classutec_1_1algebra_1_1Tensor}{Tensor} 2 de la operacion. @complexity O(n\texorpdfstring{$^\wedge$}{\string^}3). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classutec_1_1algebra_1_1Tensor}{Tensor} resultante de la operacion . 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{namespaceutec_1_1algebra_a34bfff2098201ce115fd8d11b820a434}\index{utec::algebra@{utec::algebra}!matrix\_product@{matrix\_product}}
 \index{matrix\_product@{matrix\_product}!utec::algebra@{utec::algebra}}
 \doxysubsubsection{\texorpdfstring{matrix\_product()}{matrix\_product()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -33,3 +63,25 @@ template$<$typename T, std\+::size\+\_\+t Rank$>$ \newline
 requires (Rank $>$ 2)\\
 auto utec\+::algebra\+::matrix\+\_\+product (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{rhs}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [constexpr]}}
 
+
+
+Realiza producto matricial entre 2 tensores de dimension mayor a 2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & \doxylink{classutec_1_1algebra_1_1Tensor}{Tensor} 1 de la operacion. \\
+\hline
+{\em rhs} & \doxylink{classutec_1_1algebra_1_1Tensor}{Tensor} 2 de la operacion. @complexity O(n). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classutec_1_1algebra_1_1Tensor}{Tensor} resultante de la operacion. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{namespaceutec_1_1algebra_a34bfff2098201ce115fd8d11b820a434_cgraph}
+\end{center}
+\end{figure}

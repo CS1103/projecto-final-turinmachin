@@ -1,0 +1,5 @@
+<map id="utec::neural_network::LayerRegistry::create" name="utec::neural_network::LayerRegistry::create">
+<area shape="rect" id="Node000001" title="Crea una instancia de una capa registrada a partir de su ID. Busca la función asociada al ID proporci..." alt="" coords="198,5,346,46"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1neural__network_1_1NeuralNetwork.html#a3bdc71040fd54c9787781173a2fb7acd" title="Carga una red neuronal desde un flujo de entrada binario." alt="" coords="5,5,150,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,28,150,28,150,23,182,23"/>
+</map>

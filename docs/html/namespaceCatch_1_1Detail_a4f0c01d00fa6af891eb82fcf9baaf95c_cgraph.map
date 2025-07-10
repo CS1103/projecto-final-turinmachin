@@ -1,0 +1,18 @@
+<map id="Catch::Detail::makeEnumInfo" name="Catch::Detail::makeEnumInfo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,193,68"/>
+<area shape="rect" id="Node000002" href="$namespaceCatch_1_1Detail.html#a3175310a581a4d3b7bd12cf543dfa0d9" title=" " alt="" coords="261,5,393,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,40,245,33,246,39,194,46"/>
+<area shape="rect" id="Node000003" href="$namespaceCatch_1_1Detail.html#a4e0e09e87f561af2d3a881b209a9a481" title=" " alt="" coords="241,70,413,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,64,225,68,225,73,193,69"/>
+<area shape="rect" id="Node000004" href="$namespaceCatch.html#a678e3c779388970bb3ec5802245f93d7" title=" " alt="" coords="461,45,600,70"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="413,70,445,66,446,71,414,75"/>
+<area shape="rect" id="Node000008" href="$namespaceCatch.html#a084108b47f37d8bfd5db51c50c7451b3" title=" " alt="" coords="489,94,572,120"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="414,91,474,98,474,103,413,96"/>
+<area shape="rect" id="Node000005" href="$classCatch_1_1StringRef.html#acb22719801de2b64361b4c283080d4e5" title=" " alt="" coords="655,21,799,46"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="600,46,639,42,640,47,601,52"/>
+<area shape="rect" id="Node000006" href="$classCatch_1_1StringRef.html#aabf71767dfce1066e721456d54972bc5" title=" " alt="" coords="648,70,806,96"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="601,64,633,68,632,73,600,69"/>
+<area shape="rect" id="Node000007" href="$classCatch_1_1StringRef.html#a611907867225695d38198c058758c92d" title=" " alt="" coords="854,70,1029,96"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="806,80,838,80,838,86,806,86"/>
+<area shape="poly" id="edge7_Node000007_Node000007" title=" " alt="" coords="906,71,899,62,903,52,917,46,941,44,968,46,981,53,979,58,966,51,941,49,919,51,907,56,904,61,910,68"/>
+</map>
