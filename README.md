@@ -4,6 +4,8 @@
 
 ## **CS2013 Programación III** · Informe Final
 
+[Video presentación](https://drive.google.com/drive/folders/16q8kut1xyEES6GOGlfScgpX4DKD4m5Fp?usp=sharing)
+
 ### **Descripción**
 
 Recreación del minijuego de matemáticas de Brain-Age usando redes neuronales en C++ para la identificación de dígitos.
@@ -49,14 +51,22 @@ Recreación del minijuego de matemáticas de Brain-Age usando redes neuronales e
 
 3. **Instalación**:
 
-   ```bash
-   git clone https://github.com/CS1103/projecto-final-turinmachin
-   cd projecto-final-turinmachin
-   cmake -S . -B build
-   cd build
-   cmake --build .
-   ./brain_ager
-   ```
+```bash
+git clone https://github.com/CS1103/projecto-final-turinmachin.git
+cd projecto-final-turinmachin
+
+# Descargar SDL y SDL_ttf
+git clone https://github.com/libsdl-org/SDL.git vendored\SDL
+git clone https://github.com/libsdl-org/SDL_ttf.git vendored\SDL_ttf
+cd .\vendored\SDL_ttf
+.\external\Get-GitModules.ps1
+
+cmake -S . -B build
+cd build
+
+cmake --build .
+./brain_ager
+```
 
 ---
 
