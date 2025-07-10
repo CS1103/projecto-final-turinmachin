@@ -237,6 +237,8 @@ cmake --build .
 [KAN: Kolmogorov-Arnold Networks](https://arxiv.org/pdf/2404.19756?)
 
 [KAN 2.0: Kolmogorov-Arnold Networks Meet Science](https://arxiv.org/pdf/2408.10205)
+
+
 ---
 
 ### Licencia
