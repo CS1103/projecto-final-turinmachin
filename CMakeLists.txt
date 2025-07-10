@@ -48,12 +48,11 @@ configure_file(${CMAKE_SOURCE_DIR}/config.h.in ${CMAKE_BINARY_DIR}/config.h)
 
 include_directories(${CMAKE_BINARY_DIR})
 include_directories(deps)
+include_directories(include)
 
 add_executable(brain_ager_trainer ${trainer_source})
-target_include_directories(brain_ager_trainer PUBLIC include)
 
 add_executable(brain_ager ${game_source})
-target_include_directories(brain_ager PUBLIC include)
 target_link_libraries(brain_ager PRIVATE SDL3::SDL3 SDL3_ttf::SDL3_ttf)
 
 install(TARGETS brain_ager DESTINATION bin)
