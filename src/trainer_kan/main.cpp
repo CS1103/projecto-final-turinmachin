@@ -1,6 +1,7 @@
 #include <array>
 #include <cstddef>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <random>
 #include <ranges>
@@ -161,7 +162,7 @@ auto main() -> int {
     const double accuracy_tes = test_data.test_accuracy(net);
 
     std::cout << std::setprecision(2);
-    std::cout << "Accuracy (training): " << (100 * accuracy_tra) << "\n";
-    std::println("Accuracy (test):     {:.2f}%", 100 * accuracy_tes);
+    std::cout << "Accuracy (training): " << (100 * accuracy_tra) << "%\n";
+    std::cout << "Accuracy (test):     " << (100 * accuracy_tes) << "%\n";
     return 0;
 }

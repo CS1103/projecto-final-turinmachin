@@ -43,10 +43,9 @@ Recreación del minijuego de matemáticas de Brain-Age usando redes neuronales e
 2. **Dependencias**:
 
    - CMake 3.29+
-   - pkg-config 0.29+
    - SDL3
    - SDL3_ttf
-   - catch2_3
+   - Catch2 v3 (incluido en el repositorio, no requiere instalación)
 
 3. **Instalación**:
 
