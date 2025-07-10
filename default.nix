@@ -6,9 +6,6 @@ let
   inherit (pkgs)
     lib
     cmake
-    pkg-config
-    sdl3
-    sdl3-ttf
     ;
 in
 pkgs.stdenv.mkDerivation {
@@ -17,12 +14,7 @@ pkgs.stdenv.mkDerivation {
 
   src = lib.cleanSource ./.;
 
-  nativeBuildInputs = [
-    cmake
-    pkg-config
-    sdl3
-    sdl3-ttf
-  ];
+  nativeBuildInputs = [ cmake ];
 
   cmakeFlags = [
     "-DCMAKE_BUILD_TYPE=Release"
