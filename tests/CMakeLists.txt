@@ -1,4 +1,6 @@
-find_package(Catch2 3 REQUIRED)
+if(NOT USE_VENDORED_DEPS)
+  find_package(Catch2 3 REQUIRED)
+endif()
 
 file(GLOB_RECURSE test_files CONFIGURE_DEPENDS *.cpp)
 
