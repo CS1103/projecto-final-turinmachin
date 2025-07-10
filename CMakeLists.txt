@@ -30,6 +30,7 @@ set(SHARE_INSTALL_DIR "share/${PROJECT_NAME}")
 configure_file(${CMAKE_SOURCE_DIR}/config.h.in ${CMAKE_BINARY_DIR}/config.h)
 
 include_directories(${CMAKE_BINARY_DIR})
+include_directories(deps)
 
 add_executable(brain_ager_trainer ${trainer_source})
 target_include_directories(brain_ager_trainer PUBLIC include)
