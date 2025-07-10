@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['zerotestscountassuccess_0',['zeroTestsCountAsSuccess',['../classCatch_1_1IConfig.html#a6ff06a3e00a2002992d3139d9c21718d',1,'Catch::IConfig::zeroTestsCountAsSuccess()'],['../classCatch_1_1Config.html#ac39443127fe7694ed429ecd7150d56a8',1,'Catch::Config::zeroTestsCountAsSuccess()']]]
+  ['y_20casos_20de_20prueba_0',['2.2 Manual de uso y casos de prueba',['../md_README.html#autotoc_md13',1,'']]],
+  ['yes_1',['Yes',['../namespaceCatch.html#ac881e5ba54c09673c50349dbea7fff36a93cba07454f06a4a960172bbd6e2a435',1,'Catch']]]
 ];
