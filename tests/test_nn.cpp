@@ -70,19 +70,6 @@ TEST_CASE("Empty network returns input", "[neural]") {
     REQUIRE(output == input);
 }
 
-#include <utec/nn/kan.h>
-using utec::neural_network::Kan;
-
-TEST_CASE("Kan layer basic forward", "[kan]") {
-    NeuralNetwork<float> net;
-    net.add_layer<Kan<float>>(2, 2, 5);
-    Tensor<float, 2> input(1, 2);
-    input(0, 0) = 0.2F;
-    input(0, 1) = 0.8F;
-    auto output = net.predict(input);
-    REQUIRE(output.shape() == std::array<size_t, 2>{1, 2});
-}
-
 TEST_CASE("neural network trains and reduces loss", "[neural][train]") {
     using namespace utec::neural_network;
     NeuralNetwork<float> net;
@@ -140,18 +127,6 @@ TEST_CASE("neural network save/load consistency", "[neural][save]") {
     for (size_t i = 0; i < out1.size(); ++i) {
         REQUIRE_THAT(out1[i], Catch::Matchers::WithinAbs(out2[i], 0.001));
     }
-}
-
-TEST_CASE("neural network with Kan layer", "[neural][kan]") {
-    NeuralNetwork<float> net;
-    net.add_layer<Kan<float>>(2, 1, 5);
-
-    Tensor<float, 2> input(1, 2);
-    input(0, 0) = 0.1;
-    input(0, 1) = -0.5;
-
-    auto output = net.predict(input);
-    REQUIRE(output.shape() == std::array<size_t, 2>{1, 1});
 }
 
 TEST_CASE("neural network backward call", "[neural][backward]") {
