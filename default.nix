@@ -9,7 +9,6 @@ let
     pkg-config
     sdl3
     sdl3-ttf
-    catch2_3
     ;
 in
 pkgs.stdenv.mkDerivation {
@@ -23,7 +22,6 @@ pkgs.stdenv.mkDerivation {
     pkg-config
     sdl3
     sdl3-ttf
-    catch2_3
   ];
 
   cmakeFlags = [

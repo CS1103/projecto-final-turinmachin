@@ -4,9 +4,7 @@
 #include <utec/nn/loss.h>
 #include <utec/nn/neural_network.h>
 #include <utec/nn/optimizer.h>
-#include <catch2/catch_test_macros.hpp>
-#include <catch2/matchers/catch_matchers.hpp>
-#include <catch2/matchers/catch_matchers_floating_point.hpp>
+#include <catch/catch_amalgamated.hpp>
 #include <random>
 #include <sstream>
 
