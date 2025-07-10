@@ -6,7 +6,7 @@
 
 ### **Descripción**
 
-> Ejemplo: Implementación de una red neuronal multicapa en C++ para clasificación de dígitos manuscritos.
+Recreación del juego Brain-Ager usando redes neuronales en C++ para la identificación de dígitos.
 
 ### Contenidos
 
@@ -158,7 +158,7 @@
 
 ### 7. Bibliografía
 
-> _Actualizar con bibliografia utilizada, al menos 4 referencias bibliograficas y usando formato IEEE de referencias bibliograficas._
+> _Actualizar con bibliografía utilizada, al menos 4 referencias bibliográficas y usando formato IEEE de referencias bibliográficas._
 
 ---
 
