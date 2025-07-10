@@ -65,9 +65,56 @@ Recreación del minijuego de matemáticas de Brain-Age usando redes neuronales e
 - **Objetivo**: Explorar fundamentos y arquitecturas de redes neuronales.
 - **Contenido de ejemplo**:
 
-  1. Historia y evolución de las NNs.
-  2. Principales arquitecturas: MLP, CNN, RNN.
-  3. Algoritmos de entrenamiento: backpropagation, optimizadores.
+#### 1.1 Historia y evolución de las redes neuronales
+
+- **1943**: McCulloch y Pitts proponen el primer modelo de neurona artificial, capaz de realizar operaciones lógicas básicas.
+- **1958**: Rosenblatt introduce el *Perceptrón*, una red de una sola capa capaz de clasificar datos linealmente separables.
+- **1986**: Se populariza el uso del algoritmo de *backpropagation*, que permite entrenar redes con múltiples capas (MLP).
+- **Década de 2010**: Surgen redes profundas (*deep learning*) con muchas capas ocultas, impulsadas por el aumento en capacidad computacional y la disponibilidad de grandes volúmenes de datos.
+- **Actualidad**: Las redes neuronales están presentes en múltiples campos como visión por computadora, procesamiento de lenguaje natural, videojuegos, medicina, finanzas, entre otros.
+
+---
+
+#### 1.2 Principales arquitecturas
+
+##### MLP (Perceptrón Multicapa)
+- Compuesta por capas densamente conectadas.
+- Cada neurona aplica una transformación lineal seguida por una función de activación.
+- Útil en tareas de clasificación y regresión con datos tabulares o estructurados.
+
+##### CNN (Convolutional Neural Network)
+- Especializadas en el procesamiento de datos con estructura espacial, como imágenes.
+- Usan capas convolucionales que detectan características locales (bordes, formas).
+- Incorporan *pooling* para reducir dimensiones y mejorar la eficiencia.
+- Ampliamente usadas en reconocimiento facial, visión autónoma y clasificación de imágenes.
+
+##### RNN (Recurrent Neural Network)
+- Diseñadas para manejar datos secuenciales (texto, audio, series temporales).
+- Cada salida depende no solo del input actual, sino también de estados anteriores.
+- Variantes modernas como LSTM y GRU resuelven problemas de memoria a largo plazo.
+- Aplicadas en traducción automática, generación de texto y análisis de sentimientos.
+
+---
+
+#### 1.3 Algoritmos de entrenamiento
+
+##### Backpropagation
+- Algoritmo base para ajustar los pesos en redes neuronales.
+- Calcula el gradiente del error respecto a cada peso usando la regla de la cadena.
+- Permite que la red aprenda minimizando una función de pérdida mediante optimización.
+
+##### Funciones de pérdida (loss functions)
+- Miden qué tan lejos están las predicciones del valor real.
+- Ejemplos:
+  - **MSE (Error Cuadrático Medio)** para regresión.
+  - **Cross-Entropy** para clasificación.
+
+##### Optimizadores
+- Usan los gradientes calculados para actualizar los pesos eficientemente.
+- Optimizadores comunes:
+  - **GD (Gradient Descent)**: Optimizador simple basado en gradiente.
+  - **Adam**: adapta el learning rate individualmente para cada parámetro.
+  - **RMSprop**: combina ideas de SGD y adaptación dinámica de la tasa de aprendizaje.
 
 ---
 
@@ -140,9 +187,9 @@ Recreación del minijuego de matemáticas de Brain-Age usando redes neuronales e
 
 - **Métricas de ejemplo**:
 
-  - Iteraciones: 1000 épocas.
-  - Tiempo total de entrenamiento: 2m30s.
-  - Precisión final: 92.5%.
+  - Iteraciones: 500 épocas.
+  - Tiempo total de entrenamiento: 1m30s.
+  - Precisión final: 85.42%.
 
 - **Ventajas/Desventajas**:
 
@@ -151,42 +198,49 @@ Recreación del minijuego de matemáticas de Brain-Age usando redes neuronales e
 
 - **Mejoras futuras**:
 
-  - Uso de BLAS para multiplicaciones (Justificación).
-  - Paralelizar entrenamiento por lotes (Justificación).
+  - Uso de paralelización para mejor rendimiento.
+  - Uso de CUDA para mejorar potencia de cómputo.
+  - Mejorar implemetación de Kolmogorov Arnold Networks (KAN) para volverrlo viable.
 
 ---
 
 ### 5. Trabajo en equipo
 
-| Tarea                     | Miembro  | Rol                       |
-| ------------------------- | -------- | ------------------------- |
-| Investigación teórica     | Alumno A | Documentar bases teóricas |
-| Diseño de la arquitectura | Alumno B | UML y esquemas de clases  |
-| Implementación del modelo | Alumno C | Código C++ de la NN       |
-| Pruebas y benchmarking    | Alumno D | Generación de métricas    |
-| Documentación y demo      | Alumno E | Tutorial y video demo     |
-
-> _Actualizar con tareas y nombres reales._
+| Tarea                     | Miembro                            | Rol                       |
+| ------------------------- | ---------------------------------- | ------------------------- |
+| Investigación teórica     | Lopez Del Carpio, Joaquin Adrian   | Documentar bases teóricas |
+| Diseño de la arquitectura | Grayson Tejada, José Daniel        | UML y esquemas de clases  |
+| Implementación del modelo | Figueroa Winkelried, Diego Alonso  | Código C++ de la NN       |
+| Pruebas y benchmarking    | Walde Verano, Matías Sebastian     | Generación de métricas    |
+| Documentación y demo      | Valladolid Jimenes, Gonzalo Andrés | Tutorial y video demo     |
 
 ---
 
 ### 6. Conclusiones
 
 - **Logros**: Implementar NN desde cero, validar en dataset de ejemplo.
-- **Evaluación**: Calidad y rendimiento adecuados para propósito académico.
-- **Aprendizajes**: Profundización en backpropagation y optimización.
-- **Recomendaciones**: Escalar a datasets más grandes y optimizar memoria.
+    - Se implementó desde cero una red neuronal en C++.
+    - El sistema reconoce números escritos a mano y resuelve operaciones matemáticas, como en Brain Age.
+    - Se integró la lógica de predicción con una interfaz visual basada en SDL3.
+- **Evaluación**:
+    - El modelo demuestra buena precisión en pruebas simples.
+    - Cumple los objetivos académicos con un diseño ligero y funcional.
+- **Aprendizajes**:
+    - Comprensión práctica de backpropagation.
+    - Uso de funciones de activación (ReLU, Sigmoid) y optimización con MSE y BSE.
+- **Recomendaciones**:
+    - Ampliar el entrenamiento con datasets reales para hacer pruebas completas.
 
 ---
 
 ### 7. Bibliografía
 
-> _Actualizar con bibliografía utilizada, al menos 4 referencias bibliográficas y usando formato IEEE de referencias bibliográficas._
-
+[KAN: Kolmogorov-Arnold Networks](https://arxiv.org/pdf/2404.19756?)
+[KAN 2.0: Kolmogorov-Arnold Networks Meet Science](https://arxiv.org/pdf/2408.10205)
 ---
 
 ### Licencia
 
-Este proyecto usa la licencia **MIT**. Ver [LICENSE](LICENSE) para detalles.
+Este proyecto usa la licencia **GPL 3**. Ver [LICENSE](LICENSE) para detalles.
 
 ---
