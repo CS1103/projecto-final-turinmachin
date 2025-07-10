@@ -18,16 +18,25 @@ else()
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
+option(USE_VENDORED_DEPS
+       "Use vendored dependencies instead of system-installed ones" ON)
 
-set(SDLTTF_VENDORED ON)
+if(USE_VENDORED_DEPS)
+  message(STATUS "Using vendored dependencies")
 
-add_subdirectory(vendored/SDL EXCLUDE_FROM_ALL)
-add_subdirectory(vendored/SDL_ttf EXCLUDE_FROM_ALL)
+  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
+  set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
 
-# find_package(SDL3 REQUIRED CONFIG REQUIRED COMPONENTS SDL3-shared)
-find_package(SDL3_ttf REQUIRED CONFIG REQUIRED)
+  set(SDLTTF_VENDORED ON)
+
+  add_subdirectory(vendored/SDL EXCLUDE_FROM_ALL)
+  add_subdirectory(vendored/SDL_ttf EXCLUDE_FROM_ALL)
+else()
+  message(STATUS "Using system-installed dependencies")
+
+  find_package(SDL3 REQUIRED CONFIG COMPONENTS SDL3-shared)
+  find_package(SDL3_ttf REQUIRED CONFIG)
+endif()
 
 file(GLOB_RECURSE trainer_source CONFIGURE_DEPENDS src/common/*.cpp
      src/trainer/*.cpp)
