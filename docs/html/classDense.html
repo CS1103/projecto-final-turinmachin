@@ -97,31 +97,54 @@ $(function(){initNavTree('classDense.html','','classDense-members'); });
 <div class="dynheader">
 Inheritance diagram for Dense&lt; T &gt;:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classDense.png" usemap="#Dense_3C_20T_20_3E_map" alt=""/>
-  <map id="Dense_3C_20T_20_3E_map" name="Dense_3C_20T_20_3E_map">
-<area href="structutec_1_1neural__network_1_1ILayer.html" alt="utec::neural_network::ILayer&lt; T &gt;" shape="rect" coords="0,0,202,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="classDense__inherit__graph.png" border="0" usemap="#aDense_3_01T_01_4_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="aDense_3_01T_01_4_inherit__map" id="aDense_3_01T_01_4_inherit__map">
+<area shape="rect" title=" " alt="" coords="31,94,120,120"/>
+<area shape="rect" href="structutec_1_1neural__network_1_1ILayer.html" title="Interfaz para una capa de la red neuronal. Permite que distintas capas se conecten entre sí con polim..." alt="" coords="5,5,146,46"/>
+<area shape="poly" title=" " alt="" coords="78,62,78,93,73,93,73,62"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for Dense&lt; T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="classDense__coll__graph.png" border="0" usemap="#aDense_3_01T_01_4_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="aDense_3_01T_01_4_coll__map" id="aDense_3_01T_01_4_coll__map">
+<area shape="rect" title=" " alt="" coords="31,94,120,120"/>
+<area shape="rect" href="structutec_1_1neural__network_1_1ILayer.html" title="Interfaz para una capa de la red neuronal. Permite que distintas capas se conecten entre sí con polim..." alt="" coords="5,5,146,46"/>
+<area shape="poly" title=" " alt="" coords="78,62,78,93,73,93,73,62"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a17f3a5bd7b0adf6a917e302ea1ea2694" id="r_a17f3a5bd7b0adf6a917e302ea1ea2694"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17f3a5bd7b0adf6a917e302ea1ea2694">Dense</a> (const size_t in_f, const size_t out_f)</td></tr>
+<tr class="memdesc:a17f3a5bd7b0adf6a917e302ea1ea2694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor que inicializa los tensores internos con ceros.  <br /></td></tr>
 <tr class="memitem:a57d3b60d03f48a5ef5399658511eae39" id="r_a57d3b60d03f48a5ef5399658511eae39"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57d3b60d03f48a5ef5399658511eae39">Dense</a> (const size_t in_f, const size_t out_f, auto init_w_fun, auto init_b_fun)</td></tr>
+<tr class="memdesc:a57d3b60d03f48a5ef5399658511eae39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor que permite inicializar pesos y biases con funciones personalizadas.  <br /></td></tr>
 <tr class="memitem:adf5510eaa5e3bc10bbefcde60f895238" id="r_adf5510eaa5e3bc10bbefcde60f895238"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf5510eaa5e3bc10bbefcde60f895238">forward</a> (const algebra::Tensor&lt; T, 2 &gt; &amp;<a class="el" href="catch__amalgamated_8cpp.html#a6abfb3eb1e8098e09b8a4d1fc295b265">x</a>) -&gt; algebra::Tensor&lt; T, 2 &gt; override</td></tr>
+<tr class="memdesc:adf5510eaa5e3bc10bbefcde60f895238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propagación hacia adelante de la capa. Calcula: output = x * weights + biases.  <br /></td></tr>
 <tr class="memitem:a34eff47b14246879296fefce593d3a3d" id="r_a34eff47b14246879296fefce593d3a3d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34eff47b14246879296fefce593d3a3d">backward</a> (const algebra::Tensor&lt; T, 2 &gt; &amp;dZ) -&gt; algebra::Tensor&lt; T, 2 &gt; override</td></tr>
+<tr class="memdesc:a34eff47b14246879296fefce593d3a3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propagación hacia atrás (backpropagation). Calcula los gradientes con respecto a pesos, biases y entrada.  <br /></td></tr>
 <tr class="memitem:a6a7adf0ad0f2097c68a3bcee3585265a" id="r_a6a7adf0ad0f2097c68a3bcee3585265a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a7adf0ad0f2097c68a3bcee3585265a">update_params</a> (IOptimizer&lt; T &gt; &amp;optimizer) override</td></tr>
+<tr class="memdesc:a6a7adf0ad0f2097c68a3bcee3585265a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza los parámetros (pesos y biases) usando un optimizador.  <br /></td></tr>
 <tr class="memitem:aa8c7cad728a0680188a19dc323aa15fb" id="r_aa8c7cad728a0680188a19dc323aa15fb"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8c7cad728a0680188a19dc323aa15fb">id</a> () const -&gt; LayerId override</td></tr>
+<tr class="memdesc:aa8c7cad728a0680188a19dc323aa15fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el tipo identificador de esta capa.  <br /></td></tr>
 <tr class="memitem:a075f90b95ce06ffc39e1999e911e75f1" id="r_a075f90b95ce06ffc39e1999e911e75f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a075f90b95ce06ffc39e1999e911e75f1">save</a> (std::ostream &amp;out) const override</td></tr>
+<tr class="memdesc:a075f90b95ce06ffc39e1999e911e75f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda la red neuronal en formato pp20.  <br /></td></tr>
 <tr class="inherit_header pub_methods_structutec_1_1neural__network_1_1ILayer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_structutec_1_1neural__network_1_1ILayer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="structutec_1_1neural__network_1_1ILayer.html">utec::neural_network::ILayer&lt; T &gt;</a></td></tr>
 <tr class="memitem:a6965ff90722a8ff3929fa55a1fd722f2 inherit pub_methods_structutec_1_1neural__network_1_1ILayer" id="r_a6965ff90722a8ff3929fa55a1fd722f2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutec_1_1neural__network_1_1ILayer.html#a6965ff90722a8ff3929fa55a1fd722f2">~ILayer</a> ()=default</td></tr>
+<tr class="memdesc:a6965ff90722a8ff3929fa55a1fd722f2 inherit pub_methods_structutec_1_1neural__network_1_1ILayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor virtual.  <br /></td></tr>
 <tr class="memitem:a22275b736574bf1ef9febb9889ba7a25 inherit pub_methods_structutec_1_1neural__network_1_1ILayer" id="r_a22275b736574bf1ef9febb9889ba7a25"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutec_1_1neural__network_1_1ILayer.html#a22275b736574bf1ef9febb9889ba7a25">forward</a> (const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">algebra::Tensor</a>&lt; T, 2 &gt; &amp;<a class="el" href="catch__amalgamated_8cpp.html#a6abfb3eb1e8098e09b8a4d1fc295b265">x</a>) -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">algebra::Tensor</a>&lt; T, 2 &gt;=0</td></tr>
+<tr class="memdesc:a22275b736574bf1ef9febb9889ba7a25 inherit pub_methods_structutec_1_1neural__network_1_1ILayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propagación hacia adelante de la capa.  <br /></td></tr>
 <tr class="memitem:a1edb042d919a28e28c1523c1c29df07f inherit pub_methods_structutec_1_1neural__network_1_1ILayer" id="r_a1edb042d919a28e28c1523c1c29df07f"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutec_1_1neural__network_1_1ILayer.html#a1edb042d919a28e28c1523c1c29df07f">backward</a> (const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">algebra::Tensor</a>&lt; T, 2 &gt; &amp;gradients) -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">algebra::Tensor</a>&lt; T, 2 &gt;=0</td></tr>
+<tr class="memdesc:a1edb042d919a28e28c1523c1c29df07f inherit pub_methods_structutec_1_1neural__network_1_1ILayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propagación hacia atrás de la capa.  <br /></td></tr>
 <tr class="memitem:a07d2e3abb2656a40eef1dc4de099c86f inherit pub_methods_structutec_1_1neural__network_1_1ILayer" id="r_a07d2e3abb2656a40eef1dc4de099c86f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutec_1_1neural__network_1_1ILayer.html#a07d2e3abb2656a40eef1dc4de099c86f">update_params</a> (<a class="el" href="structutec_1_1neural__network_1_1IOptimizer.html">IOptimizer</a>&lt; T &gt; &amp;optimizer)</td></tr>
+<tr class="memdesc:a07d2e3abb2656a40eef1dc4de099c86f inherit pub_methods_structutec_1_1neural__network_1_1ILayer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza los parámetros internos de la capa (si tiene).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:affa01afde1f0b8e320d789465c57040f" id="r_affa01afde1f0b8e320d789465c57040f"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affa01afde1f0b8e320d789465c57040f">load</a> (std::istream &amp;in) -&gt; <a class="el" href="classutec_1_1neural__network_1_1Dense.html">Dense</a>&lt; T &gt;</td></tr>
+<tr class="memdesc:affa01afde1f0b8e320d789465c57040f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga la red neuronal en formato pp20.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a17f3a5bd7b0adf6a917e302ea1ea2694" name="a17f3a5bd7b0adf6a917e302ea1ea2694"></a>
@@ -152,6 +175,15 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Constructor que inicializa los tensores internos con ceros. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_f</td><td>Número de neuronas de entrada. </td></tr>
+    <tr><td class="paramname">out_f</td><td>Número de neuronas de salida. @complexity O(1), inicialización directa. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -194,6 +226,17 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor que permite inicializar pesos y biases con funciones personalizadas. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_f</td><td>Número de neuronas de entrada. </td></tr>
+    <tr><td class="paramname">out_f</td><td>Número de neuronas de salida. </td></tr>
+    <tr><td class="paramname">init_w_fun</td><td>Función para inicializar los pesos. </td></tr>
+    <tr><td class="paramname">init_b_fun</td><td>Función para inicializar los biases. @complexity O(n*m), donde n = in_f, m = out_f (por recorrer los tensores). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -222,6 +265,15 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Propagación hacia atrás (backpropagation). Calcula los gradientes con respecto a pesos, biases y entrada. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dZ</td><td>Gradiente de la pérdida respecto a la salida de esta capa. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Gradiente de la pérdida respecto a la entrada de esta capa. @complexity O(b*n*m), por multiplicación activaciones^T * dZ → O(b*n*m) + suma fila a fila de dZ para biases → O(b*m) + multiplicación dZ * weights^t → O(b*m*n) </dd></dl>
+
 </div>
 </div>
 <a id="adf5510eaa5e3bc10bbefcde60f895238" name="adf5510eaa5e3bc10bbefcde60f895238"></a>
@@ -249,6 +301,15 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Propagación hacia adelante de la capa. Calcula: output = x * weights + biases. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td><a class="el" href="classTensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> de entrada. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classTensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> de salida de la capa. @complexity O(b*n*m), donde: b es el número de muestras (filas de x), n es input_features, y m es output_features. Se debe a la multiplicación matricial (x * weights) y la suma con biases. </dd></dl>
+
 </div>
 </div>
 <a id="aa8c7cad728a0680188a19dc323aa15fb" name="aa8c7cad728a0680188a19dc323aa15fb"></a>
@@ -275,6 +336,9 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Devuelve el tipo identificador de esta capa. </p>
+<dl class="section return"><dt>Returns</dt><dd>LayerID::Dense (o bien 2) @complexity O(1). </dd></dl>
 
 <p>Implements <a class="el" href="structutec_1_1neural__network_1_1ILayer.html#a16b50cd81a4b1c368797af2cce2b7d06">utec::neural_network::ILayer&lt; T &gt;</a>.</p>
 
@@ -305,6 +369,14 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Carga la red neuronal en formato pp20. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>Formato a cargar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a075f90b95ce06ffc39e1999e911e75f1" name="a075f90b95ce06ffc39e1999e911e75f1"></a>
@@ -331,6 +403,14 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Guarda la red neuronal en formato pp20. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>stream al que se le va escribir la informacion. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented from <a class="el" href="structutec_1_1neural__network_1_1ILayer.html#a0ddf898a100cec73a4e0df30caa6952e">utec::neural_network::ILayer&lt; T &gt;</a>.</p>
 
@@ -360,6 +440,14 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Actualiza los parámetros (pesos y biases) usando un optimizador. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">optimizer</td><td>Referencia al optimizador (SGD, Adam, etc.). @complexity O(n*m), donde n*m es el tamaño total de parámetros a actualizar. Depende de la implementación del optimizador. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

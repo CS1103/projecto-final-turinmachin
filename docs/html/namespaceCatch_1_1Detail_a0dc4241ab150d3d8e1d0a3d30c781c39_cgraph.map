@@ -1,0 +1,7 @@
+<map id="Catch::Detail::convertIntoString" name="Catch::Detail::convertIntoString">
+<area shape="rect" id="Node000001" title="Encases string in quotes, and escapes invisibles if user requested it via CLI." alt="" coords="5,35,171,75"/>
+<area shape="rect" id="Node000002" href="$namespaceCatch_1_1Detail.html#a23bdcac0ef138b222c3747e2af979e9a" title="Encases `string in quotes, and optionally escapes invisibles." alt="" coords="219,5,384,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,41,203,37,203,42,171,46"/>
+<area shape="rect" id="Node000003" href="$namespaceCatch.html#a8b23533de8c7d123687ac2c8d36b653a" title=" " alt="" coords="219,70,384,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,63,203,67,203,73,170,68"/>
+</map>

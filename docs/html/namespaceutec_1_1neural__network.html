@@ -92,25 +92,40 @@ $(function(){initNavTree('namespaceutec_1_1neural__network.html','',''); });
   <div class="headertitle"><div class="title">utec::neural_network Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Capa de activación de Rectified Linear Unit (<a class="el" href="classutec_1_1neural__network_1_1ReLU.html">ReLU</a>). Los valores negativos del input se convierten en 0. Los valores no negativos permanecen igual.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:Adam" id="r_Adam"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1Adam.html">Adam</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizador <a class="el" href="classutec_1_1neural__network_1_1Adam.html" title="Optimizador Adam (Adaptive Moment Estimation). Combina momentum y RMSProp para un aprendizaje más est...">Adam</a> (Adaptive Moment Estimation). Combina momentum y RMSProp para un aprendizaje más estable y rápido.  <a href="classutec_1_1neural__network_1_1Adam.html#details">More...</a><br /></td></tr>
 <tr class="memitem:BCELoss" id="r_BCELoss"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1BCELoss.html">BCELoss</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de pérdida Binary Cross Entropy (entropía cruzada binaria). Usada típicamente en clasificación binaria.  <a href="classutec_1_1neural__network_1_1BCELoss.html#details">More...</a><br /></td></tr>
 <tr class="memitem:BSpline" id="r_BSpline"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutec_1_1neural__network_1_1BSpline.html">BSpline</a></td></tr>
 <tr class="memitem:CrossEntropyLoss" id="r_CrossEntropyLoss"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1CrossEntropyLoss.html">CrossEntropyLoss</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de pérdida Cross Entropy para clasificación multiclase. Requiere que las etiquetas verdaderas estén codificadas one-hot.  <a href="classutec_1_1neural__network_1_1CrossEntropyLoss.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Dense" id="r_Dense"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1Dense.html">Dense</a></td></tr>
 <tr class="memitem:ILayer" id="r_ILayer"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutec_1_1neural__network_1_1ILayer.html">ILayer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interfaz para una capa de la red neuronal. Permite que distintas capas se conecten entre sí con polimorfismo.  <a href="structutec_1_1neural__network_1_1ILayer.html#details">More...</a><br /></td></tr>
 <tr class="memitem:ILoss" id="r_ILoss"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutec_1_1neural__network_1_1ILoss.html">ILoss</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interfaz para una función de pérdida (loss). Se encarga de calcular qué tan mal lo hizo la red con respecto a los resultados reales y obtener el gradiente necesario para ajustar los parámetros.  <a href="structutec_1_1neural__network_1_1ILoss.html#details">More...</a><br /></td></tr>
 <tr class="memitem:IOptimizer" id="r_IOptimizer"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutec_1_1neural__network_1_1IOptimizer.html">IOptimizer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interfaz para definir un optimizador (ej. <a class="el" href="classutec_1_1neural__network_1_1SGD.html" title="Optimizador Stochastic Gradient Descent (SGD). Actualiza los parámetros en dirección opuesta al gradi...">SGD</a>, <a class="el" href="classutec_1_1neural__network_1_1Adam.html" title="Optimizador Adam (Adaptive Moment Estimation). Combina momentum y RMSProp para un aprendizaje más est...">Adam</a>, ...). Un optimizador se encarga de actualizar los parámetros entrenables (como pesos y biases) en base a los gradientes.  <a href="structutec_1_1neural__network_1_1IOptimizer.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Kan" id="r_Kan"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1Kan.html">Kan</a></td></tr>
 <tr class="memitem:LayerRegistry" id="r_LayerRegistry"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1LayerRegistry.html">LayerRegistry</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registro de tipos de capas para deserialización.  <a href="classutec_1_1neural__network_1_1LayerRegistry.html#details">More...</a><br /></td></tr>
 <tr class="memitem:MSELoss" id="r_MSELoss"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1MSELoss.html">MSELoss</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de pérdida MSE (Error Cuadrático Medio). Mide el promedio de los cuadrados de las diferencias entre las predicciones y los valores reales. Es común en tareas de regresión.  <a href="classutec_1_1neural__network_1_1MSELoss.html#details">More...</a><br /></td></tr>
 <tr class="memitem:NeuralNetwork" id="r_NeuralNetwork"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1NeuralNetwork.html">NeuralNetwork</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clase que representa una red neuronal completamente conectada.  <a href="classutec_1_1neural__network_1_1NeuralNetwork.html#details">More...</a><br /></td></tr>
 <tr class="memitem:ReLU" id="r_ReLU"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1ReLU.html">ReLU</a></td></tr>
 <tr class="memitem:SGD" id="r_SGD"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1SGD.html">SGD</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizador Stochastic Gradient Descent (<a class="el" href="classutec_1_1neural__network_1_1SGD.html" title="Optimizador Stochastic Gradient Descent (SGD). Actualiza los parámetros en dirección opuesta al gradi...">SGD</a>). Actualiza los parámetros en dirección opuesta al gradiente multiplicado por el learning rate.  <a href="classutec_1_1neural__network_1_1SGD.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Sigmoid" id="r_Sigmoid"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1Sigmoid.html">Sigmoid</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capa de activación <a class="el" href="classutec_1_1neural__network_1_1Sigmoid.html" title="Capa de activación Sigmoid. Convierte cada valor en el rango (0, 1) abierto usando la función logísti...">Sigmoid</a>. Convierte cada valor en el rango (0, 1) abierto usando la función logística. No tiene parámetros entrenables.  <a href="classutec_1_1neural__network_1_1Sigmoid.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Softmax" id="r_Softmax"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1neural__network_1_1Softmax.html">Softmax</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capa de activación <a class="el" href="classutec_1_1neural__network_1_1Softmax.html" title="Capa de activación Softmax. Convierte un vector de valores en probabilidades las cualesal ser sumadas...">Softmax</a>. Convierte un vector de valores en probabilidades las cualesal ser sumadas resultan en 1. Se aplica por fila (una muestra a la vez). No tiene parámetros entrenables.  <a href="classutec_1_1neural__network_1_1Softmax.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -123,17 +138,29 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="#a8ecfa0c1de4e3b768035cb49e8962dabaf60e8dbbc0c325f558c189cc9c7c3e06">Kan</a> = 4
 <br />
  }</td></tr>
+<tr class="memdesc:a8ecfa0c1de4e3b768035cb49e8962dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identificador para los diferentes tipos de capas en la red neuronal. Se emplea uint8_t (unsigned 8-bit int, valores de 0-255) para ahorrar memoria.  <a href="#a8ecfa0c1de4e3b768035cb49e8962dab">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae41bef2d9885dfcabb4f2b261eba3c0f" id="r_ae41bef2d9885dfcabb4f2b261eba3c0f"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:ae41bef2d9885dfcabb4f2b261eba3c0f template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae41bef2d9885dfcabb4f2b261eba3c0f">register_all_layers</a> ()</td></tr>
+<tr class="memdesc:ae41bef2d9885dfcabb4f2b261eba3c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra todas las capas disponibles en el sistema. Llamado al inicio del programa para asegurar que todos los tipos de capas estén disponibles al deserializar una red neuronal. Capas sin parámetros (ej. <a class="el" href="classutec_1_1neural__network_1_1ReLU.html">ReLU</a>, <a class="el" href="classutec_1_1neural__network_1_1Softmax.html" title="Capa de activación Softmax. Convierte un vector de valores en probabilidades las cualesal ser sumadas...">Softmax</a>) se crean directamente. Capas parametrizadas (ej. <a class="el" href="classutec_1_1neural__network_1_1Dense.html">Dense</a>) leen sus parámetros del flujo de entrada.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ac4b8a0e683d7adaed3dd3a5520a77e12" id="r_ac4b8a0e683d7adaed3dd3a5520a77e12"><td class="memItemLeft" align="right" valign="top">constexpr std::uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4b8a0e683d7adaed3dd3a5520a77e12">FORMAT_CURRENT_VERSION</a> = 1</td></tr>
+<tr class="memdesc:ac4b8a0e683d7adaed3dd3a5520a77e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Versión actual del formato .pp20 (Profe Pónganos 20).  <br /></td></tr>
 </table>
-<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Capa de activación de Rectified Linear Unit (<a class="el" href="classutec_1_1neural__network_1_1ReLU.html">ReLU</a>). Los valores negativos del input se convierten en 0. Los valores no negativos permanecen igual. </p>
+<p>Capa totalmente conectada (o <a class="el" href="classutec_1_1neural__network_1_1Dense.html">Dense</a> Layer) de una red neuronal. Cada neurona de esta capa se conecta con todas las salidas de la capa anterior. Esta capa tiene pesos y biases como parámetros entrenables.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Tipo de dato (usualmente float o double). </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
 <a id="a8ecfa0c1de4e3b768035cb49e8962dab" name="a8ecfa0c1de4e3b768035cb49e8962dab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ecfa0c1de4e3b768035cb49e8962dab">&#9670;&#160;</a></span>LayerId</h2>
 
@@ -153,6 +180,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Identificador para los diferentes tipos de capas en la red neuronal. Se emplea uint8_t (unsigned 8-bit int, valores de 0-255) para ahorrar memoria. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8ecfa0c1de4e3b768035cb49e8962dabadd10d919fa85cf27fc78c0e06fe0b378" name="a8ecfa0c1de4e3b768035cb49e8962dabadd10d919fa85cf27fc78c0e06fe0b378"></a>ReLU&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a8ecfa0c1de4e3b768035cb49e8962daba21eebb164e4b8b9bcf64fdb4d8d5dff4" name="a8ecfa0c1de4e3b768035cb49e8962daba21eebb164e4b8b9bcf64fdb4d8d5dff4"></a>Sigmoid&#160;</td><td class="fielddoc"></td></tr>
@@ -181,6 +210,47 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Registra todas las capas disponibles en el sistema. Llamado al inicio del programa para asegurar que todos los tipos de capas estén disponibles al deserializar una red neuronal. Capas sin parámetros (ej. <a class="el" href="classutec_1_1neural__network_1_1ReLU.html">ReLU</a>, <a class="el" href="classutec_1_1neural__network_1_1Softmax.html" title="Capa de activación Softmax. Convierte un vector de valores en probabilidades las cualesal ser sumadas...">Softmax</a>) se crean directamente. Capas parametrizadas (ej. <a class="el" href="classutec_1_1neural__network_1_1Dense.html">Dense</a>) leen sus parámetros del flujo de entrada. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Tipo de dato utilizado por las capas (float, double, etc.). </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceutec_1_1neural__network_ae41bef2d9885dfcabb4f2b261eba3c0f_cgraph.png" border="0" usemap="#anamespaceutec_1_1neural__network_ae41bef2d9885dfcabb4f2b261eba3c0f_cgraph" loading="lazy" alt=""/></div>
+<map name="anamespaceutec_1_1neural__network_ae41bef2d9885dfcabb4f2b261eba3c0f_cgraph" id="anamespaceutec_1_1neural__network_ae41bef2d9885dfcabb4f2b261eba3c0f_cgraph">
+<area shape="rect" title="Registra todas las capas disponibles en el sistema. Llamado al inicio del programa para asegurar que ..." alt="" coords="5,103,146,143"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Dense.html#affa01afde1f0b8e320d789465c57040f" title="Carga la red neuronal en formato pp20." alt="" coords="218,37,358,78"/>
+<area shape="poly" title=" " alt="" coords="143,100,204,81,206,86,145,105"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Kan.html#a5ae5e51738dbeb57770d191c7442dae0" title=" " alt="" coords="218,103,358,143"/>
+<area shape="poly" title=" " alt="" coords="146,120,203,120,203,126,146,126"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1LayerRegistry.html#a34bb46eabb8fc2cedacbd4a0ce2181a1" title="Registra un tipo de capa junto con su función de construcción. Se asocia el identificador con una fun..." alt="" coords="194,168,383,209"/>
+<area shape="poly" title=" " alt="" coords="145,141,206,160,204,165,143,146"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Dense.html#a17f3a5bd7b0adf6a917e302ea1ea2694" title="Constructor que inicializa los tensores internos con ceros." alt="" coords="431,5,571,46"/>
+<area shape="poly" title=" " alt="" coords="359,44,415,36,416,41,359,50"/>
+<area shape="rect" href="namespaceserialization.html#ae73eaddd61e96690c3a59219c1f1e7c4" title=" " alt="" coords="441,71,561,111"/>
+<area shape="poly" title=" " alt="" coords="359,66,426,77,425,82,359,71"/>
+<area shape="poly" title=" " alt="" coords="359,110,425,100,426,105,359,115"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Kan.html#a39c44a271bd7c7af844001e8d89e543e" title=" " alt="" coords="431,136,571,177"/>
+<area shape="poly" title=" " alt="" coords="359,131,416,140,415,146,359,137"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceutec_1_1neural__network_ae41bef2d9885dfcabb4f2b261eba3c0f_icgraph.png" border="0" usemap="#anamespaceutec_1_1neural__network_ae41bef2d9885dfcabb4f2b261eba3c0f_icgraph" loading="lazy" alt=""/></div>
+<map name="anamespaceutec_1_1neural__network_ae41bef2d9885dfcabb4f2b261eba3c0f_icgraph" id="anamespaceutec_1_1neural__network_ae41bef2d9885dfcabb4f2b261eba3c0f_icgraph">
+<area shape="rect" title="Registra todas las capas disponibles en el sistema. Llamado al inicio del programa para asegurar que ..." alt="" coords="453,5,593,46"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1NeuralNetwork.html#a03cb30174664f403618acfe0e9df38e8" title="Constructor por defecto." alt="" coords="198,5,405,46"/>
+<area shape="poly" title=" " alt="" coords="437,28,406,28,406,23,437,23"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1NeuralNetwork.html#a3bdc71040fd54c9787781173a2fb7acd" title="Carga una red neuronal desde un flujo de entrada binario." alt="" coords="5,5,150,46"/>
+<area shape="poly" title=" " alt="" coords="182,28,150,28,150,23,182,23"/>
+</map>
+</div>
+
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
@@ -203,6 +273,8 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Versión actual del formato .pp20 (Profe Pónganos 20). </p>
 
 </div>
 </div>

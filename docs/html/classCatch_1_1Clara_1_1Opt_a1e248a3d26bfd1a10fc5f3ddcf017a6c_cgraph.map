@@ -1,0 +1,26 @@
+<map id="Catch::Clara::Opt::parse" name="Catch::Clara::Opt::parse">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,143,130,183"/>
+<area shape="rect" id="Node000002" href="$classCatch_1_1Clara_1_1Opt.html#affda703e83807d5e4c67ed80f5f64a66" title=" " alt="" coords="218,5,342,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,140,123,98,149,76,176,57,202,44,205,49,179,61,152,80,127,102,88,144"/>
+<area shape="rect" id="Node000003" href="$classCatch_1_1Clara_1_1Detail_1_1BasicResult.html#a4d9c94c86f71eaa76356ab808a221b62" title=" " alt="" coords="178,71,382,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,140,177,120,196,114,198,119,179,126,125,145"/>
+<area shape="rect" id="Node000004" href="$classCatch_1_1Clara_1_1Detail_1_1BasicResult.html#a8adbd2c9cd517ae768a18b9d9dca2c01" title=" " alt="" coords="193,135,366,191"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="130,160,178,160,178,166,130,166"/>
+<area shape="rect" id="Node000005" href="$structCatch_1_1Clara_1_1Detail_1_1BoundFlagRefBase.html#ace5c2ee089c74ecb6b2faf705c0b3c47" title=" " alt="" coords="186,215,374,255"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="125,181,179,200,198,207,196,212,177,206,123,186"/>
+<area shape="rect" id="Node000007" href="$classCatch_1_1Clara_1_1Opt.html#a98c20f896243211ad17339e1e15fde48" title=" " alt="" coords="218,281,342,322"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="88,182,127,224,179,265,205,278,202,282,176,269,123,228,84,186"/>
+<area shape="rect" id="Node000006" href="$structCatch_1_1Clara_1_1Detail_1_1BoundFlagRefBase.html#a7c34675b920014dda03f8025d8614365" title=" " alt="" coords="430,212,610,253"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="374,231,414,231,414,236,374,237"/>
+<area shape="rect" id="Node000008" href="$classCatch_1_1Clara_1_1Detail_1_1BasicResult.html#ae6c470af1becfc54d75df69104e45160" title=" " alt="" coords="448,276,592,332"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="342,300,433,301,433,306,342,305"/>
+<area shape="rect" id="Node000009" href="$classCatch_1_1Clara_1_1Detail_1_1BasicResult.html#a4fff47323e9c1d47912c8968719d97a0" title=" " alt="" coords="658,276,802,332"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="592,302,643,302,643,307,592,307"/>
+<area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="690,276,691,266,698,257,711,252,730,250,751,252,764,259,762,264,750,258,730,255,712,257,701,262,696,268,696,276"/>
+<area shape="rect" id="Node000010" href="$classCatch_1_1Clara_1_1Detail_1_1BasicResult.html#a72212341d12d38b9ef6f8c3ecaae3d66" title=" " alt="" coords="859,196,1002,252"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="801,273,844,256,846,261,803,278"/>
+<area shape="rect" id="Node000011" href="$classCatch_1_1Clara_1_1Detail_1_1ResultValueBase.html#a8ec617ccbc34a51c245208af9b41579a" title=" " alt="" coords="850,276,1012,332"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="802,302,834,302,834,307,802,307"/>
+<area shape="rect" id="Node000012" href="$classCatch_1_1Clara_1_1Detail_1_1BasicResult.html#ac043c61d7ad6b9fe6660cb85e1380c16" title=" " alt="" coords="859,356,1002,412"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="803,330,846,348,844,353,801,335"/>
+</map>

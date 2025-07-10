@@ -1,0 +1,18 @@
+<map id="Catch::Benchmark::Detail::classify_outliers" name="Catch::Benchmark::Detail::classify_outliers">
+<area shape="rect" id="Node000001" title=" " alt="" coords="965,75,1131,115"/>
+<area shape="rect" id="Node000002" href="$namespaceCatch_1_1Benchmark_1_1Detail.html#ac10ce6a746501524891ce359e61f3e43" title=" " alt="" coords="744,29,911,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="949,77,911,69,912,64,950,72"/>
+<area shape="rect" id="Node000006" href="$namespaceCatch_1_1Benchmark_1_1Detail.html#a5c57c45d75d53880caaf8c422aa1a5ab" title=" " alt="" coords="738,119,917,159"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="950,117,918,124,917,119,949,112"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="863,16,850,10,827,8,807,10,794,15,789,21,791,28,786,29,784,19,791,10,805,5,828,3,851,5,866,11"/>
+<area shape="rect" id="Node000003" href="$namespaceCatch_1_1Benchmark_1_1Detail.html#adb6f098507d08daee7e92c9ab12dab09" title=" " alt="" coords="524,75,690,115"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="730,73,691,80,690,75,729,67"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="643,62,630,56,607,53,586,55,573,60,569,66,571,73,566,75,563,65,570,56,585,50,607,48,631,50,645,57"/>
+<area shape="rect" id="Node000004" href="$structCatch_1_1Benchmark_1_1Benchmark.html#aeff43305485b4ce29af38094437a8544" title=" " alt="" coords="253,82,476,108"/>
+<area shape="poly" id="edge5_Node000003_Node000004" title=" " alt="" coords="508,98,476,98,476,92,508,92"/>
+<area shape="poly" id="edge7_Node000004_Node000004" title=" " alt="" coords="407,70,393,63,364,61,339,63,325,68,322,73,328,80,324,84,316,74,321,64,337,58,364,56,395,58,409,65"/>
+<area shape="rect" id="Node000005" href="$structCatch_1_1Benchmark_1_1Benchmark.html#a8d592f11d8c9f9da369d6b53616d7414" title=" " alt="" coords="5,75,205,115"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="237,98,205,98,205,92,237,92"/>
+<area shape="poly" id="edge10_Node000006_Node000003" title=" " alt="" coords="723,121,690,114,691,109,724,116"/>
+<area shape="poly" id="edge9_Node000006_Node000006" title=" " alt="" coords="863,106,850,100,827,97,807,99,794,104,789,110,791,117,786,119,784,109,791,100,805,94,828,92,851,94,866,101"/>
+</map>

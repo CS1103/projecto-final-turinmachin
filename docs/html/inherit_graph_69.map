@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classCatch_1_1ITestInvoker.html" title=" " alt="" coords="5,31,140,56"/>
+<area shape="rect" id="Node000001" href="$classCatch_1_1TestInvokerAsMethod.html" title=" " alt="" coords="188,5,408,31"/>
+<area shape="poly" id="edge65_Node000000_Node000001" title=" " alt="" coords="155,32,187,28,187,33,155,37"/>
+<area shape="rect" id="Node000002" href="$classCatch_1_1TestInvokerFixture.html" title=" " alt="" coords="198,55,398,80"/>
+<area shape="poly" id="edge66_Node000000_Node000002" title=" " alt="" coords="155,50,197,54,197,59,155,55"/>
+</map>

@@ -2,22 +2,27 @@
 \hypertarget{classcommon_1_1Tensor}{}\label{classcommon_1_1Tensor}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
 
 
+Representa un tensor de tipo T y rango Rank.  
+
+
+
+
 {\ttfamily \#include $<$tensor.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classcommon_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor}} (const std\+::array$<$ size\+\_\+t, Rank $>$ \&\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor que inicializa el tensor con una forma dada. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename... Dims$>$ \newline
 requires (sizeof...(Dims) == Rank)}\\\mbox{\hyperlink{classcommon_1_1Tensor_aa032eb5875ff92319a7c64b83a1e39a0}{Tensor}} (const Dims... dims)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor variádico para inicializar la forma del tensor. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{classcommon_1_1Tensor_abc82b477190acf69c9e09b46276147dd}{operator==}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&other) const -\/$>$ bool
 \item 
 auto \mbox{\hyperlink{classcommon_1_1Tensor_aff520eafc9ad362d3d390c4ad5f77518}{operator=}} (std\+::initializer\+\_\+list$<$ T $>$ list) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&
 \item 
 constexpr auto \mbox{\hyperlink{classcommon_1_1Tensor_addc5fb80712265edf13d2c877fbf0ce4}{operator()}} (const auto... idxs) -\/$>$ T \&
-\item 
+\begin{DoxyCompactList}\small\item\em Acceso a un elemento por índices. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{classcommon_1_1Tensor_a30f761ffe6a426e2705d92c790273165}{operator()}} (const auto... idxs) const -\/$>$ const T \&
 \item 
 auto \mbox{\hyperlink{classcommon_1_1Tensor_a57764b269a44d7ca3dc39775d9e66f25}{operator()}} (const std\+::array$<$ size\+\_\+t, Rank $>$ \&idxs) -\/$>$ T \&
@@ -33,22 +38,22 @@ auto \mbox{\hyperlink{classcommon_1_1Tensor_a215437fdbb556e998f3feae08b02a51b}{s
 auto \mbox{\hyperlink{classcommon_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}} () const noexcept -\/$>$ const std\+::array$<$ size\+\_\+t, Rank $>$ \&
 \item 
 void \mbox{\hyperlink{classcommon_1_1Tensor_a17fecc417ac1f38cf37ce43ac4a9952f}{reshape}} (const std\+::array$<$ size\+\_\+t, Rank $>$ \&new\+\_\+shape)
-\item 
+\begin{DoxyCompactList}\small\item\em Cambia la forma del tensor actual. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename... Dims$>$ \newline
 requires (sizeof...(Dims) == Rank)}\\void \mbox{\hyperlink{classcommon_1_1Tensor_a54fa319d146817ef1b6f9cd85274752c}{reshape}} (const Dims... dims)
-\item 
+\begin{DoxyCompactList}\small\item\em Cambia la forma del tensor actual. @taram Dims Nuevo "{}\+Rank"{} del tensor. @complexity O(\+Rank). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classcommon_1_1Tensor_a637c3147839433886d561c28a210cd33}{fill}} (const T \&value) noexcept
-\item 
+\begin{DoxyCompactList}\small\item\em Llena la data de un tesor con un valor. \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classcommon_1_1Tensor_a51eb9eef03f17649b74063dd37574a03}{row}} (const size\+\_\+t index) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ requires(Rank==2)
-\item 
+\begin{DoxyCompactList}\small\item\em Genera tensor con fila particular. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classcommon_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a}{set\+\_\+row}} (const size\+\_\+t index, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&row\+\_\+tensor)
-\item 
+\begin{DoxyCompactList}\small\item\em Cambia fila especifica de un tensor. \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classcommon_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c}{slice}} (const size\+\_\+t index) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ requires(Rank==3)
-\item 
+\begin{DoxyCompactList}\small\item\em Genera tensor con fila particular para tensor de Rank 3. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classcommon_1_1Tensor_ae9d375f3d8c7e60eceb238dbe0df593a}{set\+\_\+slice}} (const size\+\_\+t index, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c}{slice}})
-\item 
+\begin{DoxyCompactList}\small\item\em Cambia el subtensor asignado. \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classcommon_1_1Tensor_adac07192ba798e56630fb5c547b38747}{broadcast}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&rhs, auto fn) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
-\item 
+\begin{DoxyCompactList}\small\item\em Realiza Broadcasting para un tensor. \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classcommon_1_1Tensor_a7f68b0a3fbf84213e7f0a4928f54fb05}{operator+}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&other) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
 \item 
 auto \mbox{\hyperlink{classcommon_1_1Tensor_a4d5c7867448ca6070dd77d76e7503d0a}{operator+}} (const T \&scalar) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
@@ -76,11 +81,11 @@ auto \mbox{\hyperlink{classcommon_1_1Tensor_a816fdc2f8ac497140778fc071b813024}{e
 auto \mbox{\hyperlink{classcommon_1_1Tensor_a7be8b942f98b3c988a7dc040fe7c72d5}{end}} () const noexcept
 \item 
 constexpr auto \mbox{\hyperlink{classcommon_1_1Tensor_a271cbdb704f0c4a7c348121322212c70}{transpose\+\_\+2d}} () const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$
-\item 
+\begin{DoxyCompactList}\small\item\em Trasponer un tensor de dimension 2. @complexity O(n). \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{classcommon_1_1Tensor_aa3bbc9568b2b1fabd0fd584827603c7e}{transpose\+\_\+2d}} () const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ requires(Rank $>$ 2)
-\item 
+\begin{DoxyCompactList}\small\item\em Trasponer un tensor de dimension n mayor a 2. @complexity O(n). \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{classcommon_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16}{apply}} (auto fn) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Aplica una funcion a todos los elementos del tensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -98,6 +103,22 @@ auto \mbox{\hyperlink{classcommon_1_1Tensor_ab4131352cf1e7e232047d3f79498fa48}{o
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, size\+\_\+t Rank$>$\newline
+class common\+::\+Tensor$<$ T, Rank $>$}
+Representa un tensor de tipo T y rango Rank. 
+
+Un tensor es una estructura de datos multidimensional que puede almacenar elementos de cualquier tipo T. Esta clase admite tensores de cualquier rango (dimensionalidad), con acceso eficiente, operaciones matemáticas, y soporte para broadcasting.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo de dato almacenado (float, double, int, etc). \\
+\hline
+{\em Rank} & Dimensionalidad del tensor. \\
+\hline
+\end{DoxyTemplParams}
+
+
 \label{doc-constructors}
 \Hypertarget{classcommon_1_1Tensor_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -108,6 +129,15 @@ auto \mbox{\hyperlink{classcommon_1_1Tensor_ab4131352cf1e7e232047d3f79498fa48}{o
 template$<$typename T, size\+\_\+t Rank$>$ \\
 \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\mbox{\hyperlink{classTensor}{\+::\+Tensor}} (\begin{DoxyParamCaption}\item[{const std\+::array$<$ size\+\_\+t, Rank $>$ \&}]{shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
+
+
+Constructor que inicializa el tensor con una forma dada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & Arreglo con el tamaño en cada dimensión. @complexity O(n), donde n es el producto de todas las dimensiones. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classcommon_1_1Tensor_aa032eb5875ff92319a7c64b83a1e39a0}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!Tensor@{Tensor}}
 \index{Tensor@{Tensor}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
 \doxysubsubsection{\texorpdfstring{Tensor()}{Tensor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -117,6 +147,15 @@ template$<$typename... Dims$>$ \newline
 requires (sizeof...(Dims) == Rank)\\
 \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\mbox{\hyperlink{classTensor}{\+::\+Tensor}} (\begin{DoxyParamCaption}\item[{const Dims...}]{dims}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
+
+
+Constructor variádico para inicializar la forma del tensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dims} & Dimensiones individuales. @complexity O(n), donde n es el producto de todas las dimensiones. \\
+\hline
+\end{DoxyParams}
 
 
 \label{doc-func-members}
@@ -129,6 +168,18 @@ requires (sizeof...(Dims) == Rank)\\
 template$<$typename T, size\+\_\+t Rank$>$ \\
 auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::apply (\begin{DoxyParamCaption}\item[{auto}]{fn}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
+
+
+Aplica una funcion a todos los elementos del tensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fn} & Funcion a aplicar a los elementos del tensor. @complexity O(n)\texorpdfstring{$\ast$}{*}F donde F es la complejidad de fn. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classcommon_1_1Tensor}{Tensor} modificado por la funcion. 
+\end{DoxyReturn}
 \Hypertarget{classcommon_1_1Tensor_aecaf859f41c82bbe3e9c65ffe22d8192}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!begin@{begin}}
 \index{begin@{begin}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
 \doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -150,6 +201,20 @@ auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tenso
 template$<$typename T, size\+\_\+t Rank$>$ \\
 auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::broadcast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{rhs}{, }\item[{auto}]{fn}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Realiza Broadcasting para un tensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \doxylink{classcommon_1_1Tensor}{Tensor} de referencia para hacer broadcasting. \\
+\hline
+{\em fn} & Función que se va aplicar. @complexity O(n). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classcommon_1_1Tensor}{Tensor} adaptado apto para operaciones. 
+\end{DoxyReturn}
 \Hypertarget{classcommon_1_1Tensor_a7be8b942f98b3c988a7dc040fe7c72d5}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!end@{end}}
 \index{end@{end}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
 \doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -171,6 +236,15 @@ auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tenso
 template$<$typename T, size\+\_\+t Rank$>$ \\
 void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::fill (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
+
+
+Llena la data de un tesor con un valor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & El valor con el que se quiere llenar. @complexity O(n) \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classcommon_1_1Tensor_addc5fb80712265edf13d2c877fbf0ce4}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator()@{operator()}}
 \index{operator()@{operator()}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
 \doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
@@ -178,6 +252,18 @@ void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tenso
 template$<$typename T, size\+\_\+t Rank$>$ \\
 auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator() (\begin{DoxyParamCaption}\item[{const auto...}]{idxs}{}\end{DoxyParamCaption}) -\/$>$ T\& \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
+
+
+Acceso a un elemento por índices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idxs} & Lista de índices de acceso. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referencia al elemento en la posición dada. @complexity O(\+Rank) 
+\end{DoxyReturn}
 \Hypertarget{classcommon_1_1Tensor_a30f761ffe6a426e2705d92c790273165}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator()@{operator()}}
 \index{operator()@{operator()}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
 \doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
@@ -299,6 +385,10 @@ template$<$typename... Dims$>$ \newline
 requires (sizeof...(Dims) == Rank)\\
 void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::reshape (\begin{DoxyParamCaption}\item[{const Dims...}]{dims}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Cambia la forma del tensor actual. @taram Dims Nuevo "{}\+Rank"{} del tensor. @complexity O(\+Rank). 
+
 \Hypertarget{classcommon_1_1Tensor_a17fecc417ac1f38cf37ce43ac4a9952f}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!reshape@{reshape}}
 \index{reshape@{reshape}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
 \doxysubsubsection{\texorpdfstring{reshape()}{reshape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -306,6 +396,15 @@ void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tenso
 template$<$typename T, size\+\_\+t Rank$>$ \\
 void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::reshape (\begin{DoxyParamCaption}\item[{const std\+::array$<$ size\+\_\+t, Rank $>$ \&}]{new\+\_\+shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Cambia la forma del tensor actual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+shape} & Nueva forma del tensor. @complexity O(\+Rank). \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classcommon_1_1Tensor_a51eb9eef03f17649b74063dd37574a03}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!row@{row}}
 \index{row@{row}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
 \doxysubsubsection{\texorpdfstring{row()}{row()}}
@@ -313,6 +412,18 @@ void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tenso
 template$<$typename T, size\+\_\+t Rank$>$ \\
 auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::row (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, 2$>$             requires(Rank == 2)         \hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Genera tensor con fila particular. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Fila particular. @complexity O(k) donde k es el tamanio de la fila. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fila que coincida con el indice otorgado de la matriz. 
+\end{DoxyReturn}
 \Hypertarget{classcommon_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!set\_row@{set\_row}}
 \index{set\_row@{set\_row}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
 \doxysubsubsection{\texorpdfstring{set\_row()}{set\_row()}}
@@ -320,6 +431,17 @@ auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tenso
 template$<$typename T, size\+\_\+t Rank$>$ \\
 void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::set\+\_\+row (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&}]{row\+\_\+tensor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Cambia fila especifica de un tensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Posicion de la fila. \\
+\hline
+{\em row\+\_\+tensor} & Nueva fila. @complexity O(k) donde k es el tamanio de la fila. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classcommon_1_1Tensor_ae9d375f3d8c7e60eceb238dbe0df593a}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!set\_slice@{set\_slice}}
 \index{set\_slice@{set\_slice}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
 \doxysubsubsection{\texorpdfstring{set\_slice()}{set\_slice()}}
@@ -327,6 +449,15 @@ void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tenso
 template$<$typename T, size\+\_\+t Rank$>$ \\
 void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::set\+\_\+slice (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&}]{slice}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Cambia el subtensor asignado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Posicion del subtensor a cambiar. @complexity O(n\texorpdfstring{$\ast$}{*}m) donde n y m son las dimensiones del subtensor rango 2. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classcommon_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!shape@{shape}}
 \index{shape@{shape}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
 \doxysubsubsection{\texorpdfstring{shape()}{shape()}}
@@ -348,6 +479,18 @@ auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tenso
 template$<$typename T, size\+\_\+t Rank$>$ \\
 auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::slice (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, 2$>$             requires(Rank == 3)         \hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Genera tensor con fila particular para tensor de Rank 3. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Fila a cambiar. @complexity O(n\texorpdfstring{$\ast$}{*}m) donde n y m son las dimensiones del subtensor rango 2. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classcommon_1_1Tensor}{Tensor} con la fila indicada. 
+\end{DoxyReturn}
 \Hypertarget{classcommon_1_1Tensor_a271cbdb704f0c4a7c348121322212c70}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!transpose\_2d@{transpose\_2d}}
 \index{transpose\_2d@{transpose\_2d}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
 \doxysubsubsection{\texorpdfstring{transpose\_2d()}{transpose\_2d()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -355,6 +498,13 @@ auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tenso
 template$<$typename T, size\+\_\+t Rank$>$ \\
 auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::transpose\+\_\+2d (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, 2$>$ \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [constexpr]}}
 
+
+
+Trasponer un tensor de dimension 2. @complexity O(n). 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classcommon_1_1Tensor}{Tensor} traspuesto. 
+\end{DoxyReturn}
 \Hypertarget{classcommon_1_1Tensor_aa3bbc9568b2b1fabd0fd584827603c7e}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!transpose\_2d@{transpose\_2d}}
 \index{transpose\_2d@{transpose\_2d}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
 \doxysubsubsection{\texorpdfstring{transpose\_2d()}{transpose\_2d()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -362,6 +512,13 @@ auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tenso
 template$<$typename T, size\+\_\+t Rank$>$ \\
 auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::transpose\+\_\+2d (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$             requires(Rank $>$ 2)         \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [constexpr]}}
 
+
+
+Trasponer un tensor de dimension n mayor a 2. @complexity O(n). 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classcommon_1_1Tensor}{Tensor} traspuesto. 
+\end{DoxyReturn}
 
 
 \label{doc-related-members}

@@ -2,23 +2,44 @@
 \hypertarget{structutec_1_1neural__network_1_1IOptimizer}{}\label{structutec_1_1neural__network_1_1IOptimizer}\index{utec::neural\_network::IOptimizer$<$ T $>$@{utec::neural\_network::IOptimizer$<$ T $>$}}
 
 
+Interfaz para definir un optimizador (ej. \doxylink{classutec_1_1neural__network_1_1SGD}{SGD}, \doxylink{classutec_1_1neural__network_1_1Adam}{Adam}, ...). Un optimizador se encarga de actualizar los parámetros entrenables (como pesos y biases) en base a los gradientes.  
+
+
+
+
 {\ttfamily \#include $<$interfaces.\+h$>$}
 
-Inheritance diagram for utec\+::neural\+\_\+network\+::IOptimizer\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::IOptimizer\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{structutec_1_1neural__network_1_1IOptimizer}
+\includegraphics[width=308pt]{structutec_1_1neural__network_1_1IOptimizer__inherit__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a8535546f154901c74425495139d54b68}{\texorpdfstring{$\sim$}{\string~}\+IOptimizer}} ()=default
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor virtual. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{update}} (\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&params, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&gradients)=0
-\item 
+\begin{DoxyCompactList}\small\item\em Actualiza los parámetros del modelo usando los gradientes. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a930832dc9b736845a83f5049c735dfe1}{step}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Avanza el estado interno del optimizador si este lo permite. Sólo aplica a aquellos optimizadores que llevan estados (ej. \doxylink{classutec_1_1neural__network_1_1Adam}{Adam}). Para otros (ej. \doxylink{classutec_1_1neural__network_1_1SGD}{SGD}), no hace nada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct utec\+::neural\+\_\+network\+::\+IOptimizer$<$ T $>$}
+Interfaz para definir un optimizador (ej. \doxylink{classutec_1_1neural__network_1_1SGD}{SGD}, \doxylink{classutec_1_1neural__network_1_1Adam}{Adam}, ...). Un optimizador se encarga de actualizar los parámetros entrenables (como pesos y biases) en base a los gradientes. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo de dato usado para los cálculos (usualmente float o double). \\
+\hline
+\end{DoxyTemplParams}
 
 
 \label{doc-constructors}
@@ -30,6 +51,10 @@ virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a93083
 {\footnotesize\ttfamily \label{structutec_1_1neural__network_1_1IOptimizer_a8535546f154901c74425495139d54b68} 
 template$<$typename T$>$ \\
 virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{utec\+::neural\+\_\+network\+::\+IOptimizer}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor virtual. 
 
 
 
@@ -45,6 +70,10 @@ virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{utec\
 
 
 
+Avanza el estado interno del optimizador si este lo permite. Sólo aplica a aquellos optimizadores que llevan estados (ej. \doxylink{classutec_1_1neural__network_1_1Adam}{Adam}). Para otros (ej. \doxylink{classutec_1_1neural__network_1_1SGD}{SGD}), no hace nada. 
+
+
+
 Reimplemented in \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_a0e9d2821852c9608f87a329e8a5cb45d}{utec\+::neural\+\_\+network\+::\+Adam$<$ T $>$}}.
 
 \Hypertarget{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}\index{utec::neural\_network::IOptimizer$<$ T $>$@{utec::neural\_network::IOptimizer$<$ T $>$}!update@{update}}
@@ -56,8 +85,27 @@ virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{utec\
 
 
 
+Actualiza los parámetros del modelo usando los gradientes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Parámetros del modelo que se desean actualizar. \\
+\hline
+{\em gradients} & Gradientes calculados con respecto a dichos parámetros. \\
+\hline
+\end{DoxyParams}
+
+
 Implemented in \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_afbc4ee15fa6b2be1e0a508be4e03eb32}{utec\+::neural\+\_\+network\+::\+Adam$<$ T $>$}}, and \mbox{\hyperlink{classutec_1_1neural__network_1_1SGD_a0a3a3344db4a34db76c0da2031a68225}{utec\+::neural\+\_\+network\+::\+SGD$<$ T $>$}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}

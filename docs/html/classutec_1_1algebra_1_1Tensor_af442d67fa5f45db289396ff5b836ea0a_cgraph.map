@@ -1,0 +1,11 @@
+<map id="utec::algebra::Tensor::set_row" name="utec::algebra::Tensor::set_row">
+<area shape="rect" id="Node000001" title="Cambia fila especifica de un tensor." alt="" coords="5,63,146,103"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1algebra_1_1Tensor.html#afef65c86595bc5e9f35eedc48228c7a1" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="194,63,334,103"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="396,5,536,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="334,61,380,47,381,52,335,66"/>
+<area shape="rect" id="Node000004" href="$classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="382,70,549,96"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="334,80,366,80,366,86,334,86"/>
+<area shape="rect" id="Node000005" href="$classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="396,120,536,161"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="335,100,381,114,380,119,334,105"/>
+</map>

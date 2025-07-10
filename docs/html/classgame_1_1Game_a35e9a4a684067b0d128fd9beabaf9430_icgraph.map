@@ -1,0 +1,7 @@
+<map id="game::Game::clear_canvas" name="game::Game::clear_canvas">
+<area shape="rect" id="Node000001" title=" " alt="" coords="192,35,369,60"/>
+<area shape="rect" id="Node000002" href="$classgame_1_1Game.html#a7063cc92d273a6f3d79d61dc081836d6" title=" " alt="" coords="7,5,142,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,35,142,30,143,25,176,30"/>
+<area shape="rect" id="Node000003" href="$classgame_1_1Game.html#a8bc9429fa173bf6572e69eafb95e42e9" title=" " alt="" coords="5,55,144,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,64,145,69,144,63,176,59"/>
+</map>

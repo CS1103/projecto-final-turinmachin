@@ -1,0 +1,14 @@
+<map id="Catch::parseReporterSpec" name="Catch::parseReporterSpec">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,178,80"/>
+<area shape="rect" id="Node000002" href="$namespaceCatch_1_1Detail.html#a874fd7848ec5a0ef02d88c6ec37c9a03" title="Splits the reporter spec into reporter name and kv&#45;pair options." alt="" coords="232,29,436,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,56,216,52,217,57,178,61"/>
+<area shape="rect" id="Node000006" href="$namespaceCatch_1_1Detail.html#a64ba838a0c2e6767d095a7a01fc07b48" title=" " alt="" coords="226,79,442,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="178,73,211,77,210,82,178,79"/>
+<area shape="rect" id="Node000003" href="$classCatch_1_1StringRef.html#acb22719801de2b64361b4c283080d4e5" title=" " alt="" coords="496,5,641,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="436,29,481,24,481,30,436,34"/>
+<area shape="rect" id="Node000004" href="$classCatch_1_1StringRef.html#aabf71767dfce1066e721456d54972bc5" title=" " alt="" coords="490,55,647,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="436,51,475,55,474,60,436,56"/>
+<area shape="rect" id="Node000005" href="$classCatch_1_1StringRef.html#a611907867225695d38198c058758c92d" title=" " alt="" coords="695,55,871,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="648,65,680,65,680,70,648,70"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="747,56,740,46,745,36,759,30,783,28,809,31,823,38,820,42,808,36,783,33,760,35,748,40,746,45,752,53"/>
+</map>

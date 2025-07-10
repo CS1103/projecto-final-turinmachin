@@ -1,0 +1,11 @@
+<map id="utec::algebra::Tensor::size" name="utec::algebra::Tensor::size">
+<area shape="rect" id="Node000001" title=" " alt="" coords="295,63,435,103"/>
+<area shape="rect" id="Node000002" href="$classcommon_1_1DigitReader.html#af162abf7c4b9464343ed5ec226b64d72" title=" " alt="" coords="103,5,247,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="280,60,244,49,245,44,282,55"/>
+<area shape="rect" id="Node000003" href="$classDataset.html#af22e6119731d84dbac33dd8fcdac78c9" title=" " alt="" coords="126,70,224,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="279,86,224,86,224,80,279,80"/>
+<area shape="rect" id="Node000005" href="$classutec_1_1algebra_1_1Tensor.html#aa3bbc9568b2b1fabd0fd584827603c7e" title="Trasponer un tensor de dimension n mayor a 2. @complexity O(n)." alt="" coords="105,120,245,161"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="282,111,245,122,244,117,280,106"/>
+<area shape="rect" id="Node000004" href="$trainer__kan_2main_8cpp.html#a8216c1645620cdb2f629cde3ac02ffef" title=" " alt="" coords="5,70,55,96"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="111,86,55,86,55,80,111,80"/>
+</map>

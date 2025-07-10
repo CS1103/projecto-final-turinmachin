@@ -1,0 +1,5 @@
+<map id="utec::algebra::matrix_product" name="utec::algebra::matrix_product">
+<area shape="rect" id="Node000001" title="Realiza producto matricial entre 2 tensores de dimension mayor a 2." alt="" coords="5,5,141,46"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="189,5,329,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,23,173,23,173,28,141,28"/>
+</map>

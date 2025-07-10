@@ -96,14 +96,17 @@ $(function(){initNavTree('namespaceutec_1_1algebra.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:Tensor" id="r_Tensor"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa un tensor de tipo T y rango Rank.  <a href="classutec_1_1algebra_1_1Tensor.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae9c4a2995ea5148ad6653d79058621ac" id="r_ae9c4a2995ea5148ad6653d79058621ac"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:ae9c4a2995ea5148ad6653d79058621ac template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9c4a2995ea5148ad6653d79058621ac">matrix_product</a> (const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, 2 &gt; &amp;lhs, const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, 2 &gt; &amp;rhs) -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, 2 &gt;</td></tr>
+<tr class="memdesc:ae9c4a2995ea5148ad6653d79058621ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza producto matricial entre 2 tensores de dimension 2.  <br /></td></tr>
 <tr class="memitem:a34bfff2098201ce115fd8d11b820a434" id="r_a34bfff2098201ce115fd8d11b820a434"><td class="memTemplParams" colspan="2">template&lt;typename T, std::size_t Rank&gt; <br />
 requires (Rank &gt; 2)</td></tr>
 <tr class="memitem:a34bfff2098201ce115fd8d11b820a434 template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34bfff2098201ce115fd8d11b820a434">matrix_product</a> (const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt; &amp;lhs, const <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt; &amp;rhs) -&gt; <a class="el" href="classutec_1_1algebra_1_1Tensor.html">Tensor</a>&lt; T, Rank &gt;</td></tr>
+<tr class="memdesc:a34bfff2098201ce115fd8d11b820a434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza producto matricial entre 2 tensores de dimension mayor a 2.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="ae9c4a2995ea5148ad6653d79058621ac" name="ae9c4a2995ea5148ad6653d79058621ac"></a>
@@ -134,6 +137,42 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Realiza producto matricial entre 2 tensores de dimension 2. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td><a class="el" href="classutec_1_1algebra_1_1Tensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> 1 de la operacion. </td></tr>
+    <tr><td class="paramname">rhs</td><td><a class="el" href="classutec_1_1algebra_1_1Tensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> 2 de la operacion. @complexity O(n^3). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classutec_1_1algebra_1_1Tensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> resultante de la operacion . </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac_cgraph.png" border="0" usemap="#anamespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac_cgraph" loading="lazy" alt=""/></div>
+<map name="anamespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac_cgraph" id="anamespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac_cgraph">
+<area shape="rect" title="Realiza producto matricial entre 2 tensores de dimension 2." alt="" coords="5,5,141,46"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="189,5,329,46"/>
+<area shape="poly" title=" " alt="" coords="141,23,173,23,173,28,141,28"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac_icgraph.png" border="0" usemap="#anamespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac_icgraph" loading="lazy" alt=""/></div>
+<map name="anamespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac_icgraph" id="anamespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac_icgraph">
+<area shape="rect" title="Realiza producto matricial entre 2 tensores de dimension 2." alt="" coords="194,104,329,145"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Dense.html#a34eff47b14246879296fefce593d3a3d" title="Propagación hacia atrás (backpropagation). Calcula los gradientes con respecto a pesos,..." alt="" coords="5,5,146,46"/>
+<area shape="poly" title=" " alt="" coords="211,98,144,61,120,49,122,44,147,57,213,94"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Kan.html#aba3256bdb697b3791dab07d32514ed0b" title="Propagación hacia atrás de la capa." alt="" coords="5,71,146,111"/>
+<area shape="poly" title=" " alt="" coords="178,112,146,106,147,101,179,107"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Dense.html#adf5510eaa5e3bc10bbefcde60f895238" title="Propagación hacia adelante de la capa. Calcula: output = x * weights + biases." alt="" coords="5,136,146,177"/>
+<area shape="poly" title=" " alt="" coords="179,141,147,147,146,142,178,136"/>
+<area shape="rect" href="classutec_1_1neural__network_1_1Kan.html#adbcf3683376205b4f7987aaa2ecac36c" title="Propagación hacia adelante de la capa." alt="" coords="5,201,146,242"/>
+<area shape="poly" title=" " alt="" coords="212,155,147,191,122,203,120,198,144,186,210,150"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -166,6 +205,26 @@ requires (Rank &gt; 2)</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Realiza producto matricial entre 2 tensores de dimension mayor a 2. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td><a class="el" href="classutec_1_1algebra_1_1Tensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> 1 de la operacion. </td></tr>
+    <tr><td class="paramname">rhs</td><td><a class="el" href="classutec_1_1algebra_1_1Tensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> 2 de la operacion. @complexity O(n). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classutec_1_1algebra_1_1Tensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> resultante de la operacion. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceutec_1_1algebra_a34bfff2098201ce115fd8d11b820a434_cgraph.png" border="0" usemap="#anamespaceutec_1_1algebra_a34bfff2098201ce115fd8d11b820a434_cgraph" loading="lazy" alt=""/></div>
+<map name="anamespaceutec_1_1algebra_a34bfff2098201ce115fd8d11b820a434_cgraph" id="anamespaceutec_1_1algebra_a34bfff2098201ce115fd8d11b820a434_cgraph">
+<area shape="rect" title="Realiza producto matricial entre 2 tensores de dimension mayor a 2." alt="" coords="5,5,141,46"/>
+<area shape="rect" href="classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="189,5,329,46"/>
+<area shape="poly" title=" " alt="" coords="141,23,173,23,173,28,141,28"/>
+</map>
+</div>
 
 </div>
 </div>

@@ -1,0 +1,11 @@
+<map id="Catch::AssertionHandler::handleUnexpectedInflightException" name="Catch::AssertionHandler::handleUnexpectedInflightException">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,63,234,103"/>
+<area shape="rect" id="Node000002" href="$namespaceCatch.html#adafff91485eeeeb9e9333f317cc0e3b1" title=" " alt="" coords="282,70,486,96"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,80,266,80,266,86,234,86"/>
+<area shape="rect" id="Node000003" href="$classCatch_1_1IRegistryHub.html#aa97defa756fe28dd6249b19c12bbbec1" title=" " alt="" coords="540,5,746,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="445,67,532,47,534,53,446,72"/>
+<area shape="rect" id="Node000004" href="$namespaceCatch.html#a5d328566cb8da87b48f1fac3f319ac7a" title=" " alt="" coords="568,70,718,96"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="486,80,552,80,552,86,486,86"/>
+<area shape="rect" id="Node000005" href="$classCatch_1_1IExceptionTranslatorRegistry.html#af76ae8c331a17f2a94c9720bc0d686bb" title=" " alt="" coords="534,120,751,161"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="446,94,534,113,532,119,445,99"/>
+</map>

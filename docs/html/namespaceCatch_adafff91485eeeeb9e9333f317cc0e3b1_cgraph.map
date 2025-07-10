@@ -1,0 +1,9 @@
+<map id="Catch::translateActiveException" name="Catch::translateActiveException">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,70,210,96"/>
+<area shape="rect" id="Node000002" href="$classCatch_1_1IRegistryHub.html#aa97defa756fe28dd6249b19c12bbbec1" title=" " alt="" coords="263,5,470,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,67,256,47,257,53,169,72"/>
+<area shape="rect" id="Node000003" href="$namespaceCatch.html#a5d328566cb8da87b48f1fac3f319ac7a" title=" " alt="" coords="291,70,442,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,80,275,80,275,86,210,86"/>
+<area shape="rect" id="Node000004" href="$classCatch_1_1IExceptionTranslatorRegistry.html#af76ae8c331a17f2a94c9720bc0d686bb" title=" " alt="" coords="258,120,475,161"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="169,94,257,113,256,119,168,99"/>
+</map>

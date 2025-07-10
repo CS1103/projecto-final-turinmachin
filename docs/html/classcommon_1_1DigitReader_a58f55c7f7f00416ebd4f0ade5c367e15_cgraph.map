@@ -1,0 +1,5 @@
+<map id="common::DigitReader::load_net" name="common::DigitReader::load_net">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,150,46"/>
+<area shape="rect" id="Node000002" href="$classNeuralNetwork.html#a3bdc71040fd54c9787781173a2fb7acd" title="Carga una red neuronal desde un flujo de entrada binario." alt="" coords="198,13,336,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,23,182,23,182,28,150,28"/>
+</map>

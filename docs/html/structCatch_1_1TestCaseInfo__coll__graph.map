@@ -1,0 +1,9 @@
+<map id="Catch::TestCaseInfo" name="Catch::TestCaseInfo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="195,102,334,128"/>
+<area shape="rect" id="Node000002" href="$classCatch_1_1Detail_1_1NonCopyable.html" title="Deriving classes become noncopyable and nonmovable." alt="" coords="5,5,183,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,36,244,99,242,104,128,41"/>
+<area shape="rect" id="Node000003" href="$classCatch_1_1StringRef.html" title=" " alt="" coords="207,5,322,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="267,46,267,101,262,101,262,46"/>
+<area shape="rect" id="Node000004" href="$structCatch_1_1SourceLineInfo.html" title=" " alt="" coords="346,5,495,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="398,43,346,80,298,104,296,99,343,76,394,39"/>
+</map>

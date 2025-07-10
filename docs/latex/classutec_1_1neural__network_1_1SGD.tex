@@ -2,28 +2,59 @@
 \hypertarget{classutec_1_1neural__network_1_1SGD}{}\label{classutec_1_1neural__network_1_1SGD}\index{utec::neural\_network::SGD$<$ T $>$@{utec::neural\_network::SGD$<$ T $>$}}
 
 
+Optimizador Stochastic Gradient Descent (\doxylink{classutec_1_1neural__network_1_1SGD}{SGD}). Actualiza los parámetros en dirección opuesta al gradiente multiplicado por el learning rate.  
+
+
+
+
 {\ttfamily \#include $<$optimizer.\+h$>$}
 
-Inheritance diagram for utec\+::neural\+\_\+network\+::SGD\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::SGD\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classutec_1_1neural__network_1_1SGD}
+\includegraphics[width=185pt]{classutec_1_1neural__network_1_1SGD__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utec\+::neural\+\_\+network\+::SGD\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classutec_1_1neural__network_1_1SGD__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classutec_1_1neural__network_1_1SGD_ad777b49c63a7f092dc16d4cb27fb7af7}{SGD}} (T learning\+\_\+rate=0.\+01)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor del optimizador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classutec_1_1neural__network_1_1SGD_a0a3a3344db4a34db76c0da2031a68225}{update}} (\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&params, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&grads) override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Actualiza los parámetros en función del gradiente. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{utec\+::neural\+\_\+network\+::\+IOptimizer$<$ T $>$}}}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a8535546f154901c74425495139d54b68}{\texorpdfstring{$\sim$}{\string~}\+IOptimizer}} ()=default
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor virtual. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a930832dc9b736845a83f5049c735dfe1}{step}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Avanza el estado interno del optimizador si este lo permite. Sólo aplica a aquellos optimizadores que llevan estados (ej. \doxylink{classutec_1_1neural__network_1_1Adam}{Adam}). Para otros (ej. \doxylink{classutec_1_1neural__network_1_1SGD}{SGD}), no hace nada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class utec\+::neural\+\_\+network\+::\+SGD$<$ T $>$}
+Optimizador Stochastic Gradient Descent (\doxylink{classutec_1_1neural__network_1_1SGD}{SGD}). Actualiza los parámetros en dirección opuesta al gradiente multiplicado por el learning rate. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo de dato (usualmente float o double). \\
+\hline
+\end{DoxyTemplParams}
 
 
 \label{doc-constructors}
@@ -38,6 +69,15 @@ template$<$typename T$>$ \\
 
 
 
+Constructor del optimizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em learning\+\_\+rate} & Valor de la tasa de aprendizaje (por defecto 0.\+01). @complexity O(1). \\
+\hline
+\end{DoxyParams}
+
+
 \label{doc-func-members}
 \Hypertarget{classutec_1_1neural__network_1_1SGD_doc-func-members}
 \doxysubsection{Member Function Documentation}
@@ -48,6 +88,17 @@ template$<$typename T$>$ \\
 template$<$typename T$>$ \\
 void \mbox{\hyperlink{classutec_1_1neural__network_1_1SGD}{utec\+::neural\+\_\+network\+::\+SGD}}$<$ T $>$\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{params}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{grads}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Actualiza los parámetros en función del gradiente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Parámetros actuales del modelo. \\
+\hline
+{\em grads} & Gradientes calculados. @complexity O(n\texorpdfstring{$\ast$}{*}m), donde n\texorpdfstring{$\ast$}{*}m es el tamaño del tensor de parámetros. \\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{utec\+::neural\+\_\+network\+::\+IOptimizer$<$ T $>$}}.

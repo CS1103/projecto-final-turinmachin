@@ -1,0 +1,5 @@
+<map id="utec::algebra::Tensor::apply" name="utec::algebra::Tensor::apply">
+<area shape="rect" id="Node000001" title="Aplica una funcion a todos los elementos del tensor." alt="" coords="194,5,334,46"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1neural__network_1_1Adam.html#afbc4ee15fa6b2be1e0a508be4e03eb32" title="Actualiza los parámetros del modelo usando el algoritmo de Adam." alt="" coords="5,5,146,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,28,146,28,146,23,178,23"/>
+</map>

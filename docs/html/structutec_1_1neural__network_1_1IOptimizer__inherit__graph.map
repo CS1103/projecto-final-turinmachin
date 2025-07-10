@@ -1,0 +1,7 @@
+<map id="utec::neural_network::IOptimizer&lt; T &gt;" name="utec::neural_network::IOptimizer&lt; T &gt;">
+<area shape="rect" id="Node000001" title="Interfaz para definir un optimizador (ej. SGD, Adam, ...). Un optimizador se encarga de actualizar lo..." alt="" coords="87,5,227,46"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1neural__network_1_1Adam.html" title="Optimizador Adam (Adaptive Moment Estimation). Combina momentum y RMSProp para un aprendizaje más est..." alt="" coords="5,94,146,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,59,96,95,92,92,126,56"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1neural__network_1_1SGD.html" title="Optimizador Stochastic Gradient Descent (SGD). Actualiza los parámetros en dirección opuesta al gradi..." alt="" coords="169,94,310,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,56,223,92,219,95,184,59"/>
+</map>

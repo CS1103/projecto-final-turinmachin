@@ -1,0 +1,7 @@
+<map id="Tensor::size" name="Tensor::size">
+<area shape="rect" id="Node000001" title=" " alt="" coords="221,46,311,72"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1neural__network_1_1BCELoss.html#ab0c0df07db8e212a88d3f3f75f9befd2" title="Gradiente de la pérdida BCE con respecto a las predicciones." alt="" coords="6,5,172,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,50,172,44,173,39,206,45"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1neural__network_1_1MSELoss.html#ac42456ee183bddd85e5a40d92f5abae5" title="Gradiente de la pérdida con respecto a las predicciones." alt="" coords="5,71,173,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="206,73,174,78,173,73,205,67"/>
+</map>

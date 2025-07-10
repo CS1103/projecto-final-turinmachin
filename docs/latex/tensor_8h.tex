@@ -9,11 +9,27 @@
 {\ttfamily \#include $<$numeric$>$}\newline
 {\ttfamily \#include $<$stdexcept$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for tensor.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tensor_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tensor_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor$<$ T, Rank $>$}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Representa un tensor de tipo T y rango Rank. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,7 +41,7 @@ namespace \mbox{\hyperlink{namespaceutec_1_1algebra}{utec\+::algebra}}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename T$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{utec\+::algebra\+::matrix\+\_\+product}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&lhs, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&rhs) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$
-\item 
+\begin{DoxyCompactList}\small\item\em Realiza producto matricial entre 2 tensores de dimension 2. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T, std\+::size\+\_\+t Rank$>$ \newline
 requires (Rank $>$ 2)}\\constexpr auto \mbox{\hyperlink{namespaceutec_1_1algebra_a34bfff2098201ce115fd8d11b820a434}{utec\+::algebra\+::matrix\+\_\+product}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&lhs, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&rhs) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Realiza producto matricial entre 2 tensores de dimension mayor a 2. \end{DoxyCompactList}\end{DoxyCompactItemize}

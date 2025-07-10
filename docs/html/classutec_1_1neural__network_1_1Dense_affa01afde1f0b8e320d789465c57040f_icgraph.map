@@ -1,0 +1,9 @@
+<map id="utec::neural_network::Dense::load" name="utec::neural_network::Dense::load">
+<area shape="rect" id="Node000001" title="Carga la red neuronal en formato pp20." alt="" coords="641,5,782,46"/>
+<area shape="rect" id="Node000002" href="$namespaceutec_1_1neural__network.html#ae41bef2d9885dfcabb4f2b261eba3c0f" title="Registra todas las capas disponibles en el sistema. Llamado al inicio del programa para asegurar que ..." alt="" coords="453,5,593,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="626,28,594,28,594,23,626,23"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1neural__network_1_1NeuralNetwork.html#a03cb30174664f403618acfe0e9df38e8" title="Constructor por defecto." alt="" coords="198,5,405,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="437,28,406,28,406,23,437,23"/>
+<area shape="rect" id="Node000004" href="$classutec_1_1neural__network_1_1NeuralNetwork.html#a3bdc71040fd54c9787781173a2fb7acd" title="Carga una red neuronal desde un flujo de entrada binario." alt="" coords="5,5,150,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="182,28,150,28,150,23,182,23"/>
+</map>

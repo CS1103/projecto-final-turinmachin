@@ -1,0 +1,12 @@
+<map id="include/game/math/factory.h" name="include/game/math/factory.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,190,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="54,153,122,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,33,70,54,56,80,54,95,57,110,71,139,66,141,52,112,49,95,51,78,65,51,83,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="65,79,130,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="100,31,100,63,95,63,95,31"/>
+<area shape="rect" id="Node000004" href="$game_2math_2interfaces_8h.html" title=" " alt="" coords="154,79,311,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="122,29,197,69,195,74,119,34"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="209,108,127,148,125,143,207,103"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="206,153,259,178"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="235,105,235,137,230,137,230,105"/>
+</map>

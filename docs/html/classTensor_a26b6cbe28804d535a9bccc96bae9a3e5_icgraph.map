@@ -1,0 +1,5 @@
+<map id="Tensor::shape" name="Tensor::shape">
+<area shape="rect" id="Node000001" title=" " alt="" coords="217,20,319,46"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1neural__network_1_1CrossEntropyLoss.html#ad1a468fc0dd8bc6f825322015ffdbe13" title="Gradiente de la pérdida Cross Entropy. Simplemente calcula la diferencia entre predicción y etiqueta." alt="" coords="5,5,169,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,36,169,36,169,30,201,30"/>
+</map>

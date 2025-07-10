@@ -1,0 +1,5 @@
+<map id="utec::neural_network::SGD&lt; T &gt;" name="utec::neural_network::SGD&lt; T &gt;">
+<area shape="rect" id="Node000001" title="Optimizador Stochastic Gradient Descent (SGD). Actualiza los parámetros en dirección opuesta al gradi..." alt="" coords="5,94,146,135"/>
+<area shape="rect" id="Node000002" href="$structutec_1_1neural__network_1_1IOptimizer.html" title="Interfaz para definir un optimizador (ej. SGD, Adam, ...). Un optimizador se encarga de actualizar lo..." alt="" coords="5,5,146,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,62,78,94,73,94,73,62"/>
+</map>

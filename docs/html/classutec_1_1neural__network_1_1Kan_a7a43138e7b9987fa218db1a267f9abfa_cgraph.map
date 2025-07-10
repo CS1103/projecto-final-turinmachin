@@ -1,0 +1,5 @@
+<map id="utec::neural_network::Kan::save" name="utec::neural_network::Kan::save">
+<area shape="rect" id="Node000001" title="Guarda los parámetros internos de la capa en un flujo binario." alt="" coords="5,5,146,46"/>
+<area shape="rect" id="Node000002" href="$namespaceserialization.html#af7d3d5835d83a80288feeca38f538f4c" title=" " alt="" coords="194,5,317,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,23,178,23,178,28,146,28"/>
+</map>

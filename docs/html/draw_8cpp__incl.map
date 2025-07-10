@@ -1,0 +1,19 @@
+<map id="src/game/sdl/draw.cpp" name="src/game/sdl/draw.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="235,5,387,31"/>
+<area shape="rect" id="Node000002" href="$draw_8h.html" title=" " alt="" coords="94,79,211,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="285,34,194,75,192,70,283,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,153,140,178"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="235,33,144,52,107,65,84,81,76,93,72,107,71,137,65,137,67,107,71,91,80,77,105,61,143,47,234,27"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="172,153,309,178"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="305,33,278,80,252,139,247,137,273,78,301,30"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="286,79,336,105"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="314,31,314,63,308,63,308,31"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="360,79,417,105"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="326,30,366,66,363,70,322,34"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="441,79,512,105"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="340,29,436,70,433,75,338,34"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="536,79,593,105"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="356,29,521,75,520,80,354,34"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="141,107,99,144,95,140,137,103"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="169,103,216,141,212,145,166,107"/>
+</map>

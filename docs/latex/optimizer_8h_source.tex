@@ -9,60 +9,65 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utec_2nn_2interfaces_8h}{interfaces.h}}"{}}}
 \DoxyCodeLine{00006\ }
 \DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutec_1_1neural__network}{utec::neural\_network}}\ \{}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classutec_1_1neural__network_1_1SGD_ad777b49c63a7f092dc16d4cb27fb7af7}{SGD}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}<T>\ \{}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ T\ learning\_rate;}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1SGD_ad777b49c63a7f092dc16d4cb27fb7af7}{SGD}}(T\ learning\_rate\ =\ 0.01)}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ :\ learning\_rate(learning\_rate)\ \{\}}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1SGD_a0a3a3344db4a34db76c0da2031a68225}{update}}(\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ params,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ grads)\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ params\ =\ params\ -\/\ grads\ *\ learning\_rate;}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00019\ \ \ \ \ \};}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_af9ad301bc405fb5ec4909d4fb5d5dabf}{Adam}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}<T>\ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ T\ learning\_rate;}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ T\ beta1;}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ T\ beta2;}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ T\ epsilon;}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ m;}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ v;}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::size\_t\ t\ =\ 0;}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_af9ad301bc405fb5ec4909d4fb5d5dabf}{Adam}}(T\ learning\_rate\ =\ 0.001,\ T\ beta1\ =\ 0.9,\ T\ beta2\ =\ 0.999,\ T\ epsilon\ =\ 1e-\/8)}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ :\ learning\_rate(learning\_rate),}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ beta1(beta1),}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ beta2(beta2),}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ epsilon(epsilon)\ \{\}}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_afbc4ee15fa6b2be1e0a508be4e03eb32}{update}}(\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ params,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ grads)\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m.shape()\ !=\ grads.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}())\ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m.reshape(grads.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}());}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v.reshape(grads.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}());}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_a0e9d2821852c9608f87a329e8a5cb45d}{step}}();}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ m\ =\ beta1\ *\ m\ +\ (T\{1\}\ -\/\ beta1)\ *\ grads;}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ beta2\ *\ v\ +\ (T\{1\}\ -\/\ beta2)\ *\ grads\ *\ grads;}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ m\_hat\ =\ m\ /\ (T\{1\}\ -\/\ std::pow(beta1,\ t));}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ v\_hat\ =\ v\ /\ (T\{1\}\ -\/\ std::pow(beta2,\ t));}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ params\ -\/=\ m\_hat\ *\ learning\_rate\ /}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (v\_hat.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16}{apply}}([](\textcolor{keyword}{const}\ T\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}})\ \{\ \textcolor{keywordflow}{return}\ std::sqrt(\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}});\ \})\ +\ epsilon);}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_a0e9d2821852c9608f87a329e8a5cb45d}{step}}()\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ t\ +=\ 1;}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00059\ \ \ \ \ \};}
-\DoxyCodeLine{00060\ \}\ \ \textcolor{comment}{//\ namespace\ utec::neural\_network}}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classutec_1_1neural__network_1_1SGD_ad777b49c63a7f092dc16d4cb27fb7af7}{SGD}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}<T>\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ T\ learning\_rate;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1SGD_ad777b49c63a7f092dc16d4cb27fb7af7}{SGD}}(T\ learning\_rate\ =\ 0.01)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ :\ learning\_rate(learning\_rate)\ \{\}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1SGD_a0a3a3344db4a34db76c0da2031a68225}{update}}(\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ params,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ grads)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ params\ =\ params\ -\/\ grads\ *\ learning\_rate;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_af9ad301bc405fb5ec4909d4fb5d5dabf}{Adam}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}<T>\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ T\ learning\_rate;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ T\ beta1;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ T\ beta2;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ T\ epsilon;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ m;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ v;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::size\_t\ t\ =\ 0;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_af9ad301bc405fb5ec4909d4fb5d5dabf}{Adam}}(T\ learning\_rate\ =\ 0.001,\ T\ beta1\ =\ 0.9,\ T\ beta2\ =\ 0.999,\ T\ epsilon\ =\ 1e-\/8)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ :\ learning\_rate(learning\_rate),}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ beta1(beta1),}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ beta2(beta2),}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ epsilon(epsilon)\ \{\}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_afbc4ee15fa6b2be1e0a508be4e03eb32}{update}}(\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ params,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ grads)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m.shape()\ !=\ grads.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}())\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m.reshape(grads.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}());}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v.reshape(grads.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}());}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_a0e9d2821852c9608f87a329e8a5cb45d}{step}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ m\ =\ beta1\ *\ m\ +\ (T\{1\}\ -\/\ beta1)\ *\ grads;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ beta2\ *\ v\ +\ (T\{1\}\ -\/\ beta2)\ *\ grads\ *\ grads;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ m\_hat\ =\ m\ /\ (T\{1\}\ -\/\ std::pow(beta1,\ t));}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ v\_hat\ =\ v\ /\ (T\{1\}\ -\/\ std::pow(beta2,\ t));}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ params\ -\/=\ m\_hat\ *\ learning\_rate\ /}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (v\_hat.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16}{apply}}([](\textcolor{keyword}{const}\ T\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}})\ \{\ \textcolor{keywordflow}{return}\ std::sqrt(\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}});\ \})\ +\ epsilon);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_a0e9d2821852c9608f87a329e8a5cb45d}{step}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ t\ +=\ 1;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \};}
+\DoxyCodeLine{00115\ \}\ \ \textcolor{comment}{//\ namespace\ utec::neural\_network}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

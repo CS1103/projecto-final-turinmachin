@@ -1,0 +1,5 @@
+<map id="utec::neural_network::Dense::Dense" name="utec::neural_network::Dense::Dense">
+<area shape="rect" id="Node000001" title="Constructor que permite inicializar pesos y biases con funciones personalizadas." alt="" coords="5,5,146,46"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1neural__network_1_1Dense.html#a17f3a5bd7b0adf6a917e302ea1ea2694" title="Constructor que inicializa los tensores internos con ceros." alt="" coords="194,5,334,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,23,178,23,178,28,146,28"/>
+</map>

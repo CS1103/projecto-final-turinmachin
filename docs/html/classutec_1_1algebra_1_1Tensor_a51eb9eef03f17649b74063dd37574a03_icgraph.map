@@ -1,0 +1,17 @@
+<map id="utec::algebra::Tensor::row" name="utec::algebra::Tensor::row">
+<area shape="rect" id="Node000001" title="Genera tensor con fila particular." alt="" coords="441,104,609,130"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1neural__network_1_1NeuralNetwork.html#ab2da2c55dc3be175816a870c7c91d2e3" title="Entrena la red neuronal usando descenso por lotes." alt="" coords="248,96,393,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="426,120,394,120,394,114,426,114"/>
+<area shape="rect" id="Node000003" href="$test__nn_8cpp.html#aa2bb994d7d8e1db56c35dd2c3861fbfe" title=" " alt="" coords="103,5,200,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,90,199,44,179,34,181,29,201,40,277,86"/>
+<area shape="rect" id="Node000004" href="$test__nn_8cpp.html#a2791441892e427b263bab683de9e2bf7" title=" " alt="" coords="103,55,200,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="233,94,197,83,199,78,235,89"/>
+<area shape="rect" id="Node000005" href="$test__nn_8cpp.html#af6625554e4b688cb1905733083af326c" title=" " alt="" coords="103,104,200,130"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="232,120,200,120,200,114,232,114"/>
+<area shape="rect" id="Node000006" href="$test__nn_8cpp.html#afad5a7c3f459ccea90c483b9c1827af0" title=" " alt="" coords="103,153,200,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="235,145,199,155,197,150,233,140"/>
+<area shape="rect" id="Node000007" href="$classDataset.html#af22e6119731d84dbac33dd8fcdac78c9" title=" " alt="" coords="103,203,200,228"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="277,148,201,194,181,205,179,200,199,189,274,143"/>
+<area shape="rect" id="Node000008" href="$trainer__kan_2main_8cpp.html#a8216c1645620cdb2f629cde3ac02ffef" title=" " alt="" coords="5,203,55,228"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="87,218,55,218,55,213,87,213"/>
+</map>

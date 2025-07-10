@@ -1,0 +1,9 @@
+<map id="utec::algebra::Tensor::Tensor" name="utec::algebra::Tensor::Tensor">
+<area shape="rect" id="Node000001" title="Constructor que inicializa el tensor con una forma dada." alt="" coords="5,63,146,103"/>
+<area shape="rect" id="Node000002" href="$classutec_1_1algebra_1_1Tensor.html#ac3fe489f64db9697f6c9295aebb5d136" title=" " alt="" coords="207,5,348,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,61,191,47,193,52,147,66"/>
+<area shape="rect" id="Node000003" href="$classutec_1_1algebra_1_1Tensor.html#a816fdc2f8ac497140778fc071b813024" title=" " alt="" coords="194,70,361,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,80,178,80,178,86,146,86"/>
+<area shape="rect" id="Node000004" href="$classutec_1_1algebra_1_1Tensor.html#a26b6cbe28804d535a9bccc96bae9a3e5" title=" " alt="" coords="207,120,348,161"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="147,100,193,114,191,119,145,105"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Catch::ITestInvoker" name="Catch::ITestInvoker">
+<area shape="rect" id="Node000001" title=" " alt="" coords="166,5,300,31"/>
+<area shape="rect" id="Node000002" href="$classCatch_1_1TestInvokerAsMethod.html" title=" " alt="" coords="5,79,226,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,42,137,81,134,76,199,37"/>
+<area shape="rect" id="Node000003" href="$classCatch_1_1TestInvokerFixture.html" title=" " alt="" coords="250,79,450,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="267,37,332,76,329,81,264,42"/>
+</map>

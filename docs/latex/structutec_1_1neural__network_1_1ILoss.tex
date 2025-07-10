@@ -2,17 +2,36 @@
 \hypertarget{structutec_1_1neural__network_1_1ILoss}{}\label{structutec_1_1neural__network_1_1ILoss}\index{utec::neural\_network::ILoss$<$ T, Dims $>$@{utec::neural\_network::ILoss$<$ T, Dims $>$}}
 
 
+Interfaz para una función de pérdida (loss). Se encarga de calcular qué tan mal lo hizo la red con respecto a los resultados reales y obtener el gradiente necesario para ajustar los parámetros.  
+
+
+
+
 {\ttfamily \#include $<$interfaces.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_add5386c613a6166cedccf23b8cba066d}{\texorpdfstring{$\sim$}{\string~}\+ILoss}} ()=default
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor virtual. \end{DoxyCompactList}\item 
 virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a7aefbeb1f4bd61f61491309de76f2726}{loss}} () const -\/$>$ T=0
-\item 
+\begin{DoxyCompactList}\small\item\em Devuelve el valor escalar de la pérdida. \end{DoxyCompactList}\item 
 virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270}{loss\+\_\+gradient}} () const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, Dims $>$=0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Devuelve el gradiente de la pérdida respecto a la predicción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, size\+\_\+t Dims$>$\newline
+struct utec\+::neural\+\_\+network\+::\+ILoss$<$ T, Dims $>$}
+Interfaz para una función de pérdida (loss). Se encarga de calcular qué tan mal lo hizo la red con respecto a los resultados reales y obtener el gradiente necesario para ajustar los parámetros. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo de dato (usualmente float o double). \\
+\hline
+{\em Dims} & Número de dimensiones del tensor de entrada (usualmente dos). \\
+\hline
+\end{DoxyTemplParams}
 
 
 \label{doc-constructors}
@@ -24,6 +43,10 @@ virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a16d09111b2
 {\footnotesize\ttfamily \label{structutec_1_1neural__network_1_1ILoss_add5386c613a6166cedccf23b8cba066d} 
 template$<$typename T, size\+\_\+t Dims$>$ \\
 virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{utec\+::neural\+\_\+network\+::\+ILoss}}$<$ T, Dims $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{ILoss}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor virtual. 
 
 
 
@@ -39,6 +62,13 @@ virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{utec\+::ne
 
 
 
+Devuelve el valor escalar de la pérdida. 
+
+\begin{DoxyReturn}{Returns}
+Valor numérico que representa el "{}error"{} actual de la red. 
+\end{DoxyReturn}
+
+
 Implemented in \mbox{\hyperlink{classutec_1_1neural__network_1_1BCELoss_ab92e716086286add59e2f17cd184c96a}{utec\+::neural\+\_\+network\+::\+BCELoss$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_a7c9ae10a49791b7cb37b985dd0ccb786}{utec\+::neural\+\_\+network\+::\+Cross\+Entropy\+Loss$<$ T $>$}}, and \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_a43be1dc09b8f4fb0080de0dc1dfe1915}{utec\+::neural\+\_\+network\+::\+MSELoss$<$ T $>$}}.
 
 \Hypertarget{structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270}\index{utec::neural\_network::ILoss$<$ T, Dims $>$@{utec::neural\_network::ILoss$<$ T, Dims $>$}!loss\_gradient@{loss\_gradient}}
@@ -50,8 +80,31 @@ virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{utec\+::ne
 
 
 
+Devuelve el gradiente de la pérdida respecto a la predicción. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classTensor}{Tensor} con el gradiente (mismo shape que la predicción). 
+\end{DoxyReturn}
+
+
 Implemented in \mbox{\hyperlink{classutec_1_1neural__network_1_1BCELoss_ab0c0df07db8e212a88d3f3f75f9befd2}{utec\+::neural\+\_\+network\+::\+BCELoss$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_ad1a468fc0dd8bc6f825322015ffdbe13}{utec\+::neural\+\_\+network\+::\+Cross\+Entropy\+Loss$<$ T $>$}}, and \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_ac42456ee183bddd85e5a40d92f5abae5}{utec\+::neural\+\_\+network\+::\+MSELoss$<$ T $>$}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}

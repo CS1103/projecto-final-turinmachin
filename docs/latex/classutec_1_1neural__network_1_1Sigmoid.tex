@@ -2,32 +2,63 @@
 \hypertarget{classutec_1_1neural__network_1_1Sigmoid}{}\label{classutec_1_1neural__network_1_1Sigmoid}\index{utec::neural\_network::Sigmoid$<$ T $>$@{utec::neural\_network::Sigmoid$<$ T $>$}}
 
 
+Capa de activación \doxylink{classutec_1_1neural__network_1_1Sigmoid}{Sigmoid}. Convierte cada valor en el rango (0, 1) abierto usando la función logística. No tiene parámetros entrenables.  
+
+
+
+
 {\ttfamily \#include $<$activation.\+h$>$}
 
-Inheritance diagram for utec\+::neural\+\_\+network\+::Sigmoid\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::Sigmoid\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classutec_1_1neural__network_1_1Sigmoid}
+\includegraphics[width=185pt]{classutec_1_1neural__network_1_1Sigmoid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utec\+::neural\+\_\+network\+::Sigmoid\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classutec_1_1neural__network_1_1Sigmoid__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid_a70102144b4313b2c7e6564d429cfd2ff}{forward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&z) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ override
-\item 
+\begin{DoxyCompactList}\small\item\em Propagación hacia adelante aplicando sigmoide. \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid_adf8a7cea25b499a7dbfffd6bd95da147}{backward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&g) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ override
-\item 
+\begin{DoxyCompactList}\small\item\em Propagación hacia atrás\+: gradiente de la función sigmoide. \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid_ab5e62d3ebf0ddb9ef958bbe2c991ab37}{id}} () const -\/$>$ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}} override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Identificador único de la capa \doxylink{classutec_1_1neural__network_1_1Sigmoid}{Sigmoid}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a6965ff90722a8ff3929fa55a1fd722f2}{\texorpdfstring{$\sim$}{\string~}\+ILayer}} ()=default
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor virtual. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a07d2e3abb2656a40eef1dc4de099c86f}{update\+\_\+params}} (\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}$<$ T $>$ \&optimizer)
-\item 
+\begin{DoxyCompactList}\small\item\em Actualiza los parámetros internos de la capa (si tiene). \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a0ddf898a100cec73a4e0df30caa6952e}{save}} (std\+::ostream \&out) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Guarda los parámetros internos de la capa en un flujo binario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class utec\+::neural\+\_\+network\+::\+Sigmoid$<$ T $>$}
+Capa de activación \doxylink{classutec_1_1neural__network_1_1Sigmoid}{Sigmoid}. Convierte cada valor en el rango (0, 1) abierto usando la función logística. No tiene parámetros entrenables. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo de dato (usualmente float o double). \\
+\hline
+\end{DoxyTemplParams}
 
 
 \label{doc-func-members}
@@ -42,6 +73,18 @@ auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid}{utec\+::neural\+\
 
 
 
+Propagación hacia atrás\+: gradiente de la función sigmoide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Gradiente de la siguiente capa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Gradiente respecto a la entrada de esta capa. @complexity O(n\texorpdfstring{$\ast$}{*}m\texorpdfstring{$\ast$}{*}r), donde\+: n\texorpdfstring{$\ast$}{*}m es el tamaño del tensor de salida, r es el número de dimensiones del resultado (por broadcasting). En la práctica, si no hay broadcasting, se reduce a O(n\texorpdfstring{$\ast$}{*}m). 
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a1edb042d919a28e28c1523c1c29df07f}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
 
 \Hypertarget{classutec_1_1neural__network_1_1Sigmoid_a70102144b4313b2c7e6564d429cfd2ff}\index{utec::neural\_network::Sigmoid$<$ T $>$@{utec::neural\_network::Sigmoid$<$ T $>$}!forward@{forward}}
@@ -53,6 +96,18 @@ auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid}{utec\+::neural\+\
 
 
 
+Propagación hacia adelante aplicando sigmoide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \doxylink{classTensor}{Tensor} de entrada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classTensor}{Tensor} con valores entre 0 y 1. @complexity O(n\texorpdfstring{$\ast$}{*}m), dado un tensor de entrada z de tamaño n\texorpdfstring{$\ast$}{*}m. 
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a22275b736574bf1ef9febb9889ba7a25}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
 
 \Hypertarget{classutec_1_1neural__network_1_1Sigmoid_ab5e62d3ebf0ddb9ef958bbe2c991ab37}\index{utec::neural\_network::Sigmoid$<$ T $>$@{utec::neural\_network::Sigmoid$<$ T $>$}!id@{id}}
@@ -62,6 +117,13 @@ Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a22275b73657
 template$<$typename T$>$ \\
 auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid}{utec\+::neural\+\_\+network\+::\+Sigmoid}}$<$ T $>$\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Identificador único de la capa \doxylink{classutec_1_1neural__network_1_1Sigmoid}{Sigmoid}. 
+
+\begin{DoxyReturn}{Returns}
+Layer\+ID\+::\+Sigmoid (o bien 1) @complexity O(1). 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a16b50cd81a4b1c368797af2cce2b7d06}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.

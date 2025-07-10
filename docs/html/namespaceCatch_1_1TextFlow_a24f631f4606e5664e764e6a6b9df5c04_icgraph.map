@@ -1,0 +1,9 @@
+<map id="Catch::TextFlow::Spacer" name="Catch::TextFlow::Spacer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="368,46,529,72"/>
+<area shape="rect" id="Node000002" href="$classCatch_1_1TablePrinter.html#abb4f12add189af81ef29694014cac6df" title=" " alt="" coords="187,5,318,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="354,46,318,39,319,34,354,40"/>
+<area shape="rect" id="Node000004" href="$classCatch_1_1Clara_1_1Parser.html#aab7332e4d55845c62a0f7c282d3244cc" title=" " alt="" coords="185,71,320,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="353,77,321,83,320,77,352,72"/>
+<area shape="rect" id="Node000003" href="$classCatch_1_1TablePrinter.html#a90580b26094240d55734c7bf1e5e83d0" title=" " alt="" coords="5,5,137,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="171,28,137,28,137,23,171,23"/>
+</map>

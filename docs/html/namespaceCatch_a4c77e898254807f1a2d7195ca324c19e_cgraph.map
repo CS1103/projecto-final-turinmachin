@@ -1,0 +1,16 @@
+<map id="Catch::handleExceptionMatchExpr" name="Catch::handleExceptionMatchExpr">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,222,106"/>
+<area shape="rect" id="Node000002" href="$classCatch_1_1AssertionHandler.html#ac061e1d051135385f450973b676b2579" title=" " alt="" coords="291,29,452,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,78,275,63,276,69,193,83"/>
+<area shape="rect" id="Node000004" href="$namespaceCatch.html#adafff91485eeeeb9e9333f317cc0e3b1" title=" " alt="" coords="270,109,474,134"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="222,103,254,106,254,112,222,108"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="323,29,321,19,329,10,346,5,372,3,400,5,416,11,414,16,398,10,372,8,347,10,332,15,326,21,329,28"/>
+<area shape="rect" id="Node000003" href="$classCatch_1_1ExprLhs.html#a0bcbddc42c67a4dea5fc68c4e8bcde84" title=" " alt="" coords="528,22,733,48"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="453,42,512,39,513,44,453,48"/>
+<area shape="rect" id="Node000005" href="$classCatch_1_1IRegistryHub.html#aa97defa756fe28dd6249b19c12bbbec1" title=" " alt="" coords="528,72,734,113"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="474,107,512,103,512,108,475,113"/>
+<area shape="rect" id="Node000006" href="$namespaceCatch.html#a5d328566cb8da87b48f1fac3f319ac7a" title=" " alt="" coords="556,137,706,162"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="475,130,540,137,540,143,474,135"/>
+<area shape="rect" id="Node000007" href="$classCatch_1_1IExceptionTranslatorRegistry.html#af76ae8c331a17f2a94c9720bc0d686bb" title=" " alt="" coords="522,187,739,227"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="410,133,523,172,543,179,542,184,521,178,408,138"/>
+</map>

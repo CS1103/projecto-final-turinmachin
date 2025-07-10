@@ -10,15 +10,23 @@
 {\ttfamily \#include $<$random$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include $<$utec/nn/kan.\+h$>$}\newline
+Include dependency graph for test\+\_\+nn.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__nn_8cpp__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classDense}{Dense$<$ T $>$}}
 \item 
 class \mbox{\hyperlink{classNeuralNetwork}{Neural\+Network$<$ T $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em Clase que representa una red neuronal completamente conectada. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classSigmoid}{Sigmoid$<$ T $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em Capa de activación \doxylink{classutec_1_1neural__network_1_1Sigmoid}{Sigmoid}. Convierte cada valor en el rango (0, 1) abierto usando la función logística. No tiene parámetros entrenables. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classKan}{Kan$<$ T $>$}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
@@ -57,63 +65,151 @@ class \mbox{\hyperlink{classKan}{Kan$<$ T $>$}}
 {\footnotesize\ttfamily \label{test__nn_8cpp_a71971d8ccfa2a48601ed7d136eebdc36} 
 TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Dense + \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid}{Sigmoid}} with batch size 2"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}neural\mbox{]}}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{test__nn_8cpp_a71971d8ccfa2a48601ed7d136eebdc36_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{test__nn_8cpp_a2683f699532a6ca728fc04f17eb54c01}\index{test\_nn.cpp@{test\_nn.cpp}!TEST\_CASE@{TEST\_CASE}}
 \index{TEST\_CASE@{TEST\_CASE}!test\_nn.cpp@{test\_nn.cpp}}
 \doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
 {\footnotesize\ttfamily \label{test__nn_8cpp_a2683f699532a6ca728fc04f17eb54c01} 
 TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Dense layer with constant input"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}neural\mbox{]}}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{test__nn_8cpp_a2683f699532a6ca728fc04f17eb54c01_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{test__nn_8cpp_af27e6227eee7f46c4bd67cb010c35d64}\index{test\_nn.cpp@{test\_nn.cpp}!TEST\_CASE@{TEST\_CASE}}
 \index{TEST\_CASE@{TEST\_CASE}!test\_nn.cpp@{test\_nn.cpp}}
 \doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
 {\footnotesize\ttfamily \label{test__nn_8cpp_af27e6227eee7f46c4bd67cb010c35d64} 
 TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Empty network returns input"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}neural\mbox{]}}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{test__nn_8cpp_af27e6227eee7f46c4bd67cb010c35d64_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{test__nn_8cpp_a93d92662e5e09278257a231b2f4ed042}\index{test\_nn.cpp@{test\_nn.cpp}!TEST\_CASE@{TEST\_CASE}}
 \index{TEST\_CASE@{TEST\_CASE}!test\_nn.cpp@{test\_nn.cpp}}
 \doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
 {\footnotesize\ttfamily \label{test__nn_8cpp_a93d92662e5e09278257a231b2f4ed042} 
 TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Kan layer basic forward"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}kan\mbox{]}}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{test__nn_8cpp_a93d92662e5e09278257a231b2f4ed042_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{test__nn_8cpp_aa2bb994d7d8e1db56c35dd2c3861fbfe}\index{test\_nn.cpp@{test\_nn.cpp}!TEST\_CASE@{TEST\_CASE}}
 \index{TEST\_CASE@{TEST\_CASE}!test\_nn.cpp@{test\_nn.cpp}}
 \doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
 {\footnotesize\ttfamily \label{test__nn_8cpp_aa2bb994d7d8e1db56c35dd2c3861fbfe} 
 TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}neural network backward call"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}neural\mbox{]}\mbox{[}backward\mbox{]}}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__nn_8cpp_aa2bb994d7d8e1db56c35dd2c3861fbfe_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{test__nn_8cpp_a2791441892e427b263bab683de9e2bf7}\index{test\_nn.cpp@{test\_nn.cpp}!TEST\_CASE@{TEST\_CASE}}
 \index{TEST\_CASE@{TEST\_CASE}!test\_nn.cpp@{test\_nn.cpp}}
 \doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
 {\footnotesize\ttfamily \label{test__nn_8cpp_a2791441892e427b263bab683de9e2bf7} 
 TEST\+\_\+\+CASE (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__nn_8cpp_a2791441892e427b263bab683de9e2bf7_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{test__nn_8cpp_af6625554e4b688cb1905733083af326c}\index{test\_nn.cpp@{test\_nn.cpp}!TEST\_CASE@{TEST\_CASE}}
 \index{TEST\_CASE@{TEST\_CASE}!test\_nn.cpp@{test\_nn.cpp}}
 \doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
 {\footnotesize\ttfamily \label{test__nn_8cpp_af6625554e4b688cb1905733083af326c} 
 TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}neural network learns sin(\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}) using Re\+LU"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}neural\mbox{]}\mbox{[}train\mbox{]}}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__nn_8cpp_af6625554e4b688cb1905733083af326c_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{test__nn_8cpp_a651b1dd2864a0fc673478ba81a99bc3e}\index{test\_nn.cpp@{test\_nn.cpp}!TEST\_CASE@{TEST\_CASE}}
 \index{TEST\_CASE@{TEST\_CASE}!test\_nn.cpp@{test\_nn.cpp}}
 \doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
 {\footnotesize\ttfamily \label{test__nn_8cpp_a651b1dd2864a0fc673478ba81a99bc3e} 
 TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}neural network predict simple"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}neural\mbox{]}}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{test__nn_8cpp_a651b1dd2864a0fc673478ba81a99bc3e_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{test__nn_8cpp_ad0ab5818ba49422e20209aaab2ddc9ea}\index{test\_nn.cpp@{test\_nn.cpp}!TEST\_CASE@{TEST\_CASE}}
 \index{TEST\_CASE@{TEST\_CASE}!test\_nn.cpp@{test\_nn.cpp}}
 \doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
 {\footnotesize\ttfamily \label{test__nn_8cpp_ad0ab5818ba49422e20209aaab2ddc9ea} 
 TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}neural network save/load consistency"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}neural\mbox{]}\mbox{[}save\mbox{]}}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__nn_8cpp_ad0ab5818ba49422e20209aaab2ddc9ea_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{test__nn_8cpp_afad5a7c3f459ccea90c483b9c1827af0}\index{test\_nn.cpp@{test\_nn.cpp}!TEST\_CASE@{TEST\_CASE}}
 \index{TEST\_CASE@{TEST\_CASE}!test\_nn.cpp@{test\_nn.cpp}}
 \doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
 {\footnotesize\ttfamily \label{test__nn_8cpp_afad5a7c3f459ccea90c483b9c1827af0} 
 TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}neural network trains and reduces loss"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}neural\mbox{]}\mbox{[}train\mbox{]}}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__nn_8cpp_afad5a7c3f459ccea90c483b9c1827af0_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{test__nn_8cpp_afb5c515baf7a93d8cf0303e129c803fe}\index{test\_nn.cpp@{test\_nn.cpp}!TEST\_CASE@{TEST\_CASE}}
 \index{TEST\_CASE@{TEST\_CASE}!test\_nn.cpp@{test\_nn.cpp}}
 \doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
 {\footnotesize\ttfamily \label{test__nn_8cpp_afb5c515baf7a93d8cf0303e129c803fe} 
 TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}neural network with \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{Kan}} layer"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}neural\mbox{]}\mbox{[}kan\mbox{]}}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{test__nn_8cpp_afb5c515baf7a93d8cf0303e129c803fe_cgraph}
+\end{center}
+\end{figure}

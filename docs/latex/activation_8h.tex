@@ -3,19 +3,35 @@
 {\ttfamily \#include $<$algorithm$>$}\newline
 {\ttfamily \#include $<$cmath$>$}\newline
 {\ttfamily \#include "{}interfaces.\+h"{}}\newline
+Include dependency graph for activation.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{activation_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{activation_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classutec_1_1neural__network_1_1ReLU}{utec\+::neural\+\_\+network\+::\+Re\+LU$<$ T $>$}}
 \item 
 class \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid}{utec\+::neural\+\_\+network\+::\+Sigmoid$<$ T $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em Capa de activación \doxylink{classutec_1_1neural__network_1_1Sigmoid}{Sigmoid}. Convierte cada valor en el rango (0, 1) abierto usando la función logística. No tiene parámetros entrenables. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classutec_1_1neural__network_1_1Softmax}{utec\+::neural\+\_\+network\+::\+Softmax$<$ T $>$}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Capa de activación \doxylink{classutec_1_1neural__network_1_1Softmax}{Softmax}. Convierte un vector de valores en probabilidades las cualesal ser sumadas resultan en 1. Se aplica por fila (una muestra a la vez). No tiene parámetros entrenables. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutec}{utec}}
 \item 
 namespace \mbox{\hyperlink{namespaceutec_1_1neural__network}{utec\+::neural\+\_\+network}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Capa de activación de Rectified Linear Unit (\doxylink{classutec_1_1neural__network_1_1ReLU}{Re\+LU}). Los valores negativos del input se convierten en 0. Los valores no negativos permanecen igual. \end{DoxyCompactList}\end{DoxyCompactItemize}

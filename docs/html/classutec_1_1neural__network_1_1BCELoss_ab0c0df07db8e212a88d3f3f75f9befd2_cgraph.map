@@ -1,0 +1,5 @@
+<map id="utec::neural_network::BCELoss::loss_gradient" name="utec::neural_network::BCELoss::loss_gradient">
+<area shape="rect" id="Node000001" title="Gradiente de la pérdida BCE con respecto a las predicciones." alt="" coords="5,5,171,46"/>
+<area shape="rect" id="Node000002" href="$classTensor.html#a215437fdbb556e998f3feae08b02a51b" title=" " alt="" coords="219,13,309,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,23,203,23,203,28,171,28"/>
+</map>

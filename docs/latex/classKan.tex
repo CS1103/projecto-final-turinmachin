@@ -4,10 +4,24 @@
 
 {\ttfamily \#include $<$kan.\+h$>$}
 
-Inheritance diagram for Kan\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+
+
+Inheritance diagram for Kan\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classKan}
+\includegraphics[width=185pt]{classKan__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Kan\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classKan__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -24,20 +38,20 @@ auto \mbox{\hyperlink{classKan_aba3256bdb697b3791dab07d32514ed0b}{backward}} (co
 void \mbox{\hyperlink{classKan_a07b819255c3861f6b83f55cece8dbc61}{update\+\_\+params}} (IOptimizer$<$ T $>$ \&optimizer) override
 \item 
 auto \mbox{\hyperlink{classKan_adab78480bb6877e8971bf50dafe2cd43}{id}} () const -\/$>$ Layer\+Id override
-\item 
+\begin{DoxyCompactList}\small\item\em Devuelve el tipo de la capa. Sirve para serialización o reconstrucción de la red. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classKan_a7a43138e7b9987fa218db1a267f9abfa}{save}} (std\+::ostream \&out) const override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Guarda los parámetros internos de la capa en un flujo binario. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a6965ff90722a8ff3929fa55a1fd722f2}{\texorpdfstring{$\sim$}{\string~}\+ILayer}} ()=default
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor virtual. \end{DoxyCompactList}\item 
 virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a22275b736574bf1ef9febb9889ba7a25}{forward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$=0
-\item 
+\begin{DoxyCompactList}\small\item\em Propagación hacia adelante de la capa. \end{DoxyCompactList}\item 
 virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a1edb042d919a28e28c1523c1c29df07f}{backward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&gradients) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$=0
-\item 
+\begin{DoxyCompactList}\small\item\em Propagación hacia atrás de la capa. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a07d2e3abb2656a40eef1dc4de099c86f}{update\+\_\+params}} (\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}$<$ T $>$ \&optimizer)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Actualiza los parámetros internos de la capa (si tiene). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -86,8 +100,15 @@ auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+n
 \doxysubsubsection{\texorpdfstring{id()}{id()}}
 {\footnotesize\ttfamily \label{classKan_adab78480bb6877e8971bf50dafe2cd43} 
 template$<$typename T$>$ \\
-auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+network\+::\+Kan}}$<$ T $>$\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ Layer\+Id\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+network\+::\+Kan}}$<$ T $>$\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$  Layer\+Id\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Devuelve el tipo de la capa. Sirve para serialización o reconstrucción de la red. 
+
+\begin{DoxyReturn}{Returns}
+Identificador único de tipo Layer\+ID. 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a16b50cd81a4b1c368797af2cce2b7d06}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
@@ -106,6 +127,18 @@ auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+n
 template$<$typename T$>$ \\
 void \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{utec\+::neural\+\_\+network\+::\+Kan}}$<$ T $>$\+::save (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Guarda los parámetros internos de la capa en un flujo binario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Flujo de salida (por ejemplo, un archivo binario). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Capas sin parámetros (Re\+Lu, \doxylink{classSigmoid}{Sigmoid}, Softmax) pueden dejar esta función vacía. Se usa principalmente para guardar el modelo entrenado. 
+\end{DoxyNote}
 
 
 Reimplemented from \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a0ddf898a100cec73a4e0df30caa6952e}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.

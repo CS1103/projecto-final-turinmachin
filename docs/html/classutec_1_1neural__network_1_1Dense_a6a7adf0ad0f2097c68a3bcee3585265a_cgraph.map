@@ -1,0 +1,5 @@
+<map id="utec::neural_network::Dense::update_params" name="utec::neural_network::Dense::update_params">
+<area shape="rect" id="Node000001" title="Actualiza los parámetros (pesos y biases) usando un optimizador." alt="" coords="5,5,165,46"/>
+<area shape="rect" id="Node000002" href="$structutec_1_1neural__network_1_1IOptimizer.html#af1b6f92a0513f3673df32902444800c8" title="Actualiza los parámetros del modelo usando los gradientes." alt="" coords="213,5,353,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,23,197,23,197,28,165,28"/>
+</map>

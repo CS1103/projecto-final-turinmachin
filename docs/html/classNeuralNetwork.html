@@ -93,23 +93,41 @@ $(function(){initNavTree('classNeuralNetwork.html','','classNeuralNetwork-member
 </div><!--header-->
 <div class="contents">
 
+<p>Clase que representa una red neuronal completamente conectada.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="neural__network_8h_source.html">neural_network.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a03cb30174664f403618acfe0e9df38e8" id="r_a03cb30174664f403618acfe0e9df38e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03cb30174664f403618acfe0e9df38e8">NeuralNetwork</a> ()</td></tr>
+<tr class="memdesc:a03cb30174664f403618acfe0e9df38e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor por defecto.  <br /></td></tr>
 <tr class="memitem:a5da3f9a12e283f092fb303599b7e08af" id="r_a5da3f9a12e283f092fb303599b7e08af"><td class="memTemplParams" colspan="2">template&lt;typename L, typename... Args&gt; </td></tr>
 <tr class="memitem:a5da3f9a12e283f092fb303599b7e08af template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5da3f9a12e283f092fb303599b7e08af">add_layer</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a5da3f9a12e283f092fb303599b7e08af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agrega una nueva capa a la red.  <br /></td></tr>
 <tr class="memitem:ab2da2c55dc3be175816a870c7c91d2e3" id="r_ab2da2c55dc3be175816a870c7c91d2e3"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename... &gt; class LossType, template&lt; typename... &gt; class OptimizerType = SGD&gt; </td></tr>
 <tr class="memitem:ab2da2c55dc3be175816a870c7c91d2e3 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2da2c55dc3be175816a870c7c91d2e3">train</a> (const algebra::Tensor&lt; T, 2 &gt; &amp;<a class="el" href="catch__amalgamated_8cpp.html#a6abfb3eb1e8098e09b8a4d1fc295b265">x</a>, const algebra::Tensor&lt; T, 2 &gt; &amp;y, const size_t epochs, const size_t batch_size, T learning_rate, std::mt19937 &amp;rng)</td></tr>
+<tr class="memdesc:ab2da2c55dc3be175816a870c7c91d2e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entrena la red neuronal usando descenso por lotes.  <br /></td></tr>
 <tr class="memitem:a8728e0e068d299d39200701221cde58a" id="r_a8728e0e068d299d39200701221cde58a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8728e0e068d299d39200701221cde58a">predict</a> (const algebra::Tensor&lt; T, 2 &gt; &amp;X) -&gt; algebra::Tensor&lt; T, 2 &gt;</td></tr>
+<tr class="memdesc:a8728e0e068d299d39200701221cde58a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza una predicción sobre un conjunto de datos.  <br /></td></tr>
 <tr class="memitem:a01bcec163b0d6dba854f8f89a6552508" id="r_a01bcec163b0d6dba854f8f89a6552508"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01bcec163b0d6dba854f8f89a6552508">save</a> (std::ostream &amp;out) const</td></tr>
+<tr class="memdesc:a01bcec163b0d6dba854f8f89a6552508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda el modelo en un flujo de salida binario.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3bdc71040fd54c9787781173a2fb7acd" id="r_a3bdc71040fd54c9787781173a2fb7acd"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bdc71040fd54c9787781173a2fb7acd">load</a> (std::istream &amp;in) -&gt; <a class="el" href="classutec_1_1neural__network_1_1NeuralNetwork.html">NeuralNetwork</a>&lt; T &gt;</td></tr>
+<tr class="memdesc:a3bdc71040fd54c9787781173a2fb7acd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga una red neuronal desde un flujo de entrada binario.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+class NeuralNetwork&lt; T &gt;</div><p>Clase que representa una red neuronal completamente conectada. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Tipo de dato para los pesos y cálculos (float, double, etc.). </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a03cb30174664f403618acfe0e9df38e8" name="a03cb30174664f403618acfe0e9df38e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03cb30174664f403618acfe0e9df38e8">&#9670;&#160;</a></span>NeuralNetwork()</h2>
 
@@ -134,6 +152,8 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Constructor por defecto. </p>
 
 </div>
 </div>
@@ -165,6 +185,21 @@ template&lt;typename L, typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Agrega una nueva capa a la red. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">L</td><td>Tipo de capa (e.g., <a class="el" href="classDense.html">Dense</a>, ReLU). </td></tr>
+    <tr><td class="paramname">Args</td><td>Tipos de argumentos para el constructor de la capa. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Argumentos para inicializar la capa. @complexity O(1). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a3bdc71040fd54c9787781173a2fb7acd" name="a3bdc71040fd54c9787781173a2fb7acd"></a>
@@ -191,6 +226,27 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Carga una red neuronal desde un flujo de entrada binario. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>Flujo de entrada desde el cual se carga la red. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Instancia de <a class="el" href="classNeuralNetwork.html" title="Clase que representa una red neuronal completamente conectada.">NeuralNetwork</a> cargada con sus capas (y pesos si es que la capa lo permite). @complexity O(L*s), donde L es el número de capas y s el tamaño serializado de cada una. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classNeuralNetwork_a3bdc71040fd54c9787781173a2fb7acd_icgraph.png" border="0" usemap="#aclassNeuralNetwork_a3bdc71040fd54c9787781173a2fb7acd_icgraph" loading="lazy" alt=""/></div>
+<map name="aclassNeuralNetwork_a3bdc71040fd54c9787781173a2fb7acd_icgraph" id="aclassNeuralNetwork_a3bdc71040fd54c9787781173a2fb7acd_icgraph">
+<area shape="rect" title="Carga una red neuronal desde un flujo de entrada binario." alt="" coords="198,42,336,68"/>
+<area shape="rect" href="classcommon_1_1DigitReader.html#a58f55c7f7f00416ebd4f0ade5c367e15" title=" " alt="" coords="5,5,150,46"/>
+<area shape="poly" title=" " alt="" coords="182,45,149,39,150,34,182,39"/>
+<area shape="rect" href="test__nn_8cpp.html#ad0ab5818ba49422e20209aaab2ddc9ea" title=" " alt="" coords="29,70,126,96"/>
+<area shape="poly" title=" " alt="" coords="182,70,127,79,126,73,182,65"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -219,6 +275,15 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Realiza una predicción sobre un conjunto de datos. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">X</td><td>Datos de entrada. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classTensor.html" title="Representa un tensor de tipo T y rango Rank.">Tensor</a> con la predicción de salida. @complexity O(L*f), donde L es el número de capas y f es el costo del forward. </dd></dl>
+
 </div>
 </div>
 <a id="a01bcec163b0d6dba854f8f89a6552508" name="a01bcec163b0d6dba854f8f89a6552508"></a>
@@ -245,6 +310,14 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Guarda el modelo en un flujo de salida binario. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Flujo de salida donde se guarda la red. @complexity O(L*s), donde s es el tamaño serializado de cada capa. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -298,6 +371,35 @@ template&lt;template&lt; typename... &gt; class LossType, template&lt; typename.
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Entrena la red neuronal usando descenso por lotes. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">LossType</td><td>Tipo de función de pérdida (ej. MSELoss, BCELoss, ...). </td></tr>
+    <tr><td class="paramname">OptimizerType</td><td>Tipo de optimizador (ej. SGD, Adam, ...). Por defecto es SGD. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Datos de entrada. </td></tr>
+    <tr><td class="paramname">y</td><td>Etiquetas esperadas. </td></tr>
+    <tr><td class="paramname">epochs</td><td>Número de épocas de entrenamiento. </td></tr>
+    <tr><td class="paramname">batch_size</td><td>Tamaño del batch. </td></tr>
+    <tr><td class="paramname">learning_rate</td><td>Tasa de aprendizaje. </td></tr>
+    <tr><td class="paramname">rng</td><td>Generador aleatorio para mezclar los datos. @complexity O(e*(n/b)*L*(f+b+u))), donde:<ul>
+<li>e: número de épocas</li>
+<li>n: número total de muestras</li>
+<li>b: batch size</li>
+<li>L: número de capas</li>
+<li>f: costo forward de una capa</li>
+<li>b: costo backward de una capa</li>
+<li>u: costo de actualización de parámetros por capa </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
