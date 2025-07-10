@@ -1,0 +1,25 @@
+var classCatch_1_1Optional =
+[
+    [ "Optional", "classCatch_1_1Optional.html#adb48c01b92e96dd355e267e3b7297187", null ],
+    [ "~Optional", "classCatch_1_1Optional.html#a4d8e2b6e96fe4156e1ff6c7eb6a47176", null ],
+    [ "Optional", "classCatch_1_1Optional.html#a11640fe6b19a9d2ecdfd1704a47d4a6b", null ],
+    [ "Optional", "classCatch_1_1Optional.html#a963601c7cbbd0ce468fd07916cd1d991", null ],
+    [ "Optional", "classCatch_1_1Optional.html#af6ee253a7322440833f4aa52624adead", null ],
+    [ "Optional", "classCatch_1_1Optional.html#ac685eb1a7d000aee65cee303adaed49b", null ],
+    [ "none", "classCatch_1_1Optional.html#a4761d94b45a205bb9b5e7408e6cf963d", null ],
+    [ "operator bool", "classCatch_1_1Optional.html#ab65856f129233f69a4dd5efece1117b2", null ],
+    [ "operator!", "classCatch_1_1Optional.html#af1e6fe8bb147e12cf285a6f6e398c16d", null ],
+    [ "operator*", "classCatch_1_1Optional.html#a2e786500fe59b1a006c4a59ccc068303", null ],
+    [ "operator*", "classCatch_1_1Optional.html#a1cd2d43cdf6c3942d9697d05bccfb5bf", null ],
+    [ "operator->", "classCatch_1_1Optional.html#a28ad04d25eaab682db6689ec0f2cb0ce", null ],
+    [ "operator->", "classCatch_1_1Optional.html#ae295c76939d8f51b51d2790e40dc7eda", null ],
+    [ "operator=", "classCatch_1_1Optional.html#aec0083bc2eb795be370f93811dda4716", null ],
+    [ "operator=", "classCatch_1_1Optional.html#a6d145286d1378bc01b4239101d472da6", null ],
+    [ "operator=", "classCatch_1_1Optional.html#a5a9aa5d9ddd0a03bbde2119ae1a3290d", null ],
+    [ "operator=", "classCatch_1_1Optional.html#a3407e0994fe2e46eb3a333f78c21cadf", null ],
+    [ "reset", "classCatch_1_1Optional.html#a543ecebe7d36d7ec101671c6a82db705", null ],
+    [ "some", "classCatch_1_1Optional.html#a21c7049e5e3fbdc06566e814be31a1d1", null ],
+    [ "valueOr", "classCatch_1_1Optional.html#aa528301eb45724cf1db1b2c7123778f3", null ],
+    [ "operator!=", "classCatch_1_1Optional.html#a093e7b10b13367c45f797a9539058591", null ],
+    [ "operator==", "classCatch_1_1Optional.html#a8b50f316f18ebb56b8b510158ea3f328", null ]
+];

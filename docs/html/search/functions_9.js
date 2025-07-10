@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['kan_0',['Kan',['../classutec_1_1neural__network_1_1Kan.html#a39c44a271bd7c7af844001e8d89e543e',1,'utec::neural_network::Kan::Kan(const size_t in_f, const size_t out_f, const size_t knots, const T x_min=-1, const T x_max=+1)'],['../classutec_1_1neural__network_1_1Kan.html#a0e8f973f16a7a3bdcb5599957f4f67f5',1,'utec::neural_network::Kan::Kan(const size_t in_f, const size_t out_f, const size_t knots, auto init_psi_w_fun, auto init_phi_w_fun, auto init_phi_b_fun)'],['../classKan.html#a39c44a271bd7c7af844001e8d89e543e',1,'Kan::Kan(const size_t in_f, const size_t out_f, const size_t knots, const T x_min=-1, const T x_max=+1)'],['../classKan.html#a0e8f973f16a7a3bdcb5599957f4f67f5',1,'Kan::Kan(const size_t in_f, const size_t out_f, const size_t knots, auto init_psi_w_fun, auto init_phi_w_fun, auto init_phi_b_fun)']]]
+];

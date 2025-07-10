@@ -1,0 +1,31 @@
+\doxysection{include/utec/algebra/tensor.h File Reference}
+\hypertarget{tensor_8h}{}\label{tensor_8h}\index{include/utec/algebra/tensor.h@{include/utec/algebra/tensor.h}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor$<$ T, Rank $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceutec}{utec}}
+\item 
+namespace \mbox{\hyperlink{namespaceutec_1_1algebra}{utec\+::algebra}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{utec\+::algebra\+::matrix\+\_\+product}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&lhs, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&rhs) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$
+\item 
+{\footnotesize template$<$typename T, std\+::size\+\_\+t Rank$>$ \newline
+requires (Rank $>$ 2)}\\constexpr auto \mbox{\hyperlink{namespaceutec_1_1algebra_a34bfff2098201ce115fd8d11b820a434}{utec\+::algebra\+::matrix\+\_\+product}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&lhs, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&rhs) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\end{DoxyCompactItemize}

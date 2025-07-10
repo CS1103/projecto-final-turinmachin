@@ -1,0 +1,131 @@
+\doxysection{Catch\+::Benchmark Namespace Reference}
+\hypertarget{namespaceCatch_1_1Benchmark}{}\label{namespaceCatch_1_1Benchmark}\index{Catch::Benchmark@{Catch::Benchmark}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail}{Detail}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Benchmark}{Benchmark}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Chronometer}{Chronometer}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Environment}{Environment}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1EnvironmentEstimate}{Environment\+Estimate}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Estimate}{Estimate}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1ExecutionPlan}{Execution\+Plan}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1OutlierClassification}{Outlier\+Classification}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1SampleAnalysis}{Sample\+Analysis}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Timing}{Timing}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a39a7da4c749ecf788244a1a91dc9adb0}{IDuration}} = std\+::chrono\+::nanoseconds
+\item 
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a5e29f55ad3195ac7b08e7028b0095d02}{FDuration}} = std\+::chrono\+::duration$<$double, std\+::nano$>$
+\item 
+{\footnotesize template$<$typename Clock$>$ }\\using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a839ab043d92ae34f0c83e6142674ffa5}{Time\+Point}} = typename Clock\+::time\+\_\+point
+\item 
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a5ffee9674c457dfb4a868ea55290089c}{default\+\_\+clock}} = std\+::chrono\+::steady\+\_\+clock
+\item 
+{\footnotesize template$<$typename Func, typename... Args$>$ }\\using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_afea8ef765e5669143dfc9bbc8d81e1ac}{Timing\+Of}} = \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Timing}{Timing}}$<$\mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ac01002836fbe714bcc1bb266c249258c}{Detail\+::\+Complete\+Type\+\_\+t}}$<$\mbox{\hyperlink{namespaceCatch_a38257f15bf2974c19a11341fe50eedc1}{Function\+Return\+Type}}$<$Func, Args...$>$$>$$>$
+\item 
+{\footnotesize template$<$typename T$>$ }\\using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a737e4b9b2571ab17d74621f181a33eff}{storage\+\_\+for}} = \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1ObjectStorage}{Detail\+::\+Object\+Storage}}$<$T, true$>$
+\item 
+{\footnotesize template$<$typename T$>$ }\\using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a49daedbacb4c240e304482a88245fd10}{destructable\+\_\+object}} = \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1ObjectStorage}{Detail\+::\+Object\+Storage}}$<$T, false$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{namespaceCatch_1_1Benchmark_af5d85780971e55f9337023ad04caa247}{deoptimize\+\_\+value}} (T \&\&\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}})
+\item 
+{\footnotesize template$<$typename Fn, typename... Args$>$ }\\auto \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a9aa891ce6b44df3561292fc1a44b11fb}{invoke\+\_\+deoptimized}} (Fn \&\&fn, Args \&\&... args) -\/$>$ std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+same$<$ void, decltype(fn(args...))$>$\+::value $>$
+\item 
+{\footnotesize template$<$typename Fun$>$ }\\\mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ac01002836fbe714bcc1bb266c249258c}{Detail\+::\+Complete\+Type\+\_\+t}}$<$ \mbox{\hyperlink{namespaceCatch_a38257f15bf2974c19a11341fe50eedc1}{Function\+Return\+Type}}$<$ Fun $>$ $>$ \mbox{\hyperlink{namespaceCatch_1_1Benchmark_ab10cc5a63e65cd55178d7f1473da9f04}{user\+\_\+code}} (Fun \&\&fun)
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{namespaceCatch_1_1Benchmark_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespaceCatch_1_1Benchmark_a5ffee9674c457dfb4a868ea55290089c}\index{Catch::Benchmark@{Catch::Benchmark}!default\_clock@{default\_clock}}
+\index{default\_clock@{default\_clock}!Catch::Benchmark@{Catch::Benchmark}}
+\doxysubsubsection{\texorpdfstring{default\_clock}{default\_clock}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_a5ffee9674c457dfb4a868ea55290089c} 
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a5ffee9674c457dfb4a868ea55290089c}{Catch\+::\+Benchmark\+::default\+\_\+clock}} = std\+::chrono\+::steady\+\_\+clock}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_a49daedbacb4c240e304482a88245fd10}\index{Catch::Benchmark@{Catch::Benchmark}!destructable\_object@{destructable\_object}}
+\index{destructable\_object@{destructable\_object}!Catch::Benchmark@{Catch::Benchmark}}
+\doxysubsubsection{\texorpdfstring{destructable\_object}{destructable\_object}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_a49daedbacb4c240e304482a88245fd10} 
+template$<$typename T$>$ \\
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a49daedbacb4c240e304482a88245fd10}{Catch\+::\+Benchmark\+::destructable\+\_\+object}} = \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1ObjectStorage}{Detail\+::\+Object\+Storage}}$<$T, false$>$}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_a5e29f55ad3195ac7b08e7028b0095d02}\index{Catch::Benchmark@{Catch::Benchmark}!FDuration@{FDuration}}
+\index{FDuration@{FDuration}!Catch::Benchmark@{Catch::Benchmark}}
+\doxysubsubsection{\texorpdfstring{FDuration}{FDuration}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_a5e29f55ad3195ac7b08e7028b0095d02} 
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a5e29f55ad3195ac7b08e7028b0095d02}{Catch\+::\+Benchmark\+::\+FDuration}} = std\+::chrono\+::duration$<$double, std\+::nano$>$}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_a39a7da4c749ecf788244a1a91dc9adb0}\index{Catch::Benchmark@{Catch::Benchmark}!IDuration@{IDuration}}
+\index{IDuration@{IDuration}!Catch::Benchmark@{Catch::Benchmark}}
+\doxysubsubsection{\texorpdfstring{IDuration}{IDuration}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_a39a7da4c749ecf788244a1a91dc9adb0} 
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a39a7da4c749ecf788244a1a91dc9adb0}{Catch\+::\+Benchmark\+::\+IDuration}} = std\+::chrono\+::nanoseconds}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_a737e4b9b2571ab17d74621f181a33eff}\index{Catch::Benchmark@{Catch::Benchmark}!storage\_for@{storage\_for}}
+\index{storage\_for@{storage\_for}!Catch::Benchmark@{Catch::Benchmark}}
+\doxysubsubsection{\texorpdfstring{storage\_for}{storage\_for}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_a737e4b9b2571ab17d74621f181a33eff} 
+template$<$typename T$>$ \\
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a737e4b9b2571ab17d74621f181a33eff}{Catch\+::\+Benchmark\+::storage\+\_\+for}} = \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Detail_1_1ObjectStorage}{Detail\+::\+Object\+Storage}}$<$T, true$>$}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_a839ab043d92ae34f0c83e6142674ffa5}\index{Catch::Benchmark@{Catch::Benchmark}!TimePoint@{TimePoint}}
+\index{TimePoint@{TimePoint}!Catch::Benchmark@{Catch::Benchmark}}
+\doxysubsubsection{\texorpdfstring{TimePoint}{TimePoint}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_a839ab043d92ae34f0c83e6142674ffa5} 
+template$<$typename Clock$>$ \\
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_a839ab043d92ae34f0c83e6142674ffa5}{Catch\+::\+Benchmark\+::\+Time\+Point}} = typename Clock\+::time\+\_\+point}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_afea8ef765e5669143dfc9bbc8d81e1ac}\index{Catch::Benchmark@{Catch::Benchmark}!TimingOf@{TimingOf}}
+\index{TimingOf@{TimingOf}!Catch::Benchmark@{Catch::Benchmark}}
+\doxysubsubsection{\texorpdfstring{TimingOf}{TimingOf}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_afea8ef765e5669143dfc9bbc8d81e1ac} 
+template$<$typename Func, typename... Args$>$ \\
+using \mbox{\hyperlink{namespaceCatch_1_1Benchmark_afea8ef765e5669143dfc9bbc8d81e1ac}{Catch\+::\+Benchmark\+::\+Timing\+Of}} = \mbox{\hyperlink{structCatch_1_1Benchmark_1_1Timing}{Timing}}$<$\mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ac01002836fbe714bcc1bb266c249258c}{Detail\+::\+Complete\+Type\+\_\+t}}$<$\mbox{\hyperlink{namespaceCatch_a38257f15bf2974c19a11341fe50eedc1}{Function\+Return\+Type}}$<$Func, Args...$>$$>$$>$}
+
+
+
+\label{doc-func-members}
+\Hypertarget{namespaceCatch_1_1Benchmark_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceCatch_1_1Benchmark_af5d85780971e55f9337023ad04caa247}\index{Catch::Benchmark@{Catch::Benchmark}!deoptimize\_value@{deoptimize\_value}}
+\index{deoptimize\_value@{deoptimize\_value}!Catch::Benchmark@{Catch::Benchmark}}
+\doxysubsubsection{\texorpdfstring{deoptimize\_value()}{deoptimize\_value()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_af5d85780971e55f9337023ad04caa247} 
+template$<$typename T$>$ \\
+void Catch\+::\+Benchmark\+::deoptimize\+\_\+value (\begin{DoxyParamCaption}\item[{T \&\&}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_a9aa891ce6b44df3561292fc1a44b11fb}\index{Catch::Benchmark@{Catch::Benchmark}!invoke\_deoptimized@{invoke\_deoptimized}}
+\index{invoke\_deoptimized@{invoke\_deoptimized}!Catch::Benchmark@{Catch::Benchmark}}
+\doxysubsubsection{\texorpdfstring{invoke\_deoptimized()}{invoke\_deoptimized()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_a9aa891ce6b44df3561292fc1a44b11fb} 
+template$<$typename Fn, typename... Args$>$ \\
+auto Catch\+::\+Benchmark\+::invoke\+\_\+deoptimized (\begin{DoxyParamCaption}\item[{Fn \&\&}]{fn}{, }\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption}) -\/$>$ std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+same$<$void, decltype(fn(args...))$>$\+::value$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceCatch_1_1Benchmark_ab10cc5a63e65cd55178d7f1473da9f04}\index{Catch::Benchmark@{Catch::Benchmark}!user\_code@{user\_code}}
+\index{user\_code@{user\_code}!Catch::Benchmark@{Catch::Benchmark}}
+\doxysubsubsection{\texorpdfstring{user\_code()}{user\_code()}}
+{\footnotesize\ttfamily \label{namespaceCatch_1_1Benchmark_ab10cc5a63e65cd55178d7f1473da9f04} 
+template$<$typename Fun$>$ \\
+\mbox{\hyperlink{namespaceCatch_1_1Benchmark_1_1Detail_ac01002836fbe714bcc1bb266c249258c}{Detail\+::\+Complete\+Type\+\_\+t}}$<$ \mbox{\hyperlink{namespaceCatch_a38257f15bf2974c19a11341fe50eedc1}{Function\+Return\+Type}}$<$ Fun $>$ $>$ Catch\+::\+Benchmark\+::user\+\_\+code (\begin{DoxyParamCaption}\item[{Fun \&\&}]{fun}{}\end{DoxyParamCaption})}
+

@@ -1,0 +1,66 @@
+\doxysection{layer\+\_\+registry.\+h}
+\hypertarget{layer__registry_8h_source}{}\label{layer__registry_8h_source}\index{include/utec/nn/layer\_registry.h@{include/utec/nn/layer\_registry.h}}
+\mbox{\hyperlink{layer__registry_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PROG3\_NN\_FINAL\_PROJECT\_V2025\_01\_LAYER\_REGISTRY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PROG3\_NN\_FINAL\_PROJECT\_V2025\_01\_LAYER\_REGISTRY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <istream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{activation_8h}{utec/nn/activation.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dense_8h}{utec/nn/dense.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utec_2nn_2interfaces_8h}{utec/nn/interfaces.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{kan_8h}{utec/nn/kan.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutec_1_1neural__network}{utec::neural\_network}}\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry}{LayerRegistry}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }LayerCreator\ =\ std::function<std::unique\_ptr<ILayer<T>>(std::istream\&)>;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1}{register\_layer}}(\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{LayerId}}\ \textcolor{keywordtype}{id},\ LayerCreator\ creator)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ get\_map()[id]\ =\ std::move(creator);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry_a1ece92519c78577b1665f245ad71e376}{create}}(\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{LayerId}}\ \textcolor{keywordtype}{id},\ std::istream\&\ in)\ -\/>\ std::unique\_ptr<ILayer<T>>\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ get\_map().find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ get\_map().end())\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ layer\ ID"{}});}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second(in);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ get\_map()\ -\/>\ \textcolor{keyword}{auto}\&\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_map<LayerId,\ LayerCreator>\ map;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ map;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceutec_1_1neural__network_ae41bef2d9885dfcabb4f2b261eba3c0f}{register\_all\_layers}}()\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1}{LayerRegistry<T>::register\_layer}}(\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dabadd10d919fa85cf27fc78c0e06fe0b378}{LayerId::ReLU}},}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](std::istream\&)\ \{\ \textcolor{keywordflow}{return}\ std::make\_unique<ReLU<T>>();\ \});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1}{LayerRegistry<T>::register\_layer}}(}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba21eebb164e4b8b9bcf64fdb4d8d5dff4}{LayerId::Sigmoid}},\ [](std::istream\&)\ \{\ \textcolor{keywordflow}{return}\ std::make\_unique<Sigmoid<T>>();\ \});}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1}{LayerRegistry<T>::register\_layer}}(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba31d953b9d49a6b4378f45097047976d0}{LayerId::Softmax}},\ [](std::istream\&)\ \{\ \textcolor{keywordflow}{return}\ std::make\_unique<Softmax<T>>();\ \});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1}{LayerRegistry<T>::register\_layer}}(\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba9a71a13863c84ba34fc41595fc2ee0c6}{LayerId::Dense}},\ [](std::istream\&\ in)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<Dense<T>>(\mbox{\hyperlink{classutec_1_1neural__network_1_1Dense_affa01afde1f0b8e320d789465c57040f}{Dense<T>::load}}(in));}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry_a34bb46eabb8fc2cedacbd4a0ce2181a1}{LayerRegistry<T>::register\_layer}}(\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dabaf60e8dbbc0c325f558c189cc9c7c3e06}{LayerId::Kan}},\ [](std::istream\&\ in)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<Kan<T>>(\mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a5ae5e51738dbeb57770d191c7442dae0}{Kan<T>::load}}(in));}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \}\ \ \textcolor{comment}{//\ namespace\ utec::neural\_network}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

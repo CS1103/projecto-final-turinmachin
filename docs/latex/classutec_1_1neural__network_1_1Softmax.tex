@@ -1,0 +1,73 @@
+\doxysection{utec\+::neural\+\_\+network\+::Softmax\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classutec_1_1neural__network_1_1Softmax}{}\label{classutec_1_1neural__network_1_1Softmax}\index{utec::neural\_network::Softmax$<$ T $>$@{utec::neural\_network::Softmax$<$ T $>$}}
+
+
+{\ttfamily \#include $<$activation.\+h$>$}
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::Softmax\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classutec_1_1neural__network_1_1Softmax}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Softmax_a5978859677c653f1ba7c87c68e82e227}{forward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&z) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ override
+\item 
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Softmax_a30543b5bcb7aa7109df27fc1a6e820e5}{backward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&g) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ override
+\item 
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Softmax_a6a2b3250e565980852bd89110e55db00}{id}} () const -\/$>$ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}} override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a6965ff90722a8ff3929fa55a1fd722f2}{\texorpdfstring{$\sim$}{\string~}\+ILayer}} ()=default
+\item 
+virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a07d2e3abb2656a40eef1dc4de099c86f}{update\+\_\+params}} (\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}$<$ T $>$ \&optimizer)
+\item 
+virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a0ddf898a100cec73a4e0df30caa6952e}{save}} (std\+::ostream \&out) const
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classutec_1_1neural__network_1_1Softmax_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classutec_1_1neural__network_1_1Softmax_a30543b5bcb7aa7109df27fc1a6e820e5}\index{utec::neural\_network::Softmax$<$ T $>$@{utec::neural\_network::Softmax$<$ T $>$}!backward@{backward}}
+\index{backward@{backward}!utec::neural\_network::Softmax$<$ T $>$@{utec::neural\_network::Softmax$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{backward()}{backward()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1Softmax_a30543b5bcb7aa7109df27fc1a6e820e5} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Softmax}{utec\+::neural\+\_\+network\+::\+Softmax}}$<$ T $>$\+::backward (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{g}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$T, 2$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a1edb042d919a28e28c1523c1c29df07f}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
+
+\Hypertarget{classutec_1_1neural__network_1_1Softmax_a5978859677c653f1ba7c87c68e82e227}\index{utec::neural\_network::Softmax$<$ T $>$@{utec::neural\_network::Softmax$<$ T $>$}!forward@{forward}}
+\index{forward@{forward}!utec::neural\_network::Softmax$<$ T $>$@{utec::neural\_network::Softmax$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1Softmax_a5978859677c653f1ba7c87c68e82e227} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Softmax}{utec\+::neural\+\_\+network\+::\+Softmax}}$<$ T $>$\+::forward (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{z}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$T, 2$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a22275b736574bf1ef9febb9889ba7a25}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
+
+\Hypertarget{classutec_1_1neural__network_1_1Softmax_a6a2b3250e565980852bd89110e55db00}\index{utec::neural\_network::Softmax$<$ T $>$@{utec::neural\_network::Softmax$<$ T $>$}!id@{id}}
+\index{id@{id}!utec::neural\_network::Softmax$<$ T $>$@{utec::neural\_network::Softmax$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1Softmax_a6a2b3250e565980852bd89110e55db00} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1Softmax}{utec\+::neural\+\_\+network\+::\+Softmax}}$<$ T $>$\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a16b50cd81a4b1c368797af2cce2b7d06}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/utec/nn/\mbox{\hyperlink{activation_8h}{activation.\+h}}\end{DoxyCompactItemize}

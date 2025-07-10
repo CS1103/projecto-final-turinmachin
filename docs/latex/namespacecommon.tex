@@ -1,0 +1,133 @@
+\doxysection{common Namespace Reference}
+\hypertarget{namespacecommon}{}\label{namespacecommon}\index{common@{common}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcommon_1_1DigitReader}{Digit\+Reader}}
+\item 
+class \mbox{\hyperlink{classcommon_1_1IAgent}{IAgent}}
+\item 
+struct \mbox{\hyperlink{structcommon_1_1Sample}{Sample}}
+\item 
+class \mbox{\hyperlink{classcommon_1_1Tensor}{Tensor}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacecommon_a24ec94b26b9df6cad3baa04781a4935d}{IDigit\+Agent}} = \mbox{\hyperlink{classcommon_1_1IAgent}{IAgent}}$<$std\+::vector$<$double$>$, int$>$
+\item 
+using \mbox{\hyperlink{namespacecommon_a169c669019f457c4b869ebc21fba4771}{Digit\+Sample}} = \mbox{\hyperlink{structcommon_1_1Sample}{Sample}}$<$std\+::vector$<$double$>$, int$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{namespacecommon_adbe69ab4371185d9ccec582988dd38be}{get\+\_\+data\+\_\+path}} () -\/$>$ std\+::string
+\item 
+auto \mbox{\hyperlink{namespacecommon_ae42a5092739465bb023945ee3383d58e}{get\+\_\+data\+\_\+file\+\_\+path}} (const std\+::string \&file\+\_\+path) -\/$>$ std\+::string
+\item 
+auto \mbox{\hyperlink{namespacecommon_a7caa7d504427e910b86523bb0eb31b74}{get\+\_\+data\+\_\+file\+\_\+path\+\_\+unchecked}} (const std\+::string \&file\+\_\+path) -\/$>$ std\+::string
+\item 
+auto \mbox{\hyperlink{namespacecommon_a7fd106275aa0b9439b6ae74a2a859848}{get\+\_\+data\+\_\+file\+\_\+unchecked}} (const std\+::string \&path) -\/$>$ std\+::ifstream
+\item 
+auto \mbox{\hyperlink{namespacecommon_a3af0ebf74ebb96ec732c9fdc72cc34b0}{get\+\_\+data\+\_\+file}} (const std\+::string \&path) -\/$>$ std\+::ifstream
+\item 
+void \mbox{\hyperlink{namespacecommon_a4e225e1ee5ea060aae09a8ba907a7044}{he\+\_\+init}} (\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ double, 2 $>$ \&tensor, std\+::mt19937 \&rng)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespacecommon_a51d1cc3a5e6be93fb74940f7e7523472}{IMAGE\+\_\+\+WIDTH}} = 8
+\item 
+constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespacecommon_ae08181ff5e9851de611bd8120beb2796}{IMAGE\+\_\+\+HEIGHT}} = 8
+\item 
+constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespacecommon_a3735345f6662f118eb82242a975a24f7}{IMAGE\+\_\+\+SIZE}} = \mbox{\hyperlink{namespacecommon_a51d1cc3a5e6be93fb74940f7e7523472}{IMAGE\+\_\+\+WIDTH}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacecommon_ae08181ff5e9851de611bd8120beb2796}{IMAGE\+\_\+\+HEIGHT}}
+\item 
+constexpr double \mbox{\hyperlink{namespacecommon_ace8a763d1af936662d6d367c50c76bea}{IMAGE\+\_\+\+DIMENSION}} = 16.\+0
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{namespacecommon_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespacecommon_a169c669019f457c4b869ebc21fba4771}\index{common@{common}!DigitSample@{DigitSample}}
+\index{DigitSample@{DigitSample}!common@{common}}
+\doxysubsubsection{\texorpdfstring{DigitSample}{DigitSample}}
+{\footnotesize\ttfamily \label{namespacecommon_a169c669019f457c4b869ebc21fba4771} 
+using \mbox{\hyperlink{namespacecommon_a169c669019f457c4b869ebc21fba4771}{common\+::\+Digit\+Sample}} = \mbox{\hyperlink{structcommon_1_1Sample}{Sample}}$<$std\+::vector$<$double$>$, int$>$}
+
+\Hypertarget{namespacecommon_a24ec94b26b9df6cad3baa04781a4935d}\index{common@{common}!IDigitAgent@{IDigitAgent}}
+\index{IDigitAgent@{IDigitAgent}!common@{common}}
+\doxysubsubsection{\texorpdfstring{IDigitAgent}{IDigitAgent}}
+{\footnotesize\ttfamily \label{namespacecommon_a24ec94b26b9df6cad3baa04781a4935d} 
+using \mbox{\hyperlink{namespacecommon_a24ec94b26b9df6cad3baa04781a4935d}{common\+::\+IDigit\+Agent}} = \mbox{\hyperlink{classcommon_1_1IAgent}{IAgent}}$<$std\+::vector$<$double$>$, int$>$}
+
+
+
+\label{doc-func-members}
+\Hypertarget{namespacecommon_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacecommon_a3af0ebf74ebb96ec732c9fdc72cc34b0}\index{common@{common}!get\_data\_file@{get\_data\_file}}
+\index{get\_data\_file@{get\_data\_file}!common@{common}}
+\doxysubsubsection{\texorpdfstring{get\_data\_file()}{get\_data\_file()}}
+{\footnotesize\ttfamily \label{namespacecommon_a3af0ebf74ebb96ec732c9fdc72cc34b0} 
+auto common\+::get\+\_\+data\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption}) -\/$>$ std\+::ifstream}
+
+\Hypertarget{namespacecommon_ae42a5092739465bb023945ee3383d58e}\index{common@{common}!get\_data\_file\_path@{get\_data\_file\_path}}
+\index{get\_data\_file\_path@{get\_data\_file\_path}!common@{common}}
+\doxysubsubsection{\texorpdfstring{get\_data\_file\_path()}{get\_data\_file\_path()}}
+{\footnotesize\ttfamily \label{namespacecommon_ae42a5092739465bb023945ee3383d58e} 
+auto common\+::get\+\_\+data\+\_\+file\+\_\+path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path}{}\end{DoxyParamCaption}) -\/$>$ std\+::string}
+
+\Hypertarget{namespacecommon_a7caa7d504427e910b86523bb0eb31b74}\index{common@{common}!get\_data\_file\_path\_unchecked@{get\_data\_file\_path\_unchecked}}
+\index{get\_data\_file\_path\_unchecked@{get\_data\_file\_path\_unchecked}!common@{common}}
+\doxysubsubsection{\texorpdfstring{get\_data\_file\_path\_unchecked()}{get\_data\_file\_path\_unchecked()}}
+{\footnotesize\ttfamily \label{namespacecommon_a7caa7d504427e910b86523bb0eb31b74} 
+auto common\+::get\+\_\+data\+\_\+file\+\_\+path\+\_\+unchecked (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path}{}\end{DoxyParamCaption}) -\/$>$ std\+::string}
+
+\Hypertarget{namespacecommon_a7fd106275aa0b9439b6ae74a2a859848}\index{common@{common}!get\_data\_file\_unchecked@{get\_data\_file\_unchecked}}
+\index{get\_data\_file\_unchecked@{get\_data\_file\_unchecked}!common@{common}}
+\doxysubsubsection{\texorpdfstring{get\_data\_file\_unchecked()}{get\_data\_file\_unchecked()}}
+{\footnotesize\ttfamily \label{namespacecommon_a7fd106275aa0b9439b6ae74a2a859848} 
+auto common\+::get\+\_\+data\+\_\+file\+\_\+unchecked (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption}) -\/$>$ std\+::ifstream}
+
+\Hypertarget{namespacecommon_adbe69ab4371185d9ccec582988dd38be}\index{common@{common}!get\_data\_path@{get\_data\_path}}
+\index{get\_data\_path@{get\_data\_path}!common@{common}}
+\doxysubsubsection{\texorpdfstring{get\_data\_path()}{get\_data\_path()}}
+{\footnotesize\ttfamily \label{namespacecommon_adbe69ab4371185d9ccec582988dd38be} 
+auto common\+::get\+\_\+data\+\_\+path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ std\+::string}
+
+\Hypertarget{namespacecommon_a4e225e1ee5ea060aae09a8ba907a7044}\index{common@{common}!he\_init@{he\_init}}
+\index{he\_init@{he\_init}!common@{common}}
+\doxysubsubsection{\texorpdfstring{he\_init()}{he\_init()}}
+{\footnotesize\ttfamily \label{namespacecommon_a4e225e1ee5ea060aae09a8ba907a7044} 
+void common\+::he\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ double, 2 $>$ \&}]{tensor}{, }\item[{std\+::mt19937 \&}]{rng}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-var-members}
+\Hypertarget{namespacecommon_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacecommon_ace8a763d1af936662d6d367c50c76bea}\index{common@{common}!IMAGE\_DIMENSION@{IMAGE\_DIMENSION}}
+\index{IMAGE\_DIMENSION@{IMAGE\_DIMENSION}!common@{common}}
+\doxysubsubsection{\texorpdfstring{IMAGE\_DIMENSION}{IMAGE\_DIMENSION}}
+{\footnotesize\ttfamily \label{namespacecommon_ace8a763d1af936662d6d367c50c76bea} 
+double common\+::\+IMAGE\+\_\+\+DIMENSION = 16.\+0\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespacecommon_ae08181ff5e9851de611bd8120beb2796}\index{common@{common}!IMAGE\_HEIGHT@{IMAGE\_HEIGHT}}
+\index{IMAGE\_HEIGHT@{IMAGE\_HEIGHT}!common@{common}}
+\doxysubsubsection{\texorpdfstring{IMAGE\_HEIGHT}{IMAGE\_HEIGHT}}
+{\footnotesize\ttfamily \label{namespacecommon_ae08181ff5e9851de611bd8120beb2796} 
+std\+::size\+\_\+t common\+::\+IMAGE\+\_\+\+HEIGHT = 8\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespacecommon_a3735345f6662f118eb82242a975a24f7}\index{common@{common}!IMAGE\_SIZE@{IMAGE\_SIZE}}
+\index{IMAGE\_SIZE@{IMAGE\_SIZE}!common@{common}}
+\doxysubsubsection{\texorpdfstring{IMAGE\_SIZE}{IMAGE\_SIZE}}
+{\footnotesize\ttfamily \label{namespacecommon_a3735345f6662f118eb82242a975a24f7} 
+std\+::size\+\_\+t common\+::\+IMAGE\+\_\+\+SIZE = \mbox{\hyperlink{namespacecommon_a51d1cc3a5e6be93fb74940f7e7523472}{IMAGE\+\_\+\+WIDTH}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacecommon_ae08181ff5e9851de611bd8120beb2796}{IMAGE\+\_\+\+HEIGHT}}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespacecommon_a51d1cc3a5e6be93fb74940f7e7523472}\index{common@{common}!IMAGE\_WIDTH@{IMAGE\_WIDTH}}
+\index{IMAGE\_WIDTH@{IMAGE\_WIDTH}!common@{common}}
+\doxysubsubsection{\texorpdfstring{IMAGE\_WIDTH}{IMAGE\_WIDTH}}
+{\footnotesize\ttfamily \label{namespacecommon_a51d1cc3a5e6be93fb74940f7e7523472} 
+std\+::size\+\_\+t common\+::\+IMAGE\+\_\+\+WIDTH = 8\hspace{0.3cm}{\ttfamily [constexpr]}}
+

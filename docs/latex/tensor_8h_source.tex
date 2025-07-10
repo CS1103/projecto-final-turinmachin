@@ -1,0 +1,535 @@
+\doxysection{tensor.\+h}
+\hypertarget{tensor_8h_source}{}\label{tensor_8h_source}\index{include/utec/algebra/tensor.h@{include/utec/algebra/tensor.h}}
+\mbox{\hyperlink{tensor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PROG3\_NN\_FINAL\_PROJECT\_V2025\_01\_TENSOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PROG3\_NN\_FINAL\_PROJECT\_V2025\_01\_TENSOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{template}\ <std::\textcolor{keywordtype}{size\_t}\ Size>}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{void}\ apply\_with\_counter(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ fn,\ \textcolor{keyword}{const}\ std::array<std::size\_t,\ Size>\&\ size)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::array<std::size\_t,\ Size>\ index\{\};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::size\_t\ total\_size\ =\ std::ranges::fold\_left(size,\ 1,\ std::multiplies());}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ total\_size;\ ++i)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ fn(index);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ index[0]++;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ j\ =\ 0;\ j\ <\ Size;\ ++j)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index[j]\ <\ size[j])\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Carry\ stops\ here}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index[j]\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ <\ Size\ -\/\ 1)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index[j\ +\ 1]++;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \}\ \ \textcolor{comment}{//\ namespace}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutec_1_1algebra}{utec::algebra}}\ \{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keywordtype}{size\_t}\ Rank>}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcommon_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor}}\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::array<size\_t,\ Rank>\ m\_shape;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::array<size\_t,\ Rank>\ m\_steps;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ std::vector<T>\ m\_data;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ update\_steps()\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ current\_step\ =\ 1;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ Rank\ -\/\ 1;\ i\ !=\ \textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(-\/1);\ -\/-\/i)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_steps[i]\ =\ current\_step;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_step\ *=\ m\_shape[i];}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Idxs>}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}(\textcolor{keyword}{sizeof}...(Idxs)\ ==\ Rank)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ physical\_index(\textcolor{keyword}{const}\ Idxs...\ idxs)\ \textcolor{keyword}{const}\ -\/>\ std::size\_t\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::array<std::size\_t,\ Rank>\ idxs\_arr\{\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(idxs)...\};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ physical\_index\ =\ 0;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ Rank;\ ++i)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (idxs\_arr[i]\ >=\ m\_shape[i])\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Tensor\ index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ physical\_index\ +=\ m\_steps[i]\ *\ idxs\_arr[i];}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ physical\_index;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor}}(\textcolor{keyword}{const}\ std::array<size\_t,\ Rank>\&\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}})}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ :\ m\_shape(\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}),}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_data(std::accumulate(\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_ac3fe489f64db9697f6c9295aebb5d136}{begin}}(),}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a816fdc2f8ac497140778fc071b813024}{end}}(),}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ static\_cast<size\_t>(1),}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::multiplies()))\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ update\_steps();}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Dims>}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}(\textcolor{keyword}{sizeof}...(Dims)\ ==\ Rank)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_aa032eb5875ff92319a7c64b83a1e39a0}{Tensor}}(\textcolor{keyword}{const}\ Dims...\ dims)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ :\ m\_shape\{\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(dims)...\},}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_data(std::ranges::fold\_left(m\_shape,\ 1,\ std::multiplies()))\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ update\_steps();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_abc82b477190acf69c9e09b46276147dd}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\&\ other)\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keywordtype}{bool}\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_shape\ ==\ other.m\_shape\ \&\&\ m\_data\ ==\ other.m\_data;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_aff520eafc9ad362d3d390c4ad5f77518}{operator=}}(std::initializer\_list<T>\ list)\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\&\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (list.size()\ !=\ m\_data.size())\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Data\ size\ does\ not\ match\ tensor\ size"{}});}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ std::copy(list.begin(),\ list.end(),\ m\_data.begin());}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_addc5fb80712265edf13d2c877fbf0ce4}{operator()}}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}...\ idxs)\ -\/>\ T\&\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data[physical\_index(idxs...)];}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a30f761ffe6a426e2705d92c790273165}{operator()}}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}...\ idxs)\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keyword}{const}\ T\&\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data[physical\_index(idxs...)];}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a57764b269a44d7ca3dc39775d9e66f25}{operator()}}(\textcolor{keyword}{const}\ std::array<size\_t,\ Rank>\&\ idxs)\ -\/>\ T\&\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ idx\ =\ 0;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ dim\ =\ 0;\ dim\ <\ Rank;\ dim++)\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ idxs[dim]\ <\ m\_shape[dim]\ ?\ idx\ +=\ m\_steps[dim]\ *\ idxs[dim]}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data[idx];}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_ae63873da1de276f0defb7ddcf9a0a250}{operator()}}(\textcolor{keyword}{const}\ std::array<size\_t,\ Rank>\&\ idxs)\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keyword}{const}\ T\&\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ idx\ =\ 0;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ dim\ =\ 0;\ dim\ <\ Rank;\ dim++)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ idxs[dim]\ <\ m\_shape[dim]\ ?\ idx\ +=\ m\_steps[dim]\ *\ idxs[dim]}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data[idx];}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a4a20c27be03a3d2b3aa2d6a4a1d985db}{operator[]}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ idx)\ -\/>\ T\&\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data.at(idx);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_abdeeeb04a17e85cdbd2d23c4ba1c708a}{operator[]}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ idx)\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keyword}{const}\ T\&\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data.at(idx);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a215437fdbb556e998f3feae08b02a51b}{size}}()\ const\ -\/>\ \textcolor{keywordtype}{size\_t}\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data.size();}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}()\ const\ noexcept\ -\/>\ const\ std::array<\textcolor{keywordtype}{size\_t},\ Rank>\&\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_shape;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a17fecc417ac1f38cf37ce43ac4a9952f}{reshape}}(\textcolor{keyword}{const}\ std::array<size\_t,\ Rank>\&\ new\_shape)\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ m\_data.resize(std::ranges::fold\_left(new\_shape,\ 1,\ std::multiplies()));}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ m\_shape\ =\ new\_shape;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ update\_steps();}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Dims>}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}(\textcolor{keyword}{sizeof}...(Dims)\ ==\ Rank)}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a54fa319d146817ef1b6f9cd85274752c}{reshape}}(\textcolor{keyword}{const}\ Dims...\ dims)\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ std::array<size\_t,\ Rank>\ new\_shape\{\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(dims)...\};}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ m\_data.resize(std::ranges::fold\_left(new\_shape,\ 1,\ std::multiplies()));}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ m\_shape\ =\ new\_shape;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ update\_steps();}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a637c3147839433886d561c28a210cd33}{fill}}(\textcolor{keyword}{const}\ T\&\ value)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ std::ranges::fill(m\_data,\ value);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a51eb9eef03f17649b74063dd37574a03}{row}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ index)\ \textcolor{keyword}{const}\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ 2>}}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}(Rank\ ==\ 2)}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ m\_shape[0])\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Row\ index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ 2>}}\ result(1,\ m\_shape[1]);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ m\_shape[1];\ ++j)\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result(0,\ j)\ =\ (*this)(index,\ j);}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a}{set\_row}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ index,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ 2>}}\&\ row\_tensor)}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}(Rank\ ==\ 2)}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\_tensor.shape()[0]\ !=\ 1\ ||\ row\_tensor.shape()[1]\ !=\ m\_shape[1])\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Row\ shape\ does\ not\ match"{}});}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ m\_shape[1];\ ++j)\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*this)(index,\ j)\ =\ row\_tensor(0,\ j);}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c}{slice}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ index)\ \textcolor{keyword}{const}\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ 2>}}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}(Rank\ ==\ 3)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ m\_shape[0])\ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ 2>}}\ result(m\_shape[1],\ m\_shape[2]);}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ m\_shape[1];\ ++j)\ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ m\_shape[2];\ ++k)\ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result(j,\ k)\ =\ (*this)(index,\ j,\ k);}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_ae9d375f3d8c7e60eceb238dbe0df593a}{set\_slice}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ index,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ 2>}}\&\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c}{slice}})}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}(Rank\ ==\ 3)}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ m\_shape[0])\ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c}{slice}}.shape()[0]\ !=\ m\_shape[1]\ ||\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c}{slice}}.shape()[1]\ !=\ m\_shape[2])\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Slice\ shape\ does\ not\ match"{}});}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ m\_shape[1];\ ++j)\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ m\_shape[2];\ ++k)\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*this)(index,\ j,\ k)\ =\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c}{slice}}(j,\ k);}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_adac07192ba798e56630fb5c547b38747}{broadcast}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\&\ rhs,\ \textcolor{keyword}{auto}\ fn)\ \textcolor{keyword}{const}\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_shape\ ==\ rhs.m\_shape)\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Element-\/wise}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ result\{m\_shape\};}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ m\_data.size();\ ++i)\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result[i]\ =\ fn(m\_data[i],\ rhs[i]);}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ std::array<std::size\_t,\ Rank>\ result\_shape;}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ Rank;\ ++i)\ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_shape[i]\ ==\ rhs.m\_shape[i])\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\_shape[i]\ =\ m\_shape[i];}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (m\_shape[i]\ ==\ 1\ ||\ rhs.m\_shape[i]\ ==\ 1)\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\_shape[i]\ =\ std::max(m\_shape[i],\ rhs.m\_shape[i]);}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Shapes\ do\ not\ match\ and\ they\ are\ not\ compatible\ for\ broadcasting"{}});}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ result\{result\_shape\};}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ apply\_with\_counter(}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&](\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ result\_index)\ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<std::size\_t,\ Rank>\ lhs\_index\{result\_index\};}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<std::size\_t,\ Rank>\ rhs\_index\{result\_index\};}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ Rank;\ ++i)\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lhs\_index[i]\ \%=\ m\_shape[i];}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ Rank;\ ++i)\ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rhs\_index[i]\ \%=\ rhs.m\_shape[i];}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::apply(result,\ result\_index)\ =}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fn(std::apply(*\textcolor{keyword}{this},\ lhs\_index),\ std::apply(rhs,\ rhs\_index));}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\_shape);}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a7f68b0a3fbf84213e7f0a4928f54fb05}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\&\ other)\ \textcolor{keyword}{const}\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_adac07192ba798e56630fb5c547b38747}{broadcast}}(other,\ std::plus());}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a1cf64d6d7bdf6131ee5748949a37f187}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\&\ other)\ \textcolor{keyword}{const}\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_adac07192ba798e56630fb5c547b38747}{broadcast}}(other,\ std::minus());}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_ad90e82d91ec2f95c449eea378024df98}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\&\ other)\ \textcolor{keyword}{const}\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_adac07192ba798e56630fb5c547b38747}{broadcast}}(other,\ std::multiplies());}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a6556ae085ce1e8b3906c68d020331878}{operator/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\&\ other)\ \textcolor{keyword}{const}\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_adac07192ba798e56630fb5c547b38747}{broadcast}}(other,\ std::divides());}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a4d5c7867448ca6070dd77d76e7503d0a}{operator+}}(\textcolor{keyword}{const}\ T\&\ scalar)\ \textcolor{keyword}{const}\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ result(m\_shape);}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ std::ranges::transform(m\_data,\ result.m\_data.begin(),}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&](\textcolor{keyword}{const}\ T\&\ value)\ \{\ return\ value\ +\ scalar;\ \});}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afe345e8834b5d29becc99333effac546}{operator-\/}}(\textcolor{keyword}{const}\ T\&\ scalar)\ \textcolor{keyword}{const}\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ result(m\_shape);}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ std::ranges::transform(m\_data,\ result.m\_data.begin(),}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&](\textcolor{keyword}{const}\ T\&\ value)\ \{\ return\ value\ -\/\ scalar;\ \});}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a9e168810c56913a57f0e569300d33271}{operator*}}(\textcolor{keyword}{const}\ T\&\ scalar)\ \textcolor{keyword}{const}\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ result(m\_shape);}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ std::ranges::transform(m\_data,\ result.m\_data.begin(),}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&](\textcolor{keyword}{const}\ T\&\ value)\ \{\ return\ value\ *\ scalar;\ \});}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a332afc2da9d7aff2b9d261f3e4275ac0}{operator/}}(\textcolor{keyword}{const}\ T\&\ scalar)\ \textcolor{keyword}{const}\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ result(m\_shape);}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ std::ranges::transform(m\_data,\ result.m\_data.begin(),}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&](\textcolor{keyword}{const}\ T\&\ value)\ \{\ return\ value\ /\ scalar;\ \});}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a77343720ccea1fe9b6eb35d15b5fe9e9}{operator+}}(\textcolor{keyword}{const}\ T\&\ scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor}}\&\ tensor)\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ result(tensor.m\_shape);}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ std::ranges::transform(tensor.m\_data,\ result.m\_data.begin(),}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&](\textcolor{keyword}{const}\ T\&\ value)\ \{\ return\ scalar\ +\ value;\ \});}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_ab21fecbff07e86f38dcdd0723a545213}{operator-\/}}(\textcolor{keyword}{const}\ T\&\ scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor}}\&\ tensor)\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ result(tensor.m\_shape);}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ std::ranges::transform(tensor.m\_data,\ result.m\_data.begin(),}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&](\textcolor{keyword}{const}\ T\&\ value)\ \{\ return\ scalar\ -\/\ value;\ \});}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a0eef42b1eb01e70f175d427230ca3710}{operator*}}(\textcolor{keyword}{const}\ T\&\ scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor}}\&\ tensor)\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ result(tensor.m\_shape);}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ std::ranges::transform(tensor.m\_data,\ result.m\_data.begin(),}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&](\textcolor{keyword}{const}\ T\&\ value)\ \{\ return\ scalar\ *\ value;\ \});}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_abac937f7e9269d2523f4dac39fbb6e5d}{operator/}}(\textcolor{keyword}{const}\ T\&\ scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor}}\&\ tensor)\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ result(tensor.m\_shape);}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ std::ranges::transform(tensor.m\_data,\ result.m\_data.begin(),}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&](\textcolor{keyword}{const}\ T\&\ value)\ \{\ return\ scalar\ /\ value;\ \});}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a112907a1abc16c6c425bfd1e8e4ab0f1}{operator-\/}}()\ const\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor}}<T,\ Rank>\ \{}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ result(m\_shape);}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ std::ranges::transform(m\_data,\ result.m\_data.begin(),\ std::negate());}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_ae94cc2c4fe2ddc07580e21b96eeb1f8e}{operator<<}}(std::ostream\&\ out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\&\ tensor)}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ -\/>\ std::ostream\&\ \textcolor{keyword}{requires}(Rank\ >\ 1)\ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}\ =\ tensor.shape();}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<size\_t,\ Rank>\ index\{\};}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<void(\textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t})>\ print\_recursive\ =\ [\&](\textcolor{keywordtype}{size\_t}\ dim,}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ indent)\ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ std::string(indent,\ \textcolor{charliteral}{'\ '})\ <<\ \textcolor{stringliteral}{"{}\{\(\backslash\)n"{}};}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}[dim];\ ++i)\ \{}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index[dim]\ =\ i;}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dim\ ==\ Rank\ -\/\ 2)\ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ std::string(indent\ +\ 2,\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}[Rank\ -\/\ 1];\ ++j)\ \{}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index[Rank\ -\/\ 1]\ =\ j;}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ tensor(index)\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print\_recursive(dim\ +\ 1,\ indent\ +\ 2);}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ std::string(indent,\ \textcolor{charliteral}{'\ '})\ <<\ \textcolor{stringliteral}{"{}\}\(\backslash\)n"{}};}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print\_recursive(0,\ 0);}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_ab4131352cf1e7e232047d3f79498fa48}{operator<<}}(std::ostream\&\ out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\&\ tensor)}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ -\/>\ std::ostream\&\ \textcolor{keyword}{requires}(Rank\ ==\ 1)\ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ranges::copy(tensor,\ std::ostream\_iterator<T>(out,\ \textcolor{stringliteral}{"{}\ "{}}));}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_ac3fe489f64db9697f6c9295aebb5d136}{begin}}()\ noexcept\ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data.begin();}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a816fdc2f8ac497140778fc071b813024}{end}}()\ noexcept\ \{}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data.end();}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_aecaf859f41c82bbe3e9c65ffe22d8192}{begin}}()\ const\ noexcept\ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data.begin();}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a7be8b942f98b3c988a7dc040fe7c72d5}{end}}()\ const\ noexcept\ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data.end();}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a271cbdb704f0c4a7c348121322212c70}{transpose\_2d}}()\ const\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor}}<T,\ 2>\ \{}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ 2>}}\ result(m\_shape[1],\ m\_shape[0]);}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ m\_shape[0];\ ++i)\ \{}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ j\ =\ 0;\ j\ <\ m\_shape[1];\ ++j)\ \{}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result(j,\ i)\ =\ (*this)(i,\ j);}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_aa3bbc9568b2b1fabd0fd584827603c7e}{transpose\_2d}}()\ const\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor}}<T,\ Rank>}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ requires(Rank\ >\ 2)}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ std::array<std::size\_t,\ Rank>\ new\_shape\{m\_shape\};}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ std::swap(new\_shape[Rank\ -\/\ 2],\ new\_shape[Rank\ -\/\ 1]);}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ result\{new\_shape\};}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ std::array<std::size\_t,\ Rank\ -\/\ 2>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a215437fdbb556e998f3feae08b02a51b}{size}}\{\};}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ std::copy(m\_shape.begin(),\ m\_shape.end()\ -\/\ 2,\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a215437fdbb556e998f3feae08b02a51b}{size}}.begin());}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ apply\_with\_counter(}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&](\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ index)\ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<std::size\_t,\ Rank>\ full\_index;}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::copy(index.begin(),\ index.end(),\ full\_index.begin());}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ m\_shape[Rank\ -\/\ 2];\ ++i)\ \{}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ j\ =\ 0;\ j\ <\ m\_shape[Rank\ -\/\ 1];\ ++j)\ \{}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ full\_index[Rank\ -\/\ 2]\ =\ i;}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ full\_index[Rank\ -\/\ 1]\ =\ j;}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ src\ =\ std::apply(*\textcolor{keyword}{this},\ full\_index);}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ full\_index[Rank\ -\/\ 2]\ =\ j;}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ full\_index[Rank\ -\/\ 1]\ =\ i;}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\&\ dest\ =\ std::apply(result,\ full\_index);}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest\ =\ src;}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a215437fdbb556e998f3feae08b02a51b}{size}});}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16}{apply}}(\textcolor{keyword}{auto}\ fn)\ \textcolor{keyword}{const}\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor<T,\ Rank>}}\ result(m\_shape);}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ std::ranges::transform(m\_data,\ result.m\_data.begin(),\ fn);}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00457\ \ \ \ \ \};}
+\DoxyCodeLine{00458\ }
+\DoxyCodeLine{00459\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00460\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{matrix\_product}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor<T,\ 2>}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor<T,\ 2>}}\&\ rhs)}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor<T,\ 2>}}\ \{}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lhs.shape()[1]\ !=\ rhs.shape()[0])\ \{}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Incompatible\ matrix\ dimensions\ for\ multiplication"{}});}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Simple\ matrix\ multiplication}}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor<T,\ 2>}}\ result(lhs.shape()[0],\ rhs.shape()[1]);}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ result.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}()[0];\ ++i)\ \{}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ j\ =\ 0;\ j\ <\ result.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}()[1];\ ++j)\ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ k\ =\ 0;\ k\ <\ lhs.shape()[1];\ ++k)\ \{}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result(i,\ j)\ +=\ lhs(i,\ k)\ *\ rhs(k,\ j);}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00478\ \ \ \ \ \}}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ std::\textcolor{keywordtype}{size\_t}\ Rank>}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}(Rank\ >\ 2)}
+\DoxyCodeLine{00482\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{matrix\_product}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor<T,\ Rank>}}\&\ lhs,}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor<T,\ Rank>}}\&\ rhs)\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor<T,\ Rank>}}\ \{}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ Rank\ -\/\ 2;\ ++i)\ \{}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lhs.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}()[i]\ !=\ rhs.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}()[i])\ \{}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Incompatible\ batch\ dimensions\ for\ multiplication"{}});}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ std::array<std::size\_t,\ Rank>\ new\_shape\{lhs.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}()\};}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ new\_shape[Rank\ -\/\ 1]\ =\ rhs.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}()[Rank\ -\/\ 1];}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor<T,\ Rank>}}\ result(new\_shape);}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ std::array<std::size\_t,\ Rank\ -\/\ 2>\ size\{\};}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ std::copy(lhs.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}().begin(),\ lhs.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}().end()\ -\/\ 2,\ size.begin());}
+\DoxyCodeLine{00496\ }
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ apply\_with\_counter(}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ \ \ [\&](\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ index)\ \{}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<std::size\_t,\ Rank>\ full\_index;}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ranges::copy(index,\ full\_index.begin());}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ result.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}()[Rank\ -\/\ 2];\ ++i)\ \{}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ j\ =\ 0;\ j\ <\ result.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}()[Rank\ -\/\ 1];\ ++j)\ \{}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ k\ =\ 0;\ k\ <\ lhs.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}}()[Rank\ -\/\ 1];\ ++k)\ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ full\_index[Rank\ -\/\ 2]\ =\ i;}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ full\_index[Rank\ -\/\ 1]\ =\ k;}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ src1\ =\ std::apply(lhs,\ full\_index);}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ full\_index[Rank\ -\/\ 2]\ =\ k;}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ full\_index[Rank\ -\/\ 1]\ =\ j;}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ src2\ =\ std::apply(rhs,\ full\_index);}
+\DoxyCodeLine{00512\ }
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ full\_index[Rank\ -\/\ 2]\ =\ i;}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ full\_index[Rank\ -\/\ 1]\ =\ j;}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\&\ dest\ =\ std::apply(result,\ full\_index);}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest\ +=\ src1\ *\ src2;}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ size);}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00525\ \ \ \ \ \}}
+\DoxyCodeLine{00526\ }
+\DoxyCodeLine{00527\ \}\ \ \textcolor{comment}{//\ namespace\ utec::algebra}}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

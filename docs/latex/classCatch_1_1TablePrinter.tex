@@ -1,0 +1,93 @@
+\doxysection{Catch\+::Table\+Printer Class Reference}
+\hypertarget{classCatch_1_1TablePrinter}{}\label{classCatch_1_1TablePrinter}\index{Catch::TablePrinter@{Catch::TablePrinter}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCatch_1_1TablePrinter_a5927152ae95eeefa471ab27c01644980}{Table\+Printer}} (std\+::ostream \&os, std\+::vector$<$ \mbox{\hyperlink{structCatch_1_1ColumnInfo}{Column\+Info}} $>$ \mbox{\hyperlink{classCatch_1_1TablePrinter_a378f2bdf7f353a13d3a9f683a2c1fa04}{column\+Infos}})
+\item 
+auto \mbox{\hyperlink{classCatch_1_1TablePrinter_a378f2bdf7f353a13d3a9f683a2c1fa04}{column\+Infos}} () const -\/$>$ std\+::vector$<$ \mbox{\hyperlink{structCatch_1_1ColumnInfo}{Column\+Info}} $>$ const \&
+\item 
+void \mbox{\hyperlink{classCatch_1_1TablePrinter_abb4f12add189af81ef29694014cac6df}{open}} ()
+\item 
+void \mbox{\hyperlink{classCatch_1_1TablePrinter_aa5936978a607e853ac0346df60e0f6f7}{close}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \& \mbox{\hyperlink{classCatch_1_1TablePrinter_a32b70423caf631aeffe5a48a1971eaac}{operator$<$$<$}} (\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \&tp, T const \&value)
+\item 
+\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \& \mbox{\hyperlink{classCatch_1_1TablePrinter_a90580b26094240d55734c7bf1e5e83d0}{operator$<$$<$}} (\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \&tp, Column\+Break)
+\item 
+\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \& \mbox{\hyperlink{classCatch_1_1TablePrinter_aee6eb4fc24343c7ae86bd64dbbd49cf8}{operator$<$$<$}} (\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \&tp, Row\+Break)
+\item 
+\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \& \mbox{\hyperlink{classCatch_1_1TablePrinter_a75a1af0ba751e134282bf6ae952c9cdc}{operator$<$$<$}} (\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \&tp, Output\+Flush)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classCatch_1_1TablePrinter_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCatch_1_1TablePrinter_a5927152ae95eeefa471ab27c01644980}\index{Catch::TablePrinter@{Catch::TablePrinter}!TablePrinter@{TablePrinter}}
+\index{TablePrinter@{TablePrinter}!Catch::TablePrinter@{Catch::TablePrinter}}
+\doxysubsubsection{\texorpdfstring{TablePrinter()}{TablePrinter()}}
+{\footnotesize\ttfamily \label{classCatch_1_1TablePrinter_a5927152ae95eeefa471ab27c01644980} 
+Catch\+::\+Table\+Printer\+::\+Table\+Printer (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{structCatch_1_1ColumnInfo}{Column\+Info}} $>$}]{column\+Infos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classCatch_1_1TablePrinter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCatch_1_1TablePrinter_aa5936978a607e853ac0346df60e0f6f7}\index{Catch::TablePrinter@{Catch::TablePrinter}!close@{close}}
+\index{close@{close}!Catch::TablePrinter@{Catch::TablePrinter}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \label{classCatch_1_1TablePrinter_aa5936978a607e853ac0346df60e0f6f7} 
+void Catch\+::\+Table\+Printer\+::close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCatch_1_1TablePrinter_a378f2bdf7f353a13d3a9f683a2c1fa04}\index{Catch::TablePrinter@{Catch::TablePrinter}!columnInfos@{columnInfos}}
+\index{columnInfos@{columnInfos}!Catch::TablePrinter@{Catch::TablePrinter}}
+\doxysubsubsection{\texorpdfstring{columnInfos()}{columnInfos()}}
+{\footnotesize\ttfamily \label{classCatch_1_1TablePrinter_a378f2bdf7f353a13d3a9f683a2c1fa04} 
+auto Catch\+::\+Table\+Printer\+::column\+Infos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ std\+::vector$<$\mbox{\hyperlink{structCatch_1_1ColumnInfo}{Column\+Info}}$>$ const\& \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCatch_1_1TablePrinter_abb4f12add189af81ef29694014cac6df}\index{Catch::TablePrinter@{Catch::TablePrinter}!open@{open}}
+\index{open@{open}!Catch::TablePrinter@{Catch::TablePrinter}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \label{classCatch_1_1TablePrinter_abb4f12add189af81ef29694014cac6df} 
+void Catch\+::\+Table\+Printer\+::open (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-related-members}
+\Hypertarget{classCatch_1_1TablePrinter_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classCatch_1_1TablePrinter_a90580b26094240d55734c7bf1e5e83d0}\index{Catch::TablePrinter@{Catch::TablePrinter}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Catch::TablePrinter@{Catch::TablePrinter}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classCatch_1_1TablePrinter_a90580b26094240d55734c7bf1e5e83d0} 
+\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \&}]{tp}{, }\item[{Column\+Break}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{classCatch_1_1TablePrinter_a75a1af0ba751e134282bf6ae952c9cdc}\index{Catch::TablePrinter@{Catch::TablePrinter}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Catch::TablePrinter@{Catch::TablePrinter}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classCatch_1_1TablePrinter_a75a1af0ba751e134282bf6ae952c9cdc} 
+\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \&}]{tp}{, }\item[{Output\+Flush}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{classCatch_1_1TablePrinter_aee6eb4fc24343c7ae86bd64dbbd49cf8}\index{Catch::TablePrinter@{Catch::TablePrinter}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Catch::TablePrinter@{Catch::TablePrinter}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classCatch_1_1TablePrinter_aee6eb4fc24343c7ae86bd64dbbd49cf8} 
+\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \&}]{tp}{, }\item[{Row\+Break}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{classCatch_1_1TablePrinter_a32b70423caf631aeffe5a48a1971eaac}\index{Catch::TablePrinter@{Catch::TablePrinter}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Catch::TablePrinter@{Catch::TablePrinter}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classCatch_1_1TablePrinter_a32b70423caf631aeffe5a48a1971eaac} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1TablePrinter}{Table\+Printer}} \&}]{tp}{, }\item[{T const \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+deps/catch/\mbox{\hyperlink{catch__amalgamated_8cpp}{catch\+\_\+amalgamated.\+cpp}}\end{DoxyCompactItemize}

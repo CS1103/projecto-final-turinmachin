@@ -1,0 +1,59 @@
+\doxysection{utec\+::neural\+\_\+network\+::ILoss\texorpdfstring{$<$}{<} T, Dims \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structutec_1_1neural__network_1_1ILoss}{}\label{structutec_1_1neural__network_1_1ILoss}\index{utec::neural\_network::ILoss$<$ T, Dims $>$@{utec::neural\_network::ILoss$<$ T, Dims $>$}}
+
+
+{\ttfamily \#include $<$interfaces.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_add5386c613a6166cedccf23b8cba066d}{\texorpdfstring{$\sim$}{\string~}\+ILoss}} ()=default
+\item 
+virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a7aefbeb1f4bd61f61491309de76f2726}{loss}} () const -\/$>$ T=0
+\item 
+virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270}{loss\+\_\+gradient}} () const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, Dims $>$=0
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{structutec_1_1neural__network_1_1ILoss_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structutec_1_1neural__network_1_1ILoss_add5386c613a6166cedccf23b8cba066d}\index{utec::neural\_network::ILoss$<$ T, Dims $>$@{utec::neural\_network::ILoss$<$ T, Dims $>$}!````~ILoss@{\texorpdfstring{$\sim$}{\string~}ILoss}}
+\index{````~ILoss@{\texorpdfstring{$\sim$}{\string~}ILoss}!utec::neural\_network::ILoss$<$ T, Dims $>$@{utec::neural\_network::ILoss$<$ T, Dims $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ILoss()}{\string~ILoss()}}
+{\footnotesize\ttfamily \label{structutec_1_1neural__network_1_1ILoss_add5386c613a6166cedccf23b8cba066d} 
+template$<$typename T, size\+\_\+t Dims$>$ \\
+virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{utec\+::neural\+\_\+network\+::\+ILoss}}$<$ T, Dims $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{ILoss}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{structutec_1_1neural__network_1_1ILoss_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structutec_1_1neural__network_1_1ILoss_a7aefbeb1f4bd61f61491309de76f2726}\index{utec::neural\_network::ILoss$<$ T, Dims $>$@{utec::neural\_network::ILoss$<$ T, Dims $>$}!loss@{loss}}
+\index{loss@{loss}!utec::neural\_network::ILoss$<$ T, Dims $>$@{utec::neural\_network::ILoss$<$ T, Dims $>$}}
+\doxysubsubsection{\texorpdfstring{loss()}{loss()}}
+{\footnotesize\ttfamily \label{structutec_1_1neural__network_1_1ILoss_a7aefbeb1f4bd61f61491309de76f2726} 
+template$<$typename T, size\+\_\+t Dims$>$ \\
+virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{utec\+::neural\+\_\+network\+::\+ILoss}}$<$ T, Dims $>$\+::loss (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$  T\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classutec_1_1neural__network_1_1BCELoss_ab92e716086286add59e2f17cd184c96a}{utec\+::neural\+\_\+network\+::\+BCELoss$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_a7c9ae10a49791b7cb37b985dd0ccb786}{utec\+::neural\+\_\+network\+::\+Cross\+Entropy\+Loss$<$ T $>$}}, and \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_a43be1dc09b8f4fb0080de0dc1dfe1915}{utec\+::neural\+\_\+network\+::\+MSELoss$<$ T $>$}}.
+
+\Hypertarget{structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270}\index{utec::neural\_network::ILoss$<$ T, Dims $>$@{utec::neural\_network::ILoss$<$ T, Dims $>$}!loss\_gradient@{loss\_gradient}}
+\index{loss\_gradient@{loss\_gradient}!utec::neural\_network::ILoss$<$ T, Dims $>$@{utec::neural\_network::ILoss$<$ T, Dims $>$}}
+\doxysubsubsection{\texorpdfstring{loss\_gradient()}{loss\_gradient()}}
+{\footnotesize\ttfamily \label{structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270} 
+template$<$typename T, size\+\_\+t Dims$>$ \\
+virtual auto \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{utec\+::neural\+\_\+network\+::\+ILoss}}$<$ T, Dims $>$\+::loss\+\_\+gradient (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$  \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, Dims $>$\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classutec_1_1neural__network_1_1BCELoss_ab0c0df07db8e212a88d3f3f75f9befd2}{utec\+::neural\+\_\+network\+::\+BCELoss$<$ T $>$}}, \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_ad1a468fc0dd8bc6f825322015ffdbe13}{utec\+::neural\+\_\+network\+::\+Cross\+Entropy\+Loss$<$ T $>$}}, and \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_ac42456ee183bddd85e5a40d92f5abae5}{utec\+::neural\+\_\+network\+::\+MSELoss$<$ T $>$}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/utec/nn/\mbox{\hyperlink{utec_2nn_2interfaces_8h}{interfaces.\+h}}\end{DoxyCompactItemize}

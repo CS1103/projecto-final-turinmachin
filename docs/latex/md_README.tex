@@ -1,0 +1,196 @@
+\chapter{README }
+\hypertarget{md_README}{}\label{md_README}\index{README@{README}}
+\href{https://classroom.github.com/a/Lj3YlzJp}{\texttt{}}\hypertarget{md_README_autotoc_md0}{}\doxysection{\texorpdfstring{Proyecto Final 2025-\/1\+: Brain Ager}{Proyecto Final 2025-\/1\+: Brain Ager}}\label{md_README_autotoc_md0}
+\hypertarget{md_README_autotoc_md1}{}\doxysubsection{\texorpdfstring{{\bfseries{CS2013 Programación III}} · Informe Final}{{\bfseries{CS2013 Programación III}} · Informe Final}}\label{md_README_autotoc_md1}
+\hypertarget{md_README_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{{\bfseries{Descripción}}}{{\bfseries{Descripción}}}}\label{md_README_autotoc_md2}
+\begin{quote}
+Ejemplo\+: Implementación de una red neuronal multicapa en C++ para clasificación de dígitos manuscritos. \end{quote}
+\hypertarget{md_README_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{Contenidos}{Contenidos}}\label{md_README_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item Datos generales
+\item Requisitos e instalación
+\item Investigación teórica
+\item Diseño e implementación
+\item Ejecución
+\item Análisis del rendimiento
+\item Trabajo en equipo
+\item Conclusiones
+\item Bibliografía
+\item Licencia
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{Datos generales}{Datos generales}}\label{md_README_autotoc_md5}
+
+\begin{DoxyItemize}
+\item {\bfseries{Tema}}\+: Red Neuronal intérprete de imágenes
+\item {\bfseries{Grupo}}\+: {\ttfamily turinmachin}
+\item {\bfseries{Integrantes}}\+:
+\begin{DoxyItemize}
+\item Grayson Tejada, José Daniel – 202410372 ()
+\item Lopez Del Carpio, Joaquin Adrian – 202410220 ()
+\item Figueroa Winkelried, Diego Alonso – 202410533 ()
+\item Valladolid Jimenes, Gonzalo Andrés – 202410186 ()
+\item Walde Verano, Matías Sebastian – 202410626 ()
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{Requisitos e instalación}{Requisitos e instalación}}\label{md_README_autotoc_md7}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Compilador}}\+: GCC 14+
+\item {\bfseries{Dependencias}}\+:
+\begin{DoxyItemize}
+\item CMake 3.\+29+
+\item pkg-\/config 0.\+29+
+\item SDL3
+\item SDL3\+\_\+ttf
+\item catch2\+\_\+3
+\end{DoxyItemize}
+\item {\bfseries{Instalación}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/CS1103/projecto-\/final-\/turinmachin}
+\DoxyCodeLine{cd\ projecto-\/final-\/turinmachin}
+\DoxyCodeLine{cmake\ -\/S\ .\ -\/B\ build}
+\DoxyCodeLine{cd\ build}
+\DoxyCodeLine{cmake\ -\/-\/build\ .}
+\DoxyCodeLine{./brain\_ager}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{1. Investigación teórica}{1. Investigación teórica}}\label{md_README_autotoc_md9}
+
+\begin{DoxyItemize}
+\item {\bfseries{Objetivo}}\+: Explorar fundamentos y arquitecturas de redes neuronales.
+\item {\bfseries{Contenido de ejemplo}}\+:
+\begin{DoxyEnumerate}
+\item Historia y evolución de las NNs.
+\item Principales arquitecturas\+: MLP, CNN, RNN.
+\item Algoritmos de entrenamiento\+: backpropagation, optimizadores.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{2. Diseño e implementación}{2. Diseño e implementación}}\label{md_README_autotoc_md11}
+\hypertarget{md_README_autotoc_md12}{}\doxysubsubsubsection{\texorpdfstring{2.\+1 Arquitectura de la solución}{2.\+1 Arquitectura de la solución}}\label{md_README_autotoc_md12}
+
+\begin{DoxyItemize}
+\item {\bfseries{Patrones de diseño}}\+: ejemplo\+: Factory para capas, Strategy para optimizadores.
+\item {\bfseries{Estructura de carpetas (ejemplo)}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{proyecto-\/final/}
+\DoxyCodeLine{├──\ src/}
+\DoxyCodeLine{│\ \ \ ├──\ layers/}
+\DoxyCodeLine{│\ \ \ ├──\ optimizers/}
+\DoxyCodeLine{│\ \ \ └──\ main.cpp}
+\DoxyCodeLine{├──\ tests/}
+\DoxyCodeLine{└──\ docs/}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md13}{}\doxysubsubsubsection{\texorpdfstring{2.\+2 Manual de uso y casos de prueba}{2.\+2 Manual de uso y casos de prueba}}\label{md_README_autotoc_md13}
+
+\begin{DoxyItemize}
+\item {\bfseries{Cómo ejecutar}}\+: {\ttfamily ./build/neural\+\_\+net\+\_\+demo input.\+csv output.\+csv}
+\item {\bfseries{Casos de prueba}}\+:
+\begin{DoxyItemize}
+\item Test unitario de capa densa.
+\item Test de función de activación Re\+LU.
+\item Test de convergencia en dataset de ejemplo.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\begin{quote}
+{\itshape Personalizar rutas, comandos y casos reales.} \end{quote}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md15}{}\doxysubsubsection{\texorpdfstring{3. Ejecución}{3. Ejecución}}\label{md_README_autotoc_md15}
+\begin{quote}
+{\bfseries{Demo de ejemplo}}\+: Video/demo alojado en {\ttfamily docs/demo.\+mp4}. Pasos\+:
+
+
+\begin{DoxyEnumerate}
+\item Preparar datos de entrenamiento (formato CSV).
+\item Ejecutar comando de entrenamiento.
+\item Evaluar resultados con script de validación. 
+\end{DoxyEnumerate}\end{quote}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md17}{}\doxysubsubsection{\texorpdfstring{4. Análisis del rendimiento}{4. Análisis del rendimiento}}\label{md_README_autotoc_md17}
+
+\begin{DoxyItemize}
+\item {\bfseries{Métricas de ejemplo}}\+:
+\begin{DoxyItemize}
+\item Iteraciones\+: 1000 épocas.
+\item Tiempo total de entrenamiento\+: 2m30s.
+\item Precisión final\+: 92.\+5\%.
+\end{DoxyItemize}
+\item {\bfseries{Ventajas/\+Desventajas}}\+:
+\begin{DoxyItemize}
+\item -\/ Código ligero y dependencias mínimas.
+\item – Sin paralelización, rendimiento limitado.
+\end{DoxyItemize}
+\item {\bfseries{Mejoras futuras}}\+:
+\begin{DoxyItemize}
+\item Uso de BLAS para multiplicaciones (Justificación).
+\item Paralelizar entrenamiento por lotes (Justificación).
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{5. Trabajo en equipo}{5. Trabajo en equipo}}\label{md_README_autotoc_md19}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tarea  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Miembro  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rol  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tarea  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Miembro  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rol  }\\\cline{1-3}
+\endhead
+Investigación teórica  &Alumno A  &Documentar bases teóricas  \\\cline{1-3}
+Diseño de la arquitectura  &Alumno B  &UML y esquemas de clases  \\\cline{1-3}
+Implementación del modelo  &Alumno C  &Código C++ de la NN  \\\cline{1-3}
+Pruebas y benchmarking  &Alumno D  &Generación de métricas  \\\cline{1-3}
+Documentación y demo  &Alumno E  &Tutorial y video demo  \\\cline{1-3}
+\end{longtabu}
+
+
+\begin{quote}
+{\itshape Actualizar con tareas y nombres reales.} \end{quote}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md21}{}\doxysubsubsection{\texorpdfstring{6. Conclusiones}{6. Conclusiones}}\label{md_README_autotoc_md21}
+
+\begin{DoxyItemize}
+\item {\bfseries{Logros}}\+: Implementar NN desde cero, validar en dataset de ejemplo.
+\item {\bfseries{Evaluación}}\+: Calidad y rendimiento adecuados para propósito académico.
+\item {\bfseries{Aprendizajes}}\+: Profundización en backpropagation y optimización.
+\item {\bfseries{Recomendaciones}}\+: Escalar a datasets más grandes y optimizar memoria.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md23}{}\doxysubsubsection{\texorpdfstring{7. Bibliografía}{7. Bibliografía}}\label{md_README_autotoc_md23}
+\begin{quote}
+{\itshape Actualizar con bibliografia utilizada, al menos 4 referencias bibliograficas y usando formato IEEE de referencias bibliograficas.} \end{quote}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md25}{}\doxysubsubsection{\texorpdfstring{Licencia}{Licencia}}\label{md_README_autotoc_md25}
+Este proyecto usa la licencia {\bfseries{MIT}}. Ver \mbox{[}LICENSE\mbox{]}(LICENSE) para detalles.
+
+\DoxyHorRuler{0}
+ 

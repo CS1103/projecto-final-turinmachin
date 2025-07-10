@@ -1,0 +1,35 @@
+\doxysection{utec\+::algebra Namespace Reference}
+\hypertarget{namespaceutec_1_1algebra}{}\label{namespaceutec_1_1algebra}\index{utec::algebra@{utec::algebra}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{matrix\+\_\+product}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&lhs, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&rhs) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$
+\item 
+{\footnotesize template$<$typename T, std\+::size\+\_\+t Rank$>$ \newline
+requires (Rank $>$ 2)}\\constexpr auto \mbox{\hyperlink{namespaceutec_1_1algebra_a34bfff2098201ce115fd8d11b820a434}{matrix\+\_\+product}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&lhs, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&rhs) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{namespaceutec_1_1algebra_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}\index{utec::algebra@{utec::algebra}!matrix\_product@{matrix\_product}}
+\index{matrix\_product@{matrix\_product}!utec::algebra@{utec::algebra}}
+\doxysubsubsection{\texorpdfstring{matrix\_product()}{matrix\_product()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac} 
+template$<$typename T$>$ \\
+auto utec\+::algebra\+::matrix\+\_\+product (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&}]{rhs}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, 2$>$ \hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceutec_1_1algebra_a34bfff2098201ce115fd8d11b820a434}\index{utec::algebra@{utec::algebra}!matrix\_product@{matrix\_product}}
+\index{matrix\_product@{matrix\_product}!utec::algebra@{utec::algebra}}
+\doxysubsubsection{\texorpdfstring{matrix\_product()}{matrix\_product()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespaceutec_1_1algebra_a34bfff2098201ce115fd8d11b820a434} 
+template$<$typename T, std\+::size\+\_\+t Rank$>$ \newline
+requires (Rank $>$ 2)\\
+auto utec\+::algebra\+::matrix\+\_\+product (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{rhs}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [constexpr]}}
+

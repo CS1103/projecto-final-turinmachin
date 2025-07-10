@@ -1,0 +1,65 @@
+\doxysection{utec\+::neural\+\_\+network\+::IOptimizer\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structutec_1_1neural__network_1_1IOptimizer}{}\label{structutec_1_1neural__network_1_1IOptimizer}\index{utec::neural\_network::IOptimizer$<$ T $>$@{utec::neural\_network::IOptimizer$<$ T $>$}}
+
+
+{\ttfamily \#include $<$interfaces.\+h$>$}
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::IOptimizer\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structutec_1_1neural__network_1_1IOptimizer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a8535546f154901c74425495139d54b68}{\texorpdfstring{$\sim$}{\string~}\+IOptimizer}} ()=default
+\item 
+virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{update}} (\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&params, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&gradients)=0
+\item 
+virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a930832dc9b736845a83f5049c735dfe1}{step}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{structutec_1_1neural__network_1_1IOptimizer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structutec_1_1neural__network_1_1IOptimizer_a8535546f154901c74425495139d54b68}\index{utec::neural\_network::IOptimizer$<$ T $>$@{utec::neural\_network::IOptimizer$<$ T $>$}!````~IOptimizer@{\texorpdfstring{$\sim$}{\string~}IOptimizer}}
+\index{````~IOptimizer@{\texorpdfstring{$\sim$}{\string~}IOptimizer}!utec::neural\_network::IOptimizer$<$ T $>$@{utec::neural\_network::IOptimizer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IOptimizer()}{\string~IOptimizer()}}
+{\footnotesize\ttfamily \label{structutec_1_1neural__network_1_1IOptimizer_a8535546f154901c74425495139d54b68} 
+template$<$typename T$>$ \\
+virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{utec\+::neural\+\_\+network\+::\+IOptimizer}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{structutec_1_1neural__network_1_1IOptimizer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structutec_1_1neural__network_1_1IOptimizer_a930832dc9b736845a83f5049c735dfe1}\index{utec::neural\_network::IOptimizer$<$ T $>$@{utec::neural\_network::IOptimizer$<$ T $>$}!step@{step}}
+\index{step@{step}!utec::neural\_network::IOptimizer$<$ T $>$@{utec::neural\_network::IOptimizer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily \label{structutec_1_1neural__network_1_1IOptimizer_a930832dc9b736845a83f5049c735dfe1} 
+template$<$typename T$>$ \\
+virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{utec\+::neural\+\_\+network\+::\+IOptimizer}}$<$ T $>$\+::step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_a0e9d2821852c9608f87a329e8a5cb45d}{utec\+::neural\+\_\+network\+::\+Adam$<$ T $>$}}.
+
+\Hypertarget{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}\index{utec::neural\_network::IOptimizer$<$ T $>$@{utec::neural\_network::IOptimizer$<$ T $>$}!update@{update}}
+\index{update@{update}!utec::neural\_network::IOptimizer$<$ T $>$@{utec::neural\_network::IOptimizer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8} 
+template$<$typename T$>$ \\
+virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{utec\+::neural\+\_\+network\+::\+IOptimizer}}$<$ T $>$\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{params}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{gradients}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_afbc4ee15fa6b2be1e0a508be4e03eb32}{utec\+::neural\+\_\+network\+::\+Adam$<$ T $>$}}, and \mbox{\hyperlink{classutec_1_1neural__network_1_1SGD_a0a3a3344db4a34db76c0da2031a68225}{utec\+::neural\+\_\+network\+::\+SGD$<$ T $>$}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/utec/nn/\mbox{\hyperlink{utec_2nn_2interfaces_8h}{interfaces.\+h}}\end{DoxyCompactItemize}
