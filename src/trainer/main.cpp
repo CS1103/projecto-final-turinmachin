@@ -1,6 +1,6 @@
 #include <cstddef>
 #include <fstream>
-#include <print>
+#include <iostream>
 #include <random>
 #include <string>
 #include "common/agent.h"
@@ -28,16 +28,16 @@ auto main() -> int {
     std::size_t epochs = 0;
     double learning_rate = 0.0;
 
-    std::print("Epochs to train: ");
+    std::cout << "Epochs to train: ";
     std::cin >> epochs;
-    std::print("Learning rate: ");
+    std::cout << "Learning rate: ";
     std::cin >> learning_rate;
 
-    std::println("Training for {} epochs at learning rate {}", epochs, learning_rate);
+    std::cout << "Training for " << epochs << " epochs at learning rate " << learning_rate << "\n";
     agent.train(training_samples, epochs, learning_rate, rng);
-    std::println("Training done!");
+    std::cout << "Training done!" << "\n";
 
-    std::println("Saving network data to net.pp20...");
+    std::cout << "Saving network data to net.pp20..." << "\n";
     {
         std::ofstream outfile("net.pp20");
         agent.save_net(outfile);
@@ -45,8 +45,8 @@ auto main() -> int {
 
     const double accuracy_training = agent.test_accuracy(training_samples);
     const double accuracy_test = agent.test_accuracy(test_samples);
-    std::println("Accuracy (training): {:.2f}%", 100 * accuracy_training);
-    std::println("Accuracy (test):     {:.2f}%", 100 * accuracy_test);
+    std::cout << "Accuracy (training): " << 100 * accuracy_training << "%" << "\n";
+    std::cout << "Accuracy (test):     " << 100 * accuracy_test << "%" << "\n";
 
     return 0;
 }

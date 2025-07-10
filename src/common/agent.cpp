@@ -1,5 +1,5 @@
 #include "common/agent.h"
-#include <print>
+#include <iostream>
 #include <ranges>
 #include "common/constants.h"
 #include "common/init.h"
@@ -12,7 +12,7 @@ using namespace utec::neural_network;
 namespace common {
 
     DigitReader::DigitReader(std::mt19937& rng) {
-        std::println("No existing network data file found. Initializing DigitReader...");
+        std::cout << "No existing network data file found. Initializing DigitReader..." << "\n";
 
         const auto he_init_t = [&](Tensor<double, 2>& tensor) { he_init(tensor, rng); };
 
@@ -26,7 +26,7 @@ namespace common {
 
     DigitReader::DigitReader(std::istream& net_in)
         : net(NeuralNetwork<double>::load(net_in)) {
-        std::println("DigitReader loaded from network data file");
+        std::cout << "DigitReader loaded from network data file" << "\n";
     }
 
     auto DigitReader::predict(const Input& features) -> int {

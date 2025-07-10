@@ -1,10 +1,9 @@
 #ifndef PROG3_NN_FINAL_PROJECT_V2025_01_NEURAL_NETWORK_H
 #define PROG3_NN_FINAL_PROJECT_V2025_01_NEURAL_NETWORK_H
 
-#include <istream>
+#include <iostream>
 #include <memory>
 #include <numeric>
-#include <print>
 #include <random>
 #include "interfaces.h"
 #include "optimizer.h"
@@ -78,7 +77,7 @@ namespace utec::neural_network {
 
             for (size_t epoch = 0; epoch < epochs; ++epoch) {
                 if (epoch % 100 == 0) {
-                    std::println("Epoch {}", epoch);
+                    std::cout << "Epoch " << epoch << '\n';
                 }
 
                 std::ranges::shuffle(indices, rng);
@@ -123,7 +122,6 @@ namespace utec::neural_network {
             }
             return output;
         }
-
 
         /**
          * @brief Guarda el modelo en un flujo de salida binario.
