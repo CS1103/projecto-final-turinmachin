@@ -1,0 +1,73 @@
+\doxysection{utec\+::neural\+\_\+network\+::Re\+LU\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classutec_1_1neural__network_1_1ReLU}{}\label{classutec_1_1neural__network_1_1ReLU}\index{utec::neural\_network::ReLU$<$ T $>$@{utec::neural\_network::ReLU$<$ T $>$}}
+
+
+{\ttfamily \#include $<$activation.\+h$>$}
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::Re\+LU\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classutec_1_1neural__network_1_1ReLU}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1ReLU_a077adae0377b6b213ffa1fb832ec5919}{forward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&z) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ override
+\item 
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1ReLU_a9111ceb82a89442d0c49d28df5ae00f2}{backward}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&g) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ override
+\item 
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1ReLU_a13514d4f286dc2f67cbc992e820d830e}{id}} () const -\/$>$ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}} override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a6965ff90722a8ff3929fa55a1fd722f2}{\texorpdfstring{$\sim$}{\string~}\+ILayer}} ()=default
+\item 
+virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a07d2e3abb2656a40eef1dc4de099c86f}{update\+\_\+params}} (\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}$<$ T $>$ \&optimizer)
+\item 
+virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a0ddf898a100cec73a4e0df30caa6952e}{save}} (std\+::ostream \&out) const
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classutec_1_1neural__network_1_1ReLU_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classutec_1_1neural__network_1_1ReLU_a9111ceb82a89442d0c49d28df5ae00f2}\index{utec::neural\_network::ReLU$<$ T $>$@{utec::neural\_network::ReLU$<$ T $>$}!backward@{backward}}
+\index{backward@{backward}!utec::neural\_network::ReLU$<$ T $>$@{utec::neural\_network::ReLU$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{backward()}{backward()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1ReLU_a9111ceb82a89442d0c49d28df5ae00f2} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1ReLU}{utec\+::neural\+\_\+network\+::\+Re\+LU}}$<$ T $>$\+::backward (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{g}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$T, 2$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a1edb042d919a28e28c1523c1c29df07f}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
+
+\Hypertarget{classutec_1_1neural__network_1_1ReLU_a077adae0377b6b213ffa1fb832ec5919}\index{utec::neural\_network::ReLU$<$ T $>$@{utec::neural\_network::ReLU$<$ T $>$}!forward@{forward}}
+\index{forward@{forward}!utec::neural\_network::ReLU$<$ T $>$@{utec::neural\_network::ReLU$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1ReLU_a077adae0377b6b213ffa1fb832ec5919} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1ReLU}{utec\+::neural\+\_\+network\+::\+Re\+LU}}$<$ T $>$\+::forward (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{z}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$T, 2$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a22275b736574bf1ef9febb9889ba7a25}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
+
+\Hypertarget{classutec_1_1neural__network_1_1ReLU_a13514d4f286dc2f67cbc992e820d830e}\index{utec::neural\_network::ReLU$<$ T $>$@{utec::neural\_network::ReLU$<$ T $>$}!id@{id}}
+\index{id@{id}!utec::neural\_network::ReLU$<$ T $>$@{utec::neural\_network::ReLU$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1ReLU_a13514d4f286dc2f67cbc992e820d830e} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1ReLU}{utec\+::neural\+\_\+network\+::\+Re\+LU}}$<$ T $>$\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer_a16b50cd81a4b1c368797af2cce2b7d06}{utec\+::neural\+\_\+network\+::\+ILayer$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/utec/nn/\mbox{\hyperlink{activation_8h}{activation.\+h}}\end{DoxyCompactItemize}

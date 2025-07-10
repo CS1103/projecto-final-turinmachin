@@ -1,0 +1,59 @@
+\doxysection{common\+::IAgent\texorpdfstring{$<$}{<} Input, Output \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classcommon_1_1IAgent}{}\label{classcommon_1_1IAgent}\index{common::IAgent$<$ Input, Output $>$@{common::IAgent$<$ Input, Output $>$}}
+
+
+{\ttfamily \#include $<$agent.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classcommon_1_1IAgent_a8142ce57481ae3d313b81841e7385008}{\texorpdfstring{$\sim$}{\string~}\+IAgent}} ()=default
+\item 
+virtual auto \mbox{\hyperlink{classcommon_1_1IAgent_a0309ec3596650d8f3f8f8b7bdc963743}{predict}} (const Input \&input) -\/$>$ Output=0
+\item 
+virtual void \mbox{\hyperlink{classcommon_1_1IAgent_a39ae6fd08819b1940c8388a173266076}{train}} (const std\+::vector$<$ \mbox{\hyperlink{structcommon_1_1Sample}{Sample}}$<$ Input, Output $>$ $>$ \&samples, std\+::size\+\_\+t epochs, double learning\+\_\+rate, std\+::mt19937 \&rng)=0
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classcommon_1_1IAgent_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcommon_1_1IAgent_a8142ce57481ae3d313b81841e7385008}\index{common::IAgent$<$ Input, Output $>$@{common::IAgent$<$ Input, Output $>$}!````~IAgent@{\texorpdfstring{$\sim$}{\string~}IAgent}}
+\index{````~IAgent@{\texorpdfstring{$\sim$}{\string~}IAgent}!common::IAgent$<$ Input, Output $>$@{common::IAgent$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IAgent()}{\string~IAgent()}}
+{\footnotesize\ttfamily \label{classcommon_1_1IAgent_a8142ce57481ae3d313b81841e7385008} 
+template$<$typename Input, typename Output$>$ \\
+virtual \mbox{\hyperlink{classcommon_1_1IAgent}{common\+::\+IAgent}}$<$ Input, Output $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{classcommon_1_1IAgent}{IAgent}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classcommon_1_1IAgent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcommon_1_1IAgent_a0309ec3596650d8f3f8f8b7bdc963743}\index{common::IAgent$<$ Input, Output $>$@{common::IAgent$<$ Input, Output $>$}!predict@{predict}}
+\index{predict@{predict}!common::IAgent$<$ Input, Output $>$@{common::IAgent$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily \label{classcommon_1_1IAgent_a0309ec3596650d8f3f8f8b7bdc963743} 
+template$<$typename Input, typename Output$>$ \\
+virtual auto \mbox{\hyperlink{classcommon_1_1IAgent}{common\+::\+IAgent}}$<$ Input, Output $>$\+::predict (\begin{DoxyParamCaption}\item[{const Input \&}]{input}{}\end{DoxyParamCaption}) -\/$>$  Output\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classcommon_1_1DigitReader_ab5b30e5eeeb2a4333ea910625ff152b9}{common\+::\+Digit\+Reader}}.
+
+\Hypertarget{classcommon_1_1IAgent_a39ae6fd08819b1940c8388a173266076}\index{common::IAgent$<$ Input, Output $>$@{common::IAgent$<$ Input, Output $>$}!train@{train}}
+\index{train@{train}!common::IAgent$<$ Input, Output $>$@{common::IAgent$<$ Input, Output $>$}}
+\doxysubsubsection{\texorpdfstring{train()}{train()}}
+{\footnotesize\ttfamily \label{classcommon_1_1IAgent_a39ae6fd08819b1940c8388a173266076} 
+template$<$typename Input, typename Output$>$ \\
+virtual void \mbox{\hyperlink{classcommon_1_1IAgent}{common\+::\+IAgent}}$<$ Input, Output $>$\+::train (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structcommon_1_1Sample}{Sample}}$<$ Input, Output $>$ $>$ \&}]{samples}{, }\item[{std\+::size\+\_\+t}]{epochs}{, }\item[{double}]{learning\+\_\+rate}{, }\item[{std\+::mt19937 \&}]{rng}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classcommon_1_1DigitReader_af162abf7c4b9464343ed5ec226b64d72}{common\+::\+Digit\+Reader}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/common/\mbox{\hyperlink{agent_8h}{agent.\+h}}\end{DoxyCompactItemize}

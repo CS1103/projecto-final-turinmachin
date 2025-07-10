@@ -1,0 +1,191 @@
+\doxysection{Catch\+::Clara\+::Opt Class Reference}
+\hypertarget{classCatch_1_1Clara_1_1Opt}{}\label{classCatch_1_1Clara_1_1Opt}\index{Catch::Clara::Opt@{Catch::Clara::Opt}}
+
+
+{\ttfamily \#include $<$catch\+\_\+amalgamated.\+hpp$>$}
+
+Inheritance diagram for Catch\+::Clara\+::Opt\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classCatch_1_1Clara_1_1Opt}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename LambdaT$>$ }\\\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_a5c03617b158d29d339b58358464afe14}{Opt}} (LambdaT const \&ref)
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_a89d9c97aef11e04873da0165496789dd}{Opt}} (bool \&ref)
+\item 
+{\footnotesize template$<$typename LambdaT, typename = typename std\+::enable\+\_\+if\+\_\+t$<$                          Detail\+::is\+\_\+unary\+\_\+function$<$\+Lambda\+T$>$\+::value$>$$>$ }\\\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_a23eb9437b3954927f347af65b315d65e}{Opt}} (LambdaT const \&ref, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_af2d565724a6e3e5306ff2fa324bc1e00}{hint}})
+\item 
+{\footnotesize template$<$typename LambdaT$>$ }\\\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_adc83c149e1c0bbfc753eee8d6a741f75}{Opt}} (\mbox{\hyperlink{structCatch_1_1Clara_1_1accept__many__t}{accept\+\_\+many\+\_\+t}}, LambdaT const \&ref, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_af2d565724a6e3e5306ff2fa324bc1e00}{hint}})
+\item 
+{\footnotesize template$<$typename T, typename = typename std\+::enable\+\_\+if\+\_\+t$<$                          !\+Detail\+::is\+\_\+unary\+\_\+function$<$\+T$>$\+::value$>$$>$ }\\\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_ab513f5b20ccc9d29a307b45ade26b072}{Opt}} (T \&ref, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_af2d565724a6e3e5306ff2fa324bc1e00}{hint}})
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Opt}} \& \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_a09a55226a2b1b24b31ce698ad8eac452}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} opt\+Name) \&
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Opt}} \&\& \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_a7ad60746f51bb6af4d221fe9c9467b60}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} opt\+Name) \&\&
+\item 
+\mbox{\hyperlink{structCatch_1_1Clara_1_1Detail_1_1HelpColumns}{Detail\+::\+Help\+Columns}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_a3ca5f6fea4af004b16bbe60c6e03ff6d}{get\+Help\+Columns}} () const
+\item 
+bool \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_affda703e83807d5e4c67ed80f5f64a66}{is\+Match}} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} opt\+Token) const
+\item 
+\mbox{\hyperlink{namespaceCatch_1_1Clara_1_1Detail_a9f7cb86c4f3231620885a142eb4ca8cf}{Detail\+::\+Internal\+Parse\+Result}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_a1e248a3d26bfd1a10fc5f3ddcf017a6c}{parse}} (std\+::string const \&, \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1TokenStream}{Detail\+::\+Token\+Stream}} tokens) const override
+\item 
+\mbox{\hyperlink{namespaceCatch_1_1Clara_1_1Detail_acef9be57d426e33e84b452e44cc60f2a}{Detail\+::\+Result}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_a98c20f896243211ad17339e1e15fde48}{validate}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl}{Catch\+::\+Clara\+::\+Detail\+::\+Parser\+Ref\+Impl$<$ Opt $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Opt}} \& \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a768770e1bb1236b734e1d1a2f8a84ec9}{operator()}} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} description) \&
+\item 
+auto \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a9b4227e549fdf7ac060f32b04691f852}{optional}} () -\/$>$ \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Opt}} \&
+\item 
+auto \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_af9928e53fd50e79bb2696775fb8f211e}{required}} () -\/$>$ \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Opt}} \&
+\item 
+auto \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a7f53be97ad14acf78874b60c506e3264}{is\+Optional}} () const -\/$>$ bool
+\item 
+auto \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_adc3237f1191340d9567857efc5ffb82c}{cardinality}} () const -\/$>$ size\+\_\+t override
+\item 
+\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_af2d565724a6e3e5306ff2fa324bc1e00}{hint}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ComposableParserImpl}{Catch\+::\+Clara\+::\+Detail\+::\+Composable\+Parser\+Impl$<$ Opt $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Parser}{Parser}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ComposableParserImpl_a5ea8a53f826f89d57cafa8273b029205}{operator\texorpdfstring{$\vert$}{|}}} (T const \&other) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserBase}{Catch\+::\+Clara\+::\+Detail\+::\+Parser\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserBase_a4ef196a88d331fe35b8c10a79b9b9163}{\texorpdfstring{$\sim$}{\string~}\+Parser\+Base}} ()=default
+\item 
+\mbox{\hyperlink{namespaceCatch_1_1Clara_1_1Detail_a9f7cb86c4f3231620885a142eb4ca8cf}{Internal\+Parse\+Result}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserBase_a2f20eea3e89c6ccee15dad616fa4b072}{parse}} (\mbox{\hyperlink{classCatch_1_1Clara_1_1Args}{Args}} const \&args) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} $>$ \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_a4c9dd8a69ca69395394185cfe225613d}{m\+\_\+opt\+Names}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl}{Catch\+::\+Clara\+::\+Detail\+::\+Parser\+Ref\+Impl$<$ Opt $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceCatch_1_1Clara_1_1Detail_ab58189b0df24d5c251b76bd327164b6c}{Optionality}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a7e63dd6369e1bafc99685b46e3f906ed}{m\+\_\+optionality}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structCatch_1_1Clara_1_1Detail_1_1BoundRef}{Bound\+Ref}} $>$ \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_afb84f647163ba979e8ebf9a62963100b}{m\+\_\+ref}}
+\item 
+\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_aa5bb1319c27841e765a56aea58435d0a}{m\+\_\+hint}}
+\item 
+\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a51bed809ac3d01f86c33dbfbd1526a9e}{m\+\_\+description}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl}{Catch\+::\+Clara\+::\+Detail\+::\+Parser\+Ref\+Impl$<$ Opt $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a04749012641bd3596b1bad797623214e}{Parser\+Ref\+Impl}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structCatch_1_1Clara_1_1Detail_1_1BoundRef}{Bound\+Ref}} $>$ const \&ref)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classCatch_1_1Clara_1_1Opt_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCatch_1_1Clara_1_1Opt_a5c03617b158d29d339b58358464afe14}\index{Catch::Clara::Opt@{Catch::Clara::Opt}!Opt@{Opt}}
+\index{Opt@{Opt}!Catch::Clara::Opt@{Catch::Clara::Opt}}
+\doxysubsubsection{\texorpdfstring{Opt()}{Opt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{classCatch_1_1Clara_1_1Opt_a5c03617b158d29d339b58358464afe14} 
+template$<$typename LambdaT$>$ \\
+Catch\+::\+Clara\+::\+Opt\+::\+Opt (\begin{DoxyParamCaption}\item[{LambdaT const \&}]{ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{classCatch_1_1Clara_1_1Opt_a89d9c97aef11e04873da0165496789dd}\index{Catch::Clara::Opt@{Catch::Clara::Opt}!Opt@{Opt}}
+\index{Opt@{Opt}!Catch::Clara::Opt@{Catch::Clara::Opt}}
+\doxysubsubsection{\texorpdfstring{Opt()}{Opt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{classCatch_1_1Clara_1_1Opt_a89d9c97aef11e04873da0165496789dd} 
+Catch\+::\+Clara\+::\+Opt\+::\+Opt (\begin{DoxyParamCaption}\item[{bool \&}]{ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{classCatch_1_1Clara_1_1Opt_a23eb9437b3954927f347af65b315d65e}\index{Catch::Clara::Opt@{Catch::Clara::Opt}!Opt@{Opt}}
+\index{Opt@{Opt}!Catch::Clara::Opt@{Catch::Clara::Opt}}
+\doxysubsubsection{\texorpdfstring{Opt()}{Opt()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{classCatch_1_1Clara_1_1Opt_a23eb9437b3954927f347af65b315d65e} 
+template$<$typename LambdaT, typename = typename std\+::enable\+\_\+if\+\_\+t$<$                          Detail\+::is\+\_\+unary\+\_\+function$<$\+Lambda\+T$>$\+::value$>$$>$ \\
+Catch\+::\+Clara\+::\+Opt\+::\+Opt (\begin{DoxyParamCaption}\item[{LambdaT const \&}]{ref}{, }\item[{\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}}}]{hint}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCatch_1_1Clara_1_1Opt_adc83c149e1c0bbfc753eee8d6a741f75}\index{Catch::Clara::Opt@{Catch::Clara::Opt}!Opt@{Opt}}
+\index{Opt@{Opt}!Catch::Clara::Opt@{Catch::Clara::Opt}}
+\doxysubsubsection{\texorpdfstring{Opt()}{Opt()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{classCatch_1_1Clara_1_1Opt_adc83c149e1c0bbfc753eee8d6a741f75} 
+template$<$typename LambdaT$>$ \\
+Catch\+::\+Clara\+::\+Opt\+::\+Opt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCatch_1_1Clara_1_1accept__many__t}{accept\+\_\+many\+\_\+t}}}]{}{, }\item[{LambdaT const \&}]{ref}{, }\item[{\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}}}]{hint}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCatch_1_1Clara_1_1Opt_ab513f5b20ccc9d29a307b45ade26b072}\index{Catch::Clara::Opt@{Catch::Clara::Opt}!Opt@{Opt}}
+\index{Opt@{Opt}!Catch::Clara::Opt@{Catch::Clara::Opt}}
+\doxysubsubsection{\texorpdfstring{Opt()}{Opt()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{classCatch_1_1Clara_1_1Opt_ab513f5b20ccc9d29a307b45ade26b072} 
+template$<$typename T, typename = typename std\+::enable\+\_\+if\+\_\+t$<$                          !\+Detail\+::is\+\_\+unary\+\_\+function$<$\+T$>$\+::value$>$$>$ \\
+Catch\+::\+Clara\+::\+Opt\+::\+Opt (\begin{DoxyParamCaption}\item[{T \&}]{ref}{, }\item[{\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}}}]{hint}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classCatch_1_1Clara_1_1Opt_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCatch_1_1Clara_1_1Opt_a3ca5f6fea4af004b16bbe60c6e03ff6d}\index{Catch::Clara::Opt@{Catch::Clara::Opt}!getHelpColumns@{getHelpColumns}}
+\index{getHelpColumns@{getHelpColumns}!Catch::Clara::Opt@{Catch::Clara::Opt}}
+\doxysubsubsection{\texorpdfstring{getHelpColumns()}{getHelpColumns()}}
+{\footnotesize\ttfamily \label{classCatch_1_1Clara_1_1Opt_a3ca5f6fea4af004b16bbe60c6e03ff6d} 
+\mbox{\hyperlink{structCatch_1_1Clara_1_1Detail_1_1HelpColumns}{Detail\+::\+Help\+Columns}} Catch\+::\+Clara\+::\+Opt\+::get\+Help\+Columns (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classCatch_1_1Clara_1_1Opt_affda703e83807d5e4c67ed80f5f64a66}\index{Catch::Clara::Opt@{Catch::Clara::Opt}!isMatch@{isMatch}}
+\index{isMatch@{isMatch}!Catch::Clara::Opt@{Catch::Clara::Opt}}
+\doxysubsubsection{\texorpdfstring{isMatch()}{isMatch()}}
+{\footnotesize\ttfamily \label{classCatch_1_1Clara_1_1Opt_affda703e83807d5e4c67ed80f5f64a66} 
+bool Catch\+::\+Clara\+::\+Opt\+::is\+Match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}}}]{opt\+Token}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classCatch_1_1Clara_1_1Opt_a09a55226a2b1b24b31ce698ad8eac452}\index{Catch::Clara::Opt@{Catch::Clara::Opt}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Catch::Clara::Opt@{Catch::Clara::Opt}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classCatch_1_1Clara_1_1Opt_a09a55226a2b1b24b31ce698ad8eac452} 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Opt}} \& Catch\+::\+Clara\+::\+Opt\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}}}]{opt\+Name}{}\end{DoxyParamCaption}) \&\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCatch_1_1Clara_1_1Opt_a7ad60746f51bb6af4d221fe9c9467b60}\index{Catch::Clara::Opt@{Catch::Clara::Opt}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Catch::Clara::Opt@{Catch::Clara::Opt}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classCatch_1_1Clara_1_1Opt_a7ad60746f51bb6af4d221fe9c9467b60} 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Opt}} \&\& Catch\+::\+Clara\+::\+Opt\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}}}]{opt\+Name}{}\end{DoxyParamCaption}) \&\&\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCatch_1_1Clara_1_1Opt_a1e248a3d26bfd1a10fc5f3ddcf017a6c}\index{Catch::Clara::Opt@{Catch::Clara::Opt}!parse@{parse}}
+\index{parse@{parse}!Catch::Clara::Opt@{Catch::Clara::Opt}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily \label{classCatch_1_1Clara_1_1Opt_a1e248a3d26bfd1a10fc5f3ddcf017a6c} 
+\mbox{\hyperlink{namespaceCatch_1_1Clara_1_1Detail_a9f7cb86c4f3231620885a142eb4ca8cf}{Detail\+::\+Internal\+Parse\+Result}} Catch\+::\+Clara\+::\+Opt\+::parse (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{}{, }\item[{\mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1TokenStream}{Detail\+::\+Token\+Stream}}}]{tokens}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserBase_a86e732b9e2f6428fe74bc2ac75eb97c3}{Catch\+::\+Clara\+::\+Detail\+::\+Parser\+Base}}.
+
+\Hypertarget{classCatch_1_1Clara_1_1Opt_a98c20f896243211ad17339e1e15fde48}\index{Catch::Clara::Opt@{Catch::Clara::Opt}!validate@{validate}}
+\index{validate@{validate}!Catch::Clara::Opt@{Catch::Clara::Opt}}
+\doxysubsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily \label{classCatch_1_1Clara_1_1Opt_a98c20f896243211ad17339e1e15fde48} 
+\mbox{\hyperlink{namespaceCatch_1_1Clara_1_1Detail_acef9be57d426e33e84b452e44cc60f2a}{Detail\+::\+Result}} Catch\+::\+Clara\+::\+Opt\+::validate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserBase_a87381c4aefdeeed6609be0eb26b47133}{Catch\+::\+Clara\+::\+Detail\+::\+Parser\+Base}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classCatch_1_1Clara_1_1Opt_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCatch_1_1Clara_1_1Opt_a4c9dd8a69ca69395394185cfe225613d}\index{Catch::Clara::Opt@{Catch::Clara::Opt}!m\_optNames@{m\_optNames}}
+\index{m\_optNames@{m\_optNames}!Catch::Clara::Opt@{Catch::Clara::Opt}}
+\doxysubsubsection{\texorpdfstring{m\_optNames}{m\_optNames}}
+{\footnotesize\ttfamily \label{classCatch_1_1Clara_1_1Opt_a4c9dd8a69ca69395394185cfe225613d} 
+std\+::vector$<$\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}}$>$ Catch\+::\+Clara\+::\+Opt\+::m\+\_\+opt\+Names\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+deps/catch/\mbox{\hyperlink{catch__amalgamated_8hpp}{catch\+\_\+amalgamated.\+hpp}}\item 
+deps/catch/\mbox{\hyperlink{catch__amalgamated_8cpp}{catch\+\_\+amalgamated.\+cpp}}\end{DoxyCompactItemize}

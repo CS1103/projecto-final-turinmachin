@@ -1,0 +1,71 @@
+\doxysection{utec\+::neural\+\_\+network\+::MSELoss\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classutec_1_1neural__network_1_1MSELoss}{}\label{classutec_1_1neural__network_1_1MSELoss}\index{utec::neural\_network::MSELoss$<$ T $>$@{utec::neural\_network::MSELoss$<$ T $>$}}
+
+
+{\ttfamily \#include $<$loss.\+h$>$}
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::MSELoss\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classutec_1_1neural__network_1_1MSELoss}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Prediction, typename Expected$>$ }\\\mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_a5b8a0c8a9480e4e5be6f233eab082c87}{MSELoss}} (Prediction \&\&y\+\_\+prediction, Expected \&\&y\+\_\+true)
+\item 
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_a43be1dc09b8f4fb0080de0dc1dfe1915}{loss}} () const -\/$>$ T override
+\item 
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss_ac42456ee183bddd85e5a40d92f5abae5}{loss\+\_\+gradient}} () const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, 2 $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_add5386c613a6166cedccf23b8cba066d}{\texorpdfstring{$\sim$}{\string~}\+ILoss}} ()=default
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classutec_1_1neural__network_1_1MSELoss_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classutec_1_1neural__network_1_1MSELoss_a5b8a0c8a9480e4e5be6f233eab082c87}\index{utec::neural\_network::MSELoss$<$ T $>$@{utec::neural\_network::MSELoss$<$ T $>$}!MSELoss@{MSELoss}}
+\index{MSELoss@{MSELoss}!utec::neural\_network::MSELoss$<$ T $>$@{utec::neural\_network::MSELoss$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MSELoss()}{MSELoss()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1MSELoss_a5b8a0c8a9480e4e5be6f233eab082c87} 
+template$<$typename T$>$ \\
+template$<$typename Prediction, typename Expected$>$ \\
+\mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss}{utec\+::neural\+\_\+network\+::\+MSELoss}}$<$ T $>$\+::\+MSELoss (\begin{DoxyParamCaption}\item[{Prediction \&\&}]{y\+\_\+prediction}{, }\item[{Expected \&\&}]{y\+\_\+true}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classutec_1_1neural__network_1_1MSELoss_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classutec_1_1neural__network_1_1MSELoss_a43be1dc09b8f4fb0080de0dc1dfe1915}\index{utec::neural\_network::MSELoss$<$ T $>$@{utec::neural\_network::MSELoss$<$ T $>$}!loss@{loss}}
+\index{loss@{loss}!utec::neural\_network::MSELoss$<$ T $>$@{utec::neural\_network::MSELoss$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{loss()}{loss()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1MSELoss_a43be1dc09b8f4fb0080de0dc1dfe1915} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss}{utec\+::neural\+\_\+network\+::\+MSELoss}}$<$ T $>$\+::loss (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ T\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a7aefbeb1f4bd61f61491309de76f2726}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, 2 $>$}}.
+
+\Hypertarget{classutec_1_1neural__network_1_1MSELoss_ac42456ee183bddd85e5a40d92f5abae5}\index{utec::neural\_network::MSELoss$<$ T $>$@{utec::neural\_network::MSELoss$<$ T $>$}!loss\_gradient@{loss\_gradient}}
+\index{loss\_gradient@{loss\_gradient}!utec::neural\_network::MSELoss$<$ T $>$@{utec::neural\_network::MSELoss$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{loss\_gradient()}{loss\_gradient()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1MSELoss_ac42456ee183bddd85e5a40d92f5abae5} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss}{utec\+::neural\+\_\+network\+::\+MSELoss}}$<$ T $>$\+::loss\+\_\+gradient (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$T, 2$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, 2 $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/utec/nn/\mbox{\hyperlink{loss_8h}{loss.\+h}}\end{DoxyCompactItemize}

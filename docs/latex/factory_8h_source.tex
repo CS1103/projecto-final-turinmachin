@@ -1,0 +1,51 @@
+\doxysection{factory.\+h}
+\hypertarget{factory_8h_source}{}\label{factory_8h_source}\index{include/game/math/factory.h@{include/game/math/factory.h}}
+\mbox{\hyperlink{factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INCLUDE\_GAME\_MATH\_FACTORY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INCLUDE\_GAME\_MATH\_FACTORY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game_2math_2interfaces_8h}{game/math/interfaces.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegame_1_1math}{game::math}}\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgame_1_1math_1_1AddEquationFactory_a66178fd8757e34689de746186609d365}{AddEquationFactory}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structgame_1_1math_1_1IEquationFactory}{IEquationFactory}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ std::mt19937\&\ rng;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ std::uniform\_int\_distribution<int>\ dist\_answer\{0,\ 9\};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::uniform\_int\_distribution<int>\ dist\_rhs\{0,\ 11\};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classgame_1_1math_1_1AddEquationFactory_a66178fd8757e34689de746186609d365}{AddEquationFactory}}(std::mt19937\&\ rng);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classgame_1_1math_1_1AddEquationFactory_ab10b357fc4f1f3d41db3fab7a445876d}{create}}()\ -\/>\ std::unique\_ptr<IEquation>\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \ \ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgame_1_1math_1_1SubtractEquationFactory_ab40b7dce43b96f05b530689854601d22}{SubtractEquationFactory}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structgame_1_1math_1_1IEquationFactory}{IEquationFactory}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::mt19937\&\ rng;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::uniform\_int\_distribution<int>\ dist\_answer\{0,\ 9\};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::uniform\_int\_distribution<int>\ dist\_rhs\{0,\ 11\};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classgame_1_1math_1_1SubtractEquationFactory_ab40b7dce43b96f05b530689854601d22}{SubtractEquationFactory}}(std::mt19937\&\ rng);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classgame_1_1math_1_1SubtractEquationFactory_aee4393b8cfff0797bdff8272bd863150}{create}}()\ -\/>\ std::unique\_ptr<IEquation>\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \ \ \ \ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgame_1_1math_1_1DivideEquationFactory_ae82f214a4a28f84ad7404920ebe82b55}{DivideEquationFactory}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structgame_1_1math_1_1IEquationFactory}{IEquationFactory}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::mt19937\&\ rng;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::uniform\_int\_distribution<int>\ dist\_answer\{0,\ 9\};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ std::uniform\_int\_distribution<int>\ dist\_rhs\{1,\ 8\};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classgame_1_1math_1_1DivideEquationFactory_ae82f214a4a28f84ad7404920ebe82b55}{DivideEquationFactory}}(std::mt19937\&\ rng);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classgame_1_1math_1_1DivideEquationFactory_aa538cbcc736bb39772c495a7ab14220e}{create}}()\ -\/>\ std::unique\_ptr<IEquation>\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \}\ \ \textcolor{comment}{//\ namespace\ game::math}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

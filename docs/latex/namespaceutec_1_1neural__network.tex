@@ -1,0 +1,115 @@
+\doxysection{utec\+::neural\+\_\+network Namespace Reference}
+\hypertarget{namespaceutec_1_1neural__network}{}\label{namespaceutec_1_1neural__network}\index{utec::neural\_network@{utec::neural\_network}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam}{Adam}}
+\item 
+class \mbox{\hyperlink{classutec_1_1neural__network_1_1BCELoss}{BCELoss}}
+\item 
+struct \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline}{BSpline}}
+\item 
+class \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss}{Cross\+Entropy\+Loss}}
+\item 
+class \mbox{\hyperlink{classutec_1_1neural__network_1_1Dense}{Dense}}
+\item 
+struct \mbox{\hyperlink{structutec_1_1neural__network_1_1ILayer}{ILayer}}
+\item 
+struct \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{ILoss}}
+\item 
+struct \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer}}
+\item 
+class \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan}{Kan}}
+\item 
+class \mbox{\hyperlink{classutec_1_1neural__network_1_1LayerRegistry}{Layer\+Registry}}
+\item 
+class \mbox{\hyperlink{classutec_1_1neural__network_1_1MSELoss}{MSELoss}}
+\item 
+class \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{Neural\+Network}}
+\item 
+class \mbox{\hyperlink{classutec_1_1neural__network_1_1ReLU}{Re\+LU}}
+\item 
+class \mbox{\hyperlink{classutec_1_1neural__network_1_1SGD}{SGD}}
+\item 
+class \mbox{\hyperlink{classutec_1_1neural__network_1_1Sigmoid}{Sigmoid}}
+\item 
+class \mbox{\hyperlink{classutec_1_1neural__network_1_1Softmax}{Softmax}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{Layer\+Id}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dabadd10d919fa85cf27fc78c0e06fe0b378}{Re\+LU}} = 0
+, \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba21eebb164e4b8b9bcf64fdb4d8d5dff4}{Sigmoid}} = 1
+, \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba9a71a13863c84ba34fc41595fc2ee0c6}{Dense}} = 2
+, \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba31d953b9d49a6b4378f45097047976d0}{Softmax}} = 3
+, \newline
+\mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dabaf60e8dbbc0c325f558c189cc9c7c3e06}{Kan}} = 4
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{namespaceutec_1_1neural__network_ae41bef2d9885dfcabb4f2b261eba3c0f}{register\+\_\+all\+\_\+layers}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr std\+::uint8\+\_\+t \mbox{\hyperlink{namespaceutec_1_1neural__network_ac4b8a0e683d7adaed3dd3a5520a77e12}{FORMAT\+\_\+\+CURRENT\+\_\+\+VERSION}} = 1
+\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{namespaceutec_1_1neural__network_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}\index{utec::neural\_network@{utec::neural\_network}!LayerId@{LayerId}}
+\index{LayerId@{LayerId}!utec::neural\_network@{utec::neural\_network}}
+\doxysubsubsection{\texorpdfstring{LayerId}{LayerId}}
+{\footnotesize\ttfamily \label{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab} 
+enum class \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{utec\+::neural\+\_\+network\+::\+Layer\+Id}} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ReLU@{ReLU}!utec::neural\_network@{utec::neural\_network}}\index{utec::neural\_network@{utec::neural\_network}!ReLU@{ReLU}}}\Hypertarget{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dabadd10d919fa85cf27fc78c0e06fe0b378}\label{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dabadd10d919fa85cf27fc78c0e06fe0b378} 
+Re\+LU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sigmoid@{Sigmoid}!utec::neural\_network@{utec::neural\_network}}\index{utec::neural\_network@{utec::neural\_network}!Sigmoid@{Sigmoid}}}\Hypertarget{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba21eebb164e4b8b9bcf64fdb4d8d5dff4}\label{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba21eebb164e4b8b9bcf64fdb4d8d5dff4} 
+Sigmoid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dense@{Dense}!utec::neural\_network@{utec::neural\_network}}\index{utec::neural\_network@{utec::neural\_network}!Dense@{Dense}}}\Hypertarget{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba9a71a13863c84ba34fc41595fc2ee0c6}\label{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba9a71a13863c84ba34fc41595fc2ee0c6} 
+Dense&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Softmax@{Softmax}!utec::neural\_network@{utec::neural\_network}}\index{utec::neural\_network@{utec::neural\_network}!Softmax@{Softmax}}}\Hypertarget{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba31d953b9d49a6b4378f45097047976d0}\label{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962daba31d953b9d49a6b4378f45097047976d0} 
+Softmax&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Kan@{Kan}!utec::neural\_network@{utec::neural\_network}}\index{utec::neural\_network@{utec::neural\_network}!Kan@{Kan}}}\Hypertarget{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dabaf60e8dbbc0c325f558c189cc9c7c3e06}\label{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dabaf60e8dbbc0c325f558c189cc9c7c3e06} 
+Kan&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{namespaceutec_1_1neural__network_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceutec_1_1neural__network_ae41bef2d9885dfcabb4f2b261eba3c0f}\index{utec::neural\_network@{utec::neural\_network}!register\_all\_layers@{register\_all\_layers}}
+\index{register\_all\_layers@{register\_all\_layers}!utec::neural\_network@{utec::neural\_network}}
+\doxysubsubsection{\texorpdfstring{register\_all\_layers()}{register\_all\_layers()}}
+{\footnotesize\ttfamily \label{namespaceutec_1_1neural__network_ae41bef2d9885dfcabb4f2b261eba3c0f} 
+template$<$typename T$>$ \\
+void utec\+::neural\+\_\+network\+::register\+\_\+all\+\_\+layers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-var-members}
+\Hypertarget{namespaceutec_1_1neural__network_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceutec_1_1neural__network_ac4b8a0e683d7adaed3dd3a5520a77e12}\index{utec::neural\_network@{utec::neural\_network}!FORMAT\_CURRENT\_VERSION@{FORMAT\_CURRENT\_VERSION}}
+\index{FORMAT\_CURRENT\_VERSION@{FORMAT\_CURRENT\_VERSION}!utec::neural\_network@{utec::neural\_network}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_CURRENT\_VERSION}{FORMAT\_CURRENT\_VERSION}}
+{\footnotesize\ttfamily \label{namespaceutec_1_1neural__network_ac4b8a0e683d7adaed3dd3a5520a77e12} 
+std\+::uint8\+\_\+t utec\+::neural\+\_\+network\+::\+FORMAT\+\_\+\+CURRENT\+\_\+\+VERSION = 1\hspace{0.3cm}{\ttfamily [constexpr]}}
+

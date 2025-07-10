@@ -1,0 +1,83 @@
+\doxysection{utec\+::neural\+\_\+network\+::Neural\+Network\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classutec_1_1neural__network_1_1NeuralNetwork}{}\label{classutec_1_1neural__network_1_1NeuralNetwork}\index{utec::neural\_network::NeuralNetwork$<$ T $>$@{utec::neural\_network::NeuralNetwork$<$ T $>$}}
+
+
+{\ttfamily \#include $<$neural\+\_\+network.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork_a03cb30174664f403618acfe0e9df38e8}{Neural\+Network}} ()
+\item 
+{\footnotesize template$<$typename L, typename... Args$>$ }\\void \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork_a5da3f9a12e283f092fb303599b7e08af}{add\+\_\+layer}} (Args \&\&... args)
+\item 
+{\footnotesize template$<$template$<$ typename... $>$ class Loss\+Type, template$<$ typename... $>$ class Optimizer\+Type = SGD$>$ }\\void \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork_ab2da2c55dc3be175816a870c7c91d2e3}{train}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&y, const size\+\_\+t epochs, const size\+\_\+t batch\+\_\+size, T learning\+\_\+rate, std\+::mt19937 \&rng)
+\item 
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork_a8728e0e068d299d39200701221cde58a}{predict}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&X) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$
+\item 
+void \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork_a01bcec163b0d6dba854f8f89a6552508}{save}} (std\+::ostream \&out) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static auto \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork_a3bdc71040fd54c9787781173a2fb7acd}{load}} (std\+::istream \&in) -\/$>$ \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{Neural\+Network}}$<$ T $>$
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classutec_1_1neural__network_1_1NeuralNetwork_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classutec_1_1neural__network_1_1NeuralNetwork_a03cb30174664f403618acfe0e9df38e8}\index{utec::neural\_network::NeuralNetwork$<$ T $>$@{utec::neural\_network::NeuralNetwork$<$ T $>$}!NeuralNetwork@{NeuralNetwork}}
+\index{NeuralNetwork@{NeuralNetwork}!utec::neural\_network::NeuralNetwork$<$ T $>$@{utec::neural\_network::NeuralNetwork$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{NeuralNetwork()}{NeuralNetwork()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1NeuralNetwork_a03cb30174664f403618acfe0e9df38e8} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neural\+\_\+network\+::\+Neural\+Network}}$<$ T $>$\mbox{\hyperlink{classNeuralNetwork}{\+::\+Neural\+Network}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classutec_1_1neural__network_1_1NeuralNetwork_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classutec_1_1neural__network_1_1NeuralNetwork_a5da3f9a12e283f092fb303599b7e08af}\index{utec::neural\_network::NeuralNetwork$<$ T $>$@{utec::neural\_network::NeuralNetwork$<$ T $>$}!add\_layer@{add\_layer}}
+\index{add\_layer@{add\_layer}!utec::neural\_network::NeuralNetwork$<$ T $>$@{utec::neural\_network::NeuralNetwork$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{add\_layer()}{add\_layer()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1NeuralNetwork_a5da3f9a12e283f092fb303599b7e08af} 
+template$<$typename T$>$ \\
+template$<$typename L, typename... Args$>$ \\
+void \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neural\+\_\+network\+::\+Neural\+Network}}$<$ T $>$\+::add\+\_\+layer (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classutec_1_1neural__network_1_1NeuralNetwork_a3bdc71040fd54c9787781173a2fb7acd}\index{utec::neural\_network::NeuralNetwork$<$ T $>$@{utec::neural\_network::NeuralNetwork$<$ T $>$}!load@{load}}
+\index{load@{load}!utec::neural\_network::NeuralNetwork$<$ T $>$@{utec::neural\_network::NeuralNetwork$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1NeuralNetwork_a3bdc71040fd54c9787781173a2fb7acd} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neural\+\_\+network\+::\+Neural\+Network}}$<$ T $>$\+::load (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{Neural\+Network}}$<$T$>$ \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classutec_1_1neural__network_1_1NeuralNetwork_a8728e0e068d299d39200701221cde58a}\index{utec::neural\_network::NeuralNetwork$<$ T $>$@{utec::neural\_network::NeuralNetwork$<$ T $>$}!predict@{predict}}
+\index{predict@{predict}!utec::neural\_network::NeuralNetwork$<$ T $>$@{utec::neural\_network::NeuralNetwork$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1NeuralNetwork_a8728e0e068d299d39200701221cde58a} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neural\+\_\+network\+::\+Neural\+Network}}$<$ T $>$\+::predict (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{X}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$T, 2$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classutec_1_1neural__network_1_1NeuralNetwork_a01bcec163b0d6dba854f8f89a6552508}\index{utec::neural\_network::NeuralNetwork$<$ T $>$@{utec::neural\_network::NeuralNetwork$<$ T $>$}!save@{save}}
+\index{save@{save}!utec::neural\_network::NeuralNetwork$<$ T $>$@{utec::neural\_network::NeuralNetwork$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1NeuralNetwork_a01bcec163b0d6dba854f8f89a6552508} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neural\+\_\+network\+::\+Neural\+Network}}$<$ T $>$\+::save (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classutec_1_1neural__network_1_1NeuralNetwork_ab2da2c55dc3be175816a870c7c91d2e3}\index{utec::neural\_network::NeuralNetwork$<$ T $>$@{utec::neural\_network::NeuralNetwork$<$ T $>$}!train@{train}}
+\index{train@{train}!utec::neural\_network::NeuralNetwork$<$ T $>$@{utec::neural\_network::NeuralNetwork$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{train()}{train()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1NeuralNetwork_ab2da2c55dc3be175816a870c7c91d2e3} 
+template$<$typename T$>$ \\
+template$<$template$<$ typename... $>$ class Loss\+Type, template$<$ typename... $>$ class Optimizer\+Type = SGD$>$ \\
+void \mbox{\hyperlink{classutec_1_1neural__network_1_1NeuralNetwork}{utec\+::neural\+\_\+network\+::\+Neural\+Network}}$<$ T $>$\+::train (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{x}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{y}{, }\item[{const size\+\_\+t}]{epochs}{, }\item[{const size\+\_\+t}]{batch\+\_\+size}{, }\item[{T}]{learning\+\_\+rate}{, }\item[{std\+::mt19937 \&}]{rng}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/utec/nn/\mbox{\hyperlink{neural__network_8h}{neural\+\_\+network.\+h}}\end{DoxyCompactItemize}

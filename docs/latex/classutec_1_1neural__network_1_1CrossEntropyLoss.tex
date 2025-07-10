@@ -1,0 +1,71 @@
+\doxysection{utec\+::neural\+\_\+network\+::Cross\+Entropy\+Loss\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classutec_1_1neural__network_1_1CrossEntropyLoss}{}\label{classutec_1_1neural__network_1_1CrossEntropyLoss}\index{utec::neural\_network::CrossEntropyLoss$<$ T $>$@{utec::neural\_network::CrossEntropyLoss$<$ T $>$}}
+
+
+{\ttfamily \#include $<$loss.\+h$>$}
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::Cross\+Entropy\+Loss\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classutec_1_1neural__network_1_1CrossEntropyLoss}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Prediction, typename Expected$>$ }\\\mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_a59da8b275aa07a9b8033d691812c6757}{Cross\+Entropy\+Loss}} (Prediction \&\&y\+\_\+prediction, Expected \&\&y\+\_\+true, const T epsilon=1e-\/7)
+\item 
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_a7c9ae10a49791b7cb37b985dd0ccb786}{loss}} () const -\/$>$ T override
+\item 
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss_ad1a468fc0dd8bc6f825322015ffdbe13}{loss\+\_\+gradient}} () const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, 2 $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_add5386c613a6166cedccf23b8cba066d}{\texorpdfstring{$\sim$}{\string~}\+ILoss}} ()=default
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classutec_1_1neural__network_1_1CrossEntropyLoss_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classutec_1_1neural__network_1_1CrossEntropyLoss_a59da8b275aa07a9b8033d691812c6757}\index{utec::neural\_network::CrossEntropyLoss$<$ T $>$@{utec::neural\_network::CrossEntropyLoss$<$ T $>$}!CrossEntropyLoss@{CrossEntropyLoss}}
+\index{CrossEntropyLoss@{CrossEntropyLoss}!utec::neural\_network::CrossEntropyLoss$<$ T $>$@{utec::neural\_network::CrossEntropyLoss$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{CrossEntropyLoss()}{CrossEntropyLoss()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1CrossEntropyLoss_a59da8b275aa07a9b8033d691812c6757} 
+template$<$typename T$>$ \\
+template$<$typename Prediction, typename Expected$>$ \\
+\mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss}{utec\+::neural\+\_\+network\+::\+Cross\+Entropy\+Loss}}$<$ T $>$\+::\+Cross\+Entropy\+Loss (\begin{DoxyParamCaption}\item[{Prediction \&\&}]{y\+\_\+prediction}{, }\item[{Expected \&\&}]{y\+\_\+true}{, }\item[{const T}]{epsilon}{ = {\ttfamily 1e-\/7}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classutec_1_1neural__network_1_1CrossEntropyLoss_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classutec_1_1neural__network_1_1CrossEntropyLoss_a7c9ae10a49791b7cb37b985dd0ccb786}\index{utec::neural\_network::CrossEntropyLoss$<$ T $>$@{utec::neural\_network::CrossEntropyLoss$<$ T $>$}!loss@{loss}}
+\index{loss@{loss}!utec::neural\_network::CrossEntropyLoss$<$ T $>$@{utec::neural\_network::CrossEntropyLoss$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{loss()}{loss()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1CrossEntropyLoss_a7c9ae10a49791b7cb37b985dd0ccb786} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss}{utec\+::neural\+\_\+network\+::\+Cross\+Entropy\+Loss}}$<$ T $>$\+::loss (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ T\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a7aefbeb1f4bd61f61491309de76f2726}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, 2 $>$}}.
+
+\Hypertarget{classutec_1_1neural__network_1_1CrossEntropyLoss_ad1a468fc0dd8bc6f825322015ffdbe13}\index{utec::neural\_network::CrossEntropyLoss$<$ T $>$@{utec::neural\_network::CrossEntropyLoss$<$ T $>$}!loss\_gradient@{loss\_gradient}}
+\index{loss\_gradient@{loss\_gradient}!utec::neural\_network::CrossEntropyLoss$<$ T $>$@{utec::neural\_network::CrossEntropyLoss$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{loss\_gradient()}{loss\_gradient()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1CrossEntropyLoss_ad1a468fc0dd8bc6f825322015ffdbe13} 
+template$<$typename T$>$ \\
+auto \mbox{\hyperlink{classutec_1_1neural__network_1_1CrossEntropyLoss}{utec\+::neural\+\_\+network\+::\+Cross\+Entropy\+Loss}}$<$ T $>$\+::loss\+\_\+gradient (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$T, 2$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1ILoss_a16d09111b224ccf3a9e5676e4170e270}{utec\+::neural\+\_\+network\+::\+ILoss$<$ T, 2 $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/utec/nn/\mbox{\hyperlink{loss_8h}{loss.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,416 @@
+\doxysection{common\+::Tensor\texorpdfstring{$<$}{<} T, Rank \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classcommon_1_1Tensor}{}\label{classcommon_1_1Tensor}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+
+
+{\ttfamily \#include $<$tensor.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcommon_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}{Tensor}} (const std\+::array$<$ size\+\_\+t, Rank $>$ \&\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}})
+\item 
+{\footnotesize template$<$typename... Dims$>$ \newline
+requires (sizeof...(Dims) == Rank)}\\\mbox{\hyperlink{classcommon_1_1Tensor_aa032eb5875ff92319a7c64b83a1e39a0}{Tensor}} (const Dims... dims)
+\item 
+constexpr auto \mbox{\hyperlink{classcommon_1_1Tensor_abc82b477190acf69c9e09b46276147dd}{operator==}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&other) const -\/$>$ bool
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_aff520eafc9ad362d3d390c4ad5f77518}{operator=}} (std\+::initializer\+\_\+list$<$ T $>$ list) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&
+\item 
+constexpr auto \mbox{\hyperlink{classcommon_1_1Tensor_addc5fb80712265edf13d2c877fbf0ce4}{operator()}} (const auto... idxs) -\/$>$ T \&
+\item 
+constexpr auto \mbox{\hyperlink{classcommon_1_1Tensor_a30f761ffe6a426e2705d92c790273165}{operator()}} (const auto... idxs) const -\/$>$ const T \&
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a57764b269a44d7ca3dc39775d9e66f25}{operator()}} (const std\+::array$<$ size\+\_\+t, Rank $>$ \&idxs) -\/$>$ T \&
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_ae63873da1de276f0defb7ddcf9a0a250}{operator()}} (const std\+::array$<$ size\+\_\+t, Rank $>$ \&idxs) const -\/$>$ const T \&
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a4a20c27be03a3d2b3aa2d6a4a1d985db}{operator\mbox{[}$\,$\mbox{]}}} (const size\+\_\+t idx) -\/$>$ T \&
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_abdeeeb04a17e85cdbd2d23c4ba1c708a}{operator\mbox{[}$\,$\mbox{]}}} (const size\+\_\+t idx) const -\/$>$ const T \&
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a215437fdbb556e998f3feae08b02a51b}{size}} () const -\/$>$ size\+\_\+t
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}{shape}} () const noexcept -\/$>$ const std\+::array$<$ size\+\_\+t, Rank $>$ \&
+\item 
+void \mbox{\hyperlink{classcommon_1_1Tensor_a17fecc417ac1f38cf37ce43ac4a9952f}{reshape}} (const std\+::array$<$ size\+\_\+t, Rank $>$ \&new\+\_\+shape)
+\item 
+{\footnotesize template$<$typename... Dims$>$ \newline
+requires (sizeof...(Dims) == Rank)}\\void \mbox{\hyperlink{classcommon_1_1Tensor_a54fa319d146817ef1b6f9cd85274752c}{reshape}} (const Dims... dims)
+\item 
+void \mbox{\hyperlink{classcommon_1_1Tensor_a637c3147839433886d561c28a210cd33}{fill}} (const T \&value) noexcept
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a51eb9eef03f17649b74063dd37574a03}{row}} (const size\+\_\+t index) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ requires(Rank==2)
+\item 
+void \mbox{\hyperlink{classcommon_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a}{set\+\_\+row}} (const size\+\_\+t index, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&row\+\_\+tensor)
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c}{slice}} (const size\+\_\+t index) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ requires(Rank==3)
+\item 
+void \mbox{\hyperlink{classcommon_1_1Tensor_ae9d375f3d8c7e60eceb238dbe0df593a}{set\+\_\+slice}} (const size\+\_\+t index, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c}{slice}})
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_adac07192ba798e56630fb5c547b38747}{broadcast}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&rhs, auto fn) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a7f68b0a3fbf84213e7f0a4928f54fb05}{operator+}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&other) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a4d5c7867448ca6070dd77d76e7503d0a}{operator+}} (const T \&scalar) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a1cf64d6d7bdf6131ee5748949a37f187}{operator-\/}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&other) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_afe345e8834b5d29becc99333effac546}{operator-\/}} (const T \&scalar) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a112907a1abc16c6c425bfd1e8e4ab0f1}{operator-\/}} () const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_ad90e82d91ec2f95c449eea378024df98}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&other) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a9e168810c56913a57f0e569300d33271}{operator\texorpdfstring{$\ast$}{*}}} (const T \&scalar) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a6556ae085ce1e8b3906c68d020331878}{operator/}} (const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&other) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a332afc2da9d7aff2b9d261f3e4275ac0}{operator/}} (const T \&scalar) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_ac3fe489f64db9697f6c9295aebb5d136}{begin}} () noexcept
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_aecaf859f41c82bbe3e9c65ffe22d8192}{begin}} () const noexcept
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a816fdc2f8ac497140778fc071b813024}{end}} () noexcept
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a7be8b942f98b3c988a7dc040fe7c72d5}{end}} () const noexcept
+\item 
+constexpr auto \mbox{\hyperlink{classcommon_1_1Tensor_a271cbdb704f0c4a7c348121322212c70}{transpose\+\_\+2d}} () const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$
+\item 
+constexpr auto \mbox{\hyperlink{classcommon_1_1Tensor_aa3bbc9568b2b1fabd0fd584827603c7e}{transpose\+\_\+2d}} () const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ requires(Rank $>$ 2)
+\item 
+constexpr auto \mbox{\hyperlink{classcommon_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16}{apply}} (auto fn) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a77343720ccea1fe9b6eb35d15b5fe9e9}{operator+}} (const T \&scalar, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}} \&tensor) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_ab21fecbff07e86f38dcdd0723a545213}{operator-\/}} (const T \&scalar, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}} \&tensor) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_a0eef42b1eb01e70f175d427230ca3710}{operator\texorpdfstring{$\ast$}{*}}} (const T \&scalar, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}} \&tensor) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_abac937f7e9269d2523f4dac39fbb6e5d}{operator/}} (const T \&scalar, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}} \&tensor) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_ae94cc2c4fe2ddc07580e21b96eeb1f8e}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&tensor) -\/$>$ std\+::ostream \&requires(Rank $>$ 1)
+\item 
+auto \mbox{\hyperlink{classcommon_1_1Tensor_ab4131352cf1e7e232047d3f79498fa48}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&tensor) -\/$>$ std\+::ostream \&requires(Rank==1)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classcommon_1_1Tensor_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcommon_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!Tensor@{Tensor}}
+\index{Tensor@{Tensor}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{Tensor()}{Tensor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_afef65c86595bc5e9f35eedc48228c7a1} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\mbox{\hyperlink{classTensor}{\+::\+Tensor}} (\begin{DoxyParamCaption}\item[{const std\+::array$<$ size\+\_\+t, Rank $>$ \&}]{shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{classcommon_1_1Tensor_aa032eb5875ff92319a7c64b83a1e39a0}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!Tensor@{Tensor}}
+\index{Tensor@{Tensor}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{Tensor()}{Tensor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_aa032eb5875ff92319a7c64b83a1e39a0} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+template$<$typename... Dims$>$ \newline
+requires (sizeof...(Dims) == Rank)\\
+\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\mbox{\hyperlink{classTensor}{\+::\+Tensor}} (\begin{DoxyParamCaption}\item[{const Dims...}]{dims}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classcommon_1_1Tensor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcommon_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!apply@{apply}}
+\index{apply@{apply}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a4f81c73f3b7da0e466c384906bc85e16} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::apply (\begin{DoxyParamCaption}\item[{auto}]{fn}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{classcommon_1_1Tensor_aecaf859f41c82bbe3e9c65ffe22d8192}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!begin@{begin}}
+\index{begin@{begin}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_aecaf859f41c82bbe3e9c65ffe22d8192} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classcommon_1_1Tensor_ac3fe489f64db9697f6c9295aebb5d136}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!begin@{begin}}
+\index{begin@{begin}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_ac3fe489f64db9697f6c9295aebb5d136} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classcommon_1_1Tensor_adac07192ba798e56630fb5c547b38747}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!broadcast@{broadcast}}
+\index{broadcast@{broadcast}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{broadcast()}{broadcast()}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_adac07192ba798e56630fb5c547b38747} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::broadcast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{rhs}{, }\item[{auto}]{fn}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_a7be8b942f98b3c988a7dc040fe7c72d5}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!end@{end}}
+\index{end@{end}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a7be8b942f98b3c988a7dc040fe7c72d5} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classcommon_1_1Tensor_a816fdc2f8ac497140778fc071b813024}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!end@{end}}
+\index{end@{end}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a816fdc2f8ac497140778fc071b813024} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classcommon_1_1Tensor_a637c3147839433886d561c28a210cd33}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!fill@{fill}}
+\index{fill@{fill}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{fill()}{fill()}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a637c3147839433886d561c28a210cd33} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::fill (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classcommon_1_1Tensor_addc5fb80712265edf13d2c877fbf0ce4}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_addc5fb80712265edf13d2c877fbf0ce4} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator() (\begin{DoxyParamCaption}\item[{const auto...}]{idxs}{}\end{DoxyParamCaption}) -\/$>$ T\& \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{classcommon_1_1Tensor_a30f761ffe6a426e2705d92c790273165}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a30f761ffe6a426e2705d92c790273165} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator() (\begin{DoxyParamCaption}\item[{const auto...}]{idxs}{}\end{DoxyParamCaption}) const -\/$>$ const T\& \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{classcommon_1_1Tensor_a57764b269a44d7ca3dc39775d9e66f25}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a57764b269a44d7ca3dc39775d9e66f25} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::array$<$ size\+\_\+t, Rank $>$ \&}]{idxs}{}\end{DoxyParamCaption}) -\/$>$ T\& \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_ae63873da1de276f0defb7ddcf9a0a250}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_ae63873da1de276f0defb7ddcf9a0a250} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::array$<$ size\+\_\+t, Rank $>$ \&}]{idxs}{}\end{DoxyParamCaption}) const -\/$>$ const T\& \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_a9e168810c56913a57f0e569300d33271}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a9e168810c56913a57f0e569300d33271} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const T \&}]{scalar}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_ad90e82d91ec2f95c449eea378024df98}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_ad90e82d91ec2f95c449eea378024df98} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{other}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_a4d5c7867448ca6070dd77d76e7503d0a}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a4d5c7867448ca6070dd77d76e7503d0a} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_a7f68b0a3fbf84213e7f0a4928f54fb05}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a7f68b0a3fbf84213e7f0a4928f54fb05} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{other}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_a112907a1abc16c6c425bfd1e8e4ab0f1}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a112907a1abc16c6c425bfd1e8e4ab0f1} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator-\/ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_afe345e8834b5d29becc99333effac546}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_afe345e8834b5d29becc99333effac546} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_a1cf64d6d7bdf6131ee5748949a37f187}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a1cf64d6d7bdf6131ee5748949a37f187} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{other}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_a332afc2da9d7aff2b9d261f3e4275ac0}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a332afc2da9d7aff2b9d261f3e4275ac0} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_a6556ae085ce1e8b3906c68d020331878}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a6556ae085ce1e8b3906c68d020331878} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{other}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_aff520eafc9ad362d3d390c4ad5f77518}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_aff520eafc9ad362d3d390c4ad5f77518} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator= (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ T $>$}]{list}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$\& \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_abc82b477190acf69c9e09b46276147dd}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_abc82b477190acf69c9e09b46276147dd} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{other}{}\end{DoxyParamCaption}) const -\/$>$ bool \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{classcommon_1_1Tensor_a4a20c27be03a3d2b3aa2d6a4a1d985db}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a4a20c27be03a3d2b3aa2d6a4a1d985db} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx}{}\end{DoxyParamCaption}) -\/$>$ T\& \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_abdeeeb04a17e85cdbd2d23c4ba1c708a}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_abdeeeb04a17e85cdbd2d23c4ba1c708a} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{idx}{}\end{DoxyParamCaption}) const -\/$>$ const T\& \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_a54fa319d146817ef1b6f9cd85274752c}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!reshape@{reshape}}
+\index{reshape@{reshape}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{reshape()}{reshape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a54fa319d146817ef1b6f9cd85274752c} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+template$<$typename... Dims$>$ \newline
+requires (sizeof...(Dims) == Rank)\\
+void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::reshape (\begin{DoxyParamCaption}\item[{const Dims...}]{dims}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_a17fecc417ac1f38cf37ce43ac4a9952f}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!reshape@{reshape}}
+\index{reshape@{reshape}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{reshape()}{reshape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a17fecc417ac1f38cf37ce43ac4a9952f} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::reshape (\begin{DoxyParamCaption}\item[{const std\+::array$<$ size\+\_\+t, Rank $>$ \&}]{new\+\_\+shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_a51eb9eef03f17649b74063dd37574a03}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!row@{row}}
+\index{row@{row}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{row()}{row()}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a51eb9eef03f17649b74063dd37574a03} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::row (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, 2$>$             requires(Rank == 2)         \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!set\_row@{set\_row}}
+\index{set\_row@{set\_row}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{set\_row()}{set\_row()}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_af442d67fa5f45db289396ff5b836ea0a} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::set\+\_\+row (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&}]{row\+\_\+tensor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_ae9d375f3d8c7e60eceb238dbe0df593a}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!set\_slice@{set\_slice}}
+\index{set\_slice@{set\_slice}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{set\_slice()}{set\_slice()}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_ae9d375f3d8c7e60eceb238dbe0df593a} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+void \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::set\+\_\+slice (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, 2 $>$ \&}]{slice}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!shape@{shape}}
+\index{shape@{shape}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{shape()}{shape()}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a26b6cbe28804d535a9bccc96bae9a3e5} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::shape (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ const std\+::array$<$size\+\_\+t, Rank$>$\& \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classcommon_1_1Tensor_a215437fdbb556e998f3feae08b02a51b}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!size@{size}}
+\index{size@{size}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a215437fdbb556e998f3feae08b02a51b} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ size\+\_\+t \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+\Hypertarget{classcommon_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!slice@{slice}}
+\index{slice@{slice}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{slice()}{slice()}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a91fb9304cb7603e83a4414dfb6000c5c} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::slice (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, 2$>$             requires(Rank == 3)         \hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classcommon_1_1Tensor_a271cbdb704f0c4a7c348121322212c70}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!transpose\_2d@{transpose\_2d}}
+\index{transpose\_2d@{transpose\_2d}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{transpose\_2d()}{transpose\_2d()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a271cbdb704f0c4a7c348121322212c70} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::transpose\+\_\+2d (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, 2$>$ \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{classcommon_1_1Tensor_aa3bbc9568b2b1fabd0fd584827603c7e}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!transpose\_2d@{transpose\_2d}}
+\index{transpose\_2d@{transpose\_2d}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{transpose\_2d()}{transpose\_2d()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_aa3bbc9568b2b1fabd0fd584827603c7e} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{utec\+::algebra\+::\+Tensor}}$<$ T, Rank $>$\+::transpose\+\_\+2d (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$             requires(Rank $>$ 2)         \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [constexpr]}}
+
+
+
+\label{doc-related-members}
+\Hypertarget{classcommon_1_1Tensor_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classcommon_1_1Tensor_a0eef42b1eb01e70f175d427230ca3710}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}}{operator*}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a0eef42b1eb01e70f175d427230ca3710} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const T \&}]{scalar}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{tensor}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{classcommon_1_1Tensor_a77343720ccea1fe9b6eb35d15b5fe9e9}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_a77343720ccea1fe9b6eb35d15b5fe9e9} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto operator+ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{tensor}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{classcommon_1_1Tensor_ab21fecbff07e86f38dcdd0723a545213}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_ab21fecbff07e86f38dcdd0723a545213} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto operator-\/ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{tensor}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{classcommon_1_1Tensor_abac937f7e9269d2523f4dac39fbb6e5d}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator/}{operator/}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_abac937f7e9269d2523f4dac39fbb6e5d} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto operator/ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{tensor}{}\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$T, Rank$>$ \hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{classcommon_1_1Tensor_ae94cc2c4fe2ddc07580e21b96eeb1f8e}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_ae94cc2c4fe2ddc07580e21b96eeb1f8e} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{tensor}{}\end{DoxyParamCaption}) -\/$>$ std\+::ostream\& requires(Rank $>$ 1) \hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{classcommon_1_1Tensor_ab4131352cf1e7e232047d3f79498fa48}\index{common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!common::Tensor$<$ T, Rank $>$@{common::Tensor$<$ T, Rank $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcommon_1_1Tensor_ab4131352cf1e7e232047d3f79498fa48} 
+template$<$typename T, size\+\_\+t Rank$>$ \\
+auto operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{Tensor}}$<$ T, Rank $>$ \&}]{tensor}{}\end{DoxyParamCaption}) -\/$>$ std\+::ostream\& requires(Rank == 1) \hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/utec/algebra/\mbox{\hyperlink{tensor_8h}{tensor.\+h}}\end{DoxyCompactItemize}

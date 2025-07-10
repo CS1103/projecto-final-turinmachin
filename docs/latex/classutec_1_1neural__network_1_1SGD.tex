@@ -1,0 +1,59 @@
+\doxysection{utec\+::neural\+\_\+network\+::SGD\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classutec_1_1neural__network_1_1SGD}{}\label{classutec_1_1neural__network_1_1SGD}\index{utec::neural\_network::SGD$<$ T $>$@{utec::neural\_network::SGD$<$ T $>$}}
+
+
+{\ttfamily \#include $<$optimizer.\+h$>$}
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::SGD\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classutec_1_1neural__network_1_1SGD}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutec_1_1neural__network_1_1SGD_ad777b49c63a7f092dc16d4cb27fb7af7}{SGD}} (T learning\+\_\+rate=0.\+01)
+\item 
+void \mbox{\hyperlink{classutec_1_1neural__network_1_1SGD_a0a3a3344db4a34db76c0da2031a68225}{update}} (\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&params, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&grads) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{utec\+::neural\+\_\+network\+::\+IOptimizer$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a8535546f154901c74425495139d54b68}{\texorpdfstring{$\sim$}{\string~}\+IOptimizer}} ()=default
+\item 
+virtual void \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a930832dc9b736845a83f5049c735dfe1}{step}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classutec_1_1neural__network_1_1SGD_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classutec_1_1neural__network_1_1SGD_ad777b49c63a7f092dc16d4cb27fb7af7}\index{utec::neural\_network::SGD$<$ T $>$@{utec::neural\_network::SGD$<$ T $>$}!SGD@{SGD}}
+\index{SGD@{SGD}!utec::neural\_network::SGD$<$ T $>$@{utec::neural\_network::SGD$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SGD()}{SGD()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1SGD_ad777b49c63a7f092dc16d4cb27fb7af7} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{classutec_1_1neural__network_1_1SGD}{utec\+::neural\+\_\+network\+::\+SGD}}$<$ T $>$\+::\+SGD (\begin{DoxyParamCaption}\item[{T}]{learning\+\_\+rate}{ = {\ttfamily 0.01}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classutec_1_1neural__network_1_1SGD_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classutec_1_1neural__network_1_1SGD_a0a3a3344db4a34db76c0da2031a68225}\index{utec::neural\_network::SGD$<$ T $>$@{utec::neural\_network::SGD$<$ T $>$}!update@{update}}
+\index{update@{update}!utec::neural\_network::SGD$<$ T $>$@{utec::neural\_network::SGD$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1SGD_a0a3a3344db4a34db76c0da2031a68225} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{classutec_1_1neural__network_1_1SGD}{utec\+::neural\+\_\+network\+::\+SGD}}$<$ T $>$\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{params}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{grads}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{utec\+::neural\+\_\+network\+::\+IOptimizer$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/utec/nn/\mbox{\hyperlink{optimizer_8h}{optimizer.\+h}}\end{DoxyCompactItemize}

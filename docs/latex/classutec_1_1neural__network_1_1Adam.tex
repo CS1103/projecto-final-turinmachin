@@ -1,0 +1,70 @@
+\doxysection{utec\+::neural\+\_\+network\+::Adam\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classutec_1_1neural__network_1_1Adam}{}\label{classutec_1_1neural__network_1_1Adam}\index{utec::neural\_network::Adam$<$ T $>$@{utec::neural\_network::Adam$<$ T $>$}}
+
+
+{\ttfamily \#include $<$optimizer.\+h$>$}
+
+Inheritance diagram for utec\+::neural\+\_\+network\+::Adam\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classutec_1_1neural__network_1_1Adam}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_af9ad301bc405fb5ec4909d4fb5d5dabf}{Adam}} (T learning\+\_\+rate=0.\+001, T beta1=0.\+9, T beta2=0.\+999, T epsilon=1e-\/8)
+\item 
+void \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_afbc4ee15fa6b2be1e0a508be4e03eb32}{update}} (\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&params, const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&grads) override
+\item 
+void \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam_a0e9d2821852c9608f87a329e8a5cb45d}{step}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{utec\+::neural\+\_\+network\+::\+IOptimizer$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a8535546f154901c74425495139d54b68}{\texorpdfstring{$\sim$}{\string~}\+IOptimizer}} ()=default
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classutec_1_1neural__network_1_1Adam_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classutec_1_1neural__network_1_1Adam_af9ad301bc405fb5ec4909d4fb5d5dabf}\index{utec::neural\_network::Adam$<$ T $>$@{utec::neural\_network::Adam$<$ T $>$}!Adam@{Adam}}
+\index{Adam@{Adam}!utec::neural\_network::Adam$<$ T $>$@{utec::neural\_network::Adam$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Adam()}{Adam()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1Adam_af9ad301bc405fb5ec4909d4fb5d5dabf} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{classutec_1_1neural__network_1_1Adam}{utec\+::neural\+\_\+network\+::\+Adam}}$<$ T $>$\+::\+Adam (\begin{DoxyParamCaption}\item[{T}]{learning\+\_\+rate}{ = {\ttfamily 0.001}, }\item[{T}]{beta1}{ = {\ttfamily 0.9}, }\item[{T}]{beta2}{ = {\ttfamily 0.999}, }\item[{T}]{epsilon}{ = {\ttfamily 1e-\/8}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classutec_1_1neural__network_1_1Adam_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classutec_1_1neural__network_1_1Adam_a0e9d2821852c9608f87a329e8a5cb45d}\index{utec::neural\_network::Adam$<$ T $>$@{utec::neural\_network::Adam$<$ T $>$}!step@{step}}
+\index{step@{step}!utec::neural\_network::Adam$<$ T $>$@{utec::neural\_network::Adam$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1Adam_a0e9d2821852c9608f87a329e8a5cb45d} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam}{utec\+::neural\+\_\+network\+::\+Adam}}$<$ T $>$\+::step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_a930832dc9b736845a83f5049c735dfe1}{utec\+::neural\+\_\+network\+::\+IOptimizer$<$ T $>$}}.
+
+\Hypertarget{classutec_1_1neural__network_1_1Adam_afbc4ee15fa6b2be1e0a508be4e03eb32}\index{utec::neural\_network::Adam$<$ T $>$@{utec::neural\_network::Adam$<$ T $>$}!update@{update}}
+\index{update@{update}!utec::neural\_network::Adam$<$ T $>$@{utec::neural\_network::Adam$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classutec_1_1neural__network_1_1Adam_afbc4ee15fa6b2be1e0a508be4e03eb32} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{classutec_1_1neural__network_1_1Adam}{utec\+::neural\+\_\+network\+::\+Adam}}$<$ T $>$\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{params}{, }\item[{const \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra\+::\+Tensor}}$<$ T, 2 $>$ \&}]{grads}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{utec\+::neural\+\_\+network\+::\+IOptimizer$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/utec/nn/\mbox{\hyperlink{optimizer_8h}{optimizer.\+h}}\end{DoxyCompactItemize}

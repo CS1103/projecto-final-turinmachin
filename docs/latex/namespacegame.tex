@@ -1,0 +1,136 @@
+\doxysection{game Namespace Reference}
+\hypertarget{namespacegame}{}\label{namespacegame}\index{game@{game}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacegame_1_1math}{math}}
+\item 
+namespace \mbox{\hyperlink{namespacegame_1_1sdl}{sdl}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classgame_1_1Game}{Game}}
+\item 
+struct \mbox{\hyperlink{structgame_1_1ResourceManager}{Resource\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{namespacegame_ae7502fe16e6fcf9b6c84ceadaa22f7ac}{make\+\_\+grayscale}} (const std\+::vector$<$ std\+::uint8\+\_\+t $>$ \&pixel\+\_\+data, std\+::size\+\_\+t width) -\/$>$ std\+::vector$<$ std\+::uint8\+\_\+t $>$
+\item 
+auto \mbox{\hyperlink{namespacegame_ae74e3c466ae190bac8499607bff0cb62}{downscale\+\_\+to\+\_\+8x8}} (const std\+::vector$<$ std\+::uint8\+\_\+t $>$ \&grayscale\+\_\+data, const SDL\+\_\+\+Rect \&src\+\_\+rect, int width) -\/$>$ std\+::vector$<$ std\+::uint8\+\_\+t $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr std\+::string \mbox{\hyperlink{namespacegame_a9151ebe385270a723c02151be4f6c762}{GAME\+\_\+\+TITLE}} = "{}Brain Ager"{}
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a8024671adc6f9b0fe39789a8ea5a357a}{WINDOW\+\_\+\+WIDTH}} = 960
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a7e5a6e190446686addab44689f99a89b}{WINDOW\+\_\+\+HEIGHT}} = 540
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a63c99541ebf0087bb032b4c5646c2140}{FPS}} = 60
+\item 
+constexpr double \mbox{\hyperlink{namespacegame_a51271e8aec454f27cc005c9afb0120f4}{DELTA}} = 1.\+0 / \mbox{\hyperlink{namespacegame_a63c99541ebf0087bb032b4c5646c2140}{FPS}}
+\item 
+constexpr long double \mbox{\hyperlink{namespacegame_a46c810500ceebafce6f25a8e7033c5c2}{MAX\+\_\+\+TIME\+\_\+\+ACCUMULATOR}} = 4 \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacegame_a51271e8aec454f27cc005c9afb0120f4}{DELTA}}
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a6369af02d6d393e44626c58a72f8ebcb}{CANVAS\+\_\+\+WIDTH}} = \mbox{\hyperlink{namespacegame_a7e5a6e190446686addab44689f99a89b}{WINDOW\+\_\+\+HEIGHT}}
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a0477d6dd4b8b4bd0ba20b146aaa6bb47}{CANVAS\+\_\+\+HEIGHT}} = \mbox{\hyperlink{namespacegame_a7e5a6e190446686addab44689f99a89b}{WINDOW\+\_\+\+HEIGHT}}
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a86f10f73b8e0bf134f074aede417e34d}{CANVAS\+\_\+X}} = \mbox{\hyperlink{namespacegame_a8024671adc6f9b0fe39789a8ea5a357a}{WINDOW\+\_\+\+WIDTH}} -\/ \mbox{\hyperlink{namespacegame_a6369af02d6d393e44626c58a72f8ebcb}{CANVAS\+\_\+\+WIDTH}}
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a84e7559b0af7fccfb33e50a7b4e38bed}{CANVAS\+\_\+Y}} = 0
+\item 
+constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespacegame_ac124d1730987af950b44994a484a3912}{HISTORY\+\_\+\+LIMIT}} = 4
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{namespacegame_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacegame_ae74e3c466ae190bac8499607bff0cb62}\index{game@{game}!downscale\_to\_8x8@{downscale\_to\_8x8}}
+\index{downscale\_to\_8x8@{downscale\_to\_8x8}!game@{game}}
+\doxysubsubsection{\texorpdfstring{downscale\_to\_8x8()}{downscale\_to\_8x8()}}
+{\footnotesize\ttfamily \label{namespacegame_ae74e3c466ae190bac8499607bff0cb62} 
+auto game\+::downscale\+\_\+to\+\_\+8x8 (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::uint8\+\_\+t $>$ \&}]{grayscale\+\_\+data}{, }\item[{const SDL\+\_\+\+Rect \&}]{src\+\_\+rect}{, }\item[{int}]{width}{}\end{DoxyParamCaption}) -\/$>$ std\+::vector$<$std\+::uint8\+\_\+t$>$}
+
+\Hypertarget{namespacegame_ae7502fe16e6fcf9b6c84ceadaa22f7ac}\index{game@{game}!make\_grayscale@{make\_grayscale}}
+\index{make\_grayscale@{make\_grayscale}!game@{game}}
+\doxysubsubsection{\texorpdfstring{make\_grayscale()}{make\_grayscale()}}
+{\footnotesize\ttfamily \label{namespacegame_ae7502fe16e6fcf9b6c84ceadaa22f7ac} 
+auto game\+::make\+\_\+grayscale (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::uint8\+\_\+t $>$ \&}]{pixel\+\_\+data}{, }\item[{std\+::size\+\_\+t}]{width}{}\end{DoxyParamCaption}) -\/$>$ std\+::vector$<$std\+::uint8\+\_\+t$>$}
+
+
+
+\label{doc-var-members}
+\Hypertarget{namespacegame_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacegame_a0477d6dd4b8b4bd0ba20b146aaa6bb47}\index{game@{game}!CANVAS\_HEIGHT@{CANVAS\_HEIGHT}}
+\index{CANVAS\_HEIGHT@{CANVAS\_HEIGHT}!game@{game}}
+\doxysubsubsection{\texorpdfstring{CANVAS\_HEIGHT}{CANVAS\_HEIGHT}}
+{\footnotesize\ttfamily \label{namespacegame_a0477d6dd4b8b4bd0ba20b146aaa6bb47} 
+int game\+::\+CANVAS\+\_\+\+HEIGHT = \mbox{\hyperlink{namespacegame_a7e5a6e190446686addab44689f99a89b}{WINDOW\+\_\+\+HEIGHT}}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespacegame_a6369af02d6d393e44626c58a72f8ebcb}\index{game@{game}!CANVAS\_WIDTH@{CANVAS\_WIDTH}}
+\index{CANVAS\_WIDTH@{CANVAS\_WIDTH}!game@{game}}
+\doxysubsubsection{\texorpdfstring{CANVAS\_WIDTH}{CANVAS\_WIDTH}}
+{\footnotesize\ttfamily \label{namespacegame_a6369af02d6d393e44626c58a72f8ebcb} 
+int game\+::\+CANVAS\+\_\+\+WIDTH = \mbox{\hyperlink{namespacegame_a7e5a6e190446686addab44689f99a89b}{WINDOW\+\_\+\+HEIGHT}}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespacegame_a86f10f73b8e0bf134f074aede417e34d}\index{game@{game}!CANVAS\_X@{CANVAS\_X}}
+\index{CANVAS\_X@{CANVAS\_X}!game@{game}}
+\doxysubsubsection{\texorpdfstring{CANVAS\_X}{CANVAS\_X}}
+{\footnotesize\ttfamily \label{namespacegame_a86f10f73b8e0bf134f074aede417e34d} 
+int game\+::\+CANVAS\+\_\+X = \mbox{\hyperlink{namespacegame_a8024671adc6f9b0fe39789a8ea5a357a}{WINDOW\+\_\+\+WIDTH}} -\/ \mbox{\hyperlink{namespacegame_a6369af02d6d393e44626c58a72f8ebcb}{CANVAS\+\_\+\+WIDTH}}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespacegame_a84e7559b0af7fccfb33e50a7b4e38bed}\index{game@{game}!CANVAS\_Y@{CANVAS\_Y}}
+\index{CANVAS\_Y@{CANVAS\_Y}!game@{game}}
+\doxysubsubsection{\texorpdfstring{CANVAS\_Y}{CANVAS\_Y}}
+{\footnotesize\ttfamily \label{namespacegame_a84e7559b0af7fccfb33e50a7b4e38bed} 
+int game\+::\+CANVAS\+\_\+Y = 0\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespacegame_a51271e8aec454f27cc005c9afb0120f4}\index{game@{game}!DELTA@{DELTA}}
+\index{DELTA@{DELTA}!game@{game}}
+\doxysubsubsection{\texorpdfstring{DELTA}{DELTA}}
+{\footnotesize\ttfamily \label{namespacegame_a51271e8aec454f27cc005c9afb0120f4} 
+double game\+::\+DELTA = 1.\+0 / \mbox{\hyperlink{namespacegame_a63c99541ebf0087bb032b4c5646c2140}{FPS}}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespacegame_a63c99541ebf0087bb032b4c5646c2140}\index{game@{game}!FPS@{FPS}}
+\index{FPS@{FPS}!game@{game}}
+\doxysubsubsection{\texorpdfstring{FPS}{FPS}}
+{\footnotesize\ttfamily \label{namespacegame_a63c99541ebf0087bb032b4c5646c2140} 
+int game\+::\+FPS = 60\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespacegame_a9151ebe385270a723c02151be4f6c762}\index{game@{game}!GAME\_TITLE@{GAME\_TITLE}}
+\index{GAME\_TITLE@{GAME\_TITLE}!game@{game}}
+\doxysubsubsection{\texorpdfstring{GAME\_TITLE}{GAME\_TITLE}}
+{\footnotesize\ttfamily \label{namespacegame_a9151ebe385270a723c02151be4f6c762} 
+std\+::string game\+::\+GAME\+\_\+\+TITLE = "{}Brain Ager"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespacegame_ac124d1730987af950b44994a484a3912}\index{game@{game}!HISTORY\_LIMIT@{HISTORY\_LIMIT}}
+\index{HISTORY\_LIMIT@{HISTORY\_LIMIT}!game@{game}}
+\doxysubsubsection{\texorpdfstring{HISTORY\_LIMIT}{HISTORY\_LIMIT}}
+{\footnotesize\ttfamily \label{namespacegame_ac124d1730987af950b44994a484a3912} 
+std\+::size\+\_\+t game\+::\+HISTORY\+\_\+\+LIMIT = 4\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespacegame_a46c810500ceebafce6f25a8e7033c5c2}\index{game@{game}!MAX\_TIME\_ACCUMULATOR@{MAX\_TIME\_ACCUMULATOR}}
+\index{MAX\_TIME\_ACCUMULATOR@{MAX\_TIME\_ACCUMULATOR}!game@{game}}
+\doxysubsubsection{\texorpdfstring{MAX\_TIME\_ACCUMULATOR}{MAX\_TIME\_ACCUMULATOR}}
+{\footnotesize\ttfamily \label{namespacegame_a46c810500ceebafce6f25a8e7033c5c2} 
+long double game\+::\+MAX\+\_\+\+TIME\+\_\+\+ACCUMULATOR = 4 \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacegame_a51271e8aec454f27cc005c9afb0120f4}{DELTA}}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespacegame_a7e5a6e190446686addab44689f99a89b}\index{game@{game}!WINDOW\_HEIGHT@{WINDOW\_HEIGHT}}
+\index{WINDOW\_HEIGHT@{WINDOW\_HEIGHT}!game@{game}}
+\doxysubsubsection{\texorpdfstring{WINDOW\_HEIGHT}{WINDOW\_HEIGHT}}
+{\footnotesize\ttfamily \label{namespacegame_a7e5a6e190446686addab44689f99a89b} 
+int game\+::\+WINDOW\+\_\+\+HEIGHT = 540\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{namespacegame_a8024671adc6f9b0fe39789a8ea5a357a}\index{game@{game}!WINDOW\_WIDTH@{WINDOW\_WIDTH}}
+\index{WINDOW\_WIDTH@{WINDOW\_WIDTH}!game@{game}}
+\doxysubsubsection{\texorpdfstring{WINDOW\_WIDTH}{WINDOW\_WIDTH}}
+{\footnotesize\ttfamily \label{namespacegame_a8024671adc6f9b0fe39789a8ea5a357a} 
+int game\+::\+WINDOW\+\_\+\+WIDTH = 960\hspace{0.3cm}{\ttfamily [constexpr]}}
+

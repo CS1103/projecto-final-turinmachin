@@ -1,0 +1,34 @@
+\doxysection{serialization.\+h}
+\hypertarget{serialization_8h_source}{}\label{serialization_8h_source}\index{include/utec/utils/serialization.h@{include/utec/utils/serialization.h}}
+\mbox{\hyperlink{serialization_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SERIALIZATION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SERIALIZATION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <istream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceserialization}{serialization}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{write\_numeric}}(std::ostream\&\ out,\ \textcolor{keyword}{const}\ T\ n)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ std::size\_t\ N\ =\ \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ data\ =\ std::bit\_cast<std::array<std::uint8\_t,\ N>>(n);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ out.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(data.data()),\ data.size());}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{read\_numeric}}(std::istream\&\ in)\ -\/>\ T\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ std::size\_t\ N\ =\ \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ std::array<std::uint8\_t,\ N>\ data\{\};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ in.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(data.data()),\ data.size());}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::bit\_cast<T>(data);}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \}\ \ \textcolor{comment}{//\ namespace\ serialization}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

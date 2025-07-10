@@ -1,0 +1,250 @@
+\doxysection{kan.\+h}
+\hypertarget{kan_8h_source}{}\label{kan_8h_source}\index{include/utec/nn/kan.h@{include/utec/nn/kan.h}}
+\mbox{\hyperlink{kan_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PROG3\_NN\_FINAL\_PROJECT\_V2025\_01\_KAN\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PROG3\_NN\_FINAL\_PROJECT\_V2025\_01\_KAN\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utec_2nn_2interfaces_8h}{interfaces.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tensor_8h}{utec/algebra/tensor.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serialization_8h}{utec/utils/serialization.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutec_1_1neural__network}{utec::neural\_network}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_af8b1eb6980e641bb3d68d944faf7b2b8}{BSpline}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_af837076e9e3f2c77767370c7fa42bfe9}{knots}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_ae228014855fd41359c88d79f69c03104}{x\_min}};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_a71528e6bb6d1d1e69c718f3ebc442f33}{x\_max}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_a59c244bab47e9b2d2daf442b6ec9e9cf}{step}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_a252ee44d735e398250a025587bc6b34f}{inv\_step}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_af8b1eb6980e641bb3d68d944faf7b2b8}{BSpline}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_af837076e9e3f2c77767370c7fa42bfe9}{knots}},\ T\ a,\ T\ b)}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_af837076e9e3f2c77767370c7fa42bfe9}{knots}}(\mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_af837076e9e3f2c77767370c7fa42bfe9}{knots}}),}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_ae228014855fd41359c88d79f69c03104}{x\_min}}(a),}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_a71528e6bb6d1d1e69c718f3ebc442f33}{x\_max}}(b),}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_a59c244bab47e9b2d2daf442b6ec9e9cf}{step}}((b\ -\/\ a)\ /\ (\mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_af837076e9e3f2c77767370c7fa42bfe9}{knots}}\ -\/\ 1)),}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_a252ee44d735e398250a025587bc6b34f}{inv\_step}}(T\{1\}\ /\ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_a59c244bab47e9b2d2daf442b6ec9e9cf}{step}})\ \{\}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_a6b33d6193f23f9720cec16720c7f79df}{eval}}(T\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}})\ \textcolor{keyword}{const}\ -\/>\ std::vector<T>\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<T>\ B(\mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_af837076e9e3f2c77767370c7fa42bfe9}{knots}},\ T\{0\});}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ <=\ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_ae228014855fd41359c88d79f69c03104}{x\_min}})\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ B[0]\ =\ T\{1\};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ B;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ >=\ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_a71528e6bb6d1d1e69c718f3ebc442f33}{x\_max}})\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ B[\mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_af837076e9e3f2c77767370c7fa42bfe9}{knots}}\ -\/\ 1]\ =\ T\{1\};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ B;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ pos\ =\ (\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ -\/\ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_ae228014855fd41359c88d79f69c03104}{x\_min}})\ *\ \mbox{\hyperlink{structutec_1_1neural__network_1_1BSpline_a252ee44d735e398250a025587bc6b34f}{inv\_step}};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ i\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(pos);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ t\ =\ pos\ -\/\ i;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ B[i]\ =\ T\{1\}\ -\/\ t;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ B[i\ +\ 1]\ =\ t;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ B;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classKan_a39c44a271bd7c7af844001e8d89e543e}{Kan}}\ final\ :\ \textcolor{keyword}{public}\ ILayer<T>\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ in\_f;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ out\_f;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ width;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ knots;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ T\ x\_min;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ T\ x\_max;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 3>\ psi\_weights;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ phi\_weights;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ phi\_biases;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 3>\ gradient\_psi\_weights;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ gradient\_phi\_weights;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ gradient\_phi\_biases;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ input;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 3>\ psi\_output;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ algebra::Tensor<T,\ 2>\ psi\_sum;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ BSpline<T>\ basis;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a39c44a271bd7c7af844001e8d89e543e}{Kan}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ in\_f,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ out\_f,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ knots,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ x\_min\ =\ -\/1,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ x\_max\ =\ +1)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ :\ in\_f(in\_f),}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\_f(out\_f),}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width((2\ *\ in\_f)\ +\ 1),}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ knots(knots),}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\_min(x\_min),}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\_max(x\_max),}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ psi\_weights(width,\ in\_f,\ knots),}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ phi\_weights(out\_f,\ width),}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ phi\_biases(1,\ out\_f),}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_psi\_weights(width,\ in\_f,\ knots),}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_phi\_weights(out\_f,\ width),}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_phi\_biases(1,\ out\_f),}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ input(0,\ 0),}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ psi\_output(0,\ 0,\ 0),}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ psi\_sum(0,\ 0),}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ basis(knots,\ x\_min,\ x\_max)\ \{\}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a0e8f973f16a7a3bdcb5599957f4f67f5}{Kan}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ in\_f,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ out\_f,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ knots,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ init\_psi\_w\_fun,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ init\_phi\_w\_fun,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ init\_phi\_b\_fun)}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a39c44a271bd7c7af844001e8d89e543e}{Kan}}(in\_f,\ out\_f,\ knots)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ init\_psi\_w\_fun(psi\_weights);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ init\_phi\_w\_fun(phi\_weights);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ init\_phi\_b\_fun(phi\_biases);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_adbcf3683376205b4f7987aaa2ecac36c}{forward}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}})\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ input\ =\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ B\ =\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}.shape()[0];}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ psi\_output.reshape(B,\ width,\ in\_f);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ psi\_sum.reshape(B,\ width);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ b\ =\ 0;\ b\ <\ B;\ ++b)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ q\ =\ 0;\ q\ <\ width;\ ++q)\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ sum\_q\ =\ 0;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}}\ =\ 0;\ \mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}}\ <\ in\_f;\ ++\mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}})\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\&\ Bk\ =\ basis.eval(\mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}(b,\ \mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}}));}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ acc\ =\ 0;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ knots;\ ++k)\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acc\ +=\ psi\_weights(q,\ \mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}},\ k)\ *\ Bk[k];}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ psi\_output(b,\ q,\ \mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}})\ =\ acc;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sum\_q\ +=\ acc;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ psi\_sum(b,\ q)\ =\ sum\_q;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ phi\_w\_T\ =\ phi\_weights.transpose\_2d();}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ out\ =\ \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{algebra::matrix\_product}}(psi\_sum,\ phi\_w\_T);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ b\ =\ 0;\ b\ <\ B;\ ++b)\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ out\_f;\ ++j)\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out(b,\ j)\ +=\ phi\_biases(0,\ j);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_aba3256bdb697b3791dab07d32514ed0b}{backward}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\&\ dZ)\ -\/>\ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ B\ =\ input.shape()[0];}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_phi\_weights\ =\ \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{algebra::matrix\_product}}(dZ.transpose\_2d(),\ psi\_sum);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ gradient\_phi\_weights\ =\ algebra::transpose\_2d(gradient\_phi\_weights);}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_phi\_biases.fill(0);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ out\_f;\ ++j)\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ b\ =\ 0;\ b\ <\ B;\ ++b)\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_phi\_biases(0,\ j)\ +=\ dZ(b,\ j);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ DPsiSum\ =\ \mbox{\hyperlink{namespaceutec_1_1algebra_ae9c4a2995ea5148ad6653d79058621ac}{algebra::matrix\_product}}(dZ,\ phi\_weights);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_psi\_weights.fill(0);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1algebra_1_1Tensor}{algebra::Tensor<T,\ 2>}}\ dInput(B,\ in\_f);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ dInput.\mbox{\hyperlink{classutec_1_1algebra_1_1Tensor_a637c3147839433886d561c28a210cd33}{fill}}(0);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ b\ =\ 0;\ b\ <\ B;\ ++b)\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ q\ =\ 0;\ q\ <\ width;\ ++q)\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ dPs\ =\ DPsiSum(b,\ q);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}}\ =\ 0;\ \mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}}\ <\ in\_f;\ ++\mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}})\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\&\ Bk\ =\ basis.eval(input(b,\ \mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}}));}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ weighted\_sum\ =\ 0;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ knots;\ ++k)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\ B\_val\ =\ Bk[k];}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gradient\_psi\_weights(q,\ \mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}},\ k)\ +=\ dPs\ *\ B\_val;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ weighted\_sum\ +=\ psi\_weights(q,\ \mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}},\ k)\ *\ B\_val;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dInput(b,\ \mbox{\hyperlink{catch__amalgamated_8cpp_ac483f6ce851c9ecd9fb835ff7551737c}{p}})\ +=\ dPs\ *\ weighted\_sum;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dInput;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a07b819255c3861f6b83f55cece8dbc61}{update\_params}}(\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer}{IOptimizer<T>}}\&\ optimizer)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ q\ =\ 0;\ q\ <\ width;\ ++q)\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ psi\_slice\ =\ psi\_weights.slice(q);}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ grad\_slice\ =\ gradient\_psi\_weights.slice(q);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ optimizer.\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{update}}(psi\_slice,\ grad\_slice);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ psi\_weights.set\_slice(q,\ psi\_slice);}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ optimizer.\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{update}}(phi\_weights,\ gradient\_phi\_weights);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ optimizer.\mbox{\hyperlink{structutec_1_1neural__network_1_1IOptimizer_af1b6f92a0513f3673df32902444800c8}{update}}(phi\_biases,\ gradient\_phi\_biases);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_adab78480bb6877e8971bf50dafe2cd43}{id}}()\ const\ -\/>\ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dab}{LayerId}}\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceutec_1_1neural__network_a8ecfa0c1de4e3b768035cb49e8962dabaf60e8dbbc0c325f558c189cc9c7c3e06}{LayerId::Kan}};}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a7a43138e7b9987fa218db1a267f9abfa}{save}}(std::ostream\&\ out)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<std::uint64\_t>}}(out,\ in\_f);}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<std::uint64\_t>}}(out,\ out\_f);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<std::uint64\_t>}}(out,\ knots);}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<double>}}(out,\ x\_min);}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<double>}}(out,\ x\_max);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ psi\_weights)\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<T>}}(out,\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}});}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ phi\_weights)\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<T>}}(out,\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}});}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ phi\_biases)\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialization_af7d3d5835d83a80288feeca38f538f4c}{serialization::write\_numeric<T>}}(out,\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}});}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a5ae5e51738dbeb57770d191c7442dae0}{load}}(std::istream\&\ in)\ -\/>\ \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a39c44a271bd7c7af844001e8d89e543e}{Kan<T>}}\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ in\_feat\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<uint64\_t>}}(in);}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ out\_feat\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<uint64\_t>}}(in);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ knots\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<uint64\_t>}}(in);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ T\ a\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<T>}}(in);}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ T\ b\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<T>}}(in);}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classutec_1_1neural__network_1_1Kan_a39c44a271bd7c7af844001e8d89e543e}{Kan<T>}}\ layer(in\_feat,\ out\_feat,\ knots,\ a,\ b);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ layer.psi\_weights)\ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<T>}}(in);}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ layer.phi\_weights)\ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<T>}}(in);}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ :\ layer.phi\_biases)\ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{catch__amalgamated_8cpp_a6abfb3eb1e8098e09b8a4d1fc295b265}{x}}\ =\ \mbox{\hyperlink{namespaceserialization_ae73eaddd61e96690c3a59219c1f1e7c4}{serialization::read\_numeric<T>}}(in);}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ layer;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ \ \ \ \ \};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \}\ \ \textcolor{comment}{//\ namespace\ utec::neural\_network}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

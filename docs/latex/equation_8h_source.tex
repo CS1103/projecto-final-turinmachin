@@ -1,0 +1,59 @@
+\doxysection{equation.\+h}
+\hypertarget{equation_8h_source}{}\label{equation_8h_source}\index{include/game/math/equation.h@{include/game/math/equation.h}}
+\mbox{\hyperlink{equation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INCLUDE\_GAME\_MATH\_EQUATION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INCLUDE\_GAME\_MATH\_EQUATION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game_2math_2interfaces_8h}{game/math/interfaces.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegame_1_1math}{game::math}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgame_1_1math_1_1AddEquation_aad447b753524434bb970a91c342d0d56}{AddEquation}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structgame_1_1math_1_1IEquation}{IEquation}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lhs;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rhs;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1math_1_1AddEquation_aad447b753524434bb970a91c342d0d56}{AddEquation}}(\textcolor{keywordtype}{int}\ lhs,\ \textcolor{keywordtype}{int}\ rhs);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classgame_1_1math_1_1AddEquation_aff9b4754b759c2d118603a4b6c87420f}{answer}}()\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keywordtype}{int}\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classgame_1_1math_1_1AddEquation_a64c9e8c7f8cc9783a9b3f6d039546110}{display}}()\ \textcolor{keyword}{const}\ -\/>\ std::string\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classgame_1_1math_1_1AddEquation_ab0c1fe0a53fc3e87b0e2442d570b403e}{display\_solved}}()\ \textcolor{keyword}{const}\ -\/>\ std::string\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgame_1_1math_1_1SubtractEquation_a6ab7d6e211afecdb13214165aea74572}{SubtractEquation}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structgame_1_1math_1_1IEquation}{IEquation}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lhs;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rhs;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1math_1_1SubtractEquation_a6ab7d6e211afecdb13214165aea74572}{SubtractEquation}}(\textcolor{keywordtype}{int}\ lhs,\ \textcolor{keywordtype}{int}\ rhs);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classgame_1_1math_1_1SubtractEquation_a01114f09b7e2a5ed13e6213145a9e4fc}{answer}}()\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keywordtype}{int}\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classgame_1_1math_1_1SubtractEquation_aca511bd4478183dd4f50f88759cd59a2}{display}}()\ \textcolor{keyword}{const}\ -\/>\ std::string\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classgame_1_1math_1_1SubtractEquation_afb25292003d57cb3868e2e4115347855}{display\_solved}}()\ \textcolor{keyword}{const}\ -\/>\ std::string\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgame_1_1math_1_1DivideEquation_ac01731507530fa811ea988872b3a93b7}{DivideEquation}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structgame_1_1math_1_1IEquation}{IEquation}}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lhs;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rhs;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1math_1_1DivideEquation_ac01731507530fa811ea988872b3a93b7}{DivideEquation}}(\textcolor{keywordtype}{int}\ lhs,\ \textcolor{keywordtype}{int}\ rhs);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classgame_1_1math_1_1DivideEquation_aa7d23b69cce09432ef47970c6ee1f1c1}{answer}}()\ \textcolor{keyword}{const}\ -\/>\ \textcolor{keywordtype}{int}\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classgame_1_1math_1_1DivideEquation_a7dc63256840e41007c0509f7a140c977}{display}}()\ \textcolor{keyword}{const}\ -\/>\ std::string\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classgame_1_1math_1_1DivideEquation_a3a83eb7a7042095096f07736f35a4702}{display\_solved}}()\ \textcolor{keyword}{const}\ -\/>\ std::string\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \}\ \ \textcolor{comment}{//\ namespace\ game::math}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
