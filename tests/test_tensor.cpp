@@ -1,6 +1,6 @@
 #include <utec/algebra/tensor.h>
 #include <array>
-#include <catch/catch_amalgamated.hpp>
+#include <catch_amalgamated.hpp>
 #include <stdexcept>
 
 using utec::algebra::Tensor;

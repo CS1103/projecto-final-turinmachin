@@ -4,7 +4,7 @@
 #include <utec/nn/loss.h>
 #include <utec/nn/neural_network.h>
 #include <utec/nn/optimizer.h>
-#include <catch/catch_amalgamated.hpp>
+#include <catch_amalgamated.hpp>
 #include <random>
 #include <sstream>
 
