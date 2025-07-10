@@ -16,12 +16,11 @@ Recreación del minijuego de matemáticas de Brain-Age usando redes neuronales e
 2. [Requisitos e instalación](#requisitos-e-instalación)
 3. [Investigación teórica](#1-investigación-teórica)
 4. [Diseño e implementación](#2-diseño-e-implementación)
-5. [Ejecución](#3-ejecución)
-6. [Análisis del rendimiento](#4-análisis-del-rendimiento)
-7. [Trabajo en equipo](#5-trabajo-en-equipo)
-8. [Conclusiones](#6-conclusiones)
-9. [Bibliografía](#7-bibliografía)
-10. [Licencia](#licencia)
+5. [Análisis del rendimiento](#3-análisis-del-rendimiento)
+6. [Trabajo en equipo](#4-trabajo-en-equipo)
+7. [Conclusiones](#5-conclusiones)
+8. [Bibliografía](#6-bibliografía)
+9. [Licencia](#licencia)
 
 ---
 
@@ -182,18 +181,8 @@ cmake --build .
 
 ---
 
-### 3. Ejecución
 
-> **Demo de ejemplo**: Video/demo alojado en `docs/demo.mp4`.
-> Pasos:
->
-> 1. Preparar datos de entrenamiento (formato CSV).
-> 2. Ejecutar comando de entrenamiento.
-> 3. Evaluar resultados con script de validación.
-
----
-
-### 4. Análisis del rendimiento
+### 3. Análisis del rendimiento
 
 - **Métricas de ejemplo**:
 
@@ -203,8 +192,8 @@ cmake --build .
 
 - **Ventajas/Desventajas**:
 
-  - - Código ligero y dependencias mínimas.
-  - – Sin paralelización, rendimiento limitado.
+  - Código ligero y dependencias mínimas.
+  - Sin paralelización, rendimiento limitado.
 
 - **Mejoras futuras**:
 
@@ -214,7 +203,7 @@ cmake --build .
 
 ---
 
-### 5. Trabajo en equipo
+### 4. Trabajo en equipo
 
 | Tarea                     | Miembro                            | Rol                       |
 | ------------------------- | ---------------------------------- | ------------------------- |
@@ -226,7 +215,7 @@ cmake --build .
 
 ---
 
-### 6. Conclusiones
+### 5. Conclusiones
 
 - **Logros**: Implementar NN desde cero, validar en dataset de ejemplo.
     - Se implementó desde cero una red neuronal en C++.
@@ -243,9 +232,10 @@ cmake --build .
 
 ---
 
-### 7. Bibliografía
+### 6. Bibliografía
 
 [KAN: Kolmogorov-Arnold Networks](https://arxiv.org/pdf/2404.19756?)
+
 [KAN 2.0: Kolmogorov-Arnold Networks Meet Science](https://arxiv.org/pdf/2408.10205)
 ---
 
