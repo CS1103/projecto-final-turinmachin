@@ -6,7 +6,7 @@
 
 ### **Descripción**
 
-Recreación del juego Brain-Ager usando redes neuronales en C++ para la identificación de dígitos.
+Recreación del minijuego de matemáticas de Brain-Age usando redes neuronales en C++ para la identificación de dígitos.
 
 ### Contenidos
 
